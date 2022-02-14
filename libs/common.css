@@ -65,7 +65,7 @@ body {
 
 .common-header .logo a {
     display: block;
-    background: url('../themes/basic/assets/logo-03.png') no-repeat left center;
+    background: url('../themes/basic/assets/common-logo.png') no-repeat left center;
     padding-left: 54px;
     font-size: 18px;
     color: #FFFFFF;
@@ -103,7 +103,7 @@ body {
 .common-header .search-box .dropdown-toggle::after {
     margin-left: 4px;
     border: none;
-    background: url('../themes/basic/assets/arrowdown.png') no-repeat left center;
+    background: url('../themes/basic/assets/common-arrowdown.png') no-repeat left center;
     width: 16px;
     height: 16px;
     vertical-align: bottom;
@@ -172,6 +172,7 @@ body {
 
 .common-nav {
     padding: 20px 0;
+    background: #fff;
 }
 
 .common-nav .nav-link {
@@ -253,4 +254,7 @@ body {
 
 .common-footer .copyright a {
     color: #ffffff;
+}
+.common-division {
+    height: 16px;
 }

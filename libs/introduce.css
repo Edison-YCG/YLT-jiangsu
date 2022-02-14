@@ -1,1 +1,18 @@
 @charset "UTF-8";
+.ie-column-1 {
+    text-align: center;
+    margin-bottom: 54px;
+}
+.ie-column-1 h2 {
+    padding: 79px 0 48px;
+font-size: 16px;
+font-weight: bold;
+}
+.ie-column-2 {
+    letter-spacing: 1px;
+    margin-bottom: 300px;
+}
+.ie-column-1,
+.ie-column-2 {
+    background: #fff;
+}

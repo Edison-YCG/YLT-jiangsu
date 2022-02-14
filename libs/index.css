@@ -1,1 +1,308 @@
 @charset "UTF-8";
+
+.ix-common-title {
+    padding: 23px 32px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+
+.ix-common-title a {
+    padding: 7px 32px;
+    border-radius: 16px;
+    font-size: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    font-weight: 400;
+    color: #666;
+    float: right;
+}
+
+.ix-column-1 .carousel-indicators {
+    margin-bottom: 25px;
+}
+
+.ix-column-1 .carousel-indicators [data-bs-target] {
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    margin: 0 10px;
+    opacity: 1;
+    border: none;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.ix-column-1 .carousel-indicators .active {
+    background: #2B7EFB;
+}
+
+.ix-column-2 {
+    padding-top: 56px;
+    margin-bottom: 56px;
+}
+
+.ix-column-2 .card {
+    border: 1px solid #EDEDED;
+}
+
+.ix-column-2 .card-body {
+    padding: 34px 40px 31px;
+}
+
+.ix-column-2 .card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+
+.ix-column-2 .card-title a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+}
+
+.ix-column-2 .card-text a {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 7px;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.ix-column-2 .card-text a .tag {
+    color: #D5485A;
+    margin-right: 16px;
+}
+
+.ix-column-2 .card-text a .txt {
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    display: inline-block;
+
+}
+
+.ix-column-2 .card-text a .time {
+    color: #666;
+    float: right;
+}
+
+.ix-column-3 {
+    letter-spacing: 1px;
+    margin-bottom: 56px;
+}
+
+.ix-column-3 .ix-common-title {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
+}
+
+.ix-column-3 .card {
+    border: none;
+}
+
+.ix-column-3 .card-body {
+    padding: 41px 0 41px 56px;
+}
+
+.ix-column-3 .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    padding-right: 56px;
+}
+
+.ix-column-3 .card-subtitle {
+    margin-bottom: 0 !important;
+    padding-bottom: 15px;
+    padding-right: 56px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ix-column-3 .card-subtitle .badge {
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.04) !important;
+    border-radius: 6px;
+    font-weight: 400;
+    color: #666;
+}
+
+.ix-column-3 .card-text {
+    padding-right: 56px;
+    color: #666;
+    margin-bottom: 24px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    line-height: 17px;
+}
+
+.ix-column-3 .card-link {
+    color: #0087FF;
+}
+
+.ix-column-3 .type-1 .card-subtitle,
+.ix-column-3 .type-1 .card-text,
+.ix-column-3 .type-2 .row>div:nth-child(2n) .card-subtitle,
+.ix-column-3 .type-2 .row>div:nth-child(2n) .card-text {
+    border-right: none;
+}
+
+.ix-column-3 .type-1,
+.ix-column-3 .type-2 {
+    background: #FFFFFF;
+}
+
+.ix-column-3 .type-1 .card {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: url('../themes/basic/assets/index-hospital.png') no-repeat right center;
+}
+
+.ix-column-3 .type-1 .card-text {
+    max-width: 443px;
+}
+
+.ix-column-3 .type-2 .btn {
+    padding: 10px 71px !important;
+    background: #2B7EFB;
+    border-radius: 30px;
+    border: 8px solid #d5e5fe;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 0;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    margin-bottom: 56px;
+}
+
+.ix-column-4 {
+    margin-bottom: 56px;
+}
+
+.ix-column-4 .ix-common-title {
+    padding-bottom: 48px;
+}
+
+.ix-column-4 .card {
+    padding: 32px 32px 24px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    max-width: 306px;
+}
+
+.ix-column-4 .card-body {
+    padding: 0 0 0 12px;
+}
+
+.ix-column-4 .card img {
+    width: 43px;
+    height: 43px;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.ix-column-4 .card-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.ix-column-4 .card-text {
+    color: #666;
+    margin-bottom: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ix-column-4 .card-text:nth-last-of-type(1) {
+    margin-bottom: 0;
+}
+
+.ix-column-4 .card-text .text-muted {
+    font-size: 10px;
+    color: #FFFFFF !important;
+    padding: 6px 10px;
+    background: #F8C24D;
+    border-radius: 2px 2px 2px 8px;
+    transform: scale(.8);
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    -o-transform: scale(.8);
+    position: absolute;
+    top: -3px;
+    right: -7px;
+    border-radius: 0 10px 0 0;
+    -webkit-border-radius: 0 10px 0 0;
+    -moz-border-radius: 0 10px 0 0;
+    -ms-border-radius: 0 10px 0 0;
+    -o-border-radius: 0 10px 0 0;
+}
+
+.ix-column-4 .card-link {
+    padding: 3px 26px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #2B7EFB;
+    color: #2B7EFB;
+}
+
+.ix-column-5 {
+    padding-bottom: 113px;
+    background: url('../themes/basic/assets/index-bg-5.png') no-repeat right center;
+}
+
+.ix-column-5 .ix-common-title {
+    padding-top: 72px;
+    padding-bottom: 64px;
+}
+
+.ix-column-5 .card {
+    border: none;
+    background: unset;
+}
+
+.ix-column-5 .card-body {
+    padding: 0;
+}
+
+.ix-column-5 .card-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.ix-column-5 .card-subtitle {
+    color: #666 !important;
+    margin-bottom: 8px !important;
+    font-size: 12px;
+}
+
+
+.ix-column-5 .card-text {
+    color: #666;
+    margin-bottom: 32px;
+}
+
+.ix-column-5 .card-link {
+    color: #2B7EFB;
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #2B7EFB;
+    padding: 3px 30px;
+}
