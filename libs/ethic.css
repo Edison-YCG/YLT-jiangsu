@@ -1,55 +1,65 @@
-.ec .ec-process-img {
+.page-ec {
+  background-color: #fff;
+}
+
+.page-ec .ec-process-img {
   width: 80%;
   margin: 0 auto;
   margin-top: 63px;
   border: 1px dashed #aaa;
 }
 
-.ec .ec-process-btn {
+.page-ec .ec-process-btn {
   margin-top: 28px;
 }
 
-.ec .ec-process-btn .btn {
-  width: 180px;
-  height: 48px;
+.page-ec .ec-process-btn .btn {
+  padding: 10px 71px !important;
   background: #2B7EFB;
-  -webkit-box-shadow: 0 0 8px #2b7efb;
-          box-shadow: 0 0 8px #2b7efb;
+  border-radius: 30px;
+  border: 8px solid #d5e5fe;
+  font-size: 16px;
+  color: #FFFFFF;
+  padding: 0;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }
 
-.ec .ec-advantages {
+.page-ec .ec-advantages {
   margin-top: 60px;
 }
 
-.ec .ec-advantages .row .col:nth-child(1) .card {
+.page-ec .ec-advantages .row .col:nth-child(1) .card {
   background-image: url(../themes/basic/assets/ethic-card-bg.png);
 }
 
-.ec .ec-advantages .row .col:nth-child(2) .card {
+.page-ec .ec-advantages .row .col:nth-child(2) .card {
   background-image: url(../themes/basic/assets/ethic-card-bg2.png);
 }
 
-.ec .ec-advantages .row .col:nth-child(3) .card {
+.page-ec .ec-advantages .row .col:nth-child(3) .card {
   background-image: url(../themes/basic/assets/ethic-card-bg3.png);
 }
 
-.ec .ec-advantages .card {
+.page-ec .ec-advantages .card {
   height: 150px;
   background-position: right top;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.ec .ec-advantages .card .card-body {
+.page-ec .ec-advantages .card .card-body {
   padding: 30px;
 }
 
-.ec .ec-advantages .card .card-title {
+.page-ec .ec-advantages .card .card-title {
   font-size: 22px;
   font-weight: bold;
 }
 
-.ec .ec-advantages .card .card-text {
+.page-ec .ec-advantages .card .card-text {
   margin-top: 20px;
   width: 80%;
   font-size: 18px;

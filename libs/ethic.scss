@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-.ec {
+.page-ec {
+  background-color: #fff;
   .ec-process-img {
     width: 80%;
     margin: 0 auto;
@@ -10,11 +11,17 @@
   .ec-process-btn {
     margin-top: 28px;
     .btn {
-      width: 180px;
-      height: 48px;
+      padding: 10px 71px !important;
       background: #2B7EFB;
-      // border: 8px solid rgba(43, 126, 251, 0.25);
-      box-shadow: 0 0 8px rgb(43, 126, 251);
+      border-radius: 30px;
+      border: 8px solid #d5e5fe;
+      font-size: 16px;
+      color: #FFFFFF;
+      padding: 0;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px;
     }
   }
   .ec-advantages {

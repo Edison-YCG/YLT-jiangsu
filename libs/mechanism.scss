@@ -1,13 +1,12 @@
 @charset "UTF-8";
 
 .page-mechanism {
+  background-color: #fff;
   .mm-search {
+    margin-bottom: 47px;
     .form-label {
       opacity: .85;
       font-size: 12px;
-    }
-    .form-control {
-
     }
     svg {
       position: absolute;
@@ -30,13 +29,21 @@
     }
   }
   .mm-list {
+    padding-top: 27px;
+    border-top: 1px dashed #E9E9E9;
+    .col {
+      margin-top: 0;
+    }
     .card {
+      width: 362px;
+      height: 204px;
+      margin-bottom: 47px;
       padding: 25px 32px;
       padding-bottom: 0;
       border-radius: 6px;
       background-image: url(../themes/basic/assets/mechanism-card-bg.png);
-      background-position: right bottom;
-      background-size: 100% 90px;
+      background-position: right;
+      background-size: cover;
       background-repeat: no-repeat;
       .recommend-badge {
         font-size: 12px;
@@ -51,18 +58,28 @@
       }
       
       .card-top-right {
+        max-width: calc(100% - 70px);
         .card-name {
           font-size: 14px;
         }
-        .advantage-item {
-          min-width: 64px;
-          border-radius: 2px;
-          background: #F5F5F5;
+        .advantage-list{
+          margin-top: 10px;
+          
+          .advantage-item {
+            display: inline-block;
+            margin-right: 8px;
+            min-width: 64px;
+            text-align: center;
+            border-radius: 2px;
+            background: #F5F5F5;
+          }
         }
       }
       .card-bottom {
+        margin-top: 9px;
         height: 90px;
         font-size: 12px;
+        padding-bottom: 20px;
         .project-title {
           font-weight: bold;
         }
