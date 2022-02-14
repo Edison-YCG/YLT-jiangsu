@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 .page-core {
+  background-color: #fff;
   .nav {
+    margin-bottom: 25px;
     font-size: 12px;
     .nav-item {
       .nav-link {
@@ -16,12 +18,18 @@
       border-radius: 50rem;
     }
   }
-  hr {
-    color: #E9E9E9;
-  }
+
   .news-list {
+    border-top: 1px dashed #E9E9E9;
     .news-item {
+      margin-top: 27px;
+      padding-bottom: 27px;
+      border-bottom: 1px solid #E9E9E9;
       font-size: 14px;
+      &:nth-last-of-type(1) {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
       img {
         width: 230px;
         height: 176px;

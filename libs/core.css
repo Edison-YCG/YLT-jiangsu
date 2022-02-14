@@ -1,4 +1,9 @@
+.page-core {
+  background-color: #fff;
+}
+
 .page-core .nav {
+  margin-bottom: 25px;
   font-size: 12px;
 }
 
@@ -14,12 +19,20 @@
   border-radius: 50rem;
 }
 
-.page-core hr {
-  color: #E9E9E9;
+.page-core .news-list {
+  border-top: 1px dashed #E9E9E9;
 }
 
 .page-core .news-list .news-item {
+  margin-top: 27px;
+  padding-bottom: 27px;
+  border-bottom: 1px solid #E9E9E9;
   font-size: 14px;
+}
+
+.page-core .news-list .news-item:nth-last-of-type(1) {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .page-core .news-list .news-item img {
