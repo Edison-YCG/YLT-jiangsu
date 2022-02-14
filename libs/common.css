@@ -58,12 +58,12 @@ body {
     margin: 0 auto;
 }
 
-.header {
+.common-header {
     background: #2B7EFB;
     padding: 16px 0 2px;
 }
 
-.header .logo a {
+.common-header .logo a {
     display: block;
     background: url('../themes/basic/assets/logo-03.png') no-repeat left center;
     padding-left: 54px;
@@ -74,25 +74,25 @@ body {
     letter-spacing: 1.5px;
 }
 
-.header .logo a p:last-child {
+.common-header .logo a p:last-child {
     font-size: 8px;
     font-weight: 400;
     letter-spacing: 1px;
 }
 
-.header .search-box {
+.common-header .search-box {
     color: #0A3F7C;
     position: relative;
     max-width: 480px;
 }
 
-.header .search-box .btn {
+.common-header .search-box .btn {
     color: #0A3F7C;
     height: 40px;
     font-size: 12px;
     padding-left: 24px;
     padding-right: 16px;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.6);
     border: none;
     border-radius: 20px 0 0 20px;
     box-shadow: none !important;
@@ -100,7 +100,7 @@ body {
     font-weight: bold;
 }
 
-.header .search-box .dropdown-toggle::after {
+.common-header .search-box .dropdown-toggle::after {
     margin-left: 4px;
     border: none;
     background: url('../themes/basic/assets/arrowdown.png') no-repeat left center;
@@ -109,8 +109,8 @@ body {
     vertical-align: bottom;
 }
 
-.header .search-box .form-control {
-    background: rgba(255, 255, 255, 0.4);
+.common-header .search-box .form-control {
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 0 20px 20px 0;
     border: none;
     box-shadow: none !important;
@@ -118,25 +118,27 @@ body {
     font-size: 12px;
     padding-left: 20px;
     padding-right: 45px;
+    margin-left: 0 !important;
+    border-left: 1px solid #2B7EFB;
 }
 
-.header .search-box .form-control::-webkit-input-placeholder {
+.common-header .search-box .form-control::-webkit-input-placeholder {
     color: #0A3F7C;
 }
 
-.header .search-box .form-control::-moz-placeholder {
+.common-header .search-box .form-control::-moz-placeholder {
     color: #0A3F7C;
 }
 
-.header .search-box .form-control:-moz-placeholder {
+.common-header .search-box .form-control:-moz-placeholder {
     color: #0A3F7C;
 }
 
-.header .search-box .form-control:-ms-input-placeholder {
+.common-header .search-box .form-control:-ms-input-placeholder {
     color: #0A3F7C;
 }
 
-.header .search-box svg {
+.common-header .search-box svg {
     position: absolute;
     right: 24px;
     top: 50%;
@@ -150,11 +152,11 @@ body {
     z-index: 10;
 }
 
-.header .button-box {
-    padding-left: 44px;
+.common-header .button-box {
+    padding-left: 45px;
 }
 
-.header .button-box .btn {
+.common-header .button-box .btn {
     font-size: 12px;
     padding: 7px 19px;
     font-weight: 500;
@@ -164,7 +166,7 @@ body {
     margin-right: 20px;
 }
 
-.header .button-box .btn:last-child {
+.common-header .button-box .btn:last-child {
     margin-right: 0;
 }
 
@@ -179,7 +181,7 @@ body {
     position: relative;
     padding-left: 0;
     padding-right: 0;
-    margin-right: 80px;
+    margin-right: 70px;
     letter-spacing: 1.5px;
     font-weight: bold;
 }
@@ -219,52 +221,36 @@ body {
     margin-right: 0;
 }
 
-.common-nav .dropdown-toggle::after {
-    margin-left: 4px;
-    border: none;
-    background: url('../themes/basic/assets/arrowdown2.png') no-repeat left center;
-    width: 16px;
-    height: 16px;
-    vertical-align: text-bottom;
-}
-
-.footer {
+.common-footer {
     letter-spacing: 1.5px;
     background: #1B3152;
-    padding-top: 60px;
+    padding-top: 125px;
     color: #ffffff;
 }
 
-.footer .txt {
-    font-size: 28px;
-    margin-bottom: 6px;
+.common-footer .message {
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    width: 70%;
 }
 
-.footer .tips {
+.common-footer .txt {
+    font-size: 28px;
+    margin-bottom: 22px;
+}
+
+.common-footer .tips {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 48px;
+
 }
 
-.footer .vx-code {
-    padding-top: 50px;
+.common-footer .copyright {
     text-align: center;
-    margin-bottom: 24px;
-}
-
-.footer .vx-txt {
-    text-align: center;
-    letter-spacing: 8px;
+    padding-top: 110px;
+    padding-bottom: 90px;
     color: rgba(255, 255, 255, 0.5);
 }
 
-.footer .copyright {
-    text-align: center;
-    padding-top: 46px;
-    padding-bottom: 72px;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.footer .copyright a {
+.common-footer .copyright a {
     color: #ffffff;
 }

@@ -1,1 +1,87 @@
-@charset "UTF-8";
+.page-mechanism .mm-search .form-label {
+  opacity: .85;
+  font-size: 12px;
+}
+
+.page-mechanism .mm-search svg {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.page-mechanism .mm-search .mechanism-calendar {
+  padding: 8px 14px;
+}
+
+.page-mechanism .mm-search .mechanism-calendar img {
+  width: 16px;
+  height: 16px;
+}
+
+.page-mechanism .mm-list .card {
+  padding: 25px 32px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  background-image: url(../themes/basic/assets/mechanism-card-bg.png);
+  background-position: right bottom;
+  background-size: 100% 90px;
+  background-repeat: no-repeat;
+}
+
+.page-mechanism .mm-list .card .recommend-badge {
+  border-radius: 2px 2px 2px 8px;
+}
+
+.page-mechanism .mm-list .card .card-top img {
+  width: 48px;
+  height: 48px;
+}
+
+.page-mechanism .mm-list .card .card-top-right .card-name {
+  font-size: 14px;
+}
+
+.page-mechanism .mm-list .card .card-top-right .advantage-item {
+  min-width: 64px;
+  border-radius: 2px;
+  background: #F5F5F5;
+}
+
+.page-mechanism .mm-list .card .card-bottom {
+  height: 90px;
+  font-size: 12px;
+}
+
+.page-mechanism .mm-list .card .card-bottom .project-title {
+  font-weight: bold;
+}
+
+.page-mechanism .mm-list .card .card-bottom .project-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-mechanism .mm-list .card .card-bottom .project-item span:nth-of-type(1) {
+  opacity: .8;
+  font-weight: 500;
+}
+
+.page-mechanism .mm-list .card .card-bottom .project-item span:nth-last-of-type(1) {
+  opacity: .4;
+}
+
+.page-mechanism .mm-list .card .card-bottom .project-range {
+  opacity: .4;
+}
+/*# sourceMappingURL=mechanism.css.map */

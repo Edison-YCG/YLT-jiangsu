@@ -21,15 +21,15 @@
   margin-top: 60px;
 }
 
-.ec .ec-advantages .card:nth-of-type(1) .card {
+.ec .ec-advantages .row .col:nth-child(1) .card {
   background-image: url(../themes/basic/assets/ethic-card-bg.png);
 }
 
-.ec .ec-advantages .card:nth-of-type(2) .card {
+.ec .ec-advantages .row .col:nth-child(2) .card {
   background-image: url(../themes/basic/assets/ethic-card-bg2.png);
 }
 
-.ec .ec-advantages .card:nth-of-type(3) .card {
+.ec .ec-advantages .row .col:nth-child(3) .card {
   background-image: url(../themes/basic/assets/ethic-card-bg3.png);
 }
 
@@ -46,12 +46,13 @@
 
 .ec .ec-advantages .card .card-title {
   font-size: 22px;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .ec .ec-advantages .card .card-text {
   margin-top: 20px;
   width: 80%;
   font-size: 18px;
+  opacity: .7;
 }
 /*# sourceMappingURL=ethic.css.map */

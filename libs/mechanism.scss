@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+.page-mechanism {
+  .mm-search {
+    .form-label {
+      opacity: .85;
+      font-size: 12px;
+    }
+    .form-control {
+
+    }
+    svg {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 10;
+    }
+    .mechanism-calendar {
+      padding: 8px 14px;
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  .mm-list {
+    .card {
+      padding: 25px 32px;
+      padding-bottom: 0;
+      border-radius: 6px;
+      background-image: url(../themes/basic/assets/mechanism-card-bg.png);
+      background-position: right bottom;
+      background-size: 100% 90px;
+      background-repeat: no-repeat;
+      .recommend-badge {
+        font-size: 12px;
+        border-radius: 2px 2px 2px 8px;
+      }
+
+      .card-top {
+        img {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      
+      .card-top-right {
+        .card-name {
+          font-size: 14px;
+        }
+        .advantage-item {
+          min-width: 64px;
+          border-radius: 2px;
+          background: #F5F5F5;
+        }
+      }
+      .card-bottom {
+        height: 90px;
+        font-size: 12px;
+        .project-title {
+          font-weight: bold;
+        }
+        .project-item {
+          display: flex;
+          align-items: center;
+
+          span:nth-of-type(1) {
+            opacity: .8;
+            font-weight: 500;
+          }
+          span:nth-last-of-type(1) {
+            opacity: .4;
+          }
+        }
+        .project-range {
+          opacity: .4;;
+        }
+      }
+    }
+  }
+}
