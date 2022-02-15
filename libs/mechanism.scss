@@ -3,7 +3,7 @@
 .page-mechanism {
   background-color: #fff;
   .mm-search {
-    margin-bottom: 47px;
+    margin-bottom: 24px;
     .form-label {
       opacity: .85;
       font-size: 12px;
@@ -35,8 +35,9 @@
       margin-top: 0;
     }
     .card {
-      width: 362px;
-      height: 204px;
+      // width: 362px;
+      // height: 204px;
+      height: 236px;
       margin-bottom: 47px;
       padding: 25px 32px;
       padding-bottom: 0;
@@ -51,6 +52,7 @@
       }
 
       .card-top {
+        margin-bottom: 37px;
         img {
           width: 48px;
           height: 48px;
@@ -76,10 +78,11 @@
         }
       }
       .card-bottom {
-        margin-top: 9px;
-        height: 90px;
+        margin-top: 12px;
+        padding-top: 24px;
+        height: 159px;
         font-size: 12px;
-        padding-bottom: 20px;
+        padding-bottom: 25px;
         .project-title {
           font-weight: bold;
         }

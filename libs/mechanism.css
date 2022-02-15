@@ -3,7 +3,7 @@
 }
 
 .page-mechanism .mm-search {
-  margin-bottom: 47px;
+  margin-bottom: 24px;
 }
 
 .page-mechanism .mm-search .form-label {
@@ -43,8 +43,7 @@
 }
 
 .page-mechanism .mm-list .card {
-  width: 362px;
-  height: 204px;
+  height: 236px;
   margin-bottom: 47px;
   padding: 25px 32px;
   padding-bottom: 0;
@@ -58,6 +57,10 @@
 .page-mechanism .mm-list .card .recommend-badge {
   font-size: 12px;
   border-radius: 2px 2px 2px 8px;
+}
+
+.page-mechanism .mm-list .card .card-top {
+  margin-bottom: 37px;
 }
 
 .page-mechanism .mm-list .card .card-top img {
@@ -87,10 +90,11 @@
 }
 
 .page-mechanism .mm-list .card .card-bottom {
-  margin-top: 9px;
-  height: 90px;
+  margin-top: 12px;
+  padding-top: 24px;
+  height: 159px;
   font-size: 12px;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
 }
 
 .page-mechanism .mm-list .card .card-bottom .project-title {
