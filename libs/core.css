@@ -49,6 +49,12 @@
 }
 
 .page-core .news-list .news-item .news-detail {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   opacity: .65;
 }
 
@@ -66,6 +72,11 @@
 
 .page-core .core-pagination .pagination .page-item .page-link {
   color: rgba(0, 0, 0, 0.8);
+}
+
+.page-core .core-pagination .pagination .page-item .page-link:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .page-core .core-pagination .pagination .page-item.active .page-link {

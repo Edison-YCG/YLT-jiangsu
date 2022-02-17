@@ -8,6 +8,11 @@
       opacity: .85;
       font-size: 12px;
     }
+    .form-control {
+      &:focus {
+        box-shadow: none;
+      }
+    }
     svg {
       position: absolute;
       right: 24px;

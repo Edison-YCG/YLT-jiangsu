@@ -44,6 +44,12 @@
         }
       }
       .news-detail {
+        display: -webkit-box;
+        overflow: hidden;
+        white-space: normal;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
         opacity: .65;
       }
       .news-info{
@@ -62,6 +68,9 @@
         margin-right: 10px;
         .page-link {
           color: rgba(0, 0, 0, .8);
+          &:focus {
+            box-shadow: none;
+          }
         }
         &.active {
           .page-link {
