@@ -49,6 +49,12 @@
 }
 
 .page-core .news-list .news-item .news-detail {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   opacity: .65;
 }
 
