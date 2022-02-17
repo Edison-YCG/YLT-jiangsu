@@ -11,6 +11,11 @@
   font-size: 12px;
 }
 
+.page-mechanism .mm-search .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .page-mechanism .mm-search svg {
   position: absolute;
   right: 24px;
