@@ -18,6 +18,12 @@
     float: right;
 }
 
+.ix-common-title a:hover {
+    background: #2B7EFB;
+    color: #fff;
+    border-color: #2B7EFB;
+}
+
 .ix-column-1 .carousel-indicators {
     margin-bottom: 25px;
 }
@@ -69,6 +75,10 @@
     color: #666;
 }
 
+.ix-column-2 .card-title a:hover {
+    color: #2B7EFB;
+}
+
 .ix-column-2 .card-text a {
     display: block;
     font-size: 14px;
@@ -77,9 +87,14 @@
     letter-spacing: 1px;
 }
 
+.ix-column-2 .card-text a:hover .txt {
+    color: #2B7EFB;
+}
+
 .ix-column-2 .card-text a .tag {
     color: #D5485A;
     margin-right: 16px;
+    vertical-align: top;
 }
 
 .ix-column-2 .card-text a .txt {
@@ -149,6 +164,10 @@
     color: #0087FF;
 }
 
+.ix-column-3 .card-link:hover {
+    border-bottom: 1px solid #2B7EFB;
+}
+
 .ix-column-3 .type-1 .card-subtitle,
 .ix-column-3 .type-1 .card-text,
 .ix-column-3 .type-2 .row>div:nth-child(2n) .card-subtitle,
@@ -164,6 +183,7 @@
 .ix-column-3 .type-1 .card {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     background: url('../themes/basic/assets/index-hospital.png') no-repeat right center;
+    background-size: contain;
 }
 
 .ix-column-3 .type-1 .card-text {
@@ -171,6 +191,7 @@
 }
 
 .ix-column-3 .type-2 .btn {
+    box-shadow: none !important;
     padding: 10px 71px !important;
     background: #2B7EFB;
     border-radius: 30px;
@@ -262,9 +283,16 @@
     color: #2B7EFB;
 }
 
+.ix-column-4 .card-link:hover,
+.ix-column-5 .card-link:hover {
+    background: #2B7EFB;
+    color: #fff;
+}
+
 .ix-column-5 {
     padding-bottom: 113px;
     background: url('../themes/basic/assets/index-bg-5.png') no-repeat right center;
+    background-size: cover;
 }
 
 .ix-column-5 .ix-common-title {

@@ -98,6 +98,11 @@ body {
     box-shadow: none !important;
     letter-spacing: 1.5px;
     font-weight: bold;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
 }
 
 .common-header .search-box .dropdown-toggle::after {
@@ -141,15 +146,27 @@ body {
 .common-header .search-box svg {
     position: absolute;
     right: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
+    top: 12px;
     cursor: pointer;
     color: #0A3F7C;
     z-index: 10;
+}
+
+.common-header .search-box svg:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    font-weight: bold;
+}
+
+.common-header .search-box svg:active {
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -o-transform: scale(0.95);
 }
 
 .common-header .button-box {
@@ -215,11 +232,18 @@ body {
     padding: 0 24px;
     height: 32px;
     line-height: 32px;
-    margin-right: 20px;
+    margin-left: 20px;
+    box-shadow: none !important;
 }
 
-.common-nav .btn:last-child {
-    margin-right: 0;
+.common-nav .btn:first-child {
+    margin-left: 0;
+}
+
+.common-nav .btn:hover {
+    background-color: #2B7EFB;
+    color: #fff;
+    border-color: #2B7EFB;
 }
 
 .common-footer {
@@ -255,6 +279,17 @@ body {
 .common-footer .copyright a {
     color: #ffffff;
 }
+
 .common-division {
     height: 16px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: #2B7EFB;
+    color: #fff;
 }
