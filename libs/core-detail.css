@@ -1,0 +1,101 @@
+.page-core-detail {
+  background-color: #fff;
+}
+
+.page-core-detail .breadcrumb {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.page-core-detail .breadcrumb .breadcrumb-item a {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.page-core-detail .breadcrumb .breadcrumb-item.active {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.page-core-detail .card {
+  padding: 40px 48px;
+  margin-bottom: 16px;
+  color: rgba(0, 0, 0, 0.65);
+  border-radius: 12px;
+  -webkit-box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+          box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+}
+
+.page-core-detail .card .card-body {
+  padding: 0;
+}
+
+.page-core-detail .card .card-body .card-title {
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.page-core-detail .card .card-body .tag-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 15px;
+}
+
+.page-core-detail .card .card-body .tag-list .tag {
+  min-width: 64px;
+  margin-right: 10px;
+  padding: 2px 15px;
+  text-align: center;
+  border: 1px solid #D9D9D9;
+  border-radius: 2px;
+  background: #F5F5F5;
+}
+
+.page-core-detail .card .card-body .release-time, .page-core-detail .card .card-body .organ-name, .page-core-detail .card .card-body .detail-content, .page-core-detail .card .card-body .detail-content > p {
+  margin-top: 25px;
+}
+
+.page-core-detail .card .card-body .detail-content {
+  line-height: 24px;
+}
+
+.page-core-detail .card .card-body .detail-content p {
+  text-indent: 25px;
+}
+
+.page-core-detail .card-file .card-body .card-title {
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.page-core-detail .card-file .card-body .file-list .file-item {
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #2B7EFB;
+}
+
+.page-core-detail .card-file .card-body .file-list .file-item .file-btns .file-btn {
+  margin-left: 18px;
+  padding: 7px 14px;
+  border-radius: 50rem;
+  color: #2B7EFB;
+  border: 1px solid #D9D9D9;
+  background: transparent;
+}
+
+.page-core-detail .card-file .card-body .file-list .file-item .file-btns .file-btn:first-child {
+  margin-left: 0;
+}
+/*# sourceMappingURL=core-detail.css.map */

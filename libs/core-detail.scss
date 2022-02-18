@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+.page-core-detail {
+  background-color: #fff;
+  .breadcrumb {
+    font-size: 14px;
+    line-height: 22px;
+    .breadcrumb-item {
+      a {
+        color: rgba(0, 0, 0, .45);
+      }
+      &.active {
+        color: rgba(0,0,0,0.65);
+      }
+    }
+  }
+
+  .card {
+    padding: 40px 48px;
+    margin-bottom: 16px;
+    color:  rgba(0, 0, 0, .65);
+    border-radius: 12px;
+    box-shadow: 2px 2px 6px 1px rgba(0,28,89,0.06);
+    .card-body {
+      padding: 0;
+      .card-title {
+        color: #000;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .tag-list {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        .tag {
+          min-width: 64px;
+          margin-right: 10px;
+          padding: 2px 15px;
+          text-align: center;
+          border: 1px solid #D9D9D9;
+          border-radius: 2px;
+          background: #F5F5F5;
+        }
+      }
+      .release-time, .organ-name, .detail-content, .detail-content > p {
+        margin-top: 25px;
+      }
+      .detail-content {
+        line-height: 24px;
+        p {
+          text-indent: 25px;
+        }
+      }
+    }
+  }
+
+  .card-file {
+    .card-body{
+      .card-title {
+        margin-bottom: 16px;
+        font-size: 14px;
+        line-height: 24px;
+      }
+      .file-list {
+        .file-item {
+          margin-bottom: 16px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #2B7EFB;
+          .file-name {
+          }
+          .file-btns {
+            .file-btn {
+              margin-left: 18px;
+              padding: 7px 14px;
+              border-radius: 50rem;
+              color: #2B7EFB;
+              border: 1px solid #D9D9D9;
+              background: transparent;
+              &:first-child {
+                margin-left: 0;
+              }
+            }
+          }
+        }        
+      }
+    }
+  }
+
+}
