@@ -11,6 +11,10 @@
   font-size: 12px;
 }
 
+.page-mechanism .mm-search .form-control {
+  padding: 5px 16px;
+}
+
 .page-mechanism .mm-search .form-control:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -18,7 +22,7 @@
 
 .page-mechanism .mm-search svg {
   position: absolute;
-  right: 24px;
+  right: 16px;
   top: 50%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
@@ -50,7 +54,8 @@
 .page-mechanism .mm-list .card {
   height: 236px;
   margin-bottom: 47px;
-  padding: 25px 32px;
+  padding: 25px;
+  padding-right: 0;
   padding-bottom: 0;
   border-radius: 6px;
   background-image: url(../themes/basic/assets/mechanism-card-bg.png);
@@ -73,15 +78,12 @@
   height: 48px;
 }
 
-.page-mechanism .mm-list .card .card-top-right {
-  max-width: calc(100% - 70px);
-}
-
 .page-mechanism .mm-list .card .card-top-right .card-name {
   font-size: 14px;
 }
 
 .page-mechanism .mm-list .card .card-top-right .advantage-list {
+  min-width: 300px;
   margin-top: 10px;
 }
 
@@ -113,6 +115,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: 16px;
 }
 
 .page-mechanism .mm-list .card .card-bottom .project-item span:nth-of-type(1) {

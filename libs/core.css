@@ -3,7 +3,6 @@
 }
 
 .page-core .nav {
-  margin-bottom: 25px;
   font-size: 12px;
 }
 
@@ -17,6 +16,37 @@
   color: #fff;
   background: #2B7EFB;
   border-radius: 50rem;
+}
+
+.page-core .form-control {
+  padding: 5px 16px;
+}
+
+.page-core .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.page-core .core-search {
+  position: relative;
+}
+
+.page-core .core-search .input-group:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.page-core .core-search svg {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
 }
 
 .page-core .news-list {

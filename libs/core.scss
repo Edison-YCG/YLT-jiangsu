@@ -3,7 +3,7 @@
 .page-core {
   background-color: #fff;
   .nav {
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
     font-size: 12px;
     .nav-item {
       .nav-link {
@@ -16,6 +16,33 @@
       color: #fff;
       background: #2B7EFB;
       border-radius: 50rem;
+    }
+  }
+  .form-control {
+    padding: 5px 16px;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .core-search {
+    position: relative;
+    .input-group {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 10;
     }
   }
 
