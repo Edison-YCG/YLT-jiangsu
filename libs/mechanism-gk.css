@@ -145,17 +145,18 @@
   font-weight: bold;
 }
 .mechanism-gk-card2 .info2 {
-  padding: 0 44px;
+  padding: 2px 44px;
   overflow: hidden;
 }
 .mechanism-gk-card2 .info2 .table {
-  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   margin-bottom: 63px;
   font-weight: bold;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 .mechanism-gk-card2 .info2 .table thead th {
-  border-bottom: none;
   font-size: 12px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.85);
@@ -175,6 +176,7 @@
 .mechanism-gk-card2 .info2 .table th,
 .mechanism-gk-card2 .info2 .table td {
   padding: 11px;
+  border-bottom: none;
 }
 .mechanism-gk-card2 h2 {
   font-size: 16px;

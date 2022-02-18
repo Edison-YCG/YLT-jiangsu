@@ -173,18 +173,20 @@
     }
 
     .info2 {
-        padding: 0 44px;
+        padding: 2px 44px;
         overflow: hidden;
 
         .table {
-            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 12px;
             margin-bottom: 63px;
             font-weight: bold;
+            border-style: hidden;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
 
             thead {
                 th {
-                    border-bottom: none;
+
                     font-size: 12px;
                     font-weight: 400;
                     color: rgba(0, 0, 0, 0.85);
@@ -193,6 +195,7 @@
                 th:first-child {
                     padding-left: 65px;
                 }
+
             }
 
             tbody {
@@ -210,6 +213,7 @@
             th,
             td {
                 padding: 11px;
+                border-bottom: none;
             }
         }
     }
