@@ -168,7 +168,7 @@
   border-top: none;
 }
 .mechanism-gk-card2 .info2 .table tbody tr:nth-of-type(odd) > * {
-  background: rgba(230, 232, 234, 0);
+  background: #fafafb;
 }
 .mechanism-gk-card2 .info2 .table tbody tr td:first-child {
   padding-left: 65px;
