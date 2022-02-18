@@ -83,6 +83,7 @@
 }
 
 .page-mechanism .mm-list .card .card-top-right .advantage-list {
+  min-width: 300px;
   margin-top: 10px;
 }
 
