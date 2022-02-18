@@ -9,13 +9,14 @@
       font-size: 12px;
     }
     .form-control {
+      padding: 5px 16px;
       &:focus {
         box-shadow: none;
       }
     }
     svg {
       position: absolute;
-      right: 24px;
+      right: 16px;
       top: 50%;
       transform: translateY(-50%);
       -webkit-transform: translateY(-50%);
