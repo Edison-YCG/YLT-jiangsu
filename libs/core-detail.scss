@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 .page-core-detail {
-  background-color: #fff;
   .breadcrumb {
     font-size: 14px;
     line-height: 22px;
@@ -28,6 +27,9 @@
         font-size: 18px;
         font-weight: bold;
       }
+      .update-time {
+        color: rgba(0, 0, 0, .25);
+      }
       .tag-list {
         display: flex;
         justify-content: center;
@@ -43,7 +45,7 @@
         }
       }
       .release-time, .organ-name, .detail-content, .detail-content > p {
-        margin-top: 25px;
+        margin-top: 20px;
       }
       .detail-content {
         line-height: 24px;
