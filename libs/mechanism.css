@@ -54,7 +54,8 @@
 .page-mechanism .mm-list .card {
   height: 236px;
   margin-bottom: 47px;
-  padding: 25px 32px;
+  padding: 25px;
+  padding-right: 0;
   padding-bottom: 0;
   border-radius: 6px;
   background-image: url(../themes/basic/assets/mechanism-card-bg.png);
@@ -75,10 +76,6 @@
 .page-mechanism .mm-list .card .card-top img {
   width: 48px;
   height: 48px;
-}
-
-.page-mechanism .mm-list .card .card-top-right {
-  max-width: calc(100% - 70px);
 }
 
 .page-mechanism .mm-list .card .card-top-right .card-name {
@@ -117,6 +114,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: 16px;
 }
 
 .page-mechanism .mm-list .card .card-bottom .project-item span:nth-of-type(1) {

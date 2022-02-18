@@ -45,7 +45,8 @@
       // height: 204px;
       height: 236px;
       margin-bottom: 47px;
-      padding: 25px 32px;
+      padding: 25px;
+      padding-right: 0;
       padding-bottom: 0;
       border-radius: 6px;
       background-image: url(../themes/basic/assets/mechanism-card-bg.png);
@@ -66,7 +67,6 @@
       }
       
       .card-top-right {
-        max-width: calc(100% - 70px);
         .card-name {
           font-size: 14px;
         }
@@ -95,6 +95,7 @@
         .project-item {
           display: flex;
           align-items: center;
+          margin-left: 16px;
 
           span:nth-of-type(1) {
             opacity: .8;
