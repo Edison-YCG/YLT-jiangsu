@@ -1,0 +1,133 @@
+.mechanism-zyxq-breadcrumb {
+    font-size: 14px;
+    font-weight: 400;
+
+    .breadcrumb {
+        margin-bottom: 0;
+
+        .breadcrumb-item a {
+            color: rgba(0, 0, 0, 0.45);
+        }
+
+        .breadcrumb-item a:hover {
+            color: #2B7EFB;
+        }
+
+        .breadcrumb-item.active {
+            color: rgba(0, 0, 0, 0.65);
+        }
+    }
+}
+
+.mechanism-zyxq-card1 {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+    padding: 40px 48px;
+
+    .introduce {
+        font-size: 12px;
+        font-weight: 400;
+        color: #888;
+        line-height: 24px;
+        margin-bottom: 32px;
+    }
+
+    h1 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    h2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 21px;
+        position: relative;
+    }
+
+    h2::after {
+        content: '';
+        width: 72px;
+        height: 12px;
+        background: rgba(43, 126, 251, 0.4);
+        border-radius: 9px;
+        display: block;
+        position: absolute;
+        left: -4px;
+        bottom: -5px;
+    }
+}
+
+.mechanism-zyxq-card2 {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+    margin-bottom: 163px;
+    overflow: hidden;
+
+    .nav {
+
+        border-bottom: 1px dashed #eee;
+        padding: 0 35px;
+
+        .nav-link {
+            font-size: 14px;
+            color: #000;
+            padding: 2px 9px;
+            margin: 24px 50px 24px 0;
+        }
+
+        .nav-link.active,
+        .nav-link:hover {
+            color: #fff;
+            border-radius: 20px;
+            background-color: #2B7EFB;
+        }
+    }
+
+    .box {
+        padding: 40px 48px 0;
+
+        .table {
+            border-radius: 12px;
+            margin-bottom: 59px;
+            font-weight: bold;
+            border-style: hidden;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+
+            thead {
+                th {
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: rgba(0, 0, 0, 0.85);
+                }
+
+                th:first-child {
+                    padding-left: 65px;
+                }
+
+            }
+
+            tbody {
+                border-top: none;
+
+                tr:nth-of-type(odd)>* {
+                    background: #fafafb;
+                }
+
+                tr td:first-child {
+                    padding-left: 65px;
+                    color: #2B7EFB;
+                }
+            }
+
+            th,
+            td {
+                padding: 11px;
+                border-bottom: none;
+            }
+        }
+    }
+}
