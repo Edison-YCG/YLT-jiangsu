@@ -181,10 +181,15 @@ body {
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.6);
     margin-right: 20px;
+    background-color: #2B7EFB;
 }
 
 .common-header .button-box .btn:last-child {
     margin-right: 0;
+}
+
+.common-header .button-box .btn:hover {
+    background-color: #0b69f7;
 }
 
 .common-nav {
