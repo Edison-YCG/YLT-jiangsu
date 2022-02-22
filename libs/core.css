@@ -2,6 +2,10 @@
   background-color: #fff;
 }
 
+.page-core .news-type-tabs {
+  border-bottom: 1px dashed #E9E9E9;
+}
+
 .page-core .nav {
   font-size: 12px;
 }
@@ -47,10 +51,6 @@
   -o-transform: translateY(-50%);
   cursor: pointer;
   z-index: 10;
-}
-
-.page-core .news-list {
-  border-top: 1px dashed #E9E9E9;
 }
 
 .page-core .news-list .news-item {
@@ -117,5 +117,48 @@
 
 .page-core .core-pagination .pagination .page-item.active .page-link {
   color: #fff;
+}
+
+.page-core .meeting-training {
+  padding-top: 21px;
+}
+
+.page-core .meeting-training .table {
+  margin-top: 20px;
+  margin-bottom: 63px;
+  border-radius: 12px;
+  font-weight: bold;
+  border-style: hidden;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.page-core .meeting-training .table thead th {
+  font-size: 12px;
+  font-weight: 400;
+  color: #888;
+}
+
+.page-core .meeting-training .table thead th:first-child {
+  padding-left: 65px;
+}
+
+.page-core .meeting-training .table tbody {
+  border-top: none;
+}
+
+.page-core .meeting-training .table tbody tr:nth-of-type(odd) > * {
+  background: #fafafb;
+}
+
+.page-core .meeting-training .table tbody tr td:first-child {
+  padding-left: 65px;
+}
+
+.page-core .meeting-training .table th,
+.page-core .meeting-training .table td {
+  padding: 11px;
+  border-bottom: none;
 }
 /*# sourceMappingURL=core.css.map */

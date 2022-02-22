@@ -2,6 +2,9 @@
 
 .page-core {
   background-color: #fff;
+  .news-type-tabs {
+    border-bottom: 1px dashed #E9E9E9;
+  }
   .nav {
     // margin-bottom: 25px;
     font-size: 12px;
@@ -47,7 +50,6 @@
   }
 
   .news-list {
-    border-top: 1px dashed #E9E9E9;
     .news-item {
       margin-top: 27px;
       padding-bottom: 27px;
@@ -112,6 +114,48 @@
             color: #fff;
           }
         }
+      }
+    }
+  }
+  .meeting-training {
+    padding-top: 21px;
+    .table {
+      margin-top: 20px;
+      margin-bottom: 63px;
+      border-radius: 12px;
+      font-weight: bold;
+      border-style: hidden;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+
+      thead {
+        th {
+            font-size: 12px;
+            font-weight: 400;
+            color: #888;
+        }
+
+        th:first-child {
+            padding-left: 65px;
+        }
+      }
+
+      tbody {
+        border-top: none;
+
+        tr:nth-of-type(odd)>* {
+          background: #fafafb;
+        }
+
+        tr td:first-child {
+          padding-left: 65px;
+        }
+      }
+
+      th,
+      td {
+        padding: 11px;
+        border-bottom: none;
       }
     }
   }
