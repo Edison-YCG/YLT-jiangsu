@@ -98,6 +98,10 @@
   opacity: .25;
 }
 
+.page-core .core-pagination .row .col-md-7 {
+  width: 100%;
+}
+
 .page-core .core-pagination .pagination .page-item {
   margin-right: 10px;
 }

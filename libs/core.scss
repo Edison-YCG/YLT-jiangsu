@@ -92,6 +92,12 @@
     }
   }
   .core-pagination {
+    // 适配abp分页组件的dom结构
+    .row {
+      .col-md-7 {
+        width: 100%;
+      }
+    }
     .pagination {
       .page-item {
         margin-right: 10px;
