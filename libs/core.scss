@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 .page-core {
+  min-height: calc(100vh - 580px);
   background-color: #fff;
   .news-type-tabs {
     border-bottom: 1px dashed #E9E9E9;

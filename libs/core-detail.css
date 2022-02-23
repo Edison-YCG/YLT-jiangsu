@@ -1,3 +1,7 @@
+.page-core-detail {
+  min-height: calc(100vh - 580px);
+}
+
 .page-core-detail .breadcrumb {
   font-size: 14px;
   line-height: 22px;

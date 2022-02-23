@@ -14,23 +14,31 @@
         box-shadow: none;
       }
     }
-    svg {
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      -o-transform: translateY(-50%);
-      cursor: pointer;
-      z-index: 10;
+    .input-group {
+      svg {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 10;
+      }
     }
     .mechanism-calendar {
+      display: flex;
+      align-items: center;
       padding: 8px 14px;
-      img {
-        width: 16px;
-        height: 16px;
+      svg {
+        margin-right: 5px;
+      }
+      &:hover {
+        color: #fff;
+        background-color: #2B7EFB;
+        border-color: #2B7EFB;
       }
     }
   }
