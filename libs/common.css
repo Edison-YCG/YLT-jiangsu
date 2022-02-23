@@ -192,6 +192,81 @@ body {
     background-color: #0b69f7;
 }
 
+.common-header .button-box .login-box {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.common-header .button-box .login-box .dropdown {
+    display: inline-block;
+}
+
+.common-header .button-box .login-box .dropdown-toggle {
+    border: none !important;
+    padding: 0;
+    margin-right: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    outline: none !important;
+    box-shadow: none !important;
+
+}
+
+.common-header .button-box .login-box .dropdown-toggle:hover {
+    background: none;
+    box-shadow: none;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+}
+
+.common-header .button-box .login-box .dropdown-toggle .head {
+    margin-right: 6px;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.common-header .button-box .login-box .dropdown-toggle .head img {
+    object-fit: cover;
+}
+
+.common-header .button-box .login-box .dropdown-toggle .name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 50px;
+}
+
+.common-header .button-box .login-box .dropdown-toggle::after {
+    display: none;
+}
+
+.common-header .button-box .login-box svg {
+    position: relative;
+    top: 14px;
+    cursor: pointer;
+}
+
+.common-header .button-box .login-box .badge {
+    position: relative;
+    left: -10px;
+    top: 4px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
 .common-nav {
     padding: 20px 0;
     background: #fff;
@@ -293,8 +368,11 @@ button:active {
     transform: scale(0.95);
 }
 
+.dropdown-item {
+    padding: 6px 20px;
+}
+
 .dropdown-item:focus,
 .dropdown-item:hover {
-    background-color: #2B7EFB;
-    color: #fff;
+    background-color: #EDF4FF;
 }
