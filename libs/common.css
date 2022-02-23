@@ -253,6 +253,7 @@ body {
 .common-header .button-box .login-box svg {
     position: relative;
     top: 14px;
+    cursor: pointer;
 }
 
 .common-header .button-box .login-box .badge {
