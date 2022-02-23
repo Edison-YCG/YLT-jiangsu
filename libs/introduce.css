@@ -15,10 +15,10 @@
 
 .ie-column-2 {
     letter-spacing: 1px;
-    margin-bottom: 300px;
 }
 
 .ie-column-1,
 .ie-column-2 {
     background: #fff;
+    min-height: calc(100vh - 580px);
 }
