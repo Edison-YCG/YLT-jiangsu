@@ -78,6 +78,8 @@ body {
     font-size: 8px;
     font-weight: 400;
     letter-spacing: 1px;
+    transform: scale(.68);
+    margin-left: -69px;
 }
 
 .common-header .search-box {
@@ -175,7 +177,7 @@ body {
 
 .common-header .button-box .btn {
     font-size: 12px;
-    padding: 7px 19px;
+    padding: 6px 19px;
     font-weight: 500;
     color: #FFFFFF;
     border-radius: 16px;
