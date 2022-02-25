@@ -27,6 +27,7 @@
 .mechanism-gk-card1 .box .head-img img {
   object-fit: cover;
   width: 99%;
+  height: 99%;
 }
 .mechanism-gk-card1 .box .information {
   padding-top: 20px;
