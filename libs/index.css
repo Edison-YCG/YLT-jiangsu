@@ -255,19 +255,15 @@
 }
 
 .ix-column-4 .card-text .text-muted {
+    min-width: 54.4px;
     font-size: 10px;
     color: #FFFFFF !important;
-    padding: 6px 10px;
+    padding: 3px 5px;
     background: #F8C24D;
     border-radius: 2px 2px 2px 8px;
-    transform: scale(.8);
-    -webkit-transform: scale(.8);
-    -moz-transform: scale(.8);
-    -ms-transform: scale(.8);
-    -o-transform: scale(.8);
     position: absolute;
     top: -3px;
-    right: -7px;
+    right: 0;
     border-radius: 0 10px 0 0;
     -webkit-border-radius: 0 10px 0 0;
     -moz-border-radius: 0 10px 0 0;
