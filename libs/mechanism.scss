@@ -29,6 +29,7 @@
       }
     }
     .mechanism-calendar {
+      cursor: pointer;
       display: flex;
       align-items: center;
       padding: 8px 14px;
@@ -67,7 +68,8 @@
       }
 
       .card-top {
-        margin-bottom: 37px;
+        cursor: pointer;
+        padding-bottom: 49px;
         img {
           width: 48px;
           height: 48px;
@@ -93,7 +95,7 @@
         }
       }
       .card-bottom {
-        margin-top: 12px;
+        width: calc(100% - 25px);
         padding-top: 24px;
         height: 159px;
         font-size: 12px;

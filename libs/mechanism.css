@@ -34,6 +34,7 @@
 }
 
 .page-mechanism .mm-search .mechanism-calendar {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,7 +82,8 @@
 }
 
 .page-mechanism .mm-list .card .card-top {
-  margin-bottom: 37px;
+  cursor: pointer;
+  padding-bottom: 49px;
 }
 
 .page-mechanism .mm-list .card .card-top img {
@@ -108,7 +110,7 @@
 }
 
 .page-mechanism .mm-list .card .card-bottom {
-  margin-top: 12px;
+  width: calc(100% - 25px);
   padding-top: 24px;
   height: 159px;
   font-size: 12px;
