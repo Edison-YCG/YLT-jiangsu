@@ -158,8 +158,12 @@
     margin-bottom: 24px;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     line-height: 17px;
+    height: 68px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
 }
-
 .ix-column-3 .card-link {
     color: #0087FF;
 }
