@@ -78,6 +78,8 @@ body {
     font-size: 8px;
     font-weight: 400;
     letter-spacing: 1px;
+    transform: scale(.68);
+    margin-left: -69px;
 }
 
 .common-header .search-box {
@@ -175,7 +177,7 @@ body {
 
 .common-header .button-box .btn {
     font-size: 12px;
-    padding: 7px 19px;
+    padding: 6px 19px;
     font-weight: 500;
     color: #FFFFFF;
     border-radius: 16px;
@@ -324,6 +326,46 @@ body {
     background-color: #2B7EFB;
     color: #fff;
     border-color: #2B7EFB;
+}
+
+.common-menu-nav {
+    background-color: #fff;
+    padding: 19px 0;
+    box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.04);
+}
+
+.common-menu-nav .container {
+    position: relative;
+}
+
+.common-menu-nav .back {
+    color: #000;
+    position: absolute;
+    font-size: 16px;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.common-menu-nav .back svg {
+    margin-right: 5px;
+}
+
+.common-menu-nav h2 {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.common-box {
+    margin-bottom: 50px;
+    min-height: calc(100vh - 580px);
+}
+
+.common-box>.card-body {
+    padding: 24px;
 }
 
 .common-footer {
