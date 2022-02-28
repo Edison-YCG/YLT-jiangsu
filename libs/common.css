@@ -453,7 +453,7 @@ table.nom-table th {
 }
 
 .u-flex-row {
-    padding: 19px 16px 16px;
+    padding: 19px 16px 14px;
     background: #FFFFFF;
     border-radius: 2px;
     box-shadow: 0px 2px 8px 0px rgba(200, 201, 204, 0.5);
@@ -475,6 +475,20 @@ table.nom-table th {
     padding: 4px 6px;
     border-radius: 2px;
     background: rgba(241, 146, 78, 0.2);
+}
+
+.upload-opt-btn .down {
+    color: #2DA641;
+    padding: 4px 6px;
+    border-radius: 2px;
+    background: rgba(45, 166, 65, 0.2);
+}
+
+.upload-opt-btn .default {
+    color: #323333;
+    padding: 4px 6px;
+    border-radius: 2px;
+    background: rgba(50, 50, 51, 0.15);
 }
 
 .upload-opt-btn svg {
