@@ -213,14 +213,23 @@
                             label: '登记号',
                             labelAlign: 'top',
                             placeholder: '请填写登记信息公示平台上得登记号',
-                            span: '6',
+                            span: '5',
+                        },
+                        {
+                            component: 'Textbox',
+                            attrs: {
+                                style: {
+                                    'visibility': 'hidden',
+                                }
+                            },
+                            span: '2',
                         },
                         {
                             component: 'DatePicker',
                             label: '登记时间',
                             labelAlign: 'top',
                             placeholder: '请选择日期',
-                            span: '6',
+                            span: '5',
                         },
                         {
                             component: 'Textbox',
@@ -228,7 +237,16 @@
                             labelAlign: 'top',
                             required: true,
                             placeholder: '参考CDE临床试验登记网站，试验方案编号,若没有方案号，请填无',
-                            span: '6',
+                            span: '5',
+                        },
+                        {
+                            component: 'Textbox',
+                            attrs: {
+                                style: {
+                                    'visibility': 'hidden',
+                                }
+                            },
+                            span: '2',
                         },
                         {
                             component: 'RadioList',
@@ -247,7 +265,7 @@
                                     value: 2,
                                 },
                             ],
-                            span: '6',
+                            span: '5',
                         },
                         {
                             component: 'Textbox',
@@ -255,14 +273,23 @@
                             labelAlign: 'top',
                             required: true,
                             placeholder: '请填写登记信息公示平台上得登记号',
-                            span: '6',
+                            span: '5',
+                        },
+                        {
+                            component: 'Textbox',
+                            attrs: {
+                                style: {
+                                    'visibility': 'hidden',
+                                }
+                            },
+                            span: '2',
                         },
                         {
                             component: 'DatePicker',
                             label: '计划起止时间',
                             labelAlign: 'top',
                             placeholder: '请选择日期',
-                            span: '6',
+                            span: '5',
                         },
                         {
                             component: 'Select',
@@ -287,7 +314,7 @@
                                     value: 3,
                                 },
                             ],
-                            span: '6',
+                            span: '5',
                         },
                         {
                             component: 'Textbox',
@@ -296,21 +323,30 @@
                                     'visibility': 'hidden',
                                 }
                             },
-                            span: '6',
+                            span: '8',
                         },
                         {
                             component: 'Textbox',
                             label: 'MPA批件/通知书编号',
                             labelAlign: 'top',
                             placeholder: '批件号或通知单（没有请填NA）',
-                            span: '6',
+                            span: '5',
+                        },
+                        {
+                            component: 'Textbox',
+                            attrs: {
+                                style: {
+                                    'visibility': 'hidden',
+                                }
+                            },
+                            span: '2',
                         },
                         {
                             component: 'DatePicker',
                             label: 'NMPA批件/通知书日期',
                             labelAlign: 'top',
                             placeholder: '请选择日期',
-                            span: '6',
+                            span: '5',
                         },
                         {
                             component: 'RadioList',
@@ -327,7 +363,16 @@
                                     value: 1,
                                 },
                             ],
-                            span: '6',
+                            span: '5',
+                        },
+                        {
+                            component: 'Textbox',
+                            attrs: {
+                                style: {
+                                    'visibility': 'hidden',
+                                }
+                            },
+                            span: '2',
                         },
                         {
                             component: 'RadioList',
@@ -344,7 +389,7 @@
                                     value: 1,
                                 },
                             ],
-                            span: '6',
+                            span: '5',
                         },
                         {
                             component: 'Textbox',
@@ -352,14 +397,23 @@
                             labelAlign: 'top',
                             required: true,
                             placeholder: '请填写登记信息公示平台上得登记号',
-                            span: '6',
+                            span: '5',
+                        },
+                        {
+                            component: 'Textbox',
+                            attrs: {
+                                style: {
+                                    'visibility': 'hidden',
+                                }
+                            },
+                            span: '2',
                         },
                         {
                             component: 'Textbox',
                             label: '研究中心数量',
                             labelAlign: 'top',
                             placeholder: '请输入数量',
-                            span: '6',
+                            span: '5',
                         },
                         {
                             component: 'RadioList',
@@ -376,7 +430,16 @@
                                     value: 1,
                                 },
                             ],
-                            span: '6',
+                            span: '5',
+                        },
+                        {
+                            component: 'Textbox',
+                            attrs: {
+                                style: {
+                                    'visibility': 'hidden',
+                                }
+                            },
+                            span: '2',
                         },
                         {
                             component: 'DatePicker',
@@ -384,7 +447,7 @@
                             labelAlign: 'top',
                             required: true,
                             placeholder: '请选择日期',
-                            span: '6',
+                            span: '5',
                         },
                         {
                             component: 'Textbox',
@@ -392,17 +455,27 @@
                             labelAlign: 'top',
                             required: true,
                             placeholder: '请输入研究药物是中文名称',
-                            span: '6',
+                            span: '5',
+                        },
+                        {
+                            component: 'Textbox',
+                            attrs: {
+                                style: {
+                                    'visibility': 'hidden',
+                                }
+                            },
+                            span: '2',
                         },
                         {
                             component: 'Textbox',
                             label: '研究药物英文名称',
                             labelAlign: 'top',
                             placeholder: '请输入英文名称',
-                            span: '6',
+                            span: '5',
                         },
                         {
                             component: 'GroupList',
+                            span: '12',
                             label: '联合用药 (非必填，有联合用药的项目才添加)',
                             labelAlign: 'top',
                             onValueChange: (args) => {
@@ -412,7 +485,7 @@
                                 nowrap: true,
                                 fields: [{
                                     component: 'Textbox',
-                                    label: '学校名称',
+                                    label: '联合用药',
                                 }, ],
                             },
 
@@ -466,7 +539,16 @@
                                     value: 3,
                                 },
                             ],
-                            span: '3',
+                            span: '2',
+                        },
+                        {
+                            component: 'Textbox',
+                            attrs: {
+                                style: {
+                                    'visibility': 'hidden',
+                                }
+                            },
+                            span: '2',
                         },
                         {
                             component: 'Textbox',
@@ -474,7 +556,7 @@
                             labelAlign: 'top',
                             required: true,
                             placeholder: '请填写登记信息公示平台上得登记号',
-                            span: '6',
+                            span: '5',
                         },
                         {
                             component: 'Divider',
