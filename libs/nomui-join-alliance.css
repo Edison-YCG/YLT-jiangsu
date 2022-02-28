@@ -1,0 +1,44 @@
+.page-join-mechanism .card {
+  -webkit-box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+          box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+  border-radius: 12px;
+}
+
+.page-join-mechanism .card .nom-steps.nom-steps-horizontal .nom-step:last-child {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+.page-join-mechanism .card .nom-steps .nom-step-item-container .nom-step-item-content {
+  padding-right: 40px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.page-join-mechanism .card .nom-steps .nom-step-item-container .nom-step-item-content .nom-step-item-title {
+  position: relative;
+}
+
+.page-join-mechanism .card .nom-steps .nom-step-item-container .nom-step-item-content .nom-step-item-title::after {
+  left: 110%;
+}
+
+.page-join-mechanism .card .nom-steps .nom-step-item-description {
+  white-space: normal !important;
+}
+
+.page-join-mechanism .card .mechanism-group {
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #E9E9E9;
+}
+
+.page-join-mechanism .card .mechanism-group > .nom-field-content > .nom-control > .nom-field {
+  margin-bottom: 20px;
+}
+
+.page-join-mechanism .card .mechanism-group .nom-textbox .nom-field-content, .page-join-mechanism .card .mechanism-group .nom-select .nom-field-content, .page-join-mechanism .card .mechanism-group .nom-uploader .nom-field-content {
+  width: 80%;
+}
+/*# sourceMappingURL=nomui-join-alliance.css.map */
