@@ -1,0 +1,170 @@
+.page-person-center .nav {
+  height: 60px;
+  background: #ffffff;
+  margin: 16px 0;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.page-person-center .nav > .nav-item:hover {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  color: #2b7efb;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2b7efb), to(#2b7efb)) no-repeat;
+  background: linear-gradient(#2b7efb, #2b7efb) no-repeat;
+  background-size: 100% 3px;
+  background-position: bottom;
+}
+
+.page-person-center .nav-item {
+  margin-left: 60px;
+  cursor: pointer;
+}
+
+.page-person-center .nav:first-child {
+  margin-left: 0 !important;
+}
+
+.page-person-center .nav-active {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  color: #2b7efb;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2b7efb), to(#2b7efb)) no-repeat;
+  background: linear-gradient(#2b7efb, #2b7efb) no-repeat;
+  background-size: 100% 3px;
+  background-position: bottom;
+}
+
+.page-person-center .content {
+  border-radius: 12px;
+  background: #fff;
+}
+
+.page-person-center .toolbar {
+  height: 80px;
+  padding: 0 36px;
+}
+
+.page-person-center .personal-header {
+  background-size: 100% 100%;
+  background-image: url(../themes/basic/assets/personal-center-header.png);
+}
+
+.page-person-center .personal-tabs {
+  margin-top: 20px;
+}
+
+.page-person-center .personal-tabs > .nom-tab-list {
+  margin-top: -14px;
+  padding: 14px 0;
+}
+
+.page-person-center .personal-tabs > .nom-tab-list > .nom-list-content {
+  padding-left: 35px;
+  font-size: 16px;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+          box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+  border-radius: 8px;
+}
+
+.page-person-center .nom-tabs .nom-tab-item .nom-badge {
+  top: 10px;
+  right: 10px;
+}
+
+.page-person-center .personal-panel {
+  margin-bottom: 20px;
+  padding: 36px;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  border-radius: 12px;
+  -webkit-box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+          box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+}
+
+.page-person-center .personal-panel .form-flex .nom-flex-item:first-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.page-person-center .personal-panel .form-flex .nom-flex-item:last-child .nom-flex {
+  height: 100%;
+}
+
+.page-person-center .personal-panel .nom-grid {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.page-person-center .personal-panel .nom-grid .nom-grid-header th {
+  font-weight: bold;
+  background-color: #fff;
+  background-image: none;
+}
+
+.page-person-center .personal-panel .nom-grid .nom-grid-body td .nom-flex .nom-flex-item {
+  position: relative;
+}
+
+.page-person-center .personal-panel .nom-grid .nom-grid-body td .nom-flex .nom-flex-item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 1px;
+  height: 14px;
+  border-right: 1px solid rgba(0, 0, 0, 0.09);
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
+}
+
+.page-person-center .personal-panel .nom-grid .nom-grid-body td .nom-flex .nom-flex-item:last-child::after {
+  border-right: none;
+}
+
+.page-person-center .personal-panel .nom-tabs .nom-tab-list.nom-list {
+  padding-bottom: 14px;
+  border-bottom: 1px dashed #E9E9E9;
+}
+
+.page-person-center .personal-panel .nom-tabs .nom-tab-panel .nom-grid {
+  margin-bottom: 20px;
+}
+
+.page-person-center .personal-panel .nom-tabs .nom-tab-item {
+  font-size: 14px;
+}
+
+.page-person-center .panel-info .group-info {
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #E9E9E9;
+}
+
+.page-person-center .panel-info .group-info > .nom-field-content > .nom-control > .nom-field {
+  margin-bottom: 20px;
+}
+
+.page-person-center .panel-info .group-info .nom-textbox .nom-field-content, .page-person-center .panel-info .group-info .nom-select .nom-field-content {
+  width: 80%;
+}
+
+.page-person-center .panel-info .tab-panel-password .group-info {
+  margin: 0 auto;
+  width: 50%;
+  border-bottom: none;
+}
+
+.page-person-center .panel-info .tab-panel-password .group-info .nom-field-content {
+  width: 100%;
+}
+
+.page-person-center .panel-info .tab-panel-password .panel-password-btns {
+  padding-top: 20px;
+  border-top: 1px dashed #E9E9E9;
+}
+/*# sourceMappingURL=nomui-personal-center.css.map */

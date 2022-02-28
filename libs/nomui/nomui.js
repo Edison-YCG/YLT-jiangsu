@@ -4772,7 +4772,6 @@
           controlActionProps = Component.extendProps(controlActionProps, controlAction);
         }
       }
-
       this.setProps({
         children: [
           controlBeforeProps && n$1(controlBeforeProps, [ControlBeforeMixin]),
