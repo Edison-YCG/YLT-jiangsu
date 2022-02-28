@@ -426,11 +426,6 @@ button:active {
 
 .nom-steps .nom-step>.nom-step-item-container .nom-step-item-content .nom-step-item-title {
     font-weight: bold;
-    font-size: 14px;
-}
-
-.nom-steps .nom-step>.nom-step-item-container>.nom-step-item-icon {
-    font-size: 14px;
 }
 
 table.nom-table th {
@@ -446,7 +441,6 @@ table.nom-table th {
 }
 
 .upload-file-info {
-
     color: #969799;
     margin-bottom: 10px;
     display: inline-block;
