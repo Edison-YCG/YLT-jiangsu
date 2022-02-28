@@ -165,7 +165,7 @@
                     },
                     children: {
                         component: 'Steps',
-                        current: 0,
+                        current: 3,
                         options: [{
                                 title: '试验类型',
                             },
@@ -188,113 +188,216 @@
                     },
                     attrs: {
                         style: {
-                            padding: '24px 35px 238px',
+                            padding: '24px 35px',
                             'margin-bottom': '50px',
                         }
                     },
-                    component: 'Form',
-                    fields: [{
-                            component: 'Select',
-                            label: '选择组织',
-                            labelAlign: 'top',
+                    component: 'Flex',
+                    gap: 'large',
+                    rows: [{
+                            component: 'Flex',
+                            gap: 'medium',
+                            cols: [{
+                                    component: 'Button',
+                                    attrs: {
+                                        style: {
+                                            'background': '#fff',
+                                            'border-color': '#339af0',
+                                            color: '#339af0',
+                                        }
+                                    },
+                                    text: '添加中心',
+                                },
+                                {
+                                    component: 'Button',
+                                    attrs: {
+                                        style: {
+                                            'background': '#fff',
+                                        }
+                                    },
+                                    text: '中心筛选',
+                                },
+                            ]
+                        },
+                        {
+                            component: 'TabList',
+                            tabContent: () => {
+                                return tabContent
+                            },
+                            uistyle: 'pill',
+                            selectedItems: 'tab1',
+                            onTabSelectionChange: () => {
+                                console.log('Changed')
+                            },
+                            items: [{
+                                    key: 'tab1',
+                                    text: '全部(2)',
+                                },
+                                {
+                                    key: 'tab2',
+                                    text: '未申请(2)',
+                                },
+                                {
+                                    key: 'tab3',
+                                    text: '待受理(2)',
+                                },
+                                {
+                                    key: 'tab4',
+                                    text: '受理通过(2)',
+                                },
+                                {
+                                    key: 'tab5',
+                                    text: '已拒绝(2)',
+                                },
+                            ],
+                        },
+                        {
+                            component: 'Divider',
                             attrs: {
                                 style: {
-                                    'max-width': '452px',
+                                    'margin': ' 0',
                                 }
                             },
-                            value: 0,
-                            options: [{
-                                    text: '全部',
-                                    value: 0,
+                            dashed: true,
+                        },
+                        {
+                            component: 'TabContent',
+                            ref: (c) => {
+                                tabContent = c
+                            },
+                            selectedPanel: 'tab1',
+                            panels: [{
+                                    key: 'tab1',
+                                    children: {
+                                        component: 'Grid',
+                                        showTitle: true,
+                                        striped: true,
+                                        columns: [{
+                                                field: 'name',
+                                                key: 'name',
+                                                title: '机构名称',
+                                            },
+                                            {
+                                                field: 'author',
+                                                key: 'author',
+                                                title: '专业',
+                                            },
+                                            {
+                                                field: 'sales',
+                                                key: 'sales',
+                                                title: 'PI',
+                                            },
+
+                                            {
+                                                field: 'role',
+                                                key: 'role',
+                                                title: '申请时间',
+                                            },
+                                            {
+                                                field: 'oper',
+                                                title: '操作',
+                                                autoWidth: true,
+                                                cellRender: ({
+                                                    rowData
+                                                }) => {
+
+                                                    return [{
+                                                            component: 'Button',
+                                                            attrs: {
+                                                                style: {
+                                                                    'padding-left': '0',
+                                                                }
+                                                            },
+                                                            text: '编辑',
+                                                            type: 'link',
+                                                        },
+                                                        {
+                                                            component: 'Button',
+                                                            text: '删除',
+                                                            type: 'text',
+                                                            danger: true,
+                                                        },
+                                                    ]
+                                                },
+                                            },
+                                        ],
+                                        data: [{
+                                                id: 1,
+                                                name: '笑傲江湖',
+                                                author: '金庸',
+                                                sales: 100000,
+                                                role: '令狐冲'
+                                            },
+                                            {
+                                                id: 4,
+                                                name: '天龙八部',
+                                                author: '金庸',
+                                                sales: 200000,
+                                                role: '乔峰'
+                                            },
+                                            {
+                                                id: 5,
+                                                name: '射雕英雄传',
+                                                author: '金庸',
+                                                sales: 0,
+                                                role: '郭靖'
+                                            },
+                                        ],
+                                    },
                                 },
                                 {
-                                    text: '古龙',
-                                    value: 1,
+                                    key: 'tab2',
+                                    children: 'Tab 2 content',
                                 },
                                 {
-                                    text: '梁羽生',
-                                    value: 2,
+                                    key: 'tab3',
+                                    children: 'Tab 3 content',
                                 },
                                 {
-                                    text: '温瑞安',
-                                    value: 3,
+                                    key: 'tab4',
+                                    children: 'Tab 4 content',
+                                },
+                                {
+                                    key: 'tab5',
+                                    children: 'Tab 5 content',
                                 },
                             ],
                         },
                         {
                             component: 'Divider',
-                            dashed: true,
-                        },
-                        {
-                            component: 'RadioList',
-                            label: '试验类型',
-                            labelAlign: 'top',
-                            options: [{
-                                    text: '注册类临床研究',
-                                    value: 0,
-                                },
-                                {
-                                    text: '非注册类临床研究',
-                                    value: 1,
-                                },
-                            ],
-                        },
-                        {
-                            component: 'Divider',
-                            dashed: true,
-                        },
-                        {
-                            component: 'RadioList',
-                            label: '试验类型',
-                            labelAlign: 'top',
-                            options: [{
-                                    text: '药物临床试验',
-                                    value: 0,
-                                },
-                                {
-                                    text: '医疗器械研究',
-                                    value: 1,
-                                },
-                            ],
-                        },
-                        {
-                            component: 'Divider',
-                            dashed: true,
-                        },
-                        {
-                            component: 'RadioList',
-                            label: '试验分期',
-                            labelAlign: 'top',
-                            options: [{
-                                    text: 'I期',
-                                    value: 0,
-                                },
-                                {
-                                    text: 'II期',
-                                    value: 1,
-                                },
-                            ],
-                        },
-                        {
-                            component: 'Divider',
-                            dashed: true,
-                        },
-                    ],
-                    controlAction: [{
-                            component: 'Button',
                             attrs: {
                                 style: {
-                                    'margin-right': '9px',
+                                    'margin': ' 0',
                                 }
                             },
-                            text: '下一步',
-                            type: 'primary',
+                            dashed: true,
                         },
                         {
-                            component: 'Button',
-                            text: '取 消',
-                        },
+                            component: 'Flex',
+                            gap: 'medium',
+                            cols: [{
+                                    component: 'Button',
+                                    text: '提交申请',
+                                    type: 'primary',
+                                },
+                                {
+                                    component: 'Button',
+                                    text: '保 存',
+                                    type: 'primary',
+                                },
+                                {
+                                    component: 'Button',
+                                    text: '上一步',
+                                    type: 'primary',
+                                },
+                                {
+                                    component: 'Button',
+                                    text: '取 消',
+                                },
+                            ]
+                        }
                     ],
+
                 }
             ]
         })

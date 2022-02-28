@@ -105,7 +105,7 @@
                         p-id="2047"></path>
                 </svg>首页</a>
             <h2>
-                创建项目
+                用户登录
             </h2>
         </div>
     </div>
@@ -152,151 +152,20 @@
     <script>
         new nomui.Component({
             reference: document.getElementById('app'),
-            children: [{
+            children:{
                     classes: {
                         'card': true,
                         'border-0': true,
                     },
                     attrs: {
                         style: {
-                            padding: '35px',
-                            'margin-bottom': '16px',
-                        }
-                    },
-                    children: {
-                        component: 'Steps',
-                        current: 0,
-                        options: [{
-                                title: '试验类型',
-                            },
-                            {
-                                title: '基本信息',
-                            },
-                            {
-                                title: '资料清单',
-                            },
-                            {
-                                title: '意向中心',
-                            },
-                        ],
-                    }
-                },
-                {
-                    classes: {
-                        'card': true,
-                        'border-0': true,
-                    },
-                    attrs: {
-                        style: {
-                            padding: '24px 35px 238px',
+                            padding: '24px 35px 495px',
                             'margin-bottom': '50px',
                         }
                     },
-                    component: 'Form',
-                    fields: [{
-                            component: 'Select',
-                            label: '选择组织',
-                            labelAlign: 'top',
-                            attrs: {
-                                style: {
-                                    'max-width': '452px',
-                                }
-                            },
-                            value: 0,
-                            options: [{
-                                    text: '全部',
-                                    value: 0,
-                                },
-                                {
-                                    text: '古龙',
-                                    value: 1,
-                                },
-                                {
-                                    text: '梁羽生',
-                                    value: 2,
-                                },
-                                {
-                                    text: '温瑞安',
-                                    value: 3,
-                                },
-                            ],
-                        },
-                        {
-                            component: 'Divider',
-                            dashed: true,
-                        },
-                        {
-                            component: 'RadioList',
-                            label: '试验类型',
-                            labelAlign: 'top',
-                            options: [{
-                                    text: '注册类临床研究',
-                                    value: 0,
-                                },
-                                {
-                                    text: '非注册类临床研究',
-                                    value: 1,
-                                },
-                            ],
-                        },
-                        {
-                            component: 'Divider',
-                            dashed: true,
-                        },
-                        {
-                            component: 'RadioList',
-                            label: '试验类型',
-                            labelAlign: 'top',
-                            options: [{
-                                    text: '药物临床试验',
-                                    value: 0,
-                                },
-                                {
-                                    text: '医疗器械研究',
-                                    value: 1,
-                                },
-                            ],
-                        },
-                        {
-                            component: 'Divider',
-                            dashed: true,
-                        },
-                        {
-                            component: 'RadioList',
-                            label: '试验分期',
-                            labelAlign: 'top',
-                            options: [{
-                                    text: 'I期',
-                                    value: 0,
-                                },
-                                {
-                                    text: 'II期',
-                                    value: 1,
-                                },
-                            ],
-                        },
-                        {
-                            component: 'Divider',
-                            dashed: true,
-                        },
-                    ],
-                    controlAction: [{
-                            component: 'Button',
-                            attrs: {
-                                style: {
-                                    'margin-right': '9px',
-                                }
-                            },
-                            text: '下一步',
-                            type: 'primary',
-                        },
-                        {
-                            component: 'Button',
-                            text: '取 消',
-                        },
-                    ],
+
                 }
-            ]
+            
         })
     </script>
 </body>

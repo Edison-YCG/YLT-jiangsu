@@ -192,27 +192,24 @@
                             'margin-bottom': '50px',
                         }
                     },
-                    children: [{
+                    component: 'Flex',
+                    gap: 'large',
+                    rows: [{
                             component: 'Flex',
                             gap: 'medium',
-                            attrs: {
-                                style: {
-                                    'margin-bottom': '16px',
-                                }
-                            },
                             rows: [{
                                     children: '立项资料',
                                     attrs: {
                                         style: {
                                             'font-size': '16px',
                                             'font-weight': 'bold',
-                                            'margin-bottom': '12px',
                                         }
                                     },
                                 },
                                 {
-                                    component: 'Cols',
-                                    items: [{
+                                    component: 'Flex',
+                                    gap: 'medium',
+                                    cols: [{
                                             component: 'Button',
                                             text: '批量打包',
                                             type: 'primary',
@@ -229,19 +226,27 @@
                         },
                         {
                             component: 'Flex',
-                            gap: 'medium',
+                            gap: 'large',
                             rows: [{
-                                    children: [{
+                                    component: 'Flex',
+                                    gap: 'medium',
+                                    rows: [{
                                             children: '1、研究者手册 ',
                                             attrs: {
                                                 style: {
-                                                    'margin-bottom': '12px',
+                                                    'font-weight': 'bold',
                                                 }
                                             },
                                         },
                                         {
-                                            component: 'Cols',
-                                            items: [{
+                                            component: 'Flex',
+                                            gap: 'medium',
+                                            attrs: {
+                                                style: {
+                                                    'position': 'relative',
+                                                }
+                                            },
+                                            cols: [{
                                                     component: 'Uploader',
                                                     attrs: {
                                                         style: {
@@ -341,6 +346,13 @@
                                                 },
                                                 {
                                                     component: 'Button',
+                                                    attrs: {
+                                                        style: {
+                                                            'position': 'absolute',
+                                                            'top': '0',
+                                                            'left': '116px',
+                                                        }
+                                                    },
                                                     type: 'text',
                                                     text: '下载模板',
                                                     icon: 'swap',
@@ -352,17 +364,25 @@
 
                                 },
                                 {
-                                    children: [{
+                                    component: 'Flex',
+                                    gap: 'medium',
+                                    rows: [{
                                             children: '2、知情同意书 ',
                                             attrs: {
                                                 style: {
-                                                    'margin-bottom': '12px',
+                                                    'font-weight': 'bold',
                                                 }
                                             },
                                         },
                                         {
-                                            component: 'Cols',
-                                            items: [{
+                                            component: 'Flex',
+                                            gap: 'medium',
+                                            attrs: {
+                                                style: {
+                                                    'position': 'relative',
+                                                }
+                                            },
+                                            cols: [{
                                                     component: 'Uploader',
                                                     attrs: {
                                                         style: {
@@ -375,6 +395,49 @@
                                                         icon: 'upload',
                                                         text: '上传文件',
                                                     },
+                                                    extraAction: [{
+                                                            text: '预览',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '替换',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '下载',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '编辑',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '删除',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '历史',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                    ],
                                                     customizeInfo: (file) => {
                                                         if (!file || !file.response)
                                                             return null
@@ -419,6 +482,13 @@
                                                 },
                                                 {
                                                     component: 'Button',
+                                                    attrs: {
+                                                        style: {
+                                                            'position': 'absolute',
+                                                            'top': '0',
+                                                            'left': '116px',
+                                                        }
+                                                    },
                                                     type: 'text',
                                                     text: '下载模板',
                                                     icon: 'swap',
@@ -429,17 +499,25 @@
                                     ]
                                 },
                                 {
-                                    children: [{
+                                    component: 'Flex',
+                                    gap: 'medium',
+                                    rows: [{
                                             children: '3、研究方案 ',
                                             attrs: {
                                                 style: {
-                                                    'margin-bottom': '12px',
+                                                    'font-weight': 'bold',
                                                 }
                                             },
                                         },
                                         {
-                                            component: 'Cols',
-                                            items: [{
+                                            component: 'Flex',
+                                            gap: 'medium',
+                                            attrs: {
+                                                style: {
+                                                    'position': 'relative',
+                                                }
+                                            },
+                                            cols: [{
                                                     component: 'Uploader',
                                                     attrs: {
                                                         style: {
@@ -452,6 +530,49 @@
                                                         icon: 'upload',
                                                         text: '上传文件',
                                                     },
+                                                    extraAction: [{
+                                                            text: '预览',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '替换',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '下载',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '编辑',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '删除',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '历史',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                    ],
                                                     customizeInfo: (file) => {
                                                         if (!file || !file.response)
                                                             return null
@@ -496,6 +617,13 @@
                                                 },
                                                 {
                                                     component: 'Button',
+                                                    attrs: {
+                                                        style: {
+                                                            'position': 'absolute',
+                                                            'top': '0',
+                                                            'left': '116px',
+                                                        }
+                                                    },
                                                     type: 'text',
                                                     text: '下载模板',
                                                     icon: 'swap',
@@ -507,6 +635,11 @@
                                 },
                                 {
                                     component: 'Divider',
+                                    attrs: {
+                                        style: {
+                                            'margin': ' 0',
+                                        }
+                                    },
                                     dashed: true,
                                 },
                             ],
@@ -514,24 +647,19 @@
                         {
                             component: 'Flex',
                             gap: 'medium',
-                            attrs: {
-                                style: {
-                                    'margin-bottom': '16px',
-                                }
-                            },
                             rows: [{
                                     children: '伦理送审资料',
                                     attrs: {
                                         style: {
                                             'font-size': '16px',
                                             'font-weight': 'bold',
-                                            'margin-bottom': '12px',
                                         }
                                     },
                                 },
                                 {
-                                    component: 'Cols',
-                                    items: [{
+                                    component: 'Flex',
+                                    gap: 'medium',
+                                    cols: [{
                                             component: 'Button',
                                             text: '批量打包',
                                             type: 'primary',
@@ -548,19 +676,27 @@
                         },
                         {
                             component: 'Flex',
-                            gap: 'medium',
+                            gap: 'large',
                             rows: [{
-                                    children: [{
+                                    component: 'Flex',
+                                    gap: 'medium',
+                                    rows: [{
                                             children: '1、研究者手册 ',
                                             attrs: {
                                                 style: {
-                                                    'margin-bottom': '12px',
+                                                    'font-weight': 'bold',
                                                 }
                                             },
                                         },
                                         {
-                                            component: 'Cols',
-                                            items: [{
+                                            component: 'Flex',
+                                            gap: 'medium',
+                                            attrs: {
+                                                style: {
+                                                    'position': 'relative',
+                                                }
+                                            },
+                                            cols: [{
                                                     component: 'Uploader',
                                                     attrs: {
                                                         style: {
@@ -660,6 +796,13 @@
                                                 },
                                                 {
                                                     component: 'Button',
+                                                    attrs: {
+                                                        style: {
+                                                            'position': 'absolute',
+                                                            'top': '0',
+                                                            'left': '116px',
+                                                        }
+                                                    },
                                                     type: 'text',
                                                     text: '下载模板',
                                                     icon: 'swap',
@@ -671,17 +814,25 @@
 
                                 },
                                 {
-                                    children: [{
+                                    component: 'Flex',
+                                    gap: 'medium',
+                                    rows: [{
                                             children: '2、知情同意书 ',
                                             attrs: {
                                                 style: {
-                                                    'margin-bottom': '12px',
+                                                    'font-weight': 'bold',
                                                 }
                                             },
                                         },
                                         {
-                                            component: 'Cols',
-                                            items: [{
+                                            component: 'Flex',
+                                            gap: 'medium',
+                                            attrs: {
+                                                style: {
+                                                    'position': 'relative',
+                                                }
+                                            },
+                                            cols: [{
                                                     component: 'Uploader',
                                                     attrs: {
                                                         style: {
@@ -694,6 +845,49 @@
                                                         icon: 'upload',
                                                         text: '上传文件',
                                                     },
+                                                    extraAction: [{
+                                                            text: '预览',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '替换',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '下载',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '编辑',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '删除',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '历史',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                    ],
                                                     customizeInfo: (file) => {
                                                         if (!file || !file.response)
                                                             return null
@@ -738,6 +932,13 @@
                                                 },
                                                 {
                                                     component: 'Button',
+                                                    attrs: {
+                                                        style: {
+                                                            'position': 'absolute',
+                                                            'top': '0',
+                                                            'left': '116px',
+                                                        }
+                                                    },
                                                     type: 'text',
                                                     text: '下载模板',
                                                     icon: 'swap',
@@ -748,17 +949,25 @@
                                     ]
                                 },
                                 {
-                                    children: [{
+                                    component: 'Flex',
+                                    gap: 'medium',
+                                    rows: [{
                                             children: '3、研究方案 ',
                                             attrs: {
                                                 style: {
-                                                    'margin-bottom': '12px',
+                                                    'font-weight': 'bold',
                                                 }
                                             },
                                         },
                                         {
-                                            component: 'Cols',
-                                            items: [{
+                                            component: 'Flex',
+                                            gap: 'medium',
+                                            attrs: {
+                                                style: {
+                                                    'position': 'relative',
+                                                }
+                                            },
+                                            cols: [{
                                                     component: 'Uploader',
                                                     attrs: {
                                                         style: {
@@ -771,6 +980,49 @@
                                                         icon: 'upload',
                                                         text: '上传文件',
                                                     },
+                                                    extraAction: [{
+                                                            text: '预览',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '替换',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '下载',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '编辑',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '删除',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                        {
+                                                            text: '历史',
+                                                            action: (e, file) => {
+                                                                // eslint-disable-next-line
+                                                                console.log(e, file)
+                                                            },
+                                                        },
+                                                    ],
                                                     customizeInfo: (file) => {
                                                         if (!file || !file.response)
                                                             return null
@@ -815,6 +1067,13 @@
                                                 },
                                                 {
                                                     component: 'Button',
+                                                    attrs: {
+                                                        style: {
+                                                            'position': 'absolute',
+                                                            'top': '0',
+                                                            'left': '116px',
+                                                        }
+                                                    },
                                                     type: 'text',
                                                     text: '下载模板',
                                                     icon: 'swap',
@@ -826,13 +1085,19 @@
                                 },
                                 {
                                     component: 'Divider',
+                                    attrs: {
+                                        style: {
+                                            'margin': ' 0',
+                                        }
+                                    },
                                     dashed: true,
                                 },
                             ],
                         },
                         {
-                            component: 'Cols',
-                            items: [{
+                            component: 'Flex',
+                            gap: 'medium',
+                            cols: [{
                                     component: 'Button',
                                     text: '下一步',
                                     type: 'primary',
