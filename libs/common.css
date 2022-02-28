@@ -256,6 +256,7 @@ body {
     position: relative;
     top: 14px;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 .common-header .button-box .login-box .badge {
@@ -417,4 +418,79 @@ button:active {
 .dropdown-item:focus,
 .dropdown-item:hover {
     background-color: #EDF4FF;
+}
+
+.nom-field>.nom-field-label>.nom-label {
+    font-weight: bold;
+}
+
+.nom-steps .nom-step>.nom-step-item-container .nom-step-item-content .nom-step-item-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.nom-steps .nom-step>.nom-step-item-container>.nom-step-item-icon {
+    font-size: 14px;
+}
+
+table.nom-table th {
+    font-weight: bold;
+}
+
+.upload-file-name {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.upload-file-info {
+
+    color: #969799;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.u-flex-row {
+    padding: 19px 16px 14px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    box-shadow: 0px 2px 8px 0px rgba(200, 201, 204, 0.5);
+}
+
+.upload-opt-btn> :not(:last-child) {
+    margin-right: 8px;
+}
+
+.upload-opt-btn .preview {
+    color: #155BD4;
+    padding: 4px 6px;
+    border-radius: 2px;
+    background: rgba(21, 91, 212, 0.15);
+}
+
+.upload-opt-btn .replace {
+    color: #F1924E;
+    padding: 4px 6px;
+    border-radius: 2px;
+    background: rgba(241, 146, 78, 0.2);
+}
+
+.upload-opt-btn .down {
+    color: #2DA641;
+    padding: 4px 6px;
+    border-radius: 2px;
+    background: rgba(45, 166, 65, 0.2);
+}
+
+.upload-opt-btn .default {
+    color: #323333;
+    padding: 4px 6px;
+    border-radius: 2px;
+    background: rgba(50, 50, 51, 0.15);
+}
+
+.upload-opt-btn svg {
+    margin-right: 5px;
 }
