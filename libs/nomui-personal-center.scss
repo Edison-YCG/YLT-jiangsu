@@ -1,0 +1,176 @@
+.page-person-center {
+  .nav {
+    height: 60px;
+    background: #ffffff;
+    margin: 16px 0;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .nav > .nav-item:hover {
+    align-items: center;
+    height: 100%;
+    color: #2b7efb;
+    background: linear-gradient(#2b7efb, #2b7efb) no-repeat;
+    background-size: 100% 3px;
+    background-position: bottom;
+  }
+  
+  .nav-item {
+    margin-left: 60px;
+    cursor: pointer;
+  }
+  
+  .nav:first-child {
+    margin-left: 0 !important;
+  }
+  
+  .nav-active {
+    align-items: center;
+    height: 100%;
+    color: #2b7efb;
+    background: linear-gradient(#2b7efb, #2b7efb) no-repeat;
+    background-size: 100% 3px;
+    background-position: bottom;
+  }
+  
+  .content {
+    border-radius: 12px;
+    background: #fff;
+  }
+  
+  .toolbar {
+    height: 80px;
+    padding: 0 36px;
+  }
+
+  .personal-header {
+    background-size: 100% 100%;
+    background-image: url(../themes/basic/assets/personal-center-header.png);
+  }
+  .personal-tabs {
+    margin-top: 20px;
+    > .nom-tab-list{
+      margin-top: -14px;
+      padding: 14px 0;
+      > .nom-list-content {
+        padding-left: 35px;
+        font-size: 16px;
+        background-color: #fff;
+        box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .nom-tabs {
+    .nom-tab-item {
+      .nom-badge {
+        top: 10px;
+        right: 10px;
+      }
+    }
+  }
+
+  .personal-panel {
+    margin-bottom: 20px;
+    padding: 36px;
+    padding-top: 24px;
+    padding-bottom: 16px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+    .form-flex {
+      .nom-flex-item:first-child {
+        flex: 1;
+      }
+      .nom-flex-item:last-child {
+        .nom-flex {
+          height: 100%;
+        }
+      }
+    }
+
+
+    .nom-form {
+
+    }
+    .nom-grid {
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      .nom-grid-header {
+        th {
+          font-weight: bold;
+          background-color: #fff;
+          background-image: none;
+        }
+      }
+      .nom-grid-body{
+        td {
+          .nom-flex {
+            .nom-flex-item {
+              position: relative;
+              &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 1px;
+                height: 14px;
+                border-right: 1px solid rgba(0, 0, 0, 0.09);
+                transform: translateY(-7px);
+              }
+              &:last-child::after {
+                border-right: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .nom-tabs {
+      .nom-tab-list.nom-list {
+        padding-bottom: 14px;
+        border-bottom: 1px dashed #E9E9E9;
+      }
+      .nom-tab-panel {
+        .nom-grid {
+          margin-bottom: 20px;
+        }
+      }
+      .nom-tab-item{
+        font-size: 14px;
+      }
+      
+    }
+  }
+  .panel-info {
+    .group-info {
+      margin-bottom: 20px;
+      border-bottom: 1px dashed #E9E9E9;
+      &> .nom-field-content > .nom-control > .nom-field {
+        margin-bottom: 20px;
+      }
+      .nom-textbox, .nom-select {
+        .nom-field-content {
+          width: 80%;
+        }
+      }
+    }
+    .tab-panel-password {
+      // padding: 0 20%;
+      .group-info  {
+        margin: 0 auto;
+        width: 50%;
+        border-bottom: none;
+        .nom-field-content{
+          width: 100%;
+        }
+      }
+      .panel-password-btns{
+        padding-top: 20px;
+        border-top: 1px dashed #E9E9E9;
+      }
+    }
+  }
+  
+}

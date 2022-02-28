@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>个人中心</title>
     <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/libs/nomui/nomui.css" />
     <link rel="stylesheet" href="/libs/common.css" />
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/libs/mechanism.css" />
     <link rel="stylesheet" href="/libs/ethic.css" />
     <link rel="stylesheet" href="/libs/index.css" />
-    <link rel="stylesheet" href="/libs/personal-center.css" />
+    <link rel="stylesheet" href="/libs/nomui-personal-center.css" />
   </head>
 
   <body>
@@ -180,7 +180,7 @@
       </div>
     </div>
     <div class="common-division">&nbsp;</div>
-    <div class="container">
+    <div class="container page-person-center">
       <div id="app"></div>
     </div>
 
@@ -189,158 +189,6 @@
     <script src="/libs/nomui/nomui.js"></script>
 
     <!-- use nomui -->
-    <script>
-      new nomui.Flex({
-        attrs: {
-          style: { margin: '0 150px' },
-        },
-        rows: [
-          {
-            component: 'Flex',
-            //justify: 'between',
-            align: 'center',
-            attrs: {
-              style: {
-                height: '170px',
-                backgroundColor: 'rgba(244, 246, 250, 1)',
-                padding: '0 36px',
-              },
-            },
-            cols: [
-              {
-                component: 'Avatar',
-                icon: {
-                  component: 'Icon',
-                  type: 'user',
-                  attrs: {
-                    style: {
-                      fontSize: '60px',
-                    },
-                  },
-                },
-                attrs: {
-                  style: {
-                    width: '78px',
-                    height: '78px',
-                    marginRight: '14px',
-                  },
-                },
-              },
-              {
-                grow: true,
-                children: {
-                  component: 'Flex',
-                  attrs: {
-                    style: { width: '80%' },
-                  },
-                  rows: [
-                    {
-                      children: 'Mingzhi',
-                      attrs: {
-                        style: {
-                          fontSize: '24px',
-                          color: 'rgba(43, 126, 251, 1)',
-                        },
-                      },
-                    },
-                    {
-                      children: '信息完整度: 20%',
-                      attrs: {
-                        style: {
-                          fontSize: '12px',
-                          color: 'rgba(43, 126, 251, 1)',
-                        },
-                      },
-                    },
-                    {
-                      component: 'Progress',
-                      percent: 20,
-                      grow: true,
-                      showInfo: false,
-                    },
-                  ],
-                },
-              },
-              {
-                children: '去完善',
-                attrs: {
-                  style: {
-                    width: '88px',
-                    height: '32px',
-                    borderRadius: '16px',
-                    border: '1px solid #2B7EFB',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  },
-                },
-              },
-            ],
-          },
-          {
-            component: 'Flex',
-            classes: {
-              nav: true,
-            },
-            align: 'center',
-            cols: [
-              {
-                children: '我的项目',
-                classes: {
-                  'nav-active': true,
-                  'nav-item': true,
-                },
-                attrs: {
-                  style: { marginLeft: '36px' },
-                },
-              },
-              {
-                children: '我的组织',
-                classes: {
-                  'nav-item': true,
-                },
-              },
-              {
-                children: '我的消息',
-                classes: {
-                  'nav-item': true,
-                },
-                badge: {
-                  number: 1000,
-                  overflowCount: 999,
-                },
-              },
-              {
-                children: '我的资料',
-                classes: {
-                  'nav-item': true,
-                },
-              },
-            ],
-          },
-          {
-            component: 'Form',
-            inline: true,
-            fields: [
-              {
-                component: 'Textbox',
-                label: '项目名',
-                placeholder: '可输入项目名称、方案号关键字进行搜索',
-                controlWidth: 300,
-              },
-              {
-                component: 'Select',
-                label: '项目类型',
-                controlWidth: 300,
-              },
-              {
-                component: 'Select',
-                label: '项目状态',
-                controlWidth: 300,
-              },
-            ],
-          },
-        ],
-      })
-    </script>
+    <script src="./my-project.js"></script>
   </body>
 </html>
