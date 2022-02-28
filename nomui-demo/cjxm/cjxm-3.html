@@ -218,6 +218,11 @@
                                         {
                                             component: 'Button',
                                             text: '我的下载',
+                                            attrs: {
+                                                style: {
+                                                    'background': '#fff',
+                                                }
+                                            },
                                             icon: 'image',
                                         },
                                     ]
@@ -258,16 +263,21 @@
                                                         component: 'Button',
                                                         icon: 'upload',
                                                         text: '上传文件',
+                                                        attrs: {
+                                                            style: {
+                                                                'background': '#fff',
+                                                            }
+                                                        },
                                                     },
                                                     extraAction: [{
-                                                            text: '预览',
+                                                            text: `#<span class="preview"><svg t="1646041174487" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="currentcolor" p-id="2227" width="12" height="12"><path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3-7.7 16.2-7.7 35.2 0 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766z" fill="currentcolor" p-id="2228"></path><path d="M508 336c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176z m0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z" fill="currentcolor" p-id="2229"></path></svg>预览</span>`,
                                                             action: (e, file) => {
                                                                 // eslint-disable-next-line
                                                                 console.log(e, file)
                                                             },
                                                         },
                                                         {
-                                                            text: '替换',
+                                                            text: `#<span class="replace"><svg t="1646041441597" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="currentcolor" p-id="3096" width="12" height="12"><path d="M393.846154 738.461538c0-15.753846-13.784615-29.538462-29.538462-29.538461h-295.384615c-15.753846 0-29.538462 13.784615-29.538462 29.538461v216.615385c0 15.753846 13.784615 29.538462 29.538462 29.538462h295.384615c15.753846 0 29.538462-13.784615 29.538462-29.538462v-216.615385zM159.507692 433.230769H63.015385c-19.692308 0-29.538462 17.723077-17.723077 27.569231l157.538461 163.446154c7.876923 5.907692 19.692308 5.907692 27.569231 0l157.538462-163.446154c11.815385-11.815385 1.969231-27.569231-17.723077-27.569231h-92.553847c0-98.461538 96.492308-196.923077 194.953847-196.923077V118.153846C295.384615 118.153846 159.507692 256 159.507692 433.230769z m663.63077-33.476923c-7.876923-5.907692-19.692308-5.907692-27.569231 0l-157.538462 163.446154c-11.815385 11.815385-1.969231 27.569231 17.723077 27.569231h94.523077c0 118.153846-80.738462 196.923077-198.892308 196.923077v118.153846c177.230769 0 317.046154-137.846154 317.046154-315.076923H964.923077c19.692308 0 29.538462-17.723077 17.723077-27.569231l-159.507692-163.446154zM984.615385 68.923077c0-15.753846-13.784615-29.538462-29.538462-29.538462h-295.384615c-15.753846 0-29.538462 13.784615-29.538462 29.538462v216.615385c0 15.753846 13.784615 29.538462 29.538462 29.538461h295.384615c15.753846 0 29.538462-13.784615 29.538462-29.538461v-216.615385z" fill="currentcolor" p-id="3097"></path></svg>替换</span>`,
                                                             action: (e, file) => {
                                                                 // eslint-disable-next-line
                                                                 console.log(e, file)
@@ -312,7 +322,7 @@
                                                         } = file
 
                                                         return [{
-                                                                tag: 'span',
+                                                                tag: 'div',
                                                                 children: {
                                                                     tag: 'a',
                                                                     children: name,
@@ -323,7 +333,11 @@
                                                             },
                                                             {
                                                                 tag: 'span',
-                                                                children: '12.37KB',
+                                                                children: '文件大小：43.02KB',
+
+                                                                classes: {
+                                                                    'upload-file-info': true,
+                                                                },
                                                             },
                                                             {
                                                                 tag: 'span',
@@ -331,16 +345,10 @@
                                                                 classes: {
                                                                     'upload-file-update': true,
                                                                     'u-border-left ': true,
+                                                                    'upload-file-info': true,
                                                                 },
                                                             },
-                                                            {
-                                                                tag: 'span',
-                                                                children: `版本号: 0505`,
-                                                                classes: {
-                                                                    'upload-file-update': true,
-                                                                    'u-border-left ': true,
-                                                                },
-                                                            },
+
                                                         ]
                                                     },
                                                 },
@@ -394,6 +402,11 @@
                                                         component: 'Button',
                                                         icon: 'upload',
                                                         text: '上传文件',
+                                                        attrs: {
+                                                            style: {
+                                                                'background': '#fff',
+                                                            }
+                                                        },
                                                     },
                                                     extraAction: [{
                                                             text: '预览',
@@ -448,7 +461,7 @@
                                                         } = file
 
                                                         return [{
-                                                                tag: 'span',
+                                                                tag: 'div',
                                                                 children: {
                                                                     tag: 'a',
                                                                     children: name,
@@ -459,7 +472,11 @@
                                                             },
                                                             {
                                                                 tag: 'span',
-                                                                children: '12.37KB',
+                                                                children: '文件大小：43.02KB',
+
+                                                                classes: {
+                                                                    'upload-file-info': true,
+                                                                },
                                                             },
                                                             {
                                                                 tag: 'span',
@@ -467,16 +484,10 @@
                                                                 classes: {
                                                                     'upload-file-update': true,
                                                                     'u-border-left ': true,
+                                                                    'upload-file-info': true,
                                                                 },
                                                             },
-                                                            {
-                                                                tag: 'span',
-                                                                children: `版本号: 0505`,
-                                                                classes: {
-                                                                    'upload-file-update': true,
-                                                                    'u-border-left ': true,
-                                                                },
-                                                            },
+
                                                         ]
                                                     },
                                                 },
@@ -529,6 +540,11 @@
                                                         component: 'Button',
                                                         icon: 'upload',
                                                         text: '上传文件',
+                                                        attrs: {
+                                                            style: {
+                                                                'background': '#fff',
+                                                            }
+                                                        },
                                                     },
                                                     extraAction: [{
                                                             text: '预览',
@@ -583,7 +599,7 @@
                                                         } = file
 
                                                         return [{
-                                                                tag: 'span',
+                                                                tag: 'div',
                                                                 children: {
                                                                     tag: 'a',
                                                                     children: name,
@@ -594,7 +610,11 @@
                                                             },
                                                             {
                                                                 tag: 'span',
-                                                                children: '12.37KB',
+                                                                children: '文件大小：43.02KB',
+
+                                                                classes: {
+                                                                    'upload-file-info': true,
+                                                                },
                                                             },
                                                             {
                                                                 tag: 'span',
@@ -602,16 +622,10 @@
                                                                 classes: {
                                                                     'upload-file-update': true,
                                                                     'u-border-left ': true,
+                                                                    'upload-file-info': true,
                                                                 },
                                                             },
-                                                            {
-                                                                tag: 'span',
-                                                                children: `版本号: 0505`,
-                                                                classes: {
-                                                                    'upload-file-update': true,
-                                                                    'u-border-left ': true,
-                                                                },
-                                                            },
+
                                                         ]
                                                     },
                                                 },
@@ -668,6 +682,11 @@
                                         {
                                             component: 'Button',
                                             text: '我的下载',
+                                            attrs: {
+                                                style: {
+                                                    'background': '#fff',
+                                                }
+                                            },
                                             icon: 'image',
                                         },
                                     ]
@@ -708,6 +727,11 @@
                                                         component: 'Button',
                                                         icon: 'upload',
                                                         text: '上传文件',
+                                                        attrs: {
+                                                            style: {
+                                                                'background': '#fff',
+                                                            }
+                                                        },
                                                     },
                                                     extraAction: [{
                                                             text: '预览',
@@ -762,7 +786,7 @@
                                                         } = file
 
                                                         return [{
-                                                                tag: 'span',
+                                                                tag: 'div',
                                                                 children: {
                                                                     tag: 'a',
                                                                     children: name,
@@ -773,7 +797,11 @@
                                                             },
                                                             {
                                                                 tag: 'span',
-                                                                children: '12.37KB',
+                                                                children: '文件大小：43.02KB',
+
+                                                                classes: {
+                                                                    'upload-file-info': true,
+                                                                },
                                                             },
                                                             {
                                                                 tag: 'span',
@@ -781,16 +809,10 @@
                                                                 classes: {
                                                                     'upload-file-update': true,
                                                                     'u-border-left ': true,
+                                                                    'upload-file-info': true,
                                                                 },
                                                             },
-                                                            {
-                                                                tag: 'span',
-                                                                children: `版本号: 0505`,
-                                                                classes: {
-                                                                    'upload-file-update': true,
-                                                                    'u-border-left ': true,
-                                                                },
-                                                            },
+
                                                         ]
                                                     },
                                                 },
@@ -844,6 +866,11 @@
                                                         component: 'Button',
                                                         icon: 'upload',
                                                         text: '上传文件',
+                                                        attrs: {
+                                                            style: {
+                                                                'background': '#fff',
+                                                            }
+                                                        },
                                                     },
                                                     extraAction: [{
                                                             text: '预览',
@@ -898,7 +925,7 @@
                                                         } = file
 
                                                         return [{
-                                                                tag: 'span',
+                                                                tag: 'div',
                                                                 children: {
                                                                     tag: 'a',
                                                                     children: name,
@@ -909,7 +936,11 @@
                                                             },
                                                             {
                                                                 tag: 'span',
-                                                                children: '12.37KB',
+                                                                children: '文件大小：43.02KB',
+
+                                                                classes: {
+                                                                    'upload-file-info': true,
+                                                                },
                                                             },
                                                             {
                                                                 tag: 'span',
@@ -917,16 +948,10 @@
                                                                 classes: {
                                                                     'upload-file-update': true,
                                                                     'u-border-left ': true,
+                                                                    'upload-file-info': true,
                                                                 },
                                                             },
-                                                            {
-                                                                tag: 'span',
-                                                                children: `版本号: 0505`,
-                                                                classes: {
-                                                                    'upload-file-update': true,
-                                                                    'u-border-left ': true,
-                                                                },
-                                                            },
+
                                                         ]
                                                     },
                                                 },
@@ -979,6 +1004,11 @@
                                                         component: 'Button',
                                                         icon: 'upload',
                                                         text: '上传文件',
+                                                        attrs: {
+                                                            style: {
+                                                                'background': '#fff',
+                                                            }
+                                                        },
                                                     },
                                                     extraAction: [{
                                                             text: '预览',
@@ -1033,7 +1063,7 @@
                                                         } = file
 
                                                         return [{
-                                                                tag: 'span',
+                                                                tag: 'div',
                                                                 children: {
                                                                     tag: 'a',
                                                                     children: name,
@@ -1044,7 +1074,11 @@
                                                             },
                                                             {
                                                                 tag: 'span',
-                                                                children: '12.37KB',
+                                                                children: '文件大小：43.02KB',
+
+                                                                classes: {
+                                                                    'upload-file-info': true,
+                                                                },
                                                             },
                                                             {
                                                                 tag: 'span',
@@ -1052,16 +1086,10 @@
                                                                 classes: {
                                                                     'upload-file-update': true,
                                                                     'u-border-left ': true,
+                                                                    'upload-file-info': true,
                                                                 },
                                                             },
-                                                            {
-                                                                tag: 'span',
-                                                                children: `版本号: 0505`,
-                                                                classes: {
-                                                                    'upload-file-update': true,
-                                                                    'u-border-left ': true,
-                                                                },
-                                                            },
+
                                                         ]
                                                     },
                                                 },
@@ -1114,6 +1142,11 @@
                                 },
                                 {
                                     component: 'Button',
+                                    attrs: {
+                                        style: {
+                                            'background': '#fff',
+                                        }
+                                    },
                                     text: '取 消',
                                 },
                             ]

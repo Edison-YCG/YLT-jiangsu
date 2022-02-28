@@ -272,6 +272,9 @@
                                         component: 'Grid',
                                         showTitle: true,
                                         striped: true,
+                                        frozenHeader: true,
+                                        frozenLeftCols: 0,
+                                        frozenRightCols: 1,
                                         columns: [{
                                                 field: 'name',
                                                 key: 'name',
@@ -292,6 +295,26 @@
                                                 field: 'role',
                                                 key: 'role',
                                                 title: '申请时间',
+                                            },
+                                            {
+                                                field: 'author2',
+                                                key: 'author2',
+                                                title: '受理结果',
+                                            },
+                                            {
+                                                field: 'author3',
+                                                key: 'author3',
+                                                title: '受理人',
+                                            },
+                                            {
+                                                field: 'author4',
+                                                key: 'author4',
+                                                title: '受理时间',
+                                            },
+                                            {
+                                                field: 'author5',
+                                                key: 'author5',
+                                                title: '受理意见',
                                             },
                                             {
                                                 field: 'oper',
@@ -323,25 +346,52 @@
                                         ],
                                         data: [{
                                                 id: 1,
-                                                name: '笑傲江湖',
-                                                author: '金庸',
-                                                sales: 100000,
-                                                role: '令狐冲'
+                                                name: '江苏省人民医院',
+                                                author: '肿瘤科',
+                                                sales: '李小青',
+                                                role: '2021-08-12 12:06:00',
+                                                author2: '未申请',
+                                                author3: '李小青',
+                                                author4: '2021-08-12 12:06:00',
+                                                author5: '回复不及时',
+
+                                            },
+                                            {
+                                                id: 2,
+                                                name: '江苏省人民医院',
+                                                author: '肿瘤科',
+                                                sales: '李小青',
+                                                role: '2021-08-12 12:06:00',
+                                                author2: '未申请',
+                                                author3: '李小青',
+                                                author4: '2021-08-12 12:06:00',
+                                                author5: '回复不及时',
+
+                                            },
+                                            {
+                                                id: 3,
+                                                name: '江苏省人民医院',
+                                                author: '肿瘤科',
+                                                sales: '李小青',
+                                                role: '2021-08-12 12:06:00',
+                                                author2: '未申请',
+                                                author3: '李小青',
+                                                author4: '2021-08-12 12:06:00',
+                                                author5: '回复不及时',
+
                                             },
                                             {
                                                 id: 4,
-                                                name: '天龙八部',
-                                                author: '金庸',
-                                                sales: 200000,
-                                                role: '乔峰'
-                                            },
-                                            {
-                                                id: 5,
-                                                name: '射雕英雄传',
-                                                author: '金庸',
-                                                sales: 0,
-                                                role: '郭靖'
-                                            },
+                                                name: '江苏省人民医院',
+                                                author: '肿瘤科',
+                                                sales: '李小青',
+                                                role: '2021-08-12 12:06:00',
+                                                author2: '未申请',
+                                                author3: '李小青',
+                                                author4: '2021-08-12 12:06:00',
+                                                author5: '回复不及时',
+
+                                            }
                                         ],
                                     },
                                 },
@@ -392,6 +442,11 @@
                                 },
                                 {
                                     component: 'Button',
+                                    attrs: {
+                                        style: {
+                                            'background': '#fff',
+                                        }
+                                    },
                                     text: '取 消',
                                 },
                             ]

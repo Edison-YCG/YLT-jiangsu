@@ -152,20 +152,117 @@
     <script>
         new nomui.Component({
             reference: document.getElementById('app'),
-            children:{
-                    classes: {
-                        'card': true,
-                        'border-0': true,
-                    },
+            children: {
+                classes: {
+                    'card': true,
+                    'border-0': true,
+                },
+                attrs: {
+                    style: {
+                        padding: '24px 35px 100px',
+                        'margin-bottom': '50px',
+                    }
+                },
+                children: {
                     attrs: {
                         style: {
-                            padding: '24px 35px 495px',
-                            'margin-bottom': '50px',
+                            'width': '452px',
+                            'margin': '0 auto',
                         }
                     },
+                    component: 'Flex',
+                    gap: 'medium',
+                    rows: [{
+                            children: '登录',
+                            attrs: {
+                                style: {
+                                    'font-size': '24px',
+                                    'font-weight': 'bold',
+                                    'margin-bottom': '44px',
+                                }
+                            },
+                        },
+                        {
+                            component: 'Rows',
+                            items: [{
+                                component: 'Group',
+                                fields: [{
+                                        component: 'Textbox',
+                                        name: 'name',
+                                        label: '用户名',
+                                        labelAlign: 'top',
+                                        required: true,
+                                        placeholder: '请输入用户名',
+                                        span: '12',
+                                    },
+                                    {
+                                        component: 'Textbox',
+                                        name: 'age',
+                                        label: '密码',
+                                        labelAlign: 'top',
+                                        required: true,
+                                        placeholder: '请输入密码',
+                                        span: '12',
+                                    },
+                                    {
+                                        component: 'Checkbox',
+                                        name: 'aggree',
+                                        text: '记住我',
+                                        label: '',
+                                        labelAlign: 'top',
+                                        span: '6',
+                                    },
+                                    {
+                                        component: 'Button',
+                                        text: '忘记密码？',
+                                        type: 'link',
+                                        attrs: {
+                                            style: {
+                                                'position': 'absolute',
+                                                'right': '0',
+                                                'bottom': '3px',
+                                            }
+                                        },
+                                    },
+                                ],
+                            }, ],
+                        },
+                        {
+                            component: 'Flex',
+                            gap: 'large',
+                            attrs: {
+                                style: {
+                                    'padding': '0.5rem',
+                                }
+                            },
+                            rows: [{
+                                    component: 'Button',
+                                    attrs: {
+                                        style: {
+                                            'width': '100%',
+                                            'padding': '8px',
+                                            'font-size': '16px',
+                                        }
+                                    },
+                                    text: '登 录',
+                                    type: 'primary',
+                                },
+                                {
+                                    children: `#还没有账号？<a href=''>注册</a>`,
+                                    attrs: {
+                                        style: {
+                                            'font-size': '14px',
+                                        }
+                                    },
+                                }
+                            ],
+                        }
+                    ]
 
-                }
-            
+
+                },
+            }
+
         })
     </script>
 </body>
