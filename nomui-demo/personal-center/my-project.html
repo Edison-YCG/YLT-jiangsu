@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/libs/mechanism.css" />
     <link rel="stylesheet" href="/libs/ethic.css" />
     <link rel="stylesheet" href="/libs/index.css" />
+    <link rel="stylesheet" href="/libs/personal-center.css" />
   </head>
 
   <body>
@@ -277,43 +278,32 @@
           },
           {
             component: 'Flex',
-            align: 'center',
-            attrs: {
-              style: {
-                height: '60px',
-                background: '#FFFFFF',
-                margin: '16px 0',
-                borderRadius: '8px',
-                fontSize: '16px',
-              },
+            classes: {
+              nav: true,
             },
+            align: 'center',
             cols: [
               {
                 children: '我的项目',
                 classes: {
-                  active: true,
+                  'nav-active': true,
+                  'nav-item': true,
                 },
                 attrs: {
-                  style: {
-                    marginLeft: '36px',
-                    color: '#2B7EFB',
-                    borderBottom: '3px solid #2B7EFB',
-                  },
+                  style: { marginLeft: '36px' },
                 },
               },
               {
                 children: '我的组织',
-                attrs: {
-                  style: { marginLeft: '60px' },
+                classes: {
+                  'nav-item': true,
                 },
               },
               {
                 children: '我的消息',
-                attrs: {
-                  style: { marginLeft: '60px' },
+                classes: {
+                  'nav-item': true,
                 },
-                //component: 'Button',
-                //text: '按钮带圆点数字',
                 badge: {
                   number: 1000,
                   overflowCount: 999,
@@ -321,17 +311,33 @@
               },
               {
                 children: '我的资料',
-                attrs: {
-                  style: { marginLeft: '60px' },
+                classes: {
+                  'nav-item': true,
                 },
               },
             ],
           },
           {
-            children: 'aaaaaaaaaaa',
-            attrs: {
-              style: { borderRadius: '12px', background: '#fff' },
-            },
+            component: 'Form',
+            inline: true,
+            fields: [
+              {
+                component: 'Textbox',
+                label: '项目名',
+                placeholder: '可输入项目名称、方案号关键字进行搜索',
+                controlWidth: 300,
+              },
+              {
+                component: 'Select',
+                label: '项目类型',
+                controlWidth: 300,
+              },
+              {
+                component: 'Select',
+                label: '项目状态',
+                controlWidth: 300,
+              },
+            ],
           },
         ],
       })
