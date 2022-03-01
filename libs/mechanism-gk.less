@@ -290,4 +290,36 @@
             transform: scale(1);
         }
     }
+
+    .mechanism-gk-pagination {
+        padding-bottom: 44px;
+        padding-right: 44px;
+
+        // 适配abp分页组件的dom结构
+        .row {
+            .col-md-7 {
+                width: 100%;
+            }
+        }
+
+        .pagination {
+            .page-item {
+                margin-right: 10px;
+
+                .page-link {
+                    color: rgba(0, 0, 0, .8);
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+
+                &.active {
+                    .page-link {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
 }
