@@ -167,4 +167,28 @@
   padding-top: 20px;
   border-top: 1px dashed #E9E9E9;
 }
+
+.page-person-center .panel-info .info-tags-rows {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: .5rem;
+}
+
+.page-person-center .panel-info .info-tags-rows label {
+  font-weight: bold;
+}
+
+.page-person-center .panel-info .info-tags-rows .nom-flex-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-person-center .panel-info .info-tags-rows .nom-list .nom-tag {
+  min-width: 56px;
+  padding: 2px 10px;
+}
 /*# sourceMappingURL=nomui-personal-center.css.map */

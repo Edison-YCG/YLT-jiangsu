@@ -130,11 +130,12 @@ new nomui.Component({
         // },
         {
           component: "Tabs",
-          classes: { 'personal-tabs': true },
+          classes: { "personal-tabs": true },
           ref: (c) => {
             tabRef = c;
           },
           uistyle: "line",
+          selectedTab: "my-info",
           tabs: [
             {
               key: "my-project",
@@ -448,7 +449,8 @@ new nomui.Component({
             },
             {
               key: "my-news",
-              item: { text: "我的消息",
+              item: {
+                text: "我的消息",
                 badge: {
                   number: 12,
                   overflowCount: 99,
@@ -458,7 +460,7 @@ new nomui.Component({
                 /**
                  * ---------------------------- 我的消息 ---------------------------------
                  */
-                children:   {
+                children: {
                   component: "Panel",
                   header: false,
                   uistyle: "plain",
@@ -494,8 +496,16 @@ new nomui.Component({
                                       key: "endTime",
                                       title: "会话结束时间",
                                     },
-                                    { field: "rate", key: "rate", title: "评分" },
-                                    { field: "remark", key: "remark", title: "备注" },
+                                    {
+                                      field: "rate",
+                                      key: "rate",
+                                      title: "评分",
+                                    },
+                                    {
+                                      field: "remark",
+                                      key: "remark",
+                                      title: "备注",
+                                    },
                                     {
                                       field: "oper",
                                       key: "oper",
@@ -641,7 +651,10 @@ new nomui.Component({
                                       label: "Email",
                                       required: true,
                                       rules: [
-                                        { type: "email", message: "Email 格式不正确" },
+                                        {
+                                          type: "email",
+                                          message: "Email 格式不正确",
+                                        },
                                       ],
                                     },
                                     {
@@ -663,7 +676,7 @@ new nomui.Component({
                                       label: "工作单位",
                                       placeholder: "请输入工作单位",
                                     },
-        
+
                                     {
                                       component: "DatePicker",
                                       name: "birthDate",
@@ -727,59 +740,108 @@ new nomui.Component({
                                       label: "地址",
                                       placeholder: "请输入地址",
                                     },
+                                    // 注意: 此处的值无法通过 formRef.getValue获取
+                                    //       需调用 listRef.getAllItems 来获取后，再组装
                                     {
-                                      component: "CheckboxList",
-                                      name: "tags",
-                                      label: "职业标签",
-                                      options: [
-                                        { text: "CRO", value: 1 },
-                                        { text: "CRA", value: 2 },
-                                        { text: "机构老师", value: 3 },
-                                        { text: "CTA", value: 3 },
-                                        { text: "QA", value: 3 },
-                                        { text: "QC", value: 3 },
-                                        { text: "SSU", value: 3 },
-                                        // ...更多
+                                      component: "Rows",
+                                      classes: { "info-tags-rows": true },
+                                      col: 12,
+                                      items: [
+                                        {
+                                          tag: "label",
+                                          children: "职业标签",
+                                        },
+                                        {
+                                          component: "Flex",
+                                          gap: "medium",
+                                          cols: [
+                                            {
+                                              component: "List",
+                                              gutter: "sm",
+                                              data: ["CRO", "CRA"],
+                                              itemRender: ({
+                                                itemData,
+                                                item,
+                                              }) => {
+                                                return {
+                                                  component: "Tag",
+                                                  text: itemData,
+                                                  color: "blue",
+                                                };
+                                              },
+                                            },
+                                            {
+                                              component: "Button",
+                                              type: "link",
+                                              text: "设置职业标签",
+                                              onClick: () => {
+                                                new nomui.Modal({
+                                                  content: {
+                                                    header: {
+                                                      caption: {
+                                                        title: "设置职业标签",
+                                                      },
+                                                    },
+                                                    body: {
+                                                      children: "职业标签List",
+                                                    },
+                                                  },
+                                                });
+                                              },
+                                            },
+                                          ],
+                                        },
                                       ],
                                     },
-                                    // {
-                                    //   component: 'Field',
-                                    //   name: 'tags',
-                                    //   label: '职业标签',
-                                    //   labelAlign: "left",
-                                    //   control: {
-                                    //     children: {
-                                    //       component: 'List',
-                                    //       items: ['CRO', 'CRA'],
-                                    //       // itemDefaults: {
-                                    //       //   component: 'Tag'
-                                    //       // }
-                                    //       itemRender: ({ itemData, item }) => {
-                                    //       console.log("🚀 ~ file: my-project.js ~ line 723 ~ itemData", itemData)
-                                    //         return {
-                                    //           component: 'Tag',
-                                    //           text: itemData,
-                                    //           color: 'blue',
-                                    //         }
-                                    //       }
-                                    //     }
-                                    //   },
-                                    //   action: [{ component: 'Button', type: 'link', text: '设置职业标签' }]
-                                    // },
-                                    {},
                                     {
-                                      component: "CheckboxList",
-                                      name: "area",
-                                      label: "关注领域",
-                                      options: [
-                                        { text: "CRO", value: 1 },
-                                        { text: "CRA", value: 2 },
-                                        { text: "机构老师", value: 3 },
-                                        { text: "CTA", value: 3 },
-                                        { text: "QA", value: 3 },
-                                        { text: "QC", value: 3 },
-                                        { text: "SSU", value: 3 },
-                                        // ...更多
+                                      component: "Rows",
+                                      classes: { "info-tags-rows": true },
+                                      col: 12,
+                                      items: [
+                                        {
+                                          tag: "label",
+                                          children: "关注领域",
+                                        },
+                                        {
+                                          component: "Flex",
+                                          gap: "medium",
+                                          cols: [
+                                            {
+                                              component: "List",
+                                              gutter: "sm",
+                                              data: ["CRO", "CRA"],
+                                              itemRender: ({
+                                                itemData,
+                                                item,
+                                              }) => {
+                                                return {
+                                                  component: "Tag",
+                                                  text: itemData,
+                                                  color: "blue",
+                                                };
+                                              },
+                                            },
+                                            {
+                                              component: "Button",
+                                              type: "link",
+                                              text: "设置职业标签",
+                                              onClick: () => {
+                                                new nomui.Modal({
+                                                  content: {
+                                                    header: {
+                                                      caption: {
+                                                        title: "设置职业标签",
+                                                      },
+                                                    },
+                                                    body: {
+                                                      children: "职业标签List",
+                                                    },
+                                                  },
+                                                });
+                                              },
+                                            },
+                                          ],
+                                        },
                                       ],
                                     },
                                   ],

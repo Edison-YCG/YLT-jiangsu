@@ -171,6 +171,24 @@
         border-top: 1px dashed #E9E9E9;
       }
     }
+    .info-tags-rows {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: .5rem;
+      label {
+        font-weight: bold;
+      }
+      .nom-flex-item{
+        display: flex;
+        align-items: center;
+      }
+      .nom-list {
+        .nom-tag {
+          min-width: 56px;
+          padding: 2px 10px;
+        }
+      }
+    }
   }
   
 }
