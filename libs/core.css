@@ -75,6 +75,10 @@
   font-size: 16px;
 }
 
+.page-core .news-list .news-item .news-title a {
+  color: #000;
+}
+
 .page-core .news-list .news-item .item-tags .tag-item {
   min-width: 64px;
   margin-right: 10px;
