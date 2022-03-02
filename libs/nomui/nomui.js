@@ -25,7 +25,7 @@ function _defineProperty2(obj, key, value) {
 }
 /**
  *
- *       nomui v1.0.0-alpha.49
+ *       nomui v1.0.0-alpha.50
  *       License: MIT
  *       Copyright (c) 2021-2021, Wetrial
  *
@@ -4722,8 +4722,12 @@ function _defineProperty2(obj, key, value) {
       });
       const getSuffix = () => {
         const child = []; // 优先取外部传入的
-        if (allowClear && !disabled && !readonly) {
-          child.push(clearProps || selfClearProps);
+        if (allowClear && !disabled) {
+          if (this._ignoreReadonlyClear()) {
+            child.push(clearProps || selfClearProps);
+          } else if (!readonly) {
+            child.push(clearProps || selfClearProps);
+          }
         }
         if (rightIcon) {
           child.push(rightIconProps);
@@ -4782,6 +4786,11 @@ function _defineProperty2(obj, key, value) {
         },
       });
       super._config();
+    } // 以下组件在 readonly时，还是需要展示 清除按钮
+    _ignoreReadonlyClear() {
+      return ["DatePicker", "TimePicker", "PartialDatePicker"].includes(
+        this.componentType
+      );
     }
     _rendered() {
       const that = this;
@@ -13656,6 +13665,7 @@ function _defineProperty2(obj, key, value) {
         allowClear: true,
         onChange: null,
         showNow: true,
+        readonly: true,
       };
       super(Component.extendProps(defaults, props), ...mixins);
     }
@@ -16463,7 +16473,7 @@ function _defineProperty2(obj, key, value) {
       this._alreadyProcessedFlat = false;
       this.rowsRefs = {};
       this.checkedRowRefs = {};
-      this._doNotAutoScroll = true;
+      this._shouldAutoScroll = true;
       this._customColumnFlag = false; // 是否已经自定义处理过列
       this.props.columns = this.props.columns.filter((n) => {
         return Object.keys(n).length;
@@ -16696,8 +16706,10 @@ function _defineProperty2(obj, key, value) {
       const c = this.getColumns().map(this._setColumnItemDire(sorter));
       this.originColumns = this.originColumns.map(
         this._setColumnItemDire(sorter)
-      );
-      this._doNotAutoScroll = true;
+      ); // onSort外部会触发 update, 此时无需autoScroll
+      if (!isFunction(sorter.sortable)) {
+        this._shouldAutoScroll = false;
+      }
       this.setProps({ columns: c });
       !this.firstRender && this.render();
     } // 设置每一列的排序状态
@@ -16768,20 +16780,32 @@ function _defineProperty2(obj, key, value) {
         this.setSortDirection(this.props.defaultSort);
       }
       this.sortUpdated = true;
+    } // 外部主动记录下当前滚动（下次update时会回到当前位置）
+    setScrollPlace() {
+      this._shouldAutoScroll = true;
+      this._setScrollPlace();
     } // 记录上一次滚动到的位置
     _setScrollPlace(isEmpty) {
       // grid自身的 header和body的宽度
       const headerEl = this.header.element;
-      const bodyEl = this.body.element; // body的body的宽度
-      const tableBodyEl = this.body.table.element;
+      const bodyEl = this.body.element; // grid设置了 sticky相对父元素
+      const { scrollParent } = this.header; // body的body的宽度
+      const tableBodyEl = this.body.table.element; // 表格的竖向滚动分为两种
+      // 1.设置了sticky, 此时的scrollTop 需从 header.scrollParent中获取
+      // 2.Grid自身设置了height, scrollTop从 body中取
       let headerLeft = headerEl.scrollLeft;
-      let bodyLeft = bodyEl.scrollLeft; // 表格的宽度 / 2 - svg图标的一半
+      const headerTop =
+        scrollParent && scrollParent.element
+          ? scrollParent.element.scrollTop
+          : 0;
+      let bodyLeft = bodyEl.scrollLeft;
+      const bodyTop = bodyEl.scrollTop; // 表格的宽度 / 2 - svg图标的一半
       if (isEmpty) {
         headerLeft = (tableBodyEl.offsetWidth - headerEl.offsetWidth) / 2;
         bodyLeft = (tableBodyEl.offsetWidth - bodyEl.offsetWidth) / 2;
       }
-      this._headerScrollInfo = { left: headerLeft };
-      this._bodyScrollInfo = { left: bodyLeft };
+      this._headerScrollInfo = { top: headerTop, left: headerLeft };
+      this._bodyScrollInfo = { top: bodyTop, left: bodyLeft };
     }
     resetColumnsCustom() {
       if (this._gridColumsStoreKey) {
@@ -17134,13 +17158,13 @@ function _defineProperty2(obj, key, value) {
       });
     } // 自动滚动到上次的位置
     _processAutoScroll() {
-      const { data } = this.props; // debugger
+      const { data } = this.props;
       if (!data || !data.length) {
-        this._doNotAutoScroll = false;
+        this._shouldAutoScroll = true;
         this._setScrollPlace(true);
       } // 排序后自动滚动到之前的位置
-      !this._doNotAutoScroll && this.autoScrollGrid();
-      this._doNotAutoScroll = false;
+      this._shouldAutoScroll && this.autoScrollGrid();
+      this._shouldAutoScroll = true;
     }
     autoMergeCols() {
       const that = this;
@@ -17174,8 +17198,12 @@ function _defineProperty2(obj, key, value) {
     autoScrollGrid() {
       const { _headerScrollInfo, _bodyScrollInfo } = this;
       if (!_headerScrollInfo || !_bodyScrollInfo) return;
+      if (_headerScrollInfo.top) {
+        this.header.scrollParent.element.scrollTop = _headerScrollInfo.top || 0;
+      }
       this.header.element.scrollLeft = _headerScrollInfo.left || 0;
       this.body.element.scrollLeft = _bodyScrollInfo.left || 0;
+      this.body.element.scrollTop = _bodyScrollInfo.top || 0;
       this._headerScrollInfo = null;
       this._bodyScrollInfo = null;
     }
@@ -17259,7 +17287,10 @@ function _defineProperty2(obj, key, value) {
     }
     _getColsFromFields(columns = [], fields = []) {
       return columns.reduce((acc, curr) => {
-        if (fields.includes(curr.field)) {
+        // 无field的列，列设置后会消失
+        if (isNullish(curr.field)) {
+          acc.push(curr);
+        } else if (fields.includes(curr.field)) {
           acc.push(
             Object.assign({}, curr, {
               children: this._getColsFromFields(curr.children, fields),
@@ -20016,6 +20047,7 @@ function _defineProperty2(obj, key, value) {
         value: null,
         minDate: null,
         maxDate: null,
+        readonly: true,
       };
       super(Component.extendProps(defaults, props), ...mixins);
     }

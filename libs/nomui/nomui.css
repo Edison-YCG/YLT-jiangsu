@@ -6777,8 +6777,9 @@ fieldset[disabled] a.nom-button {
   background: none !important;
 }
 .nom-button.p-danger.p-type-primary {
-  color: var(--nom-color-danger);
+  color: var(--nom-color-white);
   border-color: var(--nom-color-danger);
+  background-color: var(--nom-color-danger);
 }
 .nom-button.p-danger.p-type-primary:hover {
   background-color: var(--nom-color-danger-hover);
@@ -6985,14 +6986,14 @@ textarea .nom-input {
 }
 .nom-textbox .nom-textbox-affix-wrapper {
   display: flex;
-  align-items: center;
   flex: 1;
-  border: 1px solid #ccc;
+  align-items: center;
   padding: 0 0.75rem;
+  border: 1px solid #ccc;
 }
 .nom-textbox .nom-textbox-affix-wrapper .nom-input-affix {
-  flex: none;
   display: flex;
+  flex: none;
   align-items: center;
 }
 .nom-textbox .nom-textbox-affix-wrapper .nom-input-prefix,
@@ -7005,10 +7006,10 @@ textarea .nom-input {
   margin-left: 4px;
 }
 .nom-textbox .nom-textbox-affix-wrapper .nom-input {
+  height: calc(1.428571429rem + (0.375rem * 2));
   padding: 0;
   border: none;
   outline: none;
-  height: calc(1.428571429rem + (0.375rem * 2));
 }
 .nom-textbox.s-disabled .nom-textbox-affix-wrapper,
 .nom-textbox[readonly] .nom-textbox-affix-wrapper {
@@ -7018,12 +7019,19 @@ textarea .nom-input {
 .nom-textbox .nom-textbox-right-icon {
   color: #a4a2bb;
 }
-.nom-time-picker[readonly]:not([disabled]) .nom-textbox-affix-wrapper,
-.nom-date-picker[readonly]:not([disabled]) .nom-textbox-affix-wrapper {
-  background-color: transparent;
+.nom-time-picker[readonly] .nom-textbox-affix-wrapper,
+.nom-date-picker[readonly] .nom-textbox-affix-wrapper,
+.nom-partial-date-picker[readonly] .nom-textbox-affix-wrapper {
+  background: transparent;
+}
+.nom-time-picker.s-disabled .nom-textbox-affix-wrapper,
+.nom-date-picker.s-disabled .nom-textbox-affix-wrapper,
+.nom-partial-date-picker.s-disabled .nom-textbox-affix-wrapper {
+  background: #e9ecef;
 }
 .nom-time-picker .nom-input[readonly]:not([disabled]),
-.nom-date-picker .nom-input[readonly]:not([disabled]) {
+.nom-date-picker .nom-input[readonly]:not([disabled]),
+.nom-partial-date-picker .nom-input[readonly]:not([disabled]) {
   background-color: transparent;
 }
 .nom-textarea {
