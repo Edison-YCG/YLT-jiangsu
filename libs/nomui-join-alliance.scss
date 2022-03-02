@@ -1,31 +1,27 @@
 .page-join-mechanism {
-  .card {
-    box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
-    border-radius: 12px;
-    .nom-steps {
-      &.nom-steps-horizontal .nom-step:last-child {
-        flex-grow: 2;
-      }
-      .nom-step-item-container {
-        .nom-step-item-content {
-          .nom-step-item-title {
-            position: relative;
-            &::after {
-              left: 110%;
-            }
+  .nom-steps {
+    &.nom-steps-horizontal .nom-step:last-child {
+      flex-grow: 2;
+    }
+    .nom-step-item-container {
+      .nom-step-item-content {
+        .nom-step-item-title {
+          position: relative;
+          &::after {
+            left: 110%;
           }
-          padding-right: 40px;
-          flex: 1;
         }
+        padding-right: 40px;
+        flex: 1;
       }
-      
-      .nom-step-item-description {
-        white-space: normal !important;
-      }
+    }
+    
+    .nom-step-item-description {
+      white-space: normal !important;
     }
   }
 
-  .card .mechanism-group {
+  .mechanism-group {
     margin-bottom: 20px;
     border-bottom: 1px dashed #E9E9E9;
     & > .nom-field-content > .nom-control > .nom-field {
