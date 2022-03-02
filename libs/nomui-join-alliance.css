@@ -4,6 +4,12 @@
           flex-grow: 2;
 }
 
+.page-join-mechanism .nom-steps .nom-step-item-container .nom-step-item-icon {
+  color: #fff !important;
+  background-color: var(--nom-color-primary) !important;
+  border-color: var(--nom-color-primary) !important;
+}
+
 .page-join-mechanism .nom-steps .nom-step-item-container .nom-step-item-content {
   padding-right: 40px;
   -webkit-box-flex: 1;
@@ -13,13 +19,17 @@
 
 .page-join-mechanism .nom-steps .nom-step-item-container .nom-step-item-content .nom-step-item-title {
   position: relative;
+  font-size: 14px;
 }
 
 .page-join-mechanism .nom-steps .nom-step-item-container .nom-step-item-content .nom-step-item-title::after {
   left: 110%;
+  background-color: var(--nom-color-primary);
 }
 
-.page-join-mechanism .nom-steps .nom-step-item-description {
+.page-join-mechanism .nom-steps .nom-step-item-container .nom-step-item-content .nom-step-item-description {
+  width: 85%;
+  color: rgba(0, 0, 0, 0.45);
   white-space: normal !important;
 }
 

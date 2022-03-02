@@ -4,20 +4,28 @@
       flex-grow: 2;
     }
     .nom-step-item-container {
+      .nom-step-item-icon {
+        color: #fff !important;
+        background-color: var(--nom-color-primary) !important;
+        border-color: var(--nom-color-primary) !important;
+      }
       .nom-step-item-content {
-        .nom-step-item-title {
-          position: relative;
-          &::after {
-            left: 110%;
-          }
-        }
         padding-right: 40px;
         flex: 1;
+        .nom-step-item-title {
+          position: relative;
+          font-size: 14px;
+          &::after {
+            left: 110%;
+            background-color: var(--nom-color-primary);
+          }
+        }
+        .nom-step-item-description {
+          width: 85%;
+          color: rgba(0, 0, 0, .45);
+          white-space: normal !important;
+        }
       }
-    }
-    
-    .nom-step-item-description {
-      white-space: normal !important;
     }
   }
 
