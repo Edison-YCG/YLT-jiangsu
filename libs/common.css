@@ -499,10 +499,6 @@ table.nom-table th {
     padding: 2px 26px !important;
 }
 
-.btn-calendar-init {
-    text-decoration: none !important;
-}
-
 #nameFilter .nom-control {
     border-radius: 50px !important;
     -webkit-border-radius: 50px !important;
