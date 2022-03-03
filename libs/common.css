@@ -498,3 +498,36 @@ table.nom-table th {
     font-size: 14px;
     padding: 2px 26px !important;
 }
+
+.btn-calendar-init {
+    text-decoration: none !important;
+}
+
+#nameFilter .nom-control {
+    border-radius: 50px !important;
+    -webkit-border-radius: 50px !important;
+    -moz-border-radius: 50px !important;
+    -ms-border-radius: 50px !important;
+    -o-border-radius: 50px !important;
+}
+
+.fc-today-button {
+    border-radius: 50px 0 0 50px !important;
+    -webkit-border-radius: 50px 0 0 50px !important;
+    -moz-border-radius: 50px 0 0 50px !important;
+    -ms-border-radius: 50px 0 0 50px !important;
+    -o-border-radius: 50px 0 0 50px !important;
+}
+
+.fc-next-button {
+    border-radius: 0 50px 50px 0 !important;
+    -webkit-border-radius: 0 50px 50px 0 !important;
+    -moz-border-radius: 0 50px 50px 0 !important;
+    -ms-border-radius: 0 50px 50px 0 !important;
+    -o-border-radius: 0 50px 50px 0 !important;
+}
+
+.fc-today-button:disabled {
+    background-color: #fff !important;
+    color: #0d6efd !important;
+}
