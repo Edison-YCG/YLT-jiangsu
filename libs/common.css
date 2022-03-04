@@ -72,7 +72,7 @@ body {
     position: fixed;
     right: 30px;
     bottom: 120px;
-    z-index: 9999;
+    z-index: 999999;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
