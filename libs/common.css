@@ -527,3 +527,37 @@ table.nom-table th {
     background-color: #fff !important;
     color: #0d6efd !important;
 }
+
+.cjxm-steps .nom-step:not(:last-child) .nom-step-item-title::after {
+    height: 2px;
+}
+
+.cjxm-steps .nom-step>.nom-step-item-container>.nom-step-item-icon {
+    border-width: 2px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.cjxm-steps .nom-step-item-wait .nom-step-item-icon,
+.cjxm-steps .nom-step-item-process .nom-step-item-icon {
+    line-height: 1.8rem !important;
+}
+
+.cjxm-steps .nom-step-item-wait .nom-step-item-title {
+
+    color: #969799 !important;
+}
+
+.cjxm-steps .nom-step>.nom-step-item-container>.nom-step-item-icon>.nom-icon svg {
+    font-weight: bold;
+}
+
+.cjxm-steps .nom-step.nom-step-item-wait .nom-step-item-icon {
+    border-color: #C8C9CC;
+    background: #C8C9CC;
+    color: #fff;
+}
+
+.cjxm-steps .nom-step-item-wait {
+    color: #969799;
+}
