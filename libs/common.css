@@ -606,3 +606,7 @@ table.nom-table th {
 .page-person-center {
     min-height: 750px;
 }
+
+.nom-uploader > .nom-field-content > .nom-control > .nom-button {
+    background-color:white;
+}
