@@ -561,3 +561,7 @@ table.nom-table th {
 .cjxm-steps .nom-step-item-wait {
     color: #969799;
 }
+
+.page-person-center {
+    min-height: 750px;
+}
