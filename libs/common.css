@@ -68,6 +68,29 @@ body {
     box-shadow: 0 7px 5px -5px #a8aab9;
 }
 
+.common-backtop {
+    position: fixed;
+    right: 30px;
+    bottom: 120px;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    user-select: none;
+    display: none;
+}
+
+.common-backtop:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
 .common-header {
     background: #2B7EFB;
     padding: 16px 0 2px;

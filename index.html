@@ -129,6 +129,17 @@
             </div>
         </div>
     </header>
+    <div class="common-backtop">
+        <div>
+            <svg t="1622955703086" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                p-id="4583" width="32" height="32">
+                <path
+                    d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"
+                    p-id="4584" fill="#ffffff"></path>
+            </svg>
+        </div>
+        <div class="text">回到顶部</div>
+    </div>
     <!-- 内容部分-s -->
     <!-- 1 -->
     <div class="ix-column-1">
@@ -443,6 +454,7 @@
         </div>
     </footer>
     <script src="/libs/js/jquery-3.6.0.min.js"></script>
+    <script src="/libs/js/jquery.plugins.min.js"></script>
     <script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).scroll(function () {
@@ -454,11 +466,15 @@
                 $("#JS-header")
                     .addClass("fixed animate__animated animate__slideInDown")
                     .removeClass("animate__slideInUp");
+                $(".common-backtop")
+                    .show()
+                    .addClass("animate__animated animate__slideInUp");
             }
             if (scroH < 100) {
                 $("#JS-header")
                     .removeClass("fixed animate__slideInDown")
                     .addClass("animate__slideInUp");
+                $(".common-backtop").removeClass("animate__slideInUp").hide();
             }
             if (contentH - (scroH + viewH) <= 100) {
                 //距离底部高度小于100px
@@ -466,6 +482,12 @@
             if ((contentH = scroH + viewH)) {
                 //滚动条滑到底部啦
             }
+        });
+        $(".common-backtop").click(function () {
+            $("body,html").animate({
+                scrollTop: 0
+            }, 500, "linear");
+            return false;
         });
     </script>
 </body>
