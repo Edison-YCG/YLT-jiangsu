@@ -486,6 +486,13 @@ table.nom-table th {
     box-shadow: 0px 2px 8px 0px rgba(200, 201, 204, 0.5);
 }
 
+.upload-info-container {
+    color: #969799;
+
+.upload-opt-btn {
+    padding-top: 10px;
+}
+
 .upload-opt-btn> :not(:last-child) {
     margin-right: 8px;
 }
