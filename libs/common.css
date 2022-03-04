@@ -58,6 +58,15 @@ body {
     margin: 0 auto;
 }
 
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+    box-shadow: 0 7px 5px -5px #a8aab9;
+}
+
 .common-header {
     background: #2B7EFB;
     padding: 16px 0 2px;
