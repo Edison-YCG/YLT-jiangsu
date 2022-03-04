@@ -459,6 +459,7 @@ button:active {
 
 .nom-steps .nom-step>.nom-step-item-container .nom-step-item-content .nom-step-item-title {
     font-weight: bold;
+    font-size: 14px;
 }
 
 table.nom-table th {
@@ -608,5 +609,5 @@ table.nom-table th {
 }
 
 .nom-uploader > .nom-field-content > .nom-control > .nom-button {
-    background-color:white;
+    background-color:#fff;
 }
