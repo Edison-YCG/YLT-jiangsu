@@ -88,6 +88,21 @@
   color: #888;
   line-height: 24px;
   margin-bottom: 24px;
+  max-height: 72px;
+  overflow: hidden;
+}
+.mechanism-gk-card1 .introduce.show {
+  max-height: initial;
+}
+.mechanism-gk-card1 .introduce .more {
+  color: #2B7EFB;
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  cursor: pointer;
+  width: 96px;
+  background-color: #fff;
+  text-align: right;
 }
 .mechanism-gk-card1 .nav {
   border-top: 1px dashed #eee;

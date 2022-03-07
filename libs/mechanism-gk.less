@@ -101,6 +101,23 @@
         color: #888;
         line-height: 24px;
         margin-bottom: 24px;
+        max-height: 72px;
+        overflow: hidden;
+
+        &.show {
+            max-height: initial;
+        }
+
+        .more {
+            color: #2B7EFB;
+            position: absolute;
+            right: 50px;
+            bottom: 0;
+            cursor: pointer;
+            width: 96px;
+            background-color: #fff;
+            text-align: right;
+        }
     }
 
     .nav {
