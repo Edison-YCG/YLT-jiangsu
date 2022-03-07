@@ -56,9 +56,23 @@ body {
     background: #FAFAFA;
     width: 100%;
     margin: 0 auto;
-    overflow-y:scroll;
-    min-height: 100vh; /* 所有页面都出现滚动条 */
+    overflow-y: scroll;
+    min-height: 100vh;
+    /* 所有页面都出现滚动条 */
     --nom-color-primary: #2B7EFB;
+}
+
+#JS-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+    box-shadow: 0 1px 0 rgb(0, 0, 0, 0.06);
+}
+
+.JS-headers {
+    height: 151px;
 }
 
 .fixed {
@@ -610,6 +624,16 @@ table.nom-table th {
     min-height: 750px;
 }
 
-.nom-uploader > .nom-field-content > .nom-control > .nom-button {
-    background-color:#fff;
+.nom-uploader>.nom-field-content>.nom-control>.nom-button {
+    background-color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .JS-headers {
+        height: 200px;
+    }
+
+    .common-nav .btn {
+        margin-left: 10px;
+    }
 }

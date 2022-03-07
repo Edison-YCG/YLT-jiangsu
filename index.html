@@ -129,6 +129,7 @@
             </div>
         </div>
     </header>
+    <div class="JS-headers"></div>
     <div class="common-backtop">
         <div>
             <svg t="1622955703086" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -463,17 +464,11 @@
             var contentH = $(document).height(); //内容高度
             if (scroH > 100) {
                 //距离顶部大于100px时
-                $("#JS-header")
-                    .addClass("fixed animate__animated animate__slideInDown")
-                    .removeClass("animate__slideInUp");
                 $(".common-backtop")
                     .show()
                     .addClass("animate__animated animate__slideInUp");
             }
             if (scroH < 100) {
-                $("#JS-header")
-                    .removeClass("fixed animate__slideInDown")
-                    .addClass("animate__slideInUp");
                 $(".common-backtop").removeClass("animate__slideInUp").hide();
             }
             if (contentH - (scroH + viewH) <= 100) {
