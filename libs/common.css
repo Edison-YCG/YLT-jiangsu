@@ -220,6 +220,7 @@ body {
 
 .common-header .button-box {
     padding-left: 45px;
+    margin-top: -5px;
 }
 
 .common-header .button-box .btn {
