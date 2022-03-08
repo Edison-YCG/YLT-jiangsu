@@ -149,6 +149,10 @@
   overflow: hidden;
 }
 
+.page-core .meeting-training .table a {
+  color: rgba(0, 0, 0, 0.85);
+}
+
 .page-core .meeting-training .table thead th {
   font-size: 12px;
   font-weight: 400;
