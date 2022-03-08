@@ -1,20 +1,17 @@
 .mechanism-gk.common-division {
   height: 32px;
 }
-
 .mechanism-gk-card1 {
   background: #fff;
   border-radius: 12px;
   box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
 }
-
 .mechanism-gk-card1 .box {
   padding: 9px 42px;
   margin-bottom: 15px;
   position: relative;
   min-height: 101px;
 }
-
 .mechanism-gk-card1 .box .head-img {
   width: 92px;
   height: 92px;
@@ -27,13 +24,11 @@
   top: -17px;
   left: 16px;
 }
-
 .mechanism-gk-card1 .box .head-img img {
   object-fit: cover;
   width: 99%;
   height: 99%;
 }
-
 .mechanism-gk-card1 .box .information {
   padding-top: 20px;
   margin-left: 110px;
@@ -42,14 +37,12 @@
   position: relative;
   z-index: 9;
 }
-
 .mechanism-gk-card1 .box .information h2 {
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 6px;
 }
-
 .mechanism-gk-card1 .box .information .badge {
   font-size: 12px;
   font-weight: 400;
@@ -60,16 +53,13 @@
   border-radius: 0;
   margin: 6px 0;
 }
-
 .mechanism-gk-card1 .box .information .badge:first-child {
   padding-left: 0;
   border-left: none;
 }
-
 .mechanism-gk-card1 .box .information a {
   color: #2B7EFB;
 }
-
 .mechanism-gk-card1 .box .btn {
   float: right;
   margin-top: 39px;
@@ -79,20 +69,16 @@
   color: #888;
   box-shadow: none;
 }
-
 .mechanism-gk-card1 .box .btn svg {
   margin-right: 6px;
 }
-
 .mechanism-gk-card1 .box .btn:hover {
   color: #fff;
   border-color: #0d6efd;
 }
-
 .mechanism-gk-card1 .box .btn:hover svg {
   color: #fff;
 }
-
 .mechanism-gk-card1 .introduce {
   position: relative;
   z-index: 9;
@@ -104,29 +90,23 @@
   margin-bottom: 24px;
   max-height: 72px;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
 }
-
 .mechanism-gk-card1 .introduce.show {
   max-height: initial;
-  display: block;
 }
-
 .mechanism-gk-card1 .introduce .more {
   color: #2B7EFB;
   position: absolute;
-  right: 10px;
+  right: 50px;
   bottom: 0;
   cursor: pointer;
+  width: 96px;
+  background-color: #fff;
   text-align: right;
 }
-
 .mechanism-gk-card1 .nav {
   border-top: 1px dashed #eee;
 }
-
 .mechanism-gk-card1 .nav .nav-link {
   font-size: 14px;
   font-weight: bold;
@@ -134,68 +114,56 @@
   padding: 14px 0;
   margin: 0 35px;
 }
-
 .mechanism-gk-card1 .nav .nav-link:first-child {
   margin-left: 42px;
 }
-
 .mechanism-gk-card1 .nav .nav-link.active,
 .mechanism-gk-card1 .nav .nav-link:hover {
   color: #2B7EFB;
   border-bottom: 3px solid #2B7EFB;
 }
-
 .mechanism-gk-card2 {
   background: #fff;
   border-radius: 12px;
   box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
   margin-bottom: 140px;
 }
-
 .mechanism-gk-card2 .nav {
   border-bottom: 1px dashed #eee;
   padding: 0 35px;
 }
-
 .mechanism-gk-card2 .nav .nav-link {
   font-size: 14px;
   color: #000;
   padding: 2px 15px;
   margin: 24px 55px;
 }
-
 .mechanism-gk-card2 .nav .nav-link:first-child {
   margin-left: 0;
 }
-
 .mechanism-gk-card2 .nav .nav-link.active,
 .mechanism-gk-card2 .nav .nav-link:hover {
   color: #fff;
   border-radius: 20px;
   background-color: #2B7EFB;
 }
-
 .mechanism-gk-card2 .info1 {
   padding: 0 44px;
   padding-top: 40px;
   margin-bottom: 16px;
 }
-
 .mechanism-gk-card2 .info1 .tit {
   color: #888;
   margin-bottom: 6px;
 }
-
 .mechanism-gk-card2 .info1 .sub {
   margin-bottom: 40px;
   font-weight: bold;
 }
-
 .mechanism-gk-card2 .info2 {
   padding: 2px 44px;
   overflow: hidden;
 }
-
 .mechanism-gk-card2 .info2 .table {
   border-radius: 12px;
   margin-bottom: 63px;
@@ -204,35 +172,28 @@
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
-
 .mechanism-gk-card2 .info2 .table thead th {
   font-size: 12px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.85);
 }
-
 .mechanism-gk-card2 .info2 .table thead th:first-child {
   padding-left: 65px;
 }
-
 .mechanism-gk-card2 .info2 .table tbody {
   border-top: none;
 }
-
-.mechanism-gk-card2 .info2 .table tbody tr:nth-of-type(odd)>* {
-  background: #fafafb;
+.mechanism-gk-card2 .info2 .table tbody tr:nth-of-type(odd) > * {
+  background: #fff;
 }
-
 .mechanism-gk-card2 .info2 .table tbody tr td:first-child {
   padding-left: 65px;
 }
-
 .mechanism-gk-card2 .info2 .table th,
 .mechanism-gk-card2 .info2 .table td {
   padding: 11px;
   border-bottom: none;
 }
-
 .mechanism-gk-card2 h2 {
   font-size: 16px;
   font-weight: bold;
@@ -240,7 +201,6 @@
   margin-bottom: 32px;
   position: relative;
 }
-
 .mechanism-gk-card2 h2::after {
   content: '';
   width: 72px;
@@ -252,13 +212,11 @@
   left: -4px;
   bottom: -5px;
 }
-
 .mechanism-gk-card2 .search-box {
   padding: 40px 44px 0;
   position: relative;
   margin-bottom: 24px;
 }
-
 .mechanism-gk-card2 .search-box .form-control {
   display: inline-block;
   width: 320px;
@@ -270,7 +228,6 @@
   padding-left: 16px;
   padding-right: 42px;
 }
-
 .mechanism-gk-card2 .search-box svg {
   position: absolute;
   left: 330px;
@@ -279,54 +236,43 @@
   color: #888;
   z-index: 10;
 }
-
 .mechanism-gk-card2 .search-box svg:hover {
   transform: scale(1.2);
   font-weight: bold;
 }
-
 .mechanism-gk-card2 .search-box svg:active {
   transform: scale(0.95);
 }
-
 .mechanism-gk-card2 .subnav {
   padding: 40px 44px 0;
   margin-bottom: 24px;
 }
-
 .mechanism-gk-card2 .subnav button:first-child {
   border-radius: 20px 0 0 20px;
   box-shadow: none;
   transform: scale(1);
 }
-
 .mechanism-gk-card2 .subnav button:last-child {
   border-radius: 0 20px 20px 0;
   box-shadow: none;
   transform: scale(1);
 }
-
 .mechanism-gk-pagination {
   padding-bottom: 44px;
   padding-right: 44px;
 }
-
 .mechanism-gk-pagination .row .col-md-7 {
   width: 100%;
 }
-
 .mechanism-gk-pagination .pagination .page-item {
   margin-right: 10px;
 }
-
 .mechanism-gk-pagination .pagination .page-item .page-link {
   color: rgba(0, 0, 0, 0.8);
 }
-
 .mechanism-gk-pagination .pagination .page-item .page-link:focus {
   box-shadow: none;
 }
-
 .mechanism-gk-pagination .pagination .page-item.active .page-link {
   color: #fff;
 }
