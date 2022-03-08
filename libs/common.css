@@ -56,7 +56,8 @@ body {
     background: #FAFAFA;
     width: 100%;
     margin: 0 auto;
-    overflow-y: scroll;/* 所有页面都出现滚动条 */
+    overflow-y: scroll;
+    /* 所有页面都出现滚动条 */
     --nom-color-primary: #2B7EFB;
 }
 
@@ -316,6 +317,11 @@ body {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+
+.common-header .button-box .nomui-qa-btn {
+    min-width: 88px;
+    display: inline-block;
 }
 
 .common-nav {
