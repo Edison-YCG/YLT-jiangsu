@@ -257,22 +257,22 @@
   box-shadow: none;
   transform: scale(1);
 }
-.mechanism-gk-card2 .mechanism-gk-pagination {
+.mechanism-gk-pagination {
   padding-bottom: 44px;
   padding-right: 44px;
 }
-.mechanism-gk-card2 .mechanism-gk-pagination .row .col-md-7 {
+.mechanism-gk-pagination .row .col-md-7 {
   width: 100%;
 }
-.mechanism-gk-card2 .mechanism-gk-pagination .pagination .page-item {
+.mechanism-gk-pagination .pagination .page-item {
   margin-right: 10px;
 }
-.mechanism-gk-card2 .mechanism-gk-pagination .pagination .page-item .page-link {
+.mechanism-gk-pagination .pagination .page-item .page-link {
   color: rgba(0, 0, 0, 0.8);
 }
-.mechanism-gk-card2 .mechanism-gk-pagination .pagination .page-item .page-link:focus {
+.mechanism-gk-pagination .pagination .page-item .page-link:focus {
   box-shadow: none;
 }
-.mechanism-gk-card2 .mechanism-gk-pagination .pagination .page-item.active .page-link {
+.mechanism-gk-pagination .pagination .page-item.active .page-link {
   color: #fff;
 }
