@@ -128,6 +128,11 @@
   }
   .meeting-training {
     padding-top: 21px;
+    .nav {
+      .nav-link {
+        padding: 4px 10px;
+      }
+    }
     .table {
       margin-top: 20px;
       margin-bottom: 63px;
@@ -153,7 +158,7 @@
         border-top: none;
 
         tr:nth-of-type(odd)>* {
-          background: #fafafb;
+          background: #fff;
         }
 
         tr td:first-child {
