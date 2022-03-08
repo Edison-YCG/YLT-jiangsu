@@ -98,7 +98,7 @@
         width: calc(100% - 25px);
         padding-top: 24px;
         height: 159px;
-        font-size: 12px;
+        font-size: 14px;
         padding-bottom: 25px;
         .project-title {
           font-weight: bold;
@@ -113,10 +113,12 @@
             font-weight: 500;
           }
           span:nth-last-of-type(1) {
-            opacity: .4;
+            // opacity: .4;
+            color: #323333;
           }
         }
         .project-range {
+          font-size: 12px;
           opacity: .4;;
         }
       }

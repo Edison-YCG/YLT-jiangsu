@@ -113,7 +113,7 @@
   width: calc(100% - 25px);
   padding-top: 24px;
   height: 159px;
-  font-size: 12px;
+  font-size: 14px;
   padding-bottom: 25px;
 }
 
@@ -137,10 +137,11 @@
 }
 
 .page-mechanism .mm-list .card .card-bottom .project-item span:nth-last-of-type(1) {
-  opacity: .4;
+  color: #323333;
 }
 
 .page-mechanism .mm-list .card .card-bottom .project-range {
+  font-size: 12px;
   opacity: .4;
 }
 /*# sourceMappingURL=mechanism.css.map */
