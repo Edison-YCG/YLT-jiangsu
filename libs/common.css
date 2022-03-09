@@ -66,7 +66,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999999;
+    z-index: 5555;
     box-shadow: 0 1px 0 rgb(0, 0, 0, 0.06);
 }
 
@@ -79,7 +79,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999999;
+    z-index: 5555;
     box-shadow: 0 7px 5px -5px #a8aab9;
 }
 
@@ -87,7 +87,7 @@ body {
     position: fixed;
     right: 30px;
     bottom: 120px;
-    z-index: 999999;
+    z-index: 5555;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
