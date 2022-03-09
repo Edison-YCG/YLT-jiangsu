@@ -58,12 +58,6 @@
     background-image: url('../themes/basic/assets/index-banner.png');
 }
 
-@media (max-width: 1024px) {
-    .ix-column-1 .index-banner {
-        height: 380px;
-    }
-}
-
 .ix-column-2 {
     padding-top: 56px;
     margin-bottom: 56px;
@@ -360,4 +354,10 @@
     border-radius: 12px;
     border: 1px solid #2B7EFB;
     padding: 3px 30px;
+}
+
+@media (max-width: 1600px) {
+    .ix-column-1 .index-banner {
+        height: 380px;
+    }
 }

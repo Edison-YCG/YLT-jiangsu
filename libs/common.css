@@ -570,7 +570,43 @@ table.nom-table th {
     -o-border-radius: 50px !important;
 }
 
+#nameFilter .nom-control .nom-select-arrow,
+#nameFilter .nom-control .nom-select-clear {
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.fc .fc-col-header-cell-cushion {
+    padding: 9px 4px;
+    font-size: 16px;
+}
+
+.fc .fc-daygrid-day-number {
+    padding: 20px 16px;
+    font-size: 18px;
+}
+
+.fc-direction-ltr .fc-daygrid-event.fc-event-end,
+.fc-direction-rtl .fc-daygrid-event.fc-event-start,
+.fc-direction-ltr .fc-daygrid-event.fc-event-start,
+.fc-direction-rtl .fc-daygrid-event.fc-event-end {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+    background-color: rgb(84, 150, 196, 0.08);
+}
+
+.fc .fc-toolbar-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .fc-today-button {
+    background-color: #fff !important;
+    color: #0d6efd !important;
     border-radius: 50px 0 0 50px !important;
     -webkit-border-radius: 50px 0 0 50px !important;
     -moz-border-radius: 50px 0 0 50px !important;
@@ -579,6 +615,7 @@ table.nom-table th {
 }
 
 .fc-next-button {
+    box-shadow: none !important;
     border-radius: 0 50px 50px 0 !important;
     -webkit-border-radius: 0 50px 50px 0 !important;
     -moz-border-radius: 0 50px 50px 0 !important;
@@ -633,7 +670,11 @@ table.nom-table th {
     background-color: #fff;
 }
 
-@media (max-width: 1024px) {
+.nom-layout-body {
+    background: #fff !important;
+}
+
+@media (max-width: 1600px) {
     .JS-headers {
         height: 200px;
     }
