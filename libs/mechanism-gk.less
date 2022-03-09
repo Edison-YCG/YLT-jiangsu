@@ -103,20 +103,22 @@
         margin-bottom: 24px;
         max-height: 72px;
         overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
 
         &.show {
             max-height: initial;
+            display: block;
         }
 
         .more {
             color: #2B7EFB;
             position: absolute;
-            right: 50px;
+            right: 15px;
             bottom: 0;
             cursor: pointer;
-            width: 96px;
-            background-color: #fff;
-            text-align: right;
         }
     }
 

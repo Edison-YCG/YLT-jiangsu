@@ -90,19 +90,21 @@
   margin-bottom: 24px;
   max-height: 72px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .mechanism-gk-card1 .introduce.show {
   max-height: initial;
+  display: block;
 }
 .mechanism-gk-card1 .introduce .more {
   color: #2B7EFB;
   position: absolute;
-  right: 50px;
+  right: 15px;
   bottom: 0;
   cursor: pointer;
-  width: 96px;
-  background-color: #fff;
-  text-align: right;
 }
 .mechanism-gk-card1 .nav {
   border-top: 1px dashed #eee;
