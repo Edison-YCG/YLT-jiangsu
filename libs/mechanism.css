@@ -89,6 +89,7 @@
 .page-mechanism .mm-list .card .card-top img {
   width: 48px;
   height: 48px;
+  border-radius: 50%;
 }
 
 .page-mechanism .mm-list .card .card-top-right .card-name {
