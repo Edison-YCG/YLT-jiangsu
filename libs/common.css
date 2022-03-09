@@ -56,6 +56,7 @@ body {
     background: #FAFAFA;
     width: 100%;
     margin: 0 auto;
+    min-width: 1024px;
     overflow-y: scroll;
     /* 所有页面都出现滚动条 */
     --nom-color-primary: #2B7EFB;
@@ -689,6 +690,17 @@ table.nom-table th {
 @media (max-width: 1024px) {
     .JS-headers {
         height: 195px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .container,
+    .container-md,
+    .container-sm {
+        width: 960px;
+        max-width: 960px;
     }
 
 }
