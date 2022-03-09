@@ -231,7 +231,7 @@ body {
     color: #FFFFFF;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.6);
-    margin-right: 20px;
+    margin-right: 10px;
     background-color: #2B7EFB;
 }
 
@@ -369,7 +369,7 @@ body {
     padding: 0 24px;
     height: 32px;
     line-height: 2.5;
-    margin-left: 20px;
+    margin-left: 10px;
     box-shadow: none !important;
 }
 
@@ -686,12 +686,9 @@ table.nom-table th {
     margin-top: 1em
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1024px) {
     .JS-headers {
-        height: 200px;
+        height: 195px;
     }
 
-    .common-nav .btn {
-        margin-left: 10px;
-    }
 }
