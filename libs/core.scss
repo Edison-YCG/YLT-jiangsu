@@ -103,30 +103,7 @@
       }
     }
   }
-  .core-pagination {
-    // 适配abp分页组件的dom结构
-    .row {
-      .col-md-7 {
-        width: 100%;
-      }
-    }
-    .pagination {
-      .page-item {
-        margin-right: 10px;
-        .page-link {
-          color: rgba(0, 0, 0, .8);
-          &:focus {
-            box-shadow: none;
-          }
-        }
-        &.active {
-          .page-link {
-            color: #fff;
-          }
-        }
-      }
-    }
-  }
+
   .meeting-training {
     padding-top: 21px;
     .nav {
@@ -173,6 +150,31 @@
       td {
         padding: 11px;
         border-bottom: none;
+      }
+    }
+  }
+}
+
+.core-pagination {
+  // 适配abp分页组件的dom结构
+  .row {
+    .col-md-7 {
+      width: 100%;
+    }
+  }
+  .pagination {
+    .page-item {
+      margin-right: 10px;
+      .page-link {
+        color: rgba(0, 0, 0, .8);
+        &:focus {
+          box-shadow: none;
+        }
+      }
+      &.active {
+        .page-link {
+          color: #fff;
+        }
       }
     }
   }
