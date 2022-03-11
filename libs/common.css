@@ -687,12 +687,6 @@ table.nom-table th {
     margin-bottom: 1em;
 }
 
-.container,
-.container-md,
-.container-sm {
-    min-width: 960px;
-}
-
 @media (max-width: 1024px) {
     .JS-headers {
         height: 195px;
