@@ -675,18 +675,6 @@ table.nom-table th {
     background: #fff !important;
 }
 
-.nom-file-list {
-    margin-top: 0;
-}
-
-.nom-file-list> :not(:last-child) {
-    margin-bottom: 0;
-}
-
-.nom-file-list> :not(:frist-child) {
-    margin-top: 1em
-}
-
 @media (max-width: 1024px) {
     .JS-headers {
         height: 195px;
