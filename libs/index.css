@@ -362,7 +362,44 @@
     padding: 3px 30px;
 }
 
-@media (max-width: 1600px) {
+@media (min-width: 1400px) and (max-width: 1600px) {
+    .ix-column-1 .index-banner {
+        height: 380px;
+    }
+
+    .ix-column-2 .card-text a .txt {
+        max-width: 375px;
+    }
+
+    .ix-column-2 .row>.col-6:nth-child(2)>.card .card-text .txt {
+        max-width: 460px;
+    }
+
+    .ix-column-3 .type-1 .card-text {
+        max-width: 645px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.99px) {
+    .ix-column-1 .index-banner {
+        height: 380px;
+    }
+
+    .ix-column-2 .card-text a .txt {
+        max-width: 280px;
+    }
+
+    .ix-column-2 .row>.col-6:nth-child(2)>.card .card-text .txt {
+        max-width: 360px;
+    }
+
+    .ix-column-3 .type-1 .card-text {
+        max-width: 555px;
+    }
+
+}
+
+@media only screen and (max-width: 1199.99px) {
     .ix-column-1 .index-banner {
         height: 380px;
     }
@@ -378,4 +415,5 @@
     .ix-column-3 .type-1 .card-text {
         max-width: 460px;
     }
+
 }
