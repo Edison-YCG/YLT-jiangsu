@@ -6730,13 +6730,13 @@ table.nom-table.p-bordered {
 }
 .nom-grid .nom-grid-setting {
   position: absolute;
-  top: 7px;
-  right: 5px;
+  top: 0;
+  right: 0;
   z-index: 11;
   background: var(--nom-grid-header-background-color);
 }
-.nom-grid .nom-grid-setting:hover:hover {
-  background-color: var(--nom-color-hover);
+.nom-grid .nom-grid-setting .nom-grid-setting-btn {
+  margin: 8px 2px 0 0;
 }
 .nom-grid > .nom-grid-header {
   overflow: hidden;
@@ -9069,7 +9069,7 @@ textarea .nom-textarea {
   line-height: 1.42857143rem;
   background: var(--nom-bg-color);
   border: 1px solid var(--nom-border-color);
-  border-radius: 2px;
+  border-radius: var(--nom-border-radius);
   cursor: pointer;
 }
 .nom-cascader > .nom-field-content .nom-control:hover {
@@ -9089,6 +9089,9 @@ textarea .nom-textarea {
 .nom-cascader > .nom-field-content .nom-control .nom-cascader-placeholder {
   color: var(--nom-input-placeholder-color);
 }
+.nom-cascader-popup {
+  overflow: hidden;
+}
 .nom-cascader-popup > .nom-layout {
   max-height: 300px;
 }
@@ -9102,7 +9105,7 @@ textarea .nom-textarea {
   display: inline-block;
   min-width: 111px;
   margin: 0;
-  padding: 4px 0;
+  padding: 0;
   overflow: auto;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -9110,6 +9113,9 @@ textarea .nom-textarea {
   vertical-align: top;
   list-style: none;
   border-right: 1px solid var(--nom-border-color);
+}
+.nom-cascader-popup > .nom-layout > .nom-layout-body .nom-cascader-menu:last-child {
+  border-right: none;
 }
 .nom-cascader-popup > .nom-layout > .nom-layout-body .nom-cascader-menu:hover {
   overflow-y: auto;
@@ -9377,6 +9383,7 @@ textarea .nom-textarea {
   display: none;
 }
 .nom-steps.nom-steps-vertical > .nom-step > .nom-step-item-container > .nom-step-item-content > .nom-step-item-description {
+  min-height: 3rem;
   padding-bottom: 1rem;
 }
 .nom-steps.nom-steps-vertical > .nom-step:not(:last-child) > .nom-step-item-container > .nom-step-item-tail {
