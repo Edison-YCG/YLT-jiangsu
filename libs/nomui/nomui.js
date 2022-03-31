@@ -424,6 +424,14 @@
     return el.currentStyle // 兼容IE的写法
   }
 
+  // 处理火狐浏览器下的 sortable 拖拽打开新标签页的bug
+  function defaultSortableOndrop() {
+    document.body.ondrop = function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    };
+  }
+
   var index$1 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     isPlainObject: isPlainObject,
@@ -448,6 +456,7 @@
     debounce: debounce,
     isNotEmptyArray: isNotEmptyArray,
     getStyle: getStyle,
+    defaultSortableOndrop: defaultSortableOndrop,
     isBrowerSupportSticky: isBrowerSupportSticky,
     isChrome49: isChrome49
   });
@@ -2319,12 +2328,7 @@
 
   class Icon extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        type: '',
-        tag: 'i',
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Icon.defaults, props), ...mixins);
     }
 
     _config() {
@@ -2334,7 +2338,10 @@
       });
     }
   }
-
+  Icon.defaults = {
+    type: '',
+    tag: 'i',
+  };
   Icon.svgs = {};
 
   Icon.add = function (type, svg, cat) {
@@ -2362,6 +2369,31 @@
 
   /* Direction */
   let cat = 'Direction';
+
+  Icon.add(
+    'prev',
+    `<svg t="1648458859637" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3969" width="1em" height="1em"><path d="M378.24 512l418.88 418.88L704 1024 192 512l512-512 93.12 93.12z" fill="currentColor" p-id="3970"></path></svg>`,
+    cat,
+  );
+
+  Icon.add(
+    'next',
+    `<svg t="1648458872022" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4111" width="1em" height="1em"><path d="M610.88 512L192 93.12 285.12 0l512 512-512 512L192 930.88z" fill="currentColor" p-id="4112"></path></svg>`,
+    cat,
+  );
+
+  Icon.add(
+    'angle-up',
+    `<svg t="1648459016487" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4253" width="1em" height="1em"><path d="M512 378.24l-418.88 418.88L0 704l512-512 512 512-93.12 93.12z" fill="currentColor" p-id="4254"></path></svg>`,
+    cat,
+  );
+
+  Icon.add(
+    'angle-down',
+    `<svg t="1648459032734" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4395" width="1em" height="1em"><path d="M512 610.88L930.88 192 1024 285.12l-512 512-512-512L93.12 192z" fill="currentColor" p-id="4396"></path></svg>`,
+    cat,
+  );
+
   Icon.add(
     'up',
     `<svg focusable="false" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"><path d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>`,
@@ -2444,7 +2476,7 @@
 
   Icon.add(
     'close',
-    `<svg t="1610503666305" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2041" width="1em" height="1em"><path d="M572.16 512l183.466667-183.04a42.666667 42.666667 0 1 0-60.586667-60.586667L512 451.84l-183.04-183.466667a42.666667 42.666667 0 0 0-60.586667 60.586667l183.466667 183.04-183.466667 183.04a42.666667 42.666667 0 0 0 0 60.586667 42.666667 42.666667 0 0 0 60.586667 0l183.04-183.466667 183.04 183.466667a42.666667 42.666667 0 0 0 60.586667 0 42.666667 42.666667 0 0 0 0-60.586667z" p-id="2042"></path></svg>`,
+    `<svg t="1610503666305" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" p-id="2041" width="1em" height="1em"><path d="M572.16 512l183.466667-183.04a42.666667 42.666667 0 1 0-60.586667-60.586667L512 451.84l-183.04-183.466667a42.666667 42.666667 0 0 0-60.586667 60.586667l183.466667 183.04-183.466667 183.04a42.666667 42.666667 0 0 0 0 60.586667 42.666667 42.666667 0 0 0 60.586667 0l183.04-183.466667 183.04 183.466667a42.666667 42.666667 0 0 0 60.586667 0 42.666667 42.666667 0 0 0 0-60.586667z" p-id="2042"></path></svg>`,
     cat,
   );
 
@@ -2456,7 +2488,7 @@
 
   Icon.add(
     'eye',
-    `<svg t="1610611013413" class="icon" viewBox="0 0 1603 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6374" width="1em" height="1em"><path d="M1439.175 502.814c-115.521-233.355-352.825-384.097-616.997-384.097-259.691-0.005-493.642 145.659-611.326 372.903-2.359 4.465-3.744 9.761-3.744 15.379 0 5.406 1.282 10.511 3.557 15.029 115.433 233.162 352.737 383.907 616.905 383.907 259.697 0 493.646-145.659 611.331-372.907 2.359-4.465 3.744-9.761 3.744-15.379 0-5.406-1.282-10.511-3.557-15.029zM827.575 839.278c-232.958 0-442.764-129.694-549.788-331.936 108.743-196.761 315.477-321.972 544.393-321.972 232.958 0 442.764 129.699 549.788 331.94-108.743 196.761-315.483 321.972-544.393 321.972zM952.959 642.373c33.654-34.619 52.858-81.01 52.858-130.373 0-103.084-83.211-186.644-185.849-186.644-102.641 0-185.849 83.561-185.849 186.644s83.206 186.644 185.849 186.644c14.662 0 26.548-11.937 26.548-26.663 0-14.722-11.885-26.661-26.548-26.661-73.319 0-132.749-59.689-132.749-133.319s59.431-133.319 132.749-133.319c73.314 0 132.745 59.689 132.745 133.319 0 35.301-13.68 68.366-37.751 93.123-4.671 4.809-7.55 11.38-7.55 18.623 0 7.469 3.061 14.223 7.998 19.075 4.777 4.693 11.327 7.588 18.553 7.588 7.449 0 14.181-3.078 18.991-8.031z" p-id="6375"></path></svg>`,
+    `<svg t="1610611013413" class="icon" viewBox="0 0 1603 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6374" width="1em" height="1em"  fill="currentColor"><path d="M1439.175 502.814c-115.521-233.355-352.825-384.097-616.997-384.097-259.691-0.005-493.642 145.659-611.326 372.903-2.359 4.465-3.744 9.761-3.744 15.379 0 5.406 1.282 10.511 3.557 15.029 115.433 233.162 352.737 383.907 616.905 383.907 259.697 0 493.646-145.659 611.331-372.907 2.359-4.465 3.744-9.761 3.744-15.379 0-5.406-1.282-10.511-3.557-15.029zM827.575 839.278c-232.958 0-442.764-129.694-549.788-331.936 108.743-196.761 315.477-321.972 544.393-321.972 232.958 0 442.764 129.699 549.788 331.94-108.743 196.761-315.483 321.972-544.393 321.972zM952.959 642.373c33.654-34.619 52.858-81.01 52.858-130.373 0-103.084-83.211-186.644-185.849-186.644-102.641 0-185.849 83.561-185.849 186.644s83.206 186.644 185.849 186.644c14.662 0 26.548-11.937 26.548-26.663 0-14.722-11.885-26.661-26.548-26.661-73.319 0-132.749-59.689-132.749-133.319s59.431-133.319 132.749-133.319c73.314 0 132.745 59.689 132.745 133.319 0 35.301-13.68 68.366-37.751 93.123-4.671 4.809-7.55 11.38-7.55 18.623 0 7.469 3.061 14.223 7.998 19.075 4.777 4.693 11.327 7.588 18.553 7.588 7.449 0 14.181-3.078 18.991-8.031z" p-id="6375"></path></svg>`,
     cat,
   );
 
@@ -2480,25 +2512,31 @@
 
   Icon.add(
     'sort',
-    `<svg t="1616635066835" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9750" width="1em" height="1em"><path d="M804.57143 621.714286q0 14.848-10.825143 25.746286l-256 256q-10.825143 10.825143-25.746286 10.825143t-25.746286-10.825143l-256-256q-10.825143-10.825143-10.825143-25.746286t10.825143-25.746286 25.746286-10.825143l512 0q14.848 0 25.746286 10.825143t10.825143 25.746286zM804.57143 402.285714q0 14.848-10.825143 25.746286t-25.746286 10.825143l-512 0q-14.848 0-25.746286-10.825143t-10.825143-25.746286 10.825143-25.746286l256-256q10.825143-10.825143 25.746286-10.825143t25.746286 10.825143l256 256q10.825143 10.825143 10.825143 25.746286z"  fill="currentColor" p-id="9751"></path></svg>`,
+    `<svg t="1648697046294" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2976" width="1em" height="1em"><path d="M788.8384 580.2496c31.6416 0 39.5776 32.768 18.944 53.9648l-267.776 275.968a40.2432 40.2432 0 0 1-56.1152 0l-267.7248-275.968c-20.5824-21.1968-12.5952-53.9648 18.944-53.9648z m-248.832-466.432l267.776 275.968c20.6336 21.1968 12.6976 53.9648-18.944 53.9648H235.1104c-31.5392 0-39.5264-32.768-18.944-53.9648l267.7248-275.968a40.2432 40.2432 0 0 1 56.1664 0z" fill="currentColor" p-id="2977"></path></svg>`,
     cat,
   );
 
   Icon.add(
     'sort-down',
-    `<svg t="1616635159124" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10028" width="1em" height="1em"><path d="M804.571184 621.714286q0 14.848-10.825143 25.746286l-256 256q-10.825143 10.825143-25.746286 10.825143t-25.746286-10.825143l-256-256q-10.825143-10.825143-10.825143-25.746286t10.825143-25.746286 25.746286-10.825143l512 0q14.848 0 25.746286 10.825143t10.825143 25.746286z" fill="currentColor" p-id="10029"></path></svg>`,
+    `<svg t="1648697089872" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3122" width="1em" height="1em"><path d="M906.4448 336.896l-356.9664 414.0032a49.5104 49.5104 0 0 1-74.9056 0L117.5552 336.896C90.112 305.152 100.7104 256 142.8992 256h738.304c42.0352 0 52.6848 49.152 25.2416 80.896z" fill="currentColor" p-id="3123"></path></svg>`,
     cat,
   );
 
   Icon.add(
     'sort-up',
-    `<svg t="1616635124506" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9889" width="1em" height="1em"><path d="M804.571671 402.285714q0 14.848-10.825143 25.746286t-25.746286 10.825143l-512 0q-14.848 0-25.746286-10.825143t-10.825143-25.746286 10.825143-25.746286l256-256q10.825143-10.825143 25.746286-10.825143t25.746286 10.825143l256 256q10.825143 10.825143 10.825143 25.746286z" fill="currentColor" p-id="9890"></path></svg>`,
+    `<svg t="1648697108373" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3418" width="1em" height="1em"><path d="M906.4448 687.104l-356.9664-414.0032a49.5104 49.5104 0 0 0-74.9056 0L117.5552 687.104c-27.4432 31.744-16.8448 80.896 25.344 80.896h738.304c42.0352 0 52.6848-49.152 25.2416-80.896z" fill="currentColor" p-id="3419"></path></svg>`,
     cat,
   );
 
   Icon.add(
     'sort-right',
-    `<svg t="1618369427378" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4408" width="1em" height="1em" fill="currentColor"><path d="M718.848 512L307.2 926.72V96.768l411.648 415.232z" p-id="4409"></path></svg>`,
+    `<svg t="1648697122767" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3566" width="1em" height="1em"><path d="M336.896 906.4448l414.0032-356.9664a49.5104 49.5104 0 0 0 0-74.9056L336.896 117.5552C305.152 90.112 256 100.7104 256 142.8992v738.304c0 42.0352 49.152 52.6848 80.896 25.2416z" fill="currentColor" p-id="3567"></path></svg>`,
+    cat,
+  );
+
+  Icon.add(
+    'sort-left',
+    `<svg t="1648697098071" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3270" width="1em" height="1em"><path d="M687.104 906.4448l-414.0032-356.9664a49.5104 49.5104 0 0 1 0-74.9056l414.0032-357.0176c31.744-27.4432 80.896-16.8448 80.896 25.344v738.304c0 42.0352-49.152 52.6848-80.896 25.2416z" fill="currentColor" p-id="3271"></path></svg>`,
     cat,
   );
 
@@ -2590,7 +2628,7 @@
 
   Icon.add(
     'times',
-    `<svg t="1610503666305" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2041" width="1em" height="1em"><path d="M572.16 512l183.466667-183.04a42.666667 42.666667 0 1 0-60.586667-60.586667L512 451.84l-183.04-183.466667a42.666667 42.666667 0 0 0-60.586667 60.586667l183.466667 183.04-183.466667 183.04a42.666667 42.666667 0 0 0 0 60.586667 42.666667 42.666667 0 0 0 60.586667 0l183.04-183.466667 183.04 183.466667a42.666667 42.666667 0 0 0 60.586667 0 42.666667 42.666667 0 0 0 0-60.586667z" p-id="2042"></path></svg>`,
+    `<svg t="1610503666305" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2041" width="1em" height="1em" fill="currentColor"><path d="M572.16 512l183.466667-183.04a42.666667 42.666667 0 1 0-60.586667-60.586667L512 451.84l-183.04-183.466667a42.666667 42.666667 0 0 0-60.586667 60.586667l183.466667 183.04-183.466667 183.04a42.666667 42.666667 0 0 0 0 60.586667 42.666667 42.666667 0 0 0 60.586667 0l183.04-183.466667 183.04 183.466667a42.666667 42.666667 0 0 0 60.586667 0 42.666667 42.666667 0 0 0 0-60.586667z" p-id="2042"></path></svg>`,
     cat,
   );
 
@@ -2664,7 +2702,13 @@
   cat = 'Common';
   Icon.add(
     'upload',
-    `<svg viewBox="64 64 896 896" focusable="false" data-icon="upload" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 00-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"></path></svg>`,
+    `<svg t="1648175489426" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8288" fill="currentColor" width="1em" height="1em"><path d="M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163c-3.2-4.1-9.4-4.1-12.6 0l-112 141.7c-4.1 5.3-0.4 13 6.3 13z" p-id="8289"></path><path d="M878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z" p-id="8290"></path></svg>`,
+    cat,
+  );
+
+  Icon.add(
+    'download',
+    `<svg t="1648175417253" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6484" fill="currentColor" width="1em" height="1em"><path d="M505.7 661c3.2 4.1 9.4 4.1 12.6 0l112-141.7c4.1-5.2 0.4-12.9-6.3-12.9h-74.1V168c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8z" p-id="6485"></path><path d="M878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z" p-id="6486"></path></svg>`,
     cat,
   );
 
@@ -2715,37 +2759,11 @@
     cat,
   );
 
-  Icon.add(
-    'template-down',
-    `<svg t="1646045982149" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" p-id="5695" width="1em" height="1em"><path d="M879.162 929.262h-734.197c-13.261 0-24.010-10.749-24.010-24.010v-160.838c0-13.261 10.75-24.010 24.010-24.010s24.010 10.749 24.010 24.010v136.827h686.175v-136.827c0-13.261 10.749-24.010 24.010-24.010s24.010 10.749 24.010 24.010v160.838c0.001 13.261-10.748 24.010-24.009 24.010zM513.242 768.423c-6.016 0-12.030-2.248-16.683-6.743l-210.744-203.6c-9.537-9.214-9.799-24.413-0.585-33.952 9.215-9.538 24.415-9.798 33.953-0.585l194.060 187.482 194.060-187.482c9.536-9.214 24.737-8.951 33.952 0.585 9.214 9.537 8.951 24.738-0.584 33.952l-210.745 203.6c-4.652 4.494-10.667 6.743-16.682 6.743zM513.242 768.423c-13.261 0-24.010-10.749-24.010-24.010v-625.829c0-13.261 10.749-24.010 24.010-24.010s24.010 10.75 24.010 24.010v625.829c0 13.261-10.749 24.010-24.010 24.010z" fill="currentColor" p-id="5696"></path></svg>`,
-    cat,
-  );
-
-  Icon.add(
-    'template-my-down',
-    `<svg t="1646045243014" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" p-id="3160" width="18" height="18"><path d="M731.1 778.9V617.5c0-5.6-4.5-10.1-10.1-10.1h-59.5c-5.6 0-10.1 4.5-10.1 10.1v161.4h-40.7c-3.9 0-6.3 4.2-4.4 7.6l80.1 136.6c2 3.3 6.8 3.3 8.7 0l80.1-136.6c2-3.4-0.5-7.6-4.4-7.6h-39.7zM503.5 464.5H297c-14.9 0-27-12.2-27-27v-2c0-14.9 12.2-27 27-27h206.5c14.9 0 27 12.2 27 27v2c0 14.8-12.1 27-27 27zM568.6 564.6H297c-14.9 0-27-12.2-27-27v-2c0-14.9 12.2-27 27-27h271.6c14.9 0 27 12.2 27 27v2c0 14.8-12.1 27-27 27z" fill="currentColor" p-id="3161"></path><path d="M470.7 860.7h-249V165.8h376.6v204.1h204.3l0.1 188.2c22.4 10.2 43 23.6 61.2 39.7V365.7c0-7.5-3-14.6-8.2-19.9L616 106.5c-5.3-5.3-12.4-8.2-19.9-8.2H174.5c-7.8 0-14.1 6.3-14.1 14.1v801.9c0 7.8 6.3 14.1 14.1 14.1h332.2c-15.3-20.5-27.6-43.2-36-67.7z" fill="currentColor" p-id="3162"></path><path d="M526.5 608.6H296.1c-14.3 0-26.1 12.6-26.1 28s11.7 28 26.1 28h191.8c10.5-20.5 23.5-39.3 38.6-56zM467.6 708.7H296.1c-14.3 0-26.1 12.6-26.1 28s11.7 28 26.1 28h162c1.3-19.3 4.5-38.1 9.5-56z" fill="currentColor" p-id="3163"></path></svg>`,
-    cat,
-  );
-
-  Icon.add(
-    'template-packag',
-    `<svg t="1646045682626" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" p-id="4211" width="24" height="24"><path d="M795.887 346.235L525.835 205.382a29.989 29.989 0 0 0-27.572-0.065L228.309 343.956A30.008 30.008 0 0 0 212 370.649V657.4a29.996 29.996 0 0 0 16.634 26.855l269.987 134.603a29.994 29.994 0 0 0 26.758 0l269.987-134.603C805.555 679.21 812 668.793 812 657.433v-284.57a30.046 30.046 0 0 0-16.113-26.628zM509.754 481.814l-101.367-49.87 229.59-122.949 98.991 51.628-227.214 121.191z m2.181-238.574l83.106 43.359L364.214 410.2l-90.56-44.564L511.935 243.24zM252.007 399.588l95.768 47.103v105.176c0 11.035 8.952 19.987 19.987 19.987s19.987-8.952 19.987-19.987v-85.481l104.264 51.27v253.223L252.007 651.215V399.588z m279.98 371.289V515.245l240.007-127.962v263.932L531.987 770.877z m0 0" fill="currentColor" p-id="4212"></path></svg>`,
-    cat,
-  );
-
   class Caption extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        title: '',
-        subtitle: '',
-        icon: null,
-        image: null,
-        titleLevel: 5,
-      };
-
       const tagProp = props.href ? { tag: 'a' } : {};
 
-      super(Component.extendProps(defaults, props, tagProp), ...mixins);
+      super(Component.extendProps(Caption.defaults, props, tagProp), ...mixins);
     }
 
     _config() {
@@ -2753,13 +2771,18 @@
       const { title, subtitle, icon, image, href, titleLevel } = this.props;
       const children = [];
       if (isPlainObject(image)) {
-        children.push(Component.extendProps({ tag: 'img', classes: { 'nom-caption-image': true } }, image));
-      }
-      else if (isString(image)) {
+        children.push(
+          Component.extendProps({ tag: 'img', classes: { 'nom-caption-image': true } }, image),
+        );
+      } else if (isString(image)) {
         children.push({ tag: 'img', classes: { 'nom-caption-image': true }, attrs: { src: image } });
-      }
-      else if (icon) {
-        children.push(Component.extendProps({ classes: { 'nom-caption-icon': true } }, Component.normalizeIconProps(icon)));
+      } else if (icon) {
+        children.push(
+          Component.extendProps(
+            { classes: { 'nom-caption-icon': true } },
+            Component.normalizeIconProps(icon),
+          ),
+        );
       }
       const titleTag = `h${titleLevel}`;
       children.push({
@@ -2777,6 +2800,14 @@
       });
     }
   }
+
+  Caption.defaults = {
+    title: '',
+    subtitle: '',
+    icon: null,
+    image: null,
+    titleLevel: 5,
+  };
 
   Component.register(Caption);
 
@@ -2919,17 +2950,7 @@
 
   class Panel extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        header: null,
-        body: null,
-        footer: null,
-        uistyle: 'default', // splitline,outline,card,bordered,plain
-        startAddons: [],
-        endAddons: [],
-        fit: false
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Panel.defaults, props), ...mixins);
     }
 
     _config() {
@@ -2949,7 +2970,15 @@
       });
     }
   }
-
+  Panel.defaults = {
+    header: null,
+    body: null,
+    footer: null,
+    uistyle: 'default', // splitline,outline,card,bordered,plain
+    startAddons: [],
+    endAddons: [],
+    fit: false,
+  };
   Component.register(Panel);
 
   Object.defineProperty(Component.prototype, '$modal', {
@@ -2984,7 +3013,7 @@
   class ModalDialog extends Component {
     constructor(props, ...mixins) {
       const defaults = {
-        children: { component: Panel },
+        children: { component: Panel, uistyle: 'plain' },
       };
 
       super(Component.extendProps(defaults, props), ...mixins);
@@ -3041,6 +3070,7 @@
       return {
         component: Panel,
         fit: fit,
+        uistyle: 'plain',
         header: {
           nav: {},
           tools: [
@@ -3064,9 +3094,7 @@
                 Component.extendProps(
                   {
                     component: 'Button',
-                    styles: {
-                      color: 'primary',
-                    },
+                    type: 'primary',
                     text: okText,
                     onClick: () => {
                       modal._handleOk();
@@ -3126,22 +3154,7 @@
 
   class Modal extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        content: {},
-        closeOnClickOutside: false,
-        okText: '确 定',
-        cancelText: '取 消',
-        onOk: (e) => {
-          e.sender.close();
-        },
-        onCancel: (e) => {
-          e.sender.close();
-        },
-        size: 'small',
-        centered: true,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Modal.defaults, props), ...mixins);
     }
 
     _created() {
@@ -3251,7 +3264,20 @@
       this._callHandler(this.props.onCancel);
     }
   }
-
+  Modal.defaults = {
+    content: {},
+    closeOnClickOutside: false,
+    okText: '确 定',
+    cancelText: '取 消',
+    onOk: (e) => {
+      e.sender.close();
+    },
+    onCancel: (e) => {
+      e.sender.close();
+    },
+    size: 'small',
+    centered: true,
+  };
   Component.register(Modal);
 
   class Button extends Component {
@@ -3377,9 +3403,7 @@
 
       const okButtonProps = {
         component: Button,
-        styles: {
-          color: 'primary',
-        },
+        type: 'primary',
         text: okText,
         onClick: () => {
           alertInst._handleOk();
@@ -3436,19 +3460,7 @@
 
   class Alert extends Modal {
     constructor(props, ...mixins) {
-      const defaults = {
-        type: 'default',
-        icon: null,
-        title: null,
-        description: null,
-        okText: '知道了',
-        onOk: (e) => {
-          e.sender.close();
-        },
-        action: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Alert.defaults, props), ...mixins);
     }
 
     _config() {
@@ -3468,24 +3480,22 @@
       super._config();
     }
   }
-
+  Alert.defaults = {
+    type: 'default',
+    icon: null,
+    title: null,
+    description: null,
+    okText: '知道了',
+    onOk: (e) => {
+      e.sender.close();
+    },
+    action: null,
+  };
   Component.register(Alert);
 
   class Anchor extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        container: null,
-        items: [],
-        border: 'left',
-        onItemClick: null,
-        width: 180,
-        sticky: false,
-        itemDefaults: null,
-        offset: 0,
-        activeKey: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Anchor.defaults, props), ...mixins);
     }
 
     _created() {
@@ -3666,15 +3676,23 @@
     }
   }
 
+  Anchor.defaults = {
+    container: null,
+    items: [],
+    border: 'left',
+    onItemClick: null,
+    width: 180,
+    sticky: false,
+    itemDefaults: null,
+    offset: 0,
+    activeKey: null,
+  };
+
   Component.register(Anchor);
 
   class AnchorContent extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        key: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(AnchorContent.defaults, props), ...mixins);
     }
 
     _rendered() {
@@ -3683,6 +3701,10 @@
       this.element.classList.add(`nom-anchor-target-${key}`);
     }
   }
+
+  AnchorContent.defaults = {
+    key: null,
+  };
 
   Component.register(AnchorContent);
 
@@ -4044,6 +4066,9 @@
     constructor(props, ...mixins) {
       const defaults = {
         zIndex: 2,
+        classes: {
+          'nom-layer-backdrop': true,
+        },
         attrs: {
           style: {
             position: 'absolute',
@@ -4053,8 +4078,6 @@
             height: '100%',
             overflow: 'hidden',
             userSelect: 'none',
-            opacity: 0.1,
-            background: '#000',
           },
         },
       };
@@ -4088,27 +4111,9 @@
   class Layer extends Component {
     constructor(props, ...mixins) {
       const defaults = {
-        align: null,
-        alignTo: null,
-        alignOuter: false,
         within: window,
-        collision: 'flipfit',
-        onClose: null,
-        onHide: null,
-        onShow: null,
-
-        closeOnClickOutside: false,
-        closeToRemove: false,
-
-        position: null,
-
-        hidden: false,
-
-        backdrop: false,
-        closeOnClickBackdrop: false,
       };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(defaults, Layer.defaults, props), ...mixins);
     }
 
     _created() {
@@ -4313,22 +4318,31 @@
     }
   }
 
+  Layer.defaults = {
+    align: null,
+    alignTo: null,
+    alignOuter: false,
+    within: window,
+    collision: 'flipfit',
+    onClose: null,
+    onHide: null,
+    onShow: null,
+
+    closeOnClickOutside: false,
+    closeToRemove: false,
+
+    position: null,
+
+    hidden: false,
+
+    backdrop: false,
+    closeOnClickBackdrop: false,
+  };
   Component.register(Layer);
 
   class Tooltip extends Layer {
     constructor(props, ...mixins) {
-      const defaults = {
-        trigger: null,
-        align: 'top',
-        alignOuter: true,
-
-        closeOnClickOutside: true,
-
-        autoRender: false,
-        hidden: false,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Tooltip.defaults, props), ...mixins);
     }
 
     _created() {
@@ -4412,7 +4426,7 @@
       this._off('mouseleave', this._hideHandler);
       this._on('mouseleave', this._hideHandler);
       const docTop = this.getScrollTop();
-      if (this.element.closest('.nom-modal') !== null && docTop !== 0) {
+      if (docTop !== 0) {
         this.element.style.top = `${this.element.style.top.replace('px', '') - docTop}px`;
       }
     }
@@ -4427,7 +4441,16 @@
       return scroll_top
     }
   }
+  Tooltip.defaults = {
+    trigger: null,
+    align: 'top',
+    alignOuter: true,
 
+    closeOnClickOutside: true,
+
+    autoRender: false,
+    hidden: false,
+  };
   Component.mixin({
     _rendered: function () {
       if (this.props.tooltip) {
@@ -4842,19 +4865,7 @@
 
   class Field extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        label: null,
-        labelAlign: 'right',
-        invalidTip: {},
-        value: null,
-        flatValue: false,
-        span: null,
-        notShowLabel: false,
-        rules: [],
-        extra: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Field.defaults, props), ...mixins);
     }
 
     _created() {
@@ -5099,6 +5110,18 @@
     }
   }
 
+  Field.defaults = {
+    label: null,
+    labelAlign: 'right',
+    invalidTip: {},
+    value: null,
+    flatValue: false,
+    span: null,
+    notShowLabel: false,
+    rules: [],
+    extra: null,
+  };
+
   Object.defineProperty(Field.prototype, 'fields', {
     get: function () {
       if (!this.control) return []
@@ -5183,24 +5206,7 @@
 
   class Textbox extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        leftIcon: null,
-        prefix: null, // 前缀
-        rightIcon: null,
-        suffix: null, // 后缀
-        maxlength: null,
-        minlength: null,
-        showWordLimit: false,
-        autofocus: false,
-        placeholder: null,
-        value: null,
-        htmlType: 'text',
-        onEnter: null,
-        allowClear: true,
-        trimValue: true, // getValue时 默认去除首位的空格
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Textbox.defaults, props), ...mixins);
     }
 
     _config() {
@@ -5342,7 +5348,7 @@
       ];
 
       this.setProps({
-        attrs: { readonly },
+        attrs: { readonly: readonly || null },
         classes: {
           'p-with-button': buttonProps !== null,
         },
@@ -5417,12 +5423,13 @@
 
       this.input.setText(value);
       const newValue = this.getValue();
+      this.oldValue = this.currentValue;
+
       if (options.triggerChange) {
         if (newValue !== this.oldValue) {
           super._onValueChange();
         }
       }
-      this.oldValue = this.currentValue;
       this.currentValue = newValue;
     }
 
@@ -5453,18 +5460,28 @@
     }
   }
 
+  Textbox.defaults = {
+    leftIcon: null,
+    prefix: null, // 前缀
+    rightIcon: null,
+    suffix: null, // 后缀
+    maxlength: null,
+    minlength: null,
+    showWordLimit: false,
+    autofocus: false,
+    placeholder: null,
+    value: null,
+    htmlType: 'text',
+    onEnter: null,
+    allowClear: true,
+    trimValue: true, // getValue时 默认去除首位的空格
+  };
+
   Component.register(Textbox);
 
   class Empty extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        description: '暂无内容',
-        image: Empty.PRESENTED_IMAGE_DEFAULT,
-        imageStyle: {},
-        size: 'xsmall',
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Empty.defaults, props), ...mixins);
     }
 
     _config() {
@@ -5522,15 +5539,22 @@
 
   Empty.PRESENTED_IMAGE_DEFAULT = `#<svg t="1619147741727" class="nom-empty-img-normal"  width="184" height="152" viewBox="0 0 1084 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4197" width="200" height="200"><path d="M0 933.456842a456.737684 85.342316 0 1 0 913.475368 0 456.737684 85.342316 0 1 0-913.475368 0Z" fill="#F5F5F7" fill-opacity=".8" p-id="4198"></path><path d="M822.130526 682.738526L660.944842 484.372211c-7.733895-9.337263-19.038316-14.989474-30.942316-14.989474h-346.543158c-11.897263 0-23.201684 5.652211-30.935579 14.989474L91.351579 682.738526v103.632842h730.778947V682.738526z" fill="#AEB8C2" p-id="4199"></path><path d="M775.390316 794.165895L634.543158 624.990316c-6.743579-8.131368-16.889263-12.577684-27.270737-12.577684H305.071158c-10.374737 0-20.527158 4.446316-27.270737 12.577684L136.953263 794.165895v92.914526h638.437053V794.165895z" fill="#000000" p-id="4200"></path><path d="M227.907368 213.355789h457.653895a26.947368 26.947368 0 0 1 26.947369 26.947369v628.843789a26.947368 26.947368 0 0 1-26.947369 26.947369H227.907368a26.947368 26.947368 0 0 1-26.947368-26.947369V240.303158a26.947368 26.947368 0 0 1 26.947368-26.947369z" fill="#F5F5F7" p-id="4201"></path><path d="M287.514947 280.407579h338.438737a13.473684 13.473684 0 0 1 13.473684 13.473684V462.012632a13.473684 13.473684 0 0 1-13.473684 13.473684H287.514947a13.473684 13.473684 0 0 1-13.473684-13.473684V293.881263a13.473684 13.473684 0 0 1 13.473684-13.473684z m1.765053 268.220632h334.908632a15.238737 15.238737 0 0 1 0 30.477473H289.28a15.238737 15.238737 0 0 1 0-30.477473z m0 79.245473h334.908632a15.245474 15.245474 0 0 1 0 30.484211H289.28a15.245474 15.245474 0 0 1 0-30.484211z m531.354947 293.066105c-5.221053 20.688842-23.558737 36.109474-45.372631 36.109474H138.206316c-21.813895 0-40.151579-15.427368-45.365895-36.109474a49.300211 49.300211 0 0 1-1.495579-12.058947V682.745263h177.300211c19.584 0 35.368421 16.491789 35.368421 36.513684v0.269474c0 20.015158 15.966316 36.176842 35.550315 36.176842h234.341053c19.584 0 35.550316-16.309895 35.550316-36.331789V719.292632c0-20.021895 15.784421-36.554105 35.368421-36.554106h177.30021v226.149053a49.381053 49.381053 0 0 1-1.488842 12.05221z" fill="#DCE0E6" p-id="4202"></path><path d="M842.920421 224.282947l-46.012632 17.852632a6.736842 6.736842 0 0 1-8.872421-8.286316l13.049264-41.815579c-17.441684-19.833263-27.681684-44.018526-27.681685-70.117052C773.402947 54.581895 841.566316 0 925.655579 0 1009.724632 0 1077.894737 54.581895 1077.894737 121.916632c0 67.334737-68.163368 121.916632-152.245895 121.916631-30.504421 0-58.906947-7.181474-82.728421-19.550316z" fill="#DCE0E6" p-id="4203"></path><path d="M985.626947 106.004211c10.597053 0 19.193263 8.488421 19.193264 18.96421s-8.596211 18.964211-19.193264 18.964211c-10.597053 0-19.193263-8.488421-19.193263-18.964211s8.596211-18.964211 19.193263-18.96421z m-119.619368 2.371368l18.863158 33.185684h-38.386526l19.523368-33.185684z m76.43621 0v33.185684h-33.583157v-33.185684h33.583157z" fill="#FFFFFF" p-id="4204"></path></svg>`;
 
+  Empty.defaults = {
+    description: '暂无内容',
+    image: Empty.PRESENTED_IMAGE_DEFAULT,
+    imageStyle: {},
+    size: 'xsmall',
+  };
+
   Component.register(Empty);
 
-  class LayoutHeader extends Component {
+  class LayoutAsider extends Component {
     // constructor(props, ...mixins) {
     //   super(props)
     // }
   }
 
-  Component.register(LayoutHeader);
+  Component.register(LayoutAsider);
 
   class LayoutBody extends Component {
     // constructor(props, ...mixins) {
@@ -5548,6 +5572,14 @@
 
   Component.register(LayoutFooter);
 
+  class LayoutHeader extends Component {
+    // constructor(props, ...mixins) {
+    //   super(props)
+    // }
+  }
+
+  Component.register(LayoutHeader);
+
   class LayoutSider extends Component {
     // constructor(props, ...mixins) {
     //   super(props)
@@ -5556,66 +5588,46 @@
 
   Component.register(LayoutSider);
 
-  class LayoutAsider extends Component {
-    // constructor(props, ...mixins) {
-    //   super(props)
-    // }
-  }
-
-  Component.register(LayoutAsider);
-
   class Layout extends Component {
-      constructor(props, ...mixins) {
-          const defaults = {
-              header: null,
-              body: null,
-              footer: null,
-              sider: null,
-              asider: null,
-              fit: true
-          };
+    constructor(props, ...mixins) {
+      super(Component.extendProps(Layout.defaults, props), ...mixins);
+    }
 
-          super(Component.extendProps(defaults, props), ...mixins);
+    _config() {
+      const { header, body, footer, sider, asider } = this.props;
+      this._addPropStyle('fit');
+
+      this.setProps({
+        tag: 'div',
+        header: header && { component: LayoutHeader },
+        body: body && { component: LayoutBody },
+        footer: footer && { component: LayoutFooter },
+        sider: sider && { component: LayoutSider },
+        asider: asider && { component: LayoutAsider },
+      });
+
+      if (sider || asider) {
+        this.setProps({
+          classes: {
+            'p-has-sider': true,
+          },
+          children: [this.props.sider, this.props.body, this.props.asider],
+        });
+      } else {
+        this.setProps({
+          children: [this.props.header, this.props.body, this.props.footer],
+        });
       }
-
-      _config() {
-          const { header, body, footer, sider, asider } = this.props;
-          this._addPropStyle('fit');
-
-          this.setProps(
-              {
-                  tag: 'div',
-                  header: header && { component: LayoutHeader },
-                  body: body && { component: LayoutBody },
-                  footer: footer && { component: LayoutFooter },
-                  sider: sider && { component: LayoutSider },
-                  asider: asider && { component: LayoutAsider }
-              }
-          );
-
-          if (sider || asider) {
-              this.setProps({
-                  classes: {
-                      'p-has-sider': true
-                  },
-                  children: [
-                      this.props.sider,
-                      this.props.body,
-                      this.props.asider
-                  ]
-              });
-          }
-          else {
-              this.setProps({
-                  children: [
-                      this.props.header,
-                      this.props.body,
-                      this.props.footer
-                  ]
-              });
-          }
-      }
+    }
   }
+  Layout.defaults = {
+    header: null,
+    body: null,
+    footer: null,
+    sider: null,
+    asider: null,
+    fit: true,
+  };
 
   Component.register(Layout);
 
@@ -8990,12 +9002,7 @@
 
   class ListItem extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tag: 'li',
-        data: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(ListItem.defaults, props), ...mixins);
     }
 
     _created() {
@@ -9038,7 +9045,10 @@
       this.content.unselect();
     }
   }
-
+  ListItem.defaults = {
+    tag: 'li',
+    data: null,
+  };
   Component.register(ListItem);
 
   var ListItemMixin = {
@@ -9116,12 +9126,7 @@
 
   class ListItemWrapper extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tag: 'li',
-        item: {},
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(ListItemWrapper.defaults, props), ...mixins);
     }
 
     _created() {
@@ -9149,16 +9154,15 @@
       });
     }
   }
-
+  ListItemWrapper.defaults = {
+    tag: 'li',
+    item: {},
+  };
   Component.register(ListItemWrapper);
 
   class ListContent extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tag: 'ul',
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(ListContent.defaults, props), ...mixins);
     }
 
     _created() {
@@ -9441,38 +9445,21 @@
       }
     }
   }
-
+  ListContent.defaults = {
+    tag: 'ul',
+  };
   Component.register(ListContent);
 
   class List extends Component {
     constructor(props, ...mixins) {
       const defaults = {
-        tag: 'div',
-        items: [],
-        itemDefaults: {},
-        data: null, // 自定义渲染时使用data
-
-        selectedItems: null,
-
-        itemSelectable: {
-          multiple: false,
-          byClick: false,
-          scrollIntoView: false,
-        },
-        disabledItems: [],
-        virtual: false,
         virtualSupport: {
           height: typeof props.virtual === 'number' ? props.virtual : 300, // 容器高度
           size: 30, // 每个列表项高度预估值
           bufferScale: 1, // 缓冲区比例
         },
-        showEmpty: false,
-        // Boolean || { onEnd: Funciton}
-        sortable: false,
-        overflow: 'hidden',
       };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(List.defaults, defaults, props), ...mixins);
     }
 
     _config() {
@@ -9706,6 +9693,10 @@
       if (this.selectedItem) {
         this.scrollTo(this.selectedItem);
       }
+    }
+
+    _rendered() {
+      this.props.sortable && defaultSortableOndrop();
     }
 
     /* 虚拟列表支持函数-start */
@@ -9955,6 +9946,27 @@
       return _listData[this._lastDragIndex]
     }
   }
+
+  List.defaults = {
+    tag: 'div',
+    items: [],
+    itemDefaults: {},
+    data: null, // 自定义渲染时使用data
+
+    selectedItems: null,
+
+    itemSelectable: {
+      multiple: false,
+      byClick: false,
+      scrollIntoView: false,
+    },
+    disabledItems: [],
+    virtual: false,
+    showEmpty: false,
+    // Boolean || { onEnd: Funciton}
+    sortable: false,
+    overflow: 'hidden',
+  };
 
   Component.register(List);
 
@@ -10218,15 +10230,7 @@
 
   class AutoComplete extends Textbox {
     constructor(props, ...mixins) {
-      const defaults = {
-        options: [],
-        debounce: true,
-        interval: 300,
-        filterOption: (value, options) => options.filter((o) => o.value.toString().includes(value)),
-        allowClear: true,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(AutoComplete.defaults, props), ...mixins);
       this._init.bind(this);
       this._handleSearch.bind(this);
       this._doSearch.bind(this);
@@ -10397,21 +10401,19 @@
     }
   }
 
+  AutoComplete.defaults = {
+    options: [],
+    debounce: true,
+    interval: 300,
+    filterOption: (value, options) => options.filter((o) => o.value.toString().includes(value)),
+    allowClear: true,
+  };
+
   Component.register(AutoComplete);
 
   class Avatar extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tag: 'span',
-        size: 'default',
-        alt: '图片',
-        gap: 4, // 字符类型距离左右两侧边界单位像素
-        text: null, // 文本
-        icon: null, // 图标
-        src: null, // 图片地址
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Avatar.defaults, props), ...mixins);
     }
 
     _config() {
@@ -10475,20 +10477,21 @@
       this._setScale();
     }
   }
+  Avatar.defaults = {
+    tag: 'span',
+    size: 'default',
+    alt: '图片',
+    gap: 4, // 字符类型距离左右两侧边界单位像素
+    text: null, // 文本
+    icon: null, // 图标
+    src: null, // 图片地址
+  };
 
   Component.register(Avatar);
 
   class AvatarGroup extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tag: 'div',
-        size: 'default',
-        maxCount: null, // 显示的最大头像个数
-        maxPopoverPlacement: 'top', // 多余头像气泡弹出位置
-        items: [], // 子元素项列表
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(AvatarGroup.defaults, props), ...mixins);
     }
 
     _config() {
@@ -10533,7 +10536,13 @@
       }
     }
   }
-
+  AvatarGroup.defaults = {
+    tag: 'div',
+    size: 'default',
+    maxCount: null, // 显示的最大头像个数
+    maxPopoverPlacement: 'top', // 多余头像气泡弹出位置
+    items: [], // 子元素项列表
+  };
   Component.register(AvatarGroup);
 
   /* eslint-disable no-return-assign */
@@ -10723,19 +10732,7 @@
 
   class BackTop extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        duration: 100,
-        animations: 'Linear',
-        target: 'window',
-        height: 400,
-        right: 30,
-        bottom: 30,
-        text: '',
-        parent: '',
-        onClick: () => {},
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(BackTop.defaults, props), ...mixins);
     }
 
     _created() {
@@ -10924,22 +10921,23 @@
     },
   });
 
+  BackTop.defaults = {
+    duration: 100,
+    animations: 'Linear',
+    target: 'window',
+    height: 400,
+    right: 30,
+    bottom: 30,
+    text: '',
+    parent: '',
+    onClick: () => {},
+  };
+
   Component.register(BackTop);
 
   class Badge extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        key: null,
-        tag: 'span',
-        type: 'round',
-        text: null,
-        icon: null,
-        number: null,
-        overflowCount: 99,
-        size: 'xs',
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Badge.defaults, props), ...mixins);
     }
 
     _config() {
@@ -10970,6 +10968,12 @@
             },
           });
         }
+      } else if (type === 'tag') {
+        this.setProps({
+          classes: {
+            'u-shape-tag': true,
+          },
+        });
       }
 
       this.setProps({
@@ -11004,6 +11008,10 @@
         const badgeProps = {
           type: 'dot',
         };
+        if (this.props.badge.text) {
+          badgeProps.text = this.props.badge.text;
+          badgeProps.type = 'tag';
+        }
         badgeProps.number = this.props.badge.number ? this.props.badge.number : null;
         badgeProps.overflowCount = this.props.badge.overflowCount
           ? this.props.badge.overflowCount
@@ -11014,7 +11022,16 @@
       }
     },
   });
-
+  Badge.defaults = {
+    key: null,
+    tag: 'span',
+    type: 'round',
+    text: null,
+    icon: null,
+    number: null,
+    overflowCount: 99,
+    size: 'xs',
+  };
   Component.register(Badge);
 
   class BreadcrumbItem extends Component {
@@ -11077,12 +11094,7 @@
 
   class Breadcrumb extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        separator: '/',
-        itemDefaults: { component: BreadcrumbItem },
-      };
-
-      super(Component.extendProps(defaults, props), mixins);
+      super(Component.extendProps(Breadcrumb.defaults, props), mixins);
     }
 
     _config() {
@@ -11103,24 +11115,16 @@
     }
   }
 
+  Breadcrumb.defaults = {
+    separator: '/',
+    itemDefaults: { component: BreadcrumbItem },
+  };
+
   Component.register(Breadcrumb);
 
   class Carousel extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        imgs: [],
-        height: 100,
-        arrows: false,
-        autoplay: false,
-        autoplaySpeed: 1000,
-        speed: 300,
-        dots: true,
-        defaultActiveIndex: 1,
-        easing: 'linear',
-        pauseOnHover: true,
-        triggerType: 'click',
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Carousel.defaults, props), ...mixins);
     }
 
     _created() {
@@ -11401,7 +11405,19 @@
       });
     }
   }
-
+  Carousel.defaults = {
+    imgs: [],
+    height: 100,
+    arrows: false,
+    autoplay: false,
+    autoplaySpeed: 1000,
+    speed: 300,
+    dots: true,
+    defaultActiveIndex: 1,
+    easing: 'linear',
+    pauseOnHover: true,
+    triggerType: 'click',
+  };
   Component.register(Carousel);
 
   class CascaderList extends Component {
@@ -11605,17 +11621,7 @@
 
   class Cascader extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        options: [],
-        showArrow: true,
-        separator: ' / ',
-        fieldsMapping: { label: 'label', value: 'value', children: 'children' },
-        valueType: 'cascade',
-        changeOnSelect: false,
-        width: 200,
-        height: 250,
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Cascader.defaults, props), ...mixins);
     }
 
     _rendered() {
@@ -11994,19 +12000,22 @@
     }
   }
 
+  Cascader.defaults = {
+    options: [],
+    showArrow: true,
+    separator: ' / ',
+    fieldsMapping: { label: 'label', value: 'value', children: 'children' },
+    valueType: 'cascade',
+    changeOnSelect: false,
+    width: 200,
+    height: 250,
+  };
+
   Component.register(Cascader);
 
   class Checkbox extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        text: null,
-        valueText: {
-          checked: '是',
-          unchecked: '否',
-        },
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Checkbox.defaults, props), ...mixins);
     }
 
     _config() {
@@ -12080,7 +12089,13 @@
       this.input.element.removeAttribute('disabled', 'disabled');
     }
   }
-
+  Checkbox.defaults = {
+    text: null,
+    valueText: {
+      checked: '是',
+      unchecked: '否',
+    },
+  };
   Component.register(Checkbox);
 
   var OptionListMixin = {
@@ -12150,14 +12165,7 @@
 
   class CheckboxList extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        options: [],
-        valueOptions: {
-          asArray: true,
-        },
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(CheckboxList.defaults, props), ...mixins);
     }
 
     _config() {
@@ -12294,15 +12302,18 @@
     }
   }
 
+  CheckboxList.defaults = {
+    options: [],
+    valueOptions: {
+      asArray: true,
+    },
+  };
+
   Component.register(CheckboxList);
 
   class TreeNodeContent extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        text: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(TreeNodeContent.defaults, props), ...mixins);
     }
 
     _created() {
@@ -12331,10 +12342,10 @@
             classes: { 'nom-tree-node-expandable-indicator': true, 'is-leaf': this.node.isLeaf },
             expandable: {
               expandedProps: {
-                type: 'down',
+                type: 'sort-down',
               },
               collapsedProps: {
-                type: 'right',
+                type: 'sort-right',
               },
             },
           },
@@ -12423,19 +12434,14 @@
       }
     }
   }
-
+  TreeNodeContent.defaults = {
+    text: null,
+  };
   Component.register(TreeNodeContent);
 
   class TreeNode extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        nodes: null,
-        data: {
-          hidden: false,
-        },
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(TreeNode.defaults, props), ...mixins);
     }
 
     _created() {
@@ -12519,11 +12525,8 @@
 
     check({ checkCheckbox = true, triggerCheckChange = true, fromChildren = false } = {}) {
       const { checked } = this.props;
-      const {
-        onCheckChange,
-        cascadeCheckParent,
-        cascadeCheckChildren,
-      } = this.tree.props.nodeCheckable;
+      const { onCheckChange, cascadeCheckParent, cascadeCheckChildren } =
+        this.tree.props.nodeCheckable;
 
       if (checked === true) {
         return
@@ -12553,11 +12556,8 @@
 
     uncheck({ uncheckCheckbox = true, triggerCheckChange = true, skipChildren = false } = {}) {
       const { checked } = this.props;
-      const {
-        onCheckChange,
-        cascadeUncheckChildren,
-        cascadeUncheckParent,
-      } = this.tree.props.nodeCheckable;
+      const { onCheckChange, cascadeUncheckChildren, cascadeUncheckParent } =
+        this.tree.props.nodeCheckable;
 
       if (checked === false) {
         return
@@ -12615,17 +12615,17 @@
       this.content.unselect();
     }
   }
-
+  TreeNode.defaults = {
+    nodes: null,
+    data: {
+      hidden: false,
+    },
+  };
   Component.register(TreeNode);
 
   class TreeNodes extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        nodes: null,
-        childrenData: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(TreeNodes.defaults, props), ...mixins);
     }
 
     _created() {
@@ -12696,32 +12696,15 @@
 
     iterateNodes() {}
   }
-
+  TreeNodes.defaults = {
+    nodes: null,
+    childrenData: null,
+  };
   Component.register(TreeNodes);
 
   class Tree extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        nodes: null,
-        nodeDefaults: {},
-        nodeSelectable: {
-          onlyleaf: false,
-          byClick: true,
-          selectedNodeKey: null,
-          scrollIntoView: true,
-        },
-        dataFields: {
-          key: 'key',
-          text: 'text',
-          children: 'children',
-          parentKey: 'parentKey',
-        },
-        flatData: false,
-        sortable: false,
-        initExpandLevel: -1,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Tree.defaults, props), ...mixins);
     }
 
     _created() {
@@ -12790,6 +12773,7 @@
 
     _rendered() {
       this.autoCheckAll();
+      this.props.sortable && defaultSortableOndrop();
     }
 
     autoCheckAll() {
@@ -13038,7 +13022,25 @@
       }
     }
   }
-
+  Tree.defaults = {
+    nodes: null,
+    nodeDefaults: {},
+    nodeSelectable: {
+      onlyleaf: false,
+      byClick: true,
+      selectedNodeKey: null,
+      scrollIntoView: true,
+    },
+    dataFields: {
+      key: 'key',
+      text: 'text',
+      children: 'children',
+      parentKey: 'parentKey',
+    },
+    flatData: false,
+    sortable: false,
+    initExpandLevel: -1,
+  };
   Component.register(Tree);
 
   var OptionTreeMixin = {
@@ -13074,14 +13076,7 @@
 
   class CheckboxTree extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        options: [],
-        showCheckAll: false,
-        checkAllText: '全选',
-        treeDataFields: {},
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(CheckboxTree.defaults, props), ...mixins);
     }
 
     _config() {
@@ -13136,7 +13131,7 @@
       const selected = this.getSelectedOptions();
       if (selected !== null && Array.isArray(selected) && selected.length > 0) {
         const vals = selected.map(function (item) {
-          return item.value
+          return item.key
         });
 
         if (options.asString) {
@@ -13207,6 +13202,13 @@
     }
   }
 
+  CheckboxTree.defaults = {
+    options: [],
+    showCheckAll: false,
+    checkAllText: '全选',
+    treeDataFields: {},
+  };
+
   Component.register(CheckboxTree);
 
   class CollapseItem extends Component {
@@ -13223,7 +13225,8 @@
     }
 
     _created() {
-      this.parent.itemRef[this.props.key] = this;
+      this.menu = this.parent.parent.parent;
+      this.menu.itemRef[this.props.key] = this;
     }
 
     _config() {
@@ -13233,37 +13236,35 @@
         children: [
           {
             tag: 'div',
-            classes: { 'nom-collapse-item-title': true },
-            styles: {
-              padding: '3px',
+            classes: {
+              'nom-collapse-item-title': true,
+              'nom-collapse-item-open': !this.props.collapsed,
             },
             key: key,
             children: [
               {
                 ...Component.normalizeIconProps(
-                  collapsed ? that.parent.props.icon.default : that.parent.props.icon.open,
+                  collapsed ? that.menu.props.icon.default : that.menu.props.icon.open,
                 ),
                 classes: {
-                  'nom-collapse-right-icon': that.parent.props.icon.align === 'right',
+                  'nom-collapse-right-icon': that.menu.props.icon.align === 'right',
                 },
                 onClick: function () {
-                  if (!that.parent.props.iconOnly) return
+                  if (!that.menu.props.iconOnly) return
                   that._handleCollapse();
                 },
               },
               { tag: 'span', children: title },
             ],
             onClick: function () {
-              if (that.parent.props.iconOnly) return
+              if (that.menu.props.iconOnly) return
               that._handleCollapse();
             },
           },
           {
             tag: 'div',
+
             classes: { 'nom-collapse-item-content': true },
-            styles: {
-              padding: '3px',
-            },
             hidden: collapsed,
             children: content,
           },
@@ -13283,7 +13284,7 @@
       });
 
       this.update(this.props.collapsed);
-      this.parent._onCollapse(this.props.key, !this.props.collapsed);
+      this.menu._onCollapse(this.props.key, !this.props.collapsed);
     }
 
     _disable() {
@@ -13295,20 +13296,7 @@
 
   class Collapse extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        activeKey: 1,
-        items: null,
-        bordered: false,
-        icon: {
-          default: 'right',
-          open: 'up',
-          align: 'left',
-        },
-        iconOnly: false,
-        accordion: false,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Collapse.defaults, props), ...mixins);
     }
 
     _created() {
@@ -13330,8 +13318,14 @@
           },
         }
       });
+
       this.setProps({
-        children: items,
+        children: {
+          component: 'Flex',
+
+          gutter: this.props.gutter,
+          rows: items,
+        },
       });
     }
 
@@ -13358,115 +13352,116 @@
         });
     }
   }
-
+  Collapse.defaults = {
+    activeKey: 1,
+    items: null,
+    bordered: false,
+    icon: {
+      default: 'right',
+      open: 'up',
+      align: 'left',
+    },
+    gutter: 'small',
+    iconOnly: false,
+    accordion: false,
+  };
   Component.register(Collapse);
 
   class ConfirmContent extends Component {
-      constructor(props, ...mixins) {
-          const defaults = {
-              title: null,
-              description: null,
-              icon: null,
-              type: null,
-          };
-          super(Component.extendProps(defaults, props), ...mixins);
+    constructor(props, ...mixins) {
+      const defaults = {
+        title: null,
+        description: null,
+        icon: null,
+        type: null,
+      };
+      super(Component.extendProps(defaults, props), ...mixins);
+    }
+
+    _config() {
+      const confirmInst = this.modal;
+
+      const { title, description, icon, action, okText, cancelText } = confirmInst.props;
+
+      const iconProps = icon
+        ? Component.extendProps(Component.normalizeIconProps(icon), {
+            classes: { 'nom-confirm-icon': true },
+          })
+        : null;
+
+      const titleProps = title
+        ? Component.extendProps(Component.normalizeTemplateProps(title), {
+            classes: { 'nom-confirm-title': true },
+          })
+        : null;
+
+      const descriptionProps = description
+        ? Component.extendProps(Component.normalizeTemplateProps(description), {
+            classes: { 'nom-confirm-description': true },
+          })
+        : null;
+
+      const okButtonProps = {
+        component: Button,
+        type: 'primary',
+        text: okText,
+        onClick: () => {
+          confirmInst._handleOk();
+        },
+      };
+
+      const cancelButtonProps = {
+        component: Button,
+        text: cancelText,
+        onClick: () => {
+          confirmInst._handleCancel();
+        },
+      };
+
+      let actionProps = {
+        component: Cols,
+        justify: 'end',
+      };
+      if (!action) {
+        actionProps.items = [okButtonProps, cancelButtonProps];
+      } else if (isPlainObject(action)) {
+        actionProps = Component.extendProps(actionProps, action);
+      } else if (Array.isArray(action)) {
+        actionProps.items = action;
       }
 
-      _config() {
-          const confirmInst = this.modal;
-
-          const { title, description, icon, action, okText, cancelText } = confirmInst.props;
-
-          const iconProps = icon
-              ? Component.extendProps(Component.normalizeIconProps(icon), {
-                  classes: { 'nom-confirm-icon': true },
-              })
-              : null;
-
-          const titleProps = title
-              ? Component.extendProps(Component.normalizeTemplateProps(title), {
-                  classes: { 'nom-confirm-title': true },
-              })
-              : null;
-
-          const descriptionProps = description
-              ? Component.extendProps(Component.normalizeTemplateProps(description), {
-                  classes: { 'nom-confirm-description': true },
-              })
-              : null;
-
-          const okButtonProps = {
-              component: Button,
-              styles: {
-                  color: 'primary'
+      this.setProps({
+        children: [
+          {
+            classes: {
+              'nom-confirm-body': true,
+            },
+            children: [
+              iconProps,
+              {
+                classes: {
+                  'nom-confirm-body-content': true,
+                },
+                children: [titleProps, descriptionProps],
               },
-              text: okText,
-              onClick: () => {
-                  confirmInst._handleOk();
-              }
-          };
-
-          const cancelButtonProps = {
-              component: Button,
-              text: cancelText,
-              onClick: () => {
-                  confirmInst._handleCancel();
-              }
-          };
-
-          let actionProps = {
-              component: Cols,
-              justify: 'end',
-          };
-          if (!action) {
-              actionProps.items = [okButtonProps, cancelButtonProps];
-          }
-          else if (isPlainObject(action)) {
-              actionProps = Component.extendProps(actionProps, action);
-          }
-          else if (Array.isArray(action)) {
-              actionProps.items = action;
-          }
-
-          this.setProps({
-              children: [
-                  {
-                      classes: {
-                          'nom-confirm-body': true,
-                      },
-                      children: [
-                          iconProps,
-                          {
-                              classes: {
-                                  'nom-confirm-body-content': true,
-                              },
-                              children: [titleProps, descriptionProps],
-                          },
-                      ],
-                  },
-                  {
-                      classes: {
-                          'nom-confirm-actions': true,
-                      },
-                      children: actionProps,
-                  },
-              ],
-          });
-      }
+            ],
+          },
+          {
+            classes: {
+              'nom-confirm-actions': true,
+            },
+            children: actionProps,
+          },
+        ],
+      });
+    }
   }
 
   Component.register(ConfirmContent);
 
   class Confirm extends Modal {
     constructor(props, ...mixins) {
-      const defaults = {
-        icon: 'question-circle',
-        title: null,
-        description: null,
-        action: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Confirm.defaults, props), ...mixins);
     }
 
     _config() {
@@ -13485,25 +13480,29 @@
       super._config();
     }
   }
+  Confirm.defaults = {
+    icon: 'question-circle',
+    title: null,
+    description: null,
+    action: null,
+  };
 
   Component.register(Confirm);
 
   class Container extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        fluid: false,
-        // type: null,
-        breakpoint: null,
-      };
-
-      super(Component.extendProps(defaults, props), mixins);
+      super(Component.extendProps(Container.defaults, props), mixins);
     }
 
     _config() {
       this._addPropStyle('breakpoint', 'fluid');
     }
   }
-
+  Container.defaults = {
+    fluid: false,
+    // type: null,
+    breakpoint: null,
+  };
   Component.register(Container);
 
   const CSS_PREFIX = 'nom-statistic-';
@@ -13542,13 +13541,7 @@
 
   class Statistic extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        groupSeparator: ',',
-        decimalSeparator: '.',
-        precision: 0,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Statistic.defaults, props), ...mixins);
     }
 
     _config() {
@@ -13623,7 +13616,11 @@
       });
     }
   }
-
+  Statistic.defaults = {
+    groupSeparator: ',',
+    decimalSeparator: '.',
+    precision: 0,
+  };
   Component.register(Statistic);
 
   /**
@@ -14167,12 +14164,7 @@
 
   class Countdown extends Statistic {
     constructor(props, ...mixins) {
-      const defaults = {
-        format: 'HH:mm:ss',
-        interval: 3000,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Countdown.defaults, props), ...mixins);
     }
 
     _created() {
@@ -14236,7 +14228,10 @@
       return formatTimeStr(diff, format)
     }
   }
-
+  Countdown.defaults = {
+    format: 'HH:mm:ss',
+    interval: 3000,
+  };
   Component.register(Countdown);
 
   class Row extends Component {
@@ -14509,49 +14504,7 @@
 
   class Select extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        options: [],
-        optionFields: { text: 'text', value: 'value' },
-        optionDefaults: {
-          key() {
-            return this.props.value
-          },
-          _config: function () {
-            this.setProps({
-              children: this.props.text,
-            });
-          },
-        },
-        selectedSingle: {
-          classes: {
-            'nom-select-single': true,
-          },
-          _config: function () {
-            this.setProps({
-              children: this.props.text,
-            });
-          },
-        },
-        selectedMultiple: {
-          classes: { 'nom-select-multiple': true },
-          component: List,
-          itemDefaults: {},
-          itemSelectable: {
-            scrollIntoView: true,
-          },
-          gutter: 'md',
-        },
-        extraOptions: [],
-        multiple: false,
-        showArrow: true,
-        minItemsForSearch: 20,
-        filterOption: (text, options) => options.filter((o) => o.text.indexOf(text) >= 0),
-        virtual: false,
-        allowClear: true,
-        popupContainer: 'body',
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Select.defaults, props), ...mixins);
     }
 
     _created() {
@@ -15063,7 +15016,10 @@
     }
 
     _normalizeInternalOptions(options) {
-      if (!Array.isArray(options) || !options.length) return options
+      if (!Array.isArray(options) || !options.length) {
+        this.internalOptions = [];
+        return
+      }
 
       // if (this.props.extraOptions) {
       //   this.initHiddenOptions = this.props.extraOptions.map((n) => {
@@ -15089,6 +15045,48 @@
       }
     }
   }
+
+  Select.defaults = {
+    options: [],
+    optionFields: { text: 'text', value: 'value' },
+    optionDefaults: {
+      key() {
+        return this.props.value
+      },
+      _config: function () {
+        this.setProps({
+          children: this.props.text,
+        });
+      },
+    },
+    selectedSingle: {
+      classes: {
+        'nom-select-single': true,
+      },
+      _config: function () {
+        this.setProps({
+          children: this.props.text,
+        });
+      },
+    },
+    selectedMultiple: {
+      classes: { 'nom-select-multiple': true },
+      component: List,
+      itemDefaults: {},
+      itemSelectable: {
+        scrollIntoView: true,
+      },
+      gutter: 'sm',
+    },
+    extraOptions: [],
+    multiple: false,
+    showArrow: true,
+    minItemsForSearch: 20,
+    filterOption: (text, options) => options.filter((o) => o.text.indexOf(text) >= 0),
+    virtual: false,
+    allowClear: true,
+    popupContainer: 'body',
+  };
 
   Component.register(Select);
 
@@ -15644,20 +15642,7 @@
 
   class DatePicker extends Textbox {
     constructor(props, ...mixins) {
-      const defaults = {
-        format: 'yyyy-MM-dd',
-        disabledTime: null,
-        minDate: null,
-        maxDate: null,
-        yearRange: [50, 20],
-        showTime: false,
-        allowClear: true,
-        onChange: null,
-        showNow: true,
-        readonly: true,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(DatePicker.defaults, props), ...mixins);
     }
 
     _created() {
@@ -15921,11 +15906,8 @@
                   },
                   this.props.showTime && {
                     component: TimePickerPanel,
-                    attrs: {
-                      style: {
-                        'border-left': '1px solid #ddd',
-                        'padding-left': '5px',
-                      },
+                    classes: {
+                      'nom-datepicker-time-panel': true,
                     },
                     onValueChange: (data) => {
                       this.handleTimeChange(data);
@@ -16220,17 +16202,23 @@
       super._onBlur();
     }
   }
-
+  DatePicker.defaults = {
+    format: 'yyyy-MM-dd',
+    disabledTime: null,
+    minDate: null,
+    maxDate: null,
+    yearRange: [90, 20],
+    showTime: false,
+    allowClear: true,
+    onChange: null,
+    showNow: true,
+    readonly: true,
+  };
   Component.register(DatePicker);
 
   class Group extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        fields: [],
-        fieldDefaults: { component: Field },
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Group.defaults, props), ...mixins);
     }
 
     _config() {
@@ -16403,37 +16391,16 @@
       return true
     }
   }
+  Group.defaults = {
+    fields: [],
+    fieldDefaults: { component: Field },
+  };
 
   Component.register(Group);
 
   class DateRangePicker extends Group {
     constructor(props, ...mixins) {
-      const defaults = {
-        format: 'yyyy-MM-dd',
-        disabledTime: null,
-        minDate: null,
-        maxDate: null,
-        yearRange: [50, 20],
-        showTime: false,
-        allowClear: true,
-        onChange: null,
-        fieldName: {
-          start: 'start',
-          end: 'end',
-        },
-        autoPopupEnd: true,
-        flatValue: true,
-        required: false,
-        requiredMessage: null,
-        startPickerProps: {
-          placeholder: '开始日期',
-        },
-        endPickerProps: {
-          placeholder: '结束日期',
-        },
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(DateRangePicker.defaults, props), ...mixins);
     }
 
     _created() {
@@ -16454,6 +16421,7 @@
         rules,
         startPickerProps,
         endPickerProps,
+        disabled,
       } = this.props;
 
       this.setProps({
@@ -16477,6 +16445,7 @@
             required,
             requiredMessage,
             rules,
+            disabled,
             ...startPickerProps,
           },
           {
@@ -16501,6 +16470,7 @@
             required,
             requiredMessage,
             rules,
+            disabled,
             ...endPickerProps,
           },
         ],
@@ -16546,20 +16516,35 @@
       }
     }
   }
-
+  DateRangePicker.defaults = {
+    format: 'yyyy-MM-dd',
+    disabledTime: null,
+    minDate: null,
+    maxDate: null,
+    yearRange: [50, 20],
+    showTime: false,
+    allowClear: true,
+    onChange: null,
+    fieldName: {
+      start: 'start',
+      end: 'end',
+    },
+    autoPopupEnd: true,
+    flatValue: true,
+    required: false,
+    requiredMessage: null,
+    startPickerProps: {
+      placeholder: '开始日期',
+    },
+    endPickerProps: {
+      placeholder: '结束日期',
+    },
+  };
   Component.register(DateRangePicker);
 
   class Divider extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        type: 'horizontal',
-        orientation: 'center',
-        // dashed:true,
-        // plan:true,
-        // children:
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Divider.defaults, props), ...mixins);
     }
 
     _config() {
@@ -16592,7 +16577,13 @@
       });
     }
   }
-
+  Divider.defaults = {
+    type: 'horizontal',
+    orientation: 'center',
+    // dashed:true,
+    // plan:true,
+    // children:
+  };
   Component.register(Divider);
 
   // 正整数
@@ -16623,32 +16614,12 @@
 
   class Drawer extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        closable: true,
-        closeIcon: 'close',
-        maskClosable: true,
-        showMasker: true,
-        settle: 'right',
-        okText: '确 定',
-        cancelText: '取 消',
-        onOk: (e) => {
-          e.sender.close();
-        },
-        onCancel: (e) => {
-          e.sender.close();
-        },
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Drawer.defaults, props), ...mixins);
     }
 
     _config() {
       const drawerRef = this;
       const { zIndex, settle, maskClosable, showMasker, width, height } = this.props;
-
-      // if (!placeGlobal && this.parent && this.parent.element) {
-      //   this.parent.element.style.position = 'relative'
-      // }
 
       const _settle = settles.includes(settle) ? settle : 'right';
 
@@ -16868,21 +16839,27 @@
     }
   }
 
+  Drawer.defaults = {
+    closable: true,
+    closeIcon: 'close',
+    maskClosable: true,
+    showMasker: true,
+    settle: 'right',
+    okText: '确 定',
+    cancelText: '取 消',
+    onOk: (e) => {
+      e.sender.close();
+    },
+    onCancel: (e) => {
+      e.sender.close();
+    },
+  };
+
   Component.register(Drawer);
 
   class Dropdown extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tag: 'span',
-        triggerAction: 'click',
-        rightIcon: 'down',
-        split: false,
-        onClick: null,
-        items: [],
-        size: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Dropdown.defaults, props), ...mixins);
     }
 
     _created() {
@@ -16924,11 +16901,6 @@
             children: {
               component: 'Menu',
               itemDefaults: {
-                styles: {
-                  hover: {
-                    color: 'primary',
-                  },
-                },
                 size: size,
               },
               items: items,
@@ -16953,18 +16925,20 @@
 
     _rendered() {}
   }
-
+  Dropdown.defaults = {
+    tag: 'span',
+    triggerAction: 'click',
+    rightIcon: 'down',
+    split: false,
+    onClick: null,
+    items: [],
+    size: null,
+  };
   Component.register(Dropdown);
 
   class Ellipsis extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        text: null,
-        showTitle: true,
-        line: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Ellipsis.defaults, props), ...mixins);
     }
 
     _config() {
@@ -16987,6 +16961,12 @@
       });
     }
   }
+
+  Ellipsis.defaults = {
+    text: null,
+    showTitle: true,
+    line: null,
+  };
 
   Component.register(Ellipsis);
 
@@ -17020,21 +17000,7 @@
 
   class Flex extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        rows: null,
-        cols: null,
-        direction: 'column',
-        wrap: false,
-        align: null,
-        justify: null,
-        gap: null,
-        gutter: null,
-        fills: false,
-        inline: false,
-        fit: false,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Flex.defaults, props), ...mixins);
     }
 
     _config() {
@@ -17103,28 +17069,34 @@
       return itemProps
     }
   }
-
+  Flex.defaults = {
+    rows: null,
+    cols: null,
+    direction: 'column',
+    wrap: false,
+    align: null,
+    justify: null,
+    gap: null,
+    gutter: null,
+    fills: false,
+    inline: false,
+    fit: false,
+  };
   Component.register(Flex);
 
   class Form extends Group {
     constructor(props, ...mixins) {
-      const defaults = {
-        labelAlign: 'top'
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Form.defaults, props), ...mixins);
     }
   }
-
+  Form.defaults = {
+    labelAlign: 'top',
+  };
   Component.register(Form);
 
   class Spinner extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        spinning: true,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Spinner.defaults, props), ...mixins);
     }
 
     _config() {
@@ -17138,18 +17110,18 @@
     }
   }
 
+  Spinner.defaults = {
+    spinning: true,
+  };
+
   Component.register(Spinner);
 
   class Loading extends Layer {
     constructor(props, ...mixins) {
       const defaults = {
-        align: 'center',
         container: document.body,
-        backdrop: true,
-        collision: 'none',
       };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(defaults, Loading.defaults, props), ...mixins);
     }
 
     _create() {
@@ -17177,7 +17149,11 @@
       super._remove();
     }
   }
-
+  Loading.defaults = {
+    align: 'center',
+    backdrop: true,
+    collision: 'none',
+  };
   Component.register(Loading);
 
   class Td extends Component {
@@ -17195,6 +17171,7 @@
       this.tr = this.parent;
       this.table = this.tr.table;
       this.col = this.table.colRefs[this.props.column.field];
+      this.col.tdRefs[this.key] = this;
     }
 
     _config() {
@@ -17250,10 +17227,10 @@
               classes: { 'nom-tr-expand-indicator': true },
               expandable: {
                 expandedProps: {
-                  type: 'down',
+                  type: 'sort-down',
                 },
                 collapsedProps: {
-                  type: 'right',
+                  type: 'sort-right',
                 },
               },
             },
@@ -17363,31 +17340,7 @@
     }
 
     _rendered() {
-      // 未设置冻结列则无需定时器
-      const { grid = {} } = this.table;
-      const { frozenLeftCols, frozenRightCols } = grid.props || {};
-      if (frozenLeftCols || frozenRightCols) {
-        setTimeout(() => {
-          this.setStickyPosition();
-        }, 0);
-      }
-
       this.props.column.autoWidth && this._parseTdWidth();
-    }
-
-    setStickyPosition() {
-      // 设置排序时会出发两次_render，则此时设置的第一个定时器中的this.props已被销毁
-      if (!this.props) return
-
-      if (this.props.column.fixed === 'left') {
-        this._setStyle({ left: `${this.element.offsetLeft}px` });
-      } else if (this.props.column.fixed === 'right') {
-        this._setStyle({
-          right: `${
-          this.parent.element.offsetWidth - this.element.offsetLeft - this.element.offsetWidth
-        }px`,
-        });
-      }
     }
 
     _parseTdWidth() {
@@ -17508,6 +17461,9 @@
   // 表格自定义列宽度的 key
   const STORAGE_KEY_GRID_COLS_WIDTH = 'NOM_STORAGE_KEY_GRID_COLS_WIDTH';
 
+  // 表格固定列的 key
+  const STORAGE_KEY_GRID_COLS_FIXED = 'NOM_STORAGE_KEY_GRID_COLS_FIXED';
+
   // 分页器缓存分大小的 key
   const STORAGE_KEY_PAGER_CACHEABLE = 'NOM_STORAGE_KEY_PAGER_CACHE';
 
@@ -17525,6 +17481,7 @@
       this.table = this.parent.table;
       this.table.colRefs[this.props.column.field] = this;
       this.maxTdWidth = 0;
+      this.tdRefs = {}; // 这一列所有的 td
     }
 
     _config() {
@@ -17569,6 +17526,7 @@
 
     _created() {
       this.table = this.parent;
+      this.table.colGroup = this;
       this.columns = this.table.props.columns;
       this.colList = [];
       this.hasColumnGroup = false;
@@ -17659,6 +17617,10 @@
         }
         this.table.grid.rowsRefs[_rowRefKey] = this;
       }
+
+      if (this.table.parent.componentType === 'GridFooter') {
+        this.table.grid.footerTrRef = this;
+      }
     }
 
     _config() {
@@ -17693,7 +17655,7 @@
       }
 
       if (Array.isArray(columns)) {
-        this.TdList = [];
+        this.tdList = [];
         children.push(...this.createTds(columns));
       }
 
@@ -17985,6 +17947,7 @@
       this.table = this.tr.table;
       this.resizer = null;
       this.lastDistance = 0;
+      this._stickyPos = 0; // 记录当前 th的sticy.style.left(right) 的值
       this.table.thRefs[this.props.column.field] = this;
     }
 
@@ -18023,6 +17986,15 @@
         this.table.grid.props.columnResizable &&
         this.props.column.resizable !== false &&
         this.props.column.colSpan === 1;
+
+      // 外部设置不允许拖拽固定列
+      if (
+        this.table.hasGrid &&
+        this.table.grid.props.columnResizable.allowFixedCol === false &&
+        this.props.column.fixed
+      ) {
+        this.resizable = false;
+      }
 
       let children = [
         headerProps,
@@ -18125,7 +18097,7 @@
           !this.props.column.isChecker &&
           !this.props.column.isTreeMark &&
           this.props.column.fixed !== 'right' &&
-          this.props.column.customizable !== false && {
+          this.props.column.frozenable !== false && {
             component: 'Icon',
             type: this.props.column.fixed ? 'pin-fill' : 'pin',
             attrs: {
@@ -18177,30 +18149,27 @@
             function () {
               const mask = that.table.grid.highlightMask;
               mask &&
+                !that.mouseDowning &&
                 mask.update({
                   attrs: {
                     style: {
+                      zIndex: that.props.column.fixed ? 99 : null,
                       left: `${this.offsetLeft}px`,
                       width: `${this.offsetWidth}px`,
                     },
                   },
                 });
             },
-          onmouseleave:
-            this.table.grid &&
-            function () {
-              const mask = that.table.grid.highlightMask;
-              mask && mask.update({ attrs: { style: { width: 0 } } });
-            },
+          onmouseleave: this._hideHighLightMask.bind(this),
         },
       });
     }
 
     _rendered() {
       // 未设置冻结列则无需定时器
-      const { grid = {} } = this.table;
-      const { frozenLeftCols, frozenRightCols } = grid.props || {};
-      if (frozenLeftCols || frozenRightCols) {
+      const fixed = this.props.column.fixed;
+
+      if (fixed) {
         setTimeout(() => {
           this.setStickyPosition();
         }, 0);
@@ -18209,18 +18178,72 @@
       this.resizer && this.handleResize();
     }
 
-    setStickyPosition() {
+    /**
+     * 当拖拽固定列后，往后的th width都需要更新 style.left
+     * @param {boolean} externalTrigger 是外部触发，
+     * @returns
+     */
+    setStickyPosition(externalTrigger = false) {
       // 设置排序时会出发两次_render，则此时设置的第一个定时器中的this.props已被销毁
       if (!this.props) return
-      if (this.props.column.fixed === 'left') {
-        this._setStyle({ left: `${this.element.offsetLeft}px` });
-      } else if (this.props.column.fixed === 'right') {
-        this._setStyle({
-          right: `${
-          this.parent.element.offsetWidth - this.element.offsetLeft - this.element.offsetWidth
-        }px`,
-        });
+      if (externalTrigger) {
+        this._setPositionByExter();
+      } else {
+        this._setPositionByIndide();
       }
+      this._setAllTdsPosition();
+    }
+
+    // 内部更新，通过 自身的 offsetLeft和offsetWidth计算得出
+    _setPositionByIndide() {
+      const fixed = this.props.column.fixed;
+      const el = this.element;
+      const parentEl = this.parent.element;
+
+      if (fixed === 'left') {
+        this._stickyPos = el.offsetLeft;
+      } else if (fixed === 'right') {
+        this._stickyPos = parentEl.offsetWidth - el.offsetLeft - el.offsetWidth;
+        if (this.table.hasGrid && this.table.grid.props.frozenHeader) {
+          this._stickyPos -= 17;
+        }
+      }
+      this._setStyle({ [fixed]: `${this._stickyPos}px` });
+    }
+
+    // 外部更新，通过 preEl 或 nextEl 的offsetWidth 计算得出
+    _setPositionByExter() {
+      const fixed = this.props.column.fixed;
+      const el = this.element;
+      if (fixed === 'left') {
+        const preEl = el.previousElementSibling;
+        this._stickyPos = preEl ? preEl.component._stickyPos + preEl.offsetWidth : 0;
+      } else if (fixed === 'right') {
+        const nextEl = el.nextElementSibling;
+        this._stickyPos = nextEl ? nextEl.component._stickyPos + nextEl.offsetWidth : 0;
+      }
+      this._setStyle({ [fixed]: `${this._stickyPos}px` });
+    }
+
+    _setAllTdsPosition() {
+      const { table, props } = this;
+      const { body, footer } = table.grid;
+      const { field } = props.column;
+      if (body) {
+        this._setTdsPosition(body.table.colRefs[field].tdRefs);
+      }
+      if (footer) {
+        this._setTdsPosition(footer.table.colRefs[field].tdRefs);
+      }
+    }
+
+    _setTdsPosition(tdRefs) {
+      const { props, _stickyPos } = this;
+      const { fixed } = props.column;
+
+      Object.keys(tdRefs).forEach((key) => {
+        tdRefs[key]._setStyle({ [fixed]: `${_stickyPos}px` });
+      });
     }
 
     handleResize() {
@@ -18230,18 +18253,19 @@
       resizer.onmousedown = function (evt) {
         const startX = evt.clientX;
         that.lastDistance = 0;
+        that._hideHighLightMask();
+        that.mouseDowning = true;
+
         document.onmousemove = function (e) {
           const endX = e.clientX;
           const moveLen = endX - startX;
 
           const distance = moveLen - that.lastDistance;
-          that.table.grid.calcResizeCol({
-            field: that.props.column.field,
-            distance: distance,
-          });
+          that._triggerGridResize(distance);
           that.lastDistance = moveLen;
         };
         document.onmouseup = function () {
+          that.mouseDowning = false;
           const grid = that.table.grid;
           if (that.resizable && grid.props.columnResizable.cache) {
             grid.storeColsWidth(that.props.column.field);
@@ -18256,10 +18280,31 @@
             };
             header.scrollbar.update({ size });
           }
+          that._triggerGridResize(0);
+
           document.onmousemove = null;
           document.onmouseup = null;
         };
       };
+    }
+
+    _hideHighLightMask() {
+      if (!this.table.grid) return
+      const mask = this.table.grid.highlightMask;
+      mask && mask.update({ attrs: { style: { width: 0 } } });
+    }
+
+    /**
+     * @param {number} distance 偏移量
+     */
+    _triggerGridResize(distance) {
+      this.table.grid.calcResizeCol(
+        {
+          field: this.props.column.field,
+          distance: distance,
+        },
+        this,
+      );
     }
 
     onSortChange() {
@@ -18455,25 +18500,7 @@
 
   class Table extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tag: 'table',
-        columns: [],
-        rowDefaults: {},
-        onlyHead: false,
-        onlyBody: false,
-        keyField: 'id',
-        striped: false,
-        treeConfig: {
-          childrenField: 'children',
-          treeNodeColumn: null,
-          initExpandLevel: -1,
-          indentSize: 6,
-        },
-        showTitle: false,
-        ellipsis: false,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Table.defaults, props), ...mixins);
     }
 
     _created() {
@@ -18514,7 +18541,7 @@
           this.props.onlyBody !== true && { component: Thead },
           this.props.onlyHead !== true && { component: Tbody },
           hasMask &&
-            this.props.onlyBody && {
+            this.parent.componentType === 'GridBody' && {
               tag: 'div',
               classes: { 'nom-table-th-hover-mask': true },
               _created() {
@@ -18563,11 +18590,29 @@
     }
   }
 
+  Table.defaults = {
+    tag: 'table',
+    columns: [],
+    rowDefaults: {},
+    onlyHead: false,
+    onlyBody: false,
+    keyField: 'id',
+    striped: false,
+    treeConfig: {
+      childrenField: 'children',
+      treeNodeColumn: null,
+      initExpandLevel: -1,
+      indentSize: 6,
+    },
+    showTitle: false,
+    ellipsis: false,
+  };
+
   Component.register(Table);
 
   var GridTableMixin = {
     methods: {
-      calcResizeCol: function (data) {
+      calcResizeCol: function (data, thRef) {
         const col = this.table.colRefs[data.field];
         const tdWidth = this.table.element.rows[0].cells[col.props.index].offsetWidth;
         const colWidth = col.props.column.width || tdWidth;
@@ -18578,6 +18623,10 @@
           result = 60;
         }
         col.update({ column: { width: result } });
+        if (this.componentType === 'GridHeader' && col.props.column.fixed) {
+          // 只在Header 调用 无需放在 mixin 中
+          this._processFixedColumnSticky(thRef);
+        }
       },
 
       resizeCol: function ({ field, width = 0 }) {
@@ -18974,6 +19023,22 @@
         this.scrollbar.hide();
       }
     }
+
+    /**
+     * 存在多列固定，设置固定列的列宽时，对其余列的 style.left style.right 的重新计算处理
+     * @param {number} triggerTh 触发的 th 实例
+     */
+    _processFixedColumnSticky(triggerTh) {
+      const { table } = triggerTh;
+      const { thRefs } = table;
+      const { colList } = table.colGroup;
+
+      colList.forEach((col) => {
+        if (col.column.fixed) {
+          thRefs[col.name] && thRefs[col.name].setStickyPosition(true);
+        }
+      });
+    }
   }
 
   Component.register(GridHeader);
@@ -19054,8 +19119,10 @@
                       });
                       return false
                     }
-                    that.grid.popupTreeData = that.tree.getData();
-                    that.grid.handleColumnsSetting(list);
+                    that.grid.popupTreeData = that.grid.originColumns = that._sortCustomizableColumns(
+                      that.tree.getData(),
+                    );
+                    that.grid.handleColumnsSetting(that._sortCustomizableColumns(list));
                   },
                 },
                 {
@@ -19102,6 +19169,15 @@
       mapColumns(val);
       return val
     }
+
+    // 将customizable: false的列排至后面
+    _sortCustomizableColumns(arr) {
+      arr.sort((curr, next) => {
+        if (next.customizable === false) return -1
+        return 0
+      });
+      return arr
+    }
   }
 
   Component.register(GridSettingPopup);
@@ -19111,6 +19187,7 @@
       Grid._loopSetValue(props.treeConfig, [
         'cascadeCheckParent',
         'cascadeCheckChildren',
+        'cascadeUncheckParent',
         'cascadeUncheckChildren',
       ]);
       super(Component.extendProps(Grid.defaults, props), ...mixins);
@@ -19124,17 +19201,20 @@
       this.checkedRowRefs = {};
       this._shouldAutoScroll = true;
       this._customColumnFlag = false; // 是否已经自定义处理过列
+      this._pinColumnFlag = false; // 是否已经处理过列缓存
 
       this.props.columns = this.props.columns.filter((n) => {
         return Object.keys(n).length
       });
       this.pinColumns = [];
       this.originColumns = [...this.props.columns];
+      this._needSortColumnsFlag = true; // 是否需要对列进行排序
 
       this.sortUpdated = false;
-      // 列设置弹窗 tree的数据
-      this.popupTreeData = this.originColumns;
+
       this.filter = {};
+      this._resetFixCount();
+
       if (this.props.frozenLeftCols > 0) {
         this.props.rowCheckable && this.props.frozenLeftCols++;
         this.props.rowExpandable && this.props.frozenLeftCols++;
@@ -19147,8 +19227,10 @@
         const c = props.columns.filter((n) => {
           return Object.keys(n)
         });
+        this._customColumnFlag = false;
+        this._pinColumnFlag = false;
+        this._needSortColumnsFlag = true;
         this.originColumns = [...c];
-        this.popupTreeData = this.originColumns;
       }
       // 更新了data
       if (props.data && this.props) {
@@ -19158,6 +19240,15 @@
           this._alreadyProcessedFlat = false;
         }
       }
+      if (props.hasOwnProperty('rowCheckable') || props.hasOwnProperty('rowExpandable')) {
+        this._resetFixCount();
+      }
+    }
+
+    _resetFixCount() {
+      this._fixedCount = 0;
+      this.props.rowCheckable && this._fixedCount++;
+      this.props.rowExpandable && this._fixedCount++;
     }
 
     _config() {
@@ -19224,16 +19315,55 @@
     // 列部分的各种处理
     _processColumns() {
       this._processColumnsCustom();
+      this._processPinColumn();
+      this._processColumnSort();
+
       this._processCheckableColumn();
       this._processExpandableColumn();
       this._processFrozenColumn();
     }
 
+    _processPinColumn() {
+      const { columnFrozenable } = this.props;
+      if (this._pinColumnFlag || !columnFrozenable || !columnFrozenable.cache) return
+      this._gridColumsFixedStoreKey = this._getStoreKey(true, STORAGE_KEY_GRID_COLS_FIXED);
+      if (!this._gridColumsFixedStoreKey) return
+
+      // 读取缓存中的上一次固定列的配置
+      let storeFields = localStorage.getItem(this._gridColumsFixedStoreKey);
+      if (storeFields && storeFields.length) {
+        storeFields = JSON.parse(storeFields);
+
+        // 从columns 二次过滤storeFields存在的列
+        this.pinColumns = this._getColsFromFields(this.props.columns, storeFields, false);
+
+        this.setProps({
+          frozenLeftCols: this.pinColumns.length ? this._fixedCount + this.pinColumns.length : 0,
+        });
+        this._pinColumnFlag = true;
+      }
+    }
+
+    // 根据缓存，对originColumns和 columns排序
+    _processColumnSort() {
+      if (this._needSortColumnsFlag) {
+        let customFields = localStorage.getItem(this._gridColumsStoreKey);
+        let fixedFields = localStorage.getItem(this._gridColumsFixedStoreKey);
+        customFields = JSON.parse(customFields);
+        // 无缓存则读取内存中 pinColumns的值做排序
+        fixedFields = JSON.parse(fixedFields) || this.pinColumns.map((item) => item.field);
+
+        this._sortColumnsFromFields(this.originColumns, customFields);
+        this._sortColumnsFromFields(this.originColumns, fixedFields);
+        this._sortColumnsFromFields(this.props.columns, customFields);
+        this._sortColumnsFromFields(this.props.columns, fixedFields);
+
+        this._needSortColumnsFlag = false;
+      }
+    }
+
     _processFrozenColumn() {
       this._parseBrowerVersion();
-      this._fixedCount = 0;
-      this.props.rowCheckable && this._fixedCount++;
-      this.props.rowExpandable && this._fixedCount++;
 
       const { frozenLeftCols, frozenRightCols } = this.props;
 
@@ -19300,6 +19430,7 @@
         this.props.frozenLeftCols = null;
         this.props.frozenRightCols = null;
         this.props.allowFrozenCols = false;
+        this.props.columnFrozenable = false;
       }
     }
 
@@ -19325,7 +19456,7 @@
       let storeFields = localStorage.getItem(this._gridColumsStoreKey);
       if (storeFields && storeFields.length) {
         storeFields = JSON.parse(storeFields);
-        // 从originColumns 过滤storeFields存在的列
+
         this.setProps({ columns: this._getColsFromFields(this.originColumns, storeFields) });
         this._customColumnFlag = true;
       }
@@ -19371,6 +19502,8 @@
 
       this._processColumnsWidth();
       this._processAutoScroll();
+
+      this.props.rowSortable && defaultSortableOndrop();
     }
 
     getColumns() {
@@ -19659,6 +19792,8 @@
     }
 
     showSetting() {
+      // 列设置弹窗 tree的数据
+      this.popupTreeData = this.originColumns;
       this.popup = new GridSettingPopup({
         align: 'center',
         alignTo: window,
@@ -19710,7 +19845,7 @@
       }
 
       this._customColumnFlag = false;
-      this._processPinColumns(tree);
+      this._processPinColumnFromSetting(tree);
       this.setProps({ columns: tree });
       this._processColumns();
       this._calcMinWidth();
@@ -19719,19 +19854,18 @@
       columnsCustomizable.callback && this._callHandler(columnsCustomizable.callback(tree));
     }
 
-    // 自定义列设置后。去掉将 pinColumns 中已隐藏的列
-    _processPinColumns(columns) {
-      const arr = [];
-      let { frozenLeftCols } = this.props;
-      this.pinColumns.forEach((item) => {
-        if (columns.find((col) => item.field === col.field)) {
-          arr.push(item);
-        } else {
-          frozenLeftCols--;
-        }
-      });
-      this.pinColumns = arr;
-      this.setProps({ frozenLeftCols });
+    // 自定义列设置后。更新 pinColumns
+    _processPinColumnFromSetting(columns) {
+      if (!this._gridColumsFixedStoreKey) return
+      const { frozenLeftCols } = this.props;
+
+      if (frozenLeftCols) {
+        this.pinColumns = columns.slice(0, frozenLeftCols - this._fixedCount);
+        localStorage.setItem(
+          this._gridColumsFixedStoreKey,
+          JSON.stringify(this.pinColumns.map((col) => col.field)),
+        );
+      }
     }
 
     handleDrag() {
@@ -19836,6 +19970,7 @@
             {
               width: 50,
               isChecker: true,
+              resizable: false,
               header: {
                 component: Checkbox,
                 plain: true,
@@ -19979,12 +20114,12 @@
      * 根据偏移量计算出width后再赋值
      * @param {*} data {field, distance}
      */
-    calcResizeCol(data) {
-      this.header && this.header.calcResizeCol(data);
+    calcResizeCol(data, thRef) {
+      this.header && this.header.calcResizeCol(data, thRef);
       if (this.props.data && this.props.data.length) {
-        this.body && this.body.calcResizeCol(data);
-        this.footer && this.footer.calcResizeCol(data);
+        this.body && this.body.calcResizeCol(data, thRef);
       }
+      this.footer && this.footer.calcResizeCol(data, thRef);
     }
 
     /**
@@ -20065,10 +20200,30 @@
       }, [])
     }
 
-    _getColsFromFields(columns = [], fields = []) {
+    // 引用传递，实现对对应 columns的排序
+    _sortColumnsFromFields(columns, fields = []) {
+      if (!fields || !fields.length) return
+
+      // 因Array.prototype.sort 在Firefox在的表现不同，改为使用for循环
+      for (let i = 0; i < fields.length; i++) {
+        for (let j = i; j < columns.length; j++) {
+          // 未设置 field的列都排在最后面
+          if (isNullish(columns[j].field)) {
+            const nullCol = columns.splice(j, 1);
+            columns.push(nullCol[0]);
+          } else if (columns[j].field === fields[i]) {
+            // 将fields 中存在的列全部排在最前面
+            const sameCol = columns.splice(j, 1);
+            columns.splice(i, 0, sameCol[0]);
+          }
+        }
+      }
+    }
+
+    _getColsFromFields(columns = [], fields = [], includeNullish = true) {
       return columns.reduce((acc, curr) => {
         // 无field的列，列设置后会消失
-        if (isNullish(curr.field)) {
+        if (isNullish(curr.field) && includeNullish) {
           acc.push(curr);
         } else if (fields.includes(curr.field)) {
           acc.push({ ...curr, children: this._getColsFromFields(curr.children, fields) });
@@ -20087,6 +20242,7 @@
             {
               width: 50,
               isTreeMark: true,
+              resizable: false,
               cellRender: ({ row, rowData }) => {
                 return {
                   component: Icon,
@@ -20146,27 +20302,39 @@
     }
 
     handlePinClick(data) {
-      if (data.fixed) {
-        if (this.pinColumns.length < 1) {
-          const num = this.props.frozenLeftCols;
-          this.setProps({ frozenLeftCols: num - (1 + this._fixedCount) });
-          num > 1 + this._fixedCount && this.fixPinOrder(data);
-          // 未对columns进行增删或排序，无需触发 config
-          this._processFrozenColumn();
-          this.render();
-          return
+      // 取消初始化固定列时(无缓存配置时)
+      if (data.fixed && this.pinColumns.length < 1) {
+        let num = this.props.frozenLeftCols;
+        if (num - 1 > this._fixedCount) {
+          this.fixPinOrder(data);
+          num--;
+        } else {
+          num = 0;
         }
+
+        this.setProps({ frozenLeftCols: num });
+        // 未对columns进行增删或排序，无需触发 config
+        this._processFrozenColumn();
+        this.render();
+        return
       }
+
       if (this.pinColumns.find((n) => n.field === data.field)) {
         this.pinColumns = this.removeColumn(this.pinColumns, data);
       } else {
-        this.pinColumns.unshift(data);
+        this.pinColumns.push(data);
       }
 
+      this._gridColumsFixedStoreKey &&
+        localStorage.setItem(
+          this._gridColumsFixedStoreKey,
+          JSON.stringify(this.pinColumns.map((col) => col.field)),
+        );
       this.setProps({
         columns: this.getPinOrderColumns(),
         frozenLeftCols: this.pinColumns.length ? this.pinColumns.length + this._fixedCount : 0,
       });
+      this._needSortColumnsFlag = !data.lastLeft;
       this._processColumns();
       this.render();
     }
@@ -20207,11 +20375,14 @@
 
       let arr = [];
 
-      this.pinColumns.forEach((n) => {
-        const arr2 = arr.length > 0 ? arr : this.props.columns;
-        arr = this.removeColumn(arr2, n);
-        arr.unshift(n);
-      });
+      this.pinColumns
+        .slice()
+        .reverse()
+        .forEach((n) => {
+          const arr2 = arr.length > 0 ? arr : this.props.columns;
+          arr = this.removeColumn(arr2, n);
+          arr.unshift(n);
+        });
       return arr
     }
   }
@@ -20245,13 +20416,18 @@
     // columnsCustomizable.callback: 设置列保存回调
     autoMergeColumns: null,
     columnResizable: false,
-    // columnResizable.cache: 设置的列宽保存至localstorage，cache的值为对应的key
+    // columnResizable.cache: boolean 设置的列宽保存至localstorage
+    // columnResizable.allowFixedCol: 固定列是否允许被拖动(当 data太多时拖动，会造成渲染卡顿, 此时可设置false关闭)
+
+    columnFrozenable: false, // 允许固定列
+    // columnFrozenable.cache: boolean 固定列的结果保存至localstorage
+
     striped: false,
     showTitle: false,
     ellipsis: false,
     sticky: false,
     line: 'row',
-    bordered: true,
+    bordered: false,
   };
   Grid._loopSetValue = function (key, arry) {
     if (key === undefined || key.cascade === undefined) return false
@@ -20265,15 +20441,7 @@
 
   class Toolbar extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        type: 'default',
-        visibleItems: 2,
-        gutter: 'sm',
-        size: null,
-        items: [],
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Toolbar.defaults, props), ...mixins);
     }
 
     _config() {
@@ -20306,7 +20474,13 @@
       });
     }
   }
-
+  Toolbar.defaults = {
+    type: 'default',
+    visibleItems: 2,
+    gutter: 'sm',
+    size: null,
+    items: [],
+  };
   Component.register(Toolbar);
 
   let nameSeq = 0;
@@ -20518,11 +20692,7 @@
 
   class GroupGrid extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        hideAction: false,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(GroupGrid.defaults, props), ...mixins);
     }
 
     _created() {
@@ -20726,7 +20896,9 @@
       }
     }
   }
-
+  GroupGrid.defaults = {
+    hideAction: false,
+  };
   Object.defineProperty(GroupGrid.prototype, 'fields', {
     get: function () {
       return this.grid.getRows()
@@ -20737,12 +20909,7 @@
 
   class GroupList extends Group {
     constructor(props, ...mixins) {
-      const defaults = {
-        fieldDefaults: { component: Group },
-        hideAction: false,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(GroupList.defaults, props), ...mixins);
     }
 
     _created() {
@@ -20859,22 +21026,16 @@
       this._onValueChange();
     }
   }
+  GroupList.defaults = {
+    fieldDefaults: { component: Group },
+    hideAction: false,
+  };
 
   Component.register(GroupList);
 
   class MaskInfo extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tag: 'span',
-        type: null,
-        text: null,
-        mask: true,
-        icon: true,
-        empty: null,
-        showTitle: true,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(MaskInfo.defaults, props), ...mixins);
     }
 
     _created() {
@@ -21037,16 +21198,20 @@
       return newText
     }
   }
-
+  MaskInfo.defaults = {
+    tag: 'span',
+    type: null,
+    text: null,
+    mask: true,
+    icon: true,
+    empty: null,
+    showTitle: true,
+  };
   Component.register(MaskInfo);
 
   class MaskInfoField extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        value: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(MaskInfoField.defaults, props), ...mixins);
     }
 
     _config() {
@@ -21078,7 +21243,9 @@
       return this.props.value
     }
   }
-
+  MaskInfoField.defaults = {
+    value: null,
+  };
   Component.register(MaskInfoField);
 
   class MenuItem extends Component {
@@ -21438,27 +21605,7 @@
 
   class Menu extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tag: 'ul',
-        items: [],
-        itemDefaults: {
-          component: MenuItem,
-        },
-        itemSelectable: {
-          onlyleaf: false,
-          byClick: false,
-        },
-        itemExpandable: {
-          expandSingle: true,
-          initExpandLevel: 0,
-        },
-        compact: false,
-        indent: 1.5,
-        direction: 'vertical',
-        keyField: 'key',
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Menu.defaults, props), ...mixins);
     }
 
     _created() {
@@ -21543,6 +21690,10 @@
     selectToItem(param) {
       if (this.props.compact) {
         const target = this.getRootItem(param);
+        if (target === null) {
+          console.warn(`Could not find the item with specific key.`);
+          return
+        }
         this.getItem(target).expand();
         this.scrollTo(target);
         this.expandedRoot = this.getItem(target).wrapper;
@@ -21555,10 +21706,15 @@
     }
 
     getRootItem(param) {
-      const rootItem = this.props.items.filter((n) => {
+      const arr = this.props.items.filter((n) => {
         return JSON.stringify(n).includes(`"${param}"`)
-      })[0][this.props.keyField];
-      return this.itemRefs[rootItem]
+      });
+
+      if (arr.length) {
+        const rootItem = arr[0][this.props.keyField];
+        return this.itemRefs[rootItem]
+      }
+      return null
     }
 
     unselectItem(param, unselectOption) {
@@ -21615,25 +21771,30 @@
       this.scrollToSelected();
     }
   }
-
+  Menu.defaults = {
+    tag: 'ul',
+    items: [],
+    itemDefaults: {
+      component: MenuItem,
+    },
+    itemSelectable: {
+      onlyleaf: false,
+      byClick: false,
+    },
+    itemExpandable: {
+      expandSingle: true,
+      initExpandLevel: 0,
+    },
+    compact: false,
+    indent: 1.5,
+    direction: 'vertical',
+    keyField: 'key',
+  };
   Component.register(Menu);
 
   class Message extends Layer {
     constructor(props, ...mixins) {
-      const defaults = {
-        type: null,
-        icon: null,
-        content: null,
-        duration: 2,
-        closeToRemove: true,
-        position: {
-          my: 'center center',
-          at: 'center center',
-          of: window,
-        },
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Message.defaults, props), ...mixins);
     }
 
     _config() {
@@ -21652,6 +21813,9 @@
       }
       this.props.content = Component.normalizeTemplateProps(this.props.content);
       this.setProps({
+        classes: {
+          'nom-message-popup': !!this.props.position,
+        },
         content: {
           classes: {
             'nom-message-content': true,
@@ -21680,7 +21844,18 @@
       }
     }
   }
-
+  Message.defaults = {
+    type: null,
+    icon: null,
+    content: null,
+    duration: 2,
+    closeToRemove: true,
+    position: {
+      my: 'center center',
+      at: 'center center',
+      of: window,
+    },
+  };
   Component.register(Message);
 
   // Thanks to https://github.com/andreypopp/react-textarea-autosize/
@@ -21945,17 +22120,7 @@
 
   class MultilineTextbox extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        autofocus: false,
-        autoSize: false, // boolean|{minRows:number,maxRows:number}
-        placeholder: null,
-        value: null,
-        maxlength: null,
-        rows: null,
-        readonly: false,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(MultilineTextbox.defaults, props), ...mixins);
     }
 
     _config() {
@@ -22037,6 +22202,16 @@
     }
   }
 
+  MultilineTextbox.defaults = {
+    autofocus: false,
+    autoSize: false, // boolean|{minRows:number,maxRows:number}
+    placeholder: null,
+    value: null,
+    maxlength: null,
+    rows: null,
+    readonly: false,
+  };
+
   Component.register(MultilineTextbox);
 
   class NavbarCaption extends Component {
@@ -22047,14 +22222,6 @@
 
   Component.register(NavbarCaption);
 
-  class NavbarCaptionBefore extends Component {
-    // constructor(props, ...mixins) {
-    //   super(props, ...mixins)
-    // }
-  }
-
-  Component.register(NavbarCaptionBefore);
-
   class NavbarCaptionAfter extends Component {
     // constructor(props, ...mixins) {
     //   super(props, ...mixins)
@@ -22062,6 +22229,14 @@
   }
 
   Component.register(NavbarCaptionAfter);
+
+  class NavbarCaptionBefore extends Component {
+    // constructor(props, ...mixins) {
+    //   super(props, ...mixins)
+    // }
+  }
+
+  Component.register(NavbarCaptionBefore);
 
   class NavbarNav extends Component {
     // constructor(props, ...mixins) {
@@ -22081,13 +22256,7 @@
 
   class Navbar extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        caption: null,
-        nav: null,
-        tools: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Navbar.defaults, props), ...mixins);
     }
 
     config() {
@@ -22125,7 +22294,11 @@
       });
     }
   }
-
+  Navbar.defaults = {
+    caption: null,
+    nav: null,
+    tools: null,
+  };
   Component.register(Navbar);
 
   class NotificationContent extends Component {
@@ -22273,19 +22446,7 @@
     // }
 
     constructor(props, ...mixins) {
-      const defaults = {
-        ...Notification.NOMUI_NOTIFICATION_DEFAULTS,
-        // type:'',
-        closeIcon: 'close',
-        // alignTo: document.body,
-        title: '',
-        description: '',
-        // btn:boolean||{text:''},
-        // closeIcon:{},
-        key: newGuid(),
-        // onClose:()=>{},
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Notification.defaults, props), ...mixins);
     }
 
     static open(config) {
@@ -22463,21 +22624,23 @@
       super._config();
     }
   }
-
+  Notification.defaults = {
+    ...Notification.NOMUI_NOTIFICATION_DEFAULTS,
+    // type:'',
+    closeIcon: 'close',
+    // alignTo: document.body,
+    title: '',
+    description: '',
+    // btn:boolean||{text:''},
+    // closeIcon:{},
+    key: newGuid(),
+    // onClose:()=>{},
+  };
   Component.register(Notification);
 
   class Numberbox extends Textbox {
     constructor(props, ...mixins) {
-      const defaults = {
-        min: null,
-        max: null,
-        precision: -1,
-        maxPrecision: null,
-        limitInput: false,
-        allowClear: false,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Numberbox.defaults, props), ...mixins);
     }
 
     _config() {
@@ -22643,7 +22806,14 @@
       return this.input.getText()
     }
   }
-
+  Numberbox.defaults = {
+    min: null,
+    max: null,
+    precision: -1,
+    maxPrecision: null,
+    limitInput: false,
+    allowClear: false,
+  };
   Component.register(Numberbox);
 
   const SPINNER_POSITION = {
@@ -22690,24 +22860,7 @@
 
   class NumberSpinner extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        // min: Number.MIN_SAFE_INTEGER,
-        // max: Number.MAX_SAFE_INTEGER,
-        min: null,
-        max: null,
-        precision: 0,
-        formatter: null,
-        parser: null,
-        step: 1,
-        showSpinner: true,
-        align: 'right',
-
-        // decimal,currency,percent
-        style: STYLE.DECIMAL,
-        currency: 'CNY',
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(NumberSpinner.defaults, props), ...mixins);
       this._handleSpinnerIcon = this._handleSpinnerIcon.bind(this);
     }
 
@@ -23116,6 +23269,23 @@
     }
   }
 
+  NumberSpinner.defaults = {
+    // min: Number.MIN_SAFE_INTEGER,
+    // max: Number.MAX_SAFE_INTEGER,
+    min: null,
+    max: null,
+    precision: 0,
+    formatter: null,
+    parser: null,
+    step: 1,
+    showSpinner: true,
+    align: 'right',
+
+    // decimal,currency,percent
+    style: STYLE.DECIMAL,
+    currency: 'CNY',
+  };
+
   Component.register(NumberSpinner);
 
   class Pager extends Component {
@@ -23153,7 +23323,7 @@
     _renderpages(pager) {
       return {
         component: List,
-        gutter: this.props.compact ? 'sm' : 'md',
+        gutter: this.props.compact ? 'sm' : 'sm',
         items: pager.getPageItems(),
         itemDefaults: {
           tag: 'a',
@@ -23162,7 +23332,7 @@
           },
           _config: function () {
             this.setProps({
-              children: `${this.props.text}`,
+              children: this.props.text,
             });
           },
         },
@@ -23401,8 +23571,16 @@
     itemsSort: ['count', 'pages', 'sizes'], // 排列顺序 1.count 共xx条数据 2.分页数List 3.分页大小Select
 
     texts: {
-      prev: '上一页',
-      next: '下一页',
+      // prev: '上一页',
+      // next: '下一页',
+      prev: {
+        component: 'Icon',
+        type: 'prev',
+      },
+      next: {
+        component: 'Icon',
+        type: 'next',
+      },
       ellipse: '...',
     },
 
@@ -23429,19 +23607,7 @@
 
   class PartialDatePicker extends Textbox {
     constructor(props, ...mixins) {
-      const defaults = {
-        yearRange: [50, 20],
-        mode: 'year',
-        allowClear: true,
-        onChange: null,
-        placeholder: '选择年份',
-        value: null,
-        minDate: null,
-        maxDate: null,
-        readonly: true,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(PartialDatePicker.defaults, props), ...mixins);
     }
 
     _created() {
@@ -24018,33 +24184,22 @@
       return date.format(format || 'yyyy-MM-dd')
     }
   }
-
+  PartialDatePicker.defaults = {
+    yearRange: [50, 20],
+    mode: 'year',
+    allowClear: true,
+    onChange: null,
+    placeholder: '选择年份',
+    value: null,
+    minDate: null,
+    maxDate: null,
+    readonly: true,
+  };
   Component.register(PartialDatePicker);
 
   class PartialDateRangePicker extends Group {
     constructor(props, ...mixins) {
-      const defaults = {
-        mode: 'year',
-        minDate: null,
-        maxDate: null,
-        yearRange: [50, 20],
-        allowClear: true,
-        onChange: null,
-        fieldName: {
-          start: 'start',
-          end: 'end',
-        },
-        autoPopupEnd: true,
-        flatValue: true,
-        startPickerProps: {
-          placeholder: '开始日期',
-        },
-        endPickerProps: {
-          placeholder: '结束日期',
-        },
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(PartialDateRangePicker.defaults, props), ...mixins);
     }
 
     _created() {
@@ -24064,6 +24219,7 @@
         rules,
         startPickerProps,
         endPickerProps,
+        disabled,
       } = this.props;
 
       this.setProps({
@@ -24086,6 +24242,7 @@
             required,
             requiredMessage,
             rules,
+            disabled,
             ...startPickerProps,
           },
           {
@@ -24109,6 +24266,7 @@
             required,
             requiredMessage,
             rules,
+            disabled,
             ...endPickerProps,
           },
         ],
@@ -24154,15 +24312,31 @@
       }
     }
   }
-
+  PartialDateRangePicker.defaults = {
+    mode: 'year',
+    minDate: null,
+    maxDate: null,
+    yearRange: [50, 20],
+    allowClear: true,
+    onChange: null,
+    fieldName: {
+      start: 'start',
+      end: 'end',
+    },
+    autoPopupEnd: true,
+    flatValue: true,
+    startPickerProps: {
+      placeholder: '开始日期',
+    },
+    endPickerProps: {
+      placeholder: '结束日期',
+    },
+  };
   Component.register(PartialDateRangePicker);
 
   class Password extends Textbox {
     constructor(props, ...mixins) {
-      const defaults = {
-        allowClear: false,
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Password.defaults, props), ...mixins);
     }
 
     _created() {
@@ -24246,22 +24420,14 @@
     }
   }
 
+  Password.defaults = {
+    allowClear: false,
+  };
   Component.register(Password);
 
   class Popconfirm extends Popup {
     constructor(props, ...mixins) {
-      const defaults = {
-        triggerAction: 'click',
-        closeOnClickOutside: false,
-        content: null,
-        onConfirm: null,
-        okText: '是',
-        cancelText: '否',
-        icon: 'info-circle',
-        align: 'top left',
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Popconfirm.defaults, props), ...mixins);
     }
 
     _config() {
@@ -24302,9 +24468,7 @@
                 items: [
                   {
                     component: 'Button',
-                    styles: {
-                      color: 'primary',
-                    },
+                    type: 'primary',
 
                     text: okText,
                     onClick: () => {
@@ -24337,7 +24501,16 @@
       this.hide();
     }
   }
-
+  Popconfirm.defaults = {
+    triggerAction: 'click',
+    closeOnClickOutside: false,
+    content: null,
+    onConfirm: null,
+    okText: '是',
+    cancelText: '否',
+    icon: 'info-circle',
+    align: 'top left',
+  };
   Component.mixin({
     _rendered: function () {
       if (this.props.popconfirm) {
@@ -24610,11 +24783,7 @@
     static _prefixClass = 'nom-progress'
 
     constructor(props, ...mixins) {
-      const defaults = {
-        width: 120,
-        // strokeWidth:6
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(ProgressCircle.defaults, props), ...mixins);
     }
 
     _getGapDegree() {
@@ -24703,16 +24872,16 @@
     }
   }
 
+  ProgressCircle.defaults = {
+    width: 120,
+    // strokeWidth:6
+  };
+
   class ProgressLine extends Component {
     static _prefixClass = 'nom-progress'
 
     constructor(props, ...mixins) {
-      const defaults = {
-        // steps:100,
-        // strokeColor:'',
-        strokeWidth: 10,
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(ProgressLine.defaults, props), ...mixins);
     }
 
     _config() {
@@ -24798,15 +24967,17 @@
     }
   }
 
+  ProgressLine.defaults = {
+    // steps:100,
+    // strokeColor:'',
+    strokeWidth: 10,
+  };
+
   class ProgressSteps extends Component {
     static _prefixClass = 'nom-progress'
 
     constructor(props, ...mixins) {
-      const defaults = {
-        strokeWidth: 8,
-        percent: 0,
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(ProgressSteps.defaults, props), ...mixins);
     }
 
     _config() {
@@ -24839,42 +25010,18 @@
     }
   }
 
+  ProgressSteps.defaults = {
+    strokeWidth: 8,
+    percent: 0,
+  };
+
   class Progress extends Component {
     static _prefixClass = 'nom-progress'
 
     static _progressStatuses = ['normal', 'exception', 'active', 'success']
 
     constructor(props, ...mixins) {
-      const defaults = {
-        type: 'line', // 'line', 'circle', 'dashboard' // 类型，可选 line circle dashboard
-        percent: 0, // 百分比
-        // format?:undefined, // (percentNumber,successPercent) => `${percentNumber}%` 内容的模板函数
-        // status:undefined, // 'normal', 'exception', 'active', 'success' // 状态，可选：success exception normal active(仅限 line)
-        showInfo: true, // 是否显示进度数值或状态图标
-        // null for different theme definition
-        trailColor: null,
-        size: 'default', // 'default' ,'small'
-        /**
-         * type="line"
-         *  进度条线的宽度，默认为10px，
-         * type="circle"
-         *  圆形进度条线的宽度，单位是进度条画布宽度的百分比 默认 6
-         */
-        // strokeWidth:10,
-        strokeLinecap: 'round', //  'butt' | 'square' | 'round', // 进度条的样式
-        // strokeColor: string |  { from: string; to: string; direction: string }, // 进度条的色彩，传入 object 时为渐变
-        // trailColor: string, // 未完成的分段的颜色
-        /**
-         * type="circle" 圆形进度条画布宽度，单位 px 默认 132px
-         * type="dashboard" 仪表盘进度条画布宽度，单位 px 默认 132px
-         */
-        // width: number,
-        success: {}, //  { percent: number, strokeColor: string }, // 成功进度条相关配置
-        // gapDegree: number,【type="dashboard"】 仪表盘进度条缺口角度，可取值 0 ~ 295默认75
-        // gapPosition: 'top' | 'bottom' | 'left' | 'right', // 仪表盘进度条缺口位置 默认值 bottom
-        // steps: number, // 【type="line"】进度条总共步数
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Progress.defaults, props), ...mixins);
     }
 
     getPercentNumber() {
@@ -25001,6 +25148,36 @@
     }
   }
 
+  Progress.defaults = {
+    type: 'line', // 'line', 'circle', 'dashboard' // 类型，可选 line circle dashboard
+    percent: 0, // 百分比
+    // format?:undefined, // (percentNumber,successPercent) => `${percentNumber}%` 内容的模板函数
+    // status:undefined, // 'normal', 'exception', 'active', 'success' // 状态，可选：success exception normal active(仅限 line)
+    showInfo: true, // 是否显示进度数值或状态图标
+    // null for different theme definition
+    trailColor: null,
+    size: 'default', // 'default' ,'small'
+    /**
+     * type="line"
+     *  进度条线的宽度，默认为10px，
+     * type="circle"
+     *  圆形进度条线的宽度，单位是进度条画布宽度的百分比 默认 6
+     */
+    // strokeWidth:10,
+    strokeLinecap: 'round', //  'butt' | 'square' | 'round', // 进度条的样式
+    // strokeColor: string |  { from: string; to: string; direction: string }, // 进度条的色彩，传入 object 时为渐变
+    // trailColor: string, // 未完成的分段的颜色
+    /**
+     * type="circle" 圆形进度条画布宽度，单位 px 默认 132px
+     * type="dashboard" 仪表盘进度条画布宽度，单位 px 默认 132px
+     */
+    // width: number,
+    success: {}, //  { percent: number, strokeColor: string }, // 成功进度条相关配置
+    // gapDegree: number,【type="dashboard"】 仪表盘进度条缺口角度，可取值 0 ~ 295默认75
+    // gapPosition: 'top' | 'bottom' | 'left' | 'right', // 仪表盘进度条缺口位置 默认值 bottom
+    // steps: number, // 【type="line"】进度条总共步数
+  };
+
   Component.register(Progress);
 
   class RadioOptionList extends List {
@@ -25066,12 +25243,7 @@
 
   class RadioList extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        options: [],
-        uistyle: 'radio',
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(RadioList.defaults, props), ...mixins);
     }
 
     _config() {
@@ -25189,7 +25361,10 @@
       return option
     }
   }
-
+  RadioList.defaults = {
+    options: [],
+    uistyle: 'radio',
+  };
   Component.register(RadioList);
 
   function getValidMax(value) {
@@ -25324,19 +25499,7 @@
 
   class Rate extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        allowClear: true,
-        allowHalf: false,
-        disable: false,
-        rateIcon: '',
-        value: null,
-        disabled: false,
-        count: 5,
-        character: null,
-        tooltips: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Rate.defaults, props), ...mixins);
     }
 
     _config() {
@@ -25421,7 +25584,17 @@
       }
     }
   }
-
+  Rate.defaults = {
+    allowClear: true,
+    allowHalf: false,
+    disable: false,
+    rateIcon: '',
+    value: null,
+    disabled: false,
+    count: 5,
+    character: null,
+    tooltips: null,
+  };
   Component.register(Rate);
 
   const UnAuthorized = `#<svg width="251" height="294">
@@ -26310,16 +26483,7 @@
 
   class Result extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        // icon: 'info',
-        status: 'info', //  '403' | '404' | '500'|'success'|'error'|'info'|'warning',
-        // title: '',
-        // subTitle:'',
-        // extra:null,
-        // children:null
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Result.defaults, props), ...mixins);
     }
 
     renderIcon({ status, icon }) {
@@ -26426,28 +26590,30 @@
     403: UnAuthorized,
   };
 
+  Result.defaults = {
+    // icon: 'info',
+    status: 'info', //  '403' | '404' | '500'|'success'|'error'|'info'|'warning',
+    // title: '',
+    // subTitle:'',
+    // extra:null,
+    // children:null
+  };
+
   Component.register(Result);
 
   class SkeletonAvatar extends Avatar {
     constructor(props, ...mixins) {
-      const defaults = {
-        text: '#&nbsp;',
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(SkeletonAvatar.defaults, props), ...mixins);
     }
   }
+
+  SkeletonAvatar.defaults = {};
 
   Component.register(SkeletonAvatar);
 
   class SkeletonImage extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        width: null,
-        height: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(SkeletonImage.defaults, props), ...mixins);
     }
 
     _config() {
@@ -26481,13 +26647,16 @@
     }
   }
 
+  SkeletonImage.defaults = {
+    width: null,
+    height: null,
+  };
+
   Component.register(SkeletonImage);
 
   class SkeletonParagraph extends Component {
     constructor(props, ...mixins) {
-      const defaults = {};
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(SkeletonParagraph.defaults, props), ...mixins);
     }
 
     _config() {
@@ -26506,13 +26675,13 @@
     }
   }
 
+  SkeletonParagraph.defaults = {};
+
   Component.register(SkeletonParagraph);
 
   class SkeletonTitle extends Component {
     constructor(props, ...mixins) {
-      const defaults = {};
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(SkeletonTitle.defaults, props), ...mixins);
     }
 
     _config() {
@@ -26528,21 +26697,13 @@
     }
   }
 
+  SkeletonTitle.defaults = {};
+
   Component.register(SkeletonTitle);
 
   class Skeleton extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        type: null,
-        avatar: false,
-        title: true,
-        paragraph: 3,
-        image: false,
-        cols: null,
-        rows: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Skeleton.defaults, props), ...mixins);
     }
 
     _config() {
@@ -26675,28 +26836,22 @@
     },
   });
 
+  Skeleton.defaults = {
+    type: null,
+    avatar: false,
+    title: true,
+    paragraph: 3,
+    image: false,
+    cols: null,
+    rows: null,
+  };
+
   Component.register(Skeleton);
 
   class SlideCaptcha extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        token: null,
-        bgSrc: '',
-        captchSrc: '',
-        width: 300,
-        height: 300,
-        top: 0,
-        // onRefresh:()=>{},
-        // validate:()=>{},
-        // onFinish:()=>{},
-        // onFinishFailed:()=>{},
-        refreshTitle: '换一张',
-        tip: '向右滑动完成拼图',
-        autoRefreshOnFail: true, // 失败后是否自动刷新图片
-      };
-
       super(
-        Component.extendProps(defaults, props, {
+        Component.extendProps(SlideCaptcha.defaults, props, {
           state: {
             // 记录开始滑动的时间
             startTime: new Date(),
@@ -27026,16 +27181,27 @@
     }
   }
 
+  SlideCaptcha.defaults = {
+    token: null,
+    bgSrc: '',
+    captchSrc: '',
+    width: 300,
+    height: 300,
+    top: 0,
+    // onRefresh:()=>{},
+    // validate:()=>{},
+    // onFinish:()=>{},
+    // onFinishFailed:()=>{},
+    refreshTitle: '换一张',
+    tip: '向右滑动完成拼图',
+    autoRefreshOnFail: true, // 失败后是否自动刷新图片
+  };
+
   Component.register(SlideCaptcha);
 
   class Slider extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        disable: false,
-        max: 100,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Slider.defaults, props), ...mixins);
     }
 
     _created() {
@@ -27166,38 +27332,39 @@
       }
     }
   }
-
+  Slider.defaults = {
+    disable: false,
+    max: 100,
+  };
   Component.register(Slider);
 
   class StaticText extends Field {
-      constructor(props, ...mixins) {
-          const defaults = {
-              value: null,
-          };
+    constructor(props, ...mixins) {
+      super(Component.extendProps(StaticText.defaults, props), ...mixins);
+    }
 
-          super(Component.extendProps(defaults, props), ...mixins);
-      }
+    _config() {
+      this.setProps({
+        control: {
+          children: this.props.value,
+        },
+      });
+      super._config();
+    }
 
-      _config() {
-          this.setProps({
-              control: {
-                  children: this.props.value,
-              }
-          });
-          super._config();
-      }
+    _setValue(value) {
+      this.update({
+        value,
+      });
+    }
 
-      _setValue(value) {
-          this.update({
-              value,
-          });
-      }
-
-      _getValue() {
-          return this.props.value
-      }
+    _getValue() {
+      return this.props.value
+    }
   }
-
+  StaticText.defaults = {
+    value: null,
+  };
   Component.register(StaticText);
 
   const STATUS = {
@@ -27209,13 +27376,7 @@
 
   class Step extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        disabled: false,
-        current: 0,
-        // wait process finish error
-        status: 'wait',
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Step.defaults, props), ...mixins);
     }
 
     _config() {
@@ -27323,16 +27484,17 @@
     }
   }
 
+  Step.defaults = {
+    disabled: false,
+    current: 0,
+    // wait process finish error
+    status: 'wait',
+  };
+
   class Steps extends Component {
     constructor(props, ...mixins) {
       // active current
-      const defaults = {
-        direction: 'horizontal',
-        current: 0,
-        options: [],
-        onChange: null,
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Steps.defaults, props), ...mixins);
     }
 
     _config() {
@@ -27382,16 +27544,17 @@
     }
   }
 
+  Steps.defaults = {
+    direction: 'horizontal',
+    current: 0,
+    options: [],
+    onChange: null,
+  };
   Component.register(Steps);
 
   class Switch extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        unselectedText: '关',
-        selectedText: '开',
-        value: false,
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Switch.defaults, props), ...mixins);
     }
 
     _config() {
@@ -27467,6 +27630,13 @@
     }
   }
 
+  Switch.defaults = {
+    unselectedText: '关',
+    selectedText: '开',
+    value: false,
+    size: 'small',
+  };
+
   Component.register(Switch);
 
   class TabPanel extends Component {
@@ -27503,12 +27673,7 @@
 
   class TabContent extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        panels: [],
-        panelDefaults: { component: TabPanel },
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(TabContent.defaults, props), ...mixins);
     }
 
     _created() {
@@ -27560,7 +27725,10 @@
       panel.show();
     }
   }
-
+  TabContent.defaults = {
+    panels: [],
+    panelDefaults: { component: TabPanel },
+  };
   Component.register(TabContent);
 
   class TabItem extends Component {
@@ -27619,21 +27787,7 @@
 
   class TabList extends List {
     constructor(props, ...mixins) {
-      const defaults = {
-        itemDefaults: {
-          component: TabItem,
-        },
-        tabContent: null,
-        uistyle: 'plain',
-        itemSelectable: {
-          byClick: true,
-          scrollIntoView: false,
-        },
-        onTabSelectionChange: null,
-        disabledItems: [],
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(TabList.defaults, props), ...mixins);
     }
 
     _created() {
@@ -27674,21 +27828,24 @@
       }
     }
   }
-
+  TabList.defaults = {
+    itemDefaults: {
+      component: TabItem,
+    },
+    tabContent: null,
+    uistyle: 'plain',
+    itemSelectable: {
+      byClick: true,
+      scrollIntoView: false,
+    },
+    onTabSelectionChange: null,
+    disabledItems: [],
+  };
   Component.register(TabList);
 
   class Tabs extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tabs: [],
-        // selectedTab: 'tab0',
-        uistyle: 'plain', // hat,card,line,pill
-        onTabSelectionChange: null,
-        disabledItems: [],
-        tools: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Tabs.defaults, props), ...mixins);
     }
 
     _config() {
@@ -27780,25 +27937,20 @@
       panel.update(newPanelProps);
     }
   }
+  Tabs.defaults = {
+    tabs: [],
+    // selectedTab: 'tab0',
+    uistyle: 'plain', // hat,card,line,pill
+    onTabSelectionChange: null,
+    disabledItems: [],
+    tools: null,
+  };
 
   Component.register(Tabs);
 
   class Tag extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        key: null,
-        tag: 'span',
-        type: 'square',
-        color: null,
-        text: null,
-        icon: null,
-        number: null,
-        overflowCount: 99,
-        removable: false,
-        size: 'sm',
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Tag.defaults, props), ...mixins);
     }
 
     _config() {
@@ -27835,7 +27987,7 @@
                 'nom-tag-remove': true,
                 'nom-tag-remove-basic': !that.props.styles,
               },
-              onClick: function ({event}) {
+              onClick: function ({ event }) {
                 that.props.removable(that.props.key);
                 event.stopPropagation();
               },
@@ -27849,20 +28001,24 @@
     }
   }
 
+  Tag.defaults = {
+    key: null,
+    tag: 'span',
+    type: 'square',
+    color: null,
+    text: null,
+    icon: null,
+    number: null,
+    overflowCount: 99,
+    removable: false,
+    size: 'sm',
+  };
+
   Component.register(Tag);
 
   class TimelineItem extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tag: 'li',
-        color: 'blue', // 指定圆圈颜色 blue, red, green, gray，或自定义的色值
-        dot: null, // 自定义时间轴点
-        label: null, // 设置标签
-        pending: false, // 是否是幽灵节点
-        children: null, // 内容
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(TimelineItem.defaults, props), ...mixins);
     }
 
     _config() {
@@ -27913,24 +28069,20 @@
     }
   }
 
+  TimelineItem.defaults = {
+    tag: 'li',
+    color: 'blue', // 指定圆圈颜色 blue, red, green, gray，或自定义的色值
+    dot: null, // 自定义时间轴点
+    label: null, // 设置标签
+    pending: false, // 是否是幽灵节点
+    children: null, // 内容
+  };
+
   Component.register(TimelineItem);
 
   class Timeline extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        tag: 'ul',
-        mode: 'left', // 通过设置 mode 可以改变时间轴和内容的相对位置 left | alternate | right
-        pending: false, // 指定最后一个幽灵节点是否存在或内容,也可以是一个自定义的子元素
-        // 当最后一个幽灵节点存在時，指定其时间图点
-        pendingDot: {
-          component: 'Icon',
-          type: 'loading',
-        },
-        reverse: false, // 节点排序
-        items: null, // 子元素项列表
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Timeline.defaults, props), ...mixins);
     }
 
     _getPositionClass(ele, index) {
@@ -28007,6 +28159,19 @@
       });
     }
   }
+
+  Timeline.defaults = {
+    tag: 'ul',
+    mode: 'left', // 通过设置 mode 可以改变时间轴和内容的相对位置 left | alternate | right
+    pending: false, // 指定最后一个幽灵节点是否存在或内容,也可以是一个自定义的子元素
+    // 当最后一个幽灵节点存在時，指定其时间图点
+    pendingDot: {
+      component: 'Icon',
+      type: 'loading',
+    },
+    reverse: false, // 节点排序
+    items: null, // 子元素项列表
+  };
 
   Component.register(Timeline);
 
@@ -28254,21 +28419,7 @@
 
   class TimePicker extends Textbox {
     constructor(props, ...mixins) {
-      const defaults = {
-        allowClear: true,
-        value: null,
-        format: 'HH:mm:ss',
-        hourStep: null,
-        minuteStep: null,
-        secondStep: null,
-        readonly: true,
-        placeholder: null,
-        showNow: true,
-        minTime: null,
-        maxTime: null,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(TimePicker.defaults, props), ...mixins);
     }
 
     _created() {
@@ -28590,36 +28741,25 @@
     }
   }
 
+  TimePicker.defaults = {
+    allowClear: true,
+    value: null,
+    format: 'HH:mm:ss',
+    hourStep: null,
+    minuteStep: null,
+    secondStep: null,
+    readonly: true,
+    placeholder: null,
+    showNow: true,
+    minTime: null,
+    maxTime: null,
+  };
+
   Component.register(TimePicker);
 
   class TimeRangePicker extends Group {
     constructor(props, ...mixins) {
-      const defaults = {
-        allowClear: true,
-        value: null,
-        format: 'HH:mm:ss',
-        hourStep: 0,
-        minuteStep: 0,
-        secondStep: 0,
-        readonly: true,
-        placeholder: null,
-        autoPopupEnd: true,
-        showNow: true,
-        onChange: null,
-        fieldName: {
-          start: 'start',
-          end: 'end',
-        },
-        flatValue: true,
-        startPickerProps: {
-          placeholder: '开始时间',
-        },
-        endPickerProps: {
-          placeholder: '结束时间',
-        },
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(TimeRangePicker.defaults, props), ...mixins);
     }
 
     _created() {
@@ -28740,6 +28880,30 @@
     }
   }
 
+  TimeRangePicker.defaults = {
+    allowClear: true,
+    value: null,
+    format: 'HH:mm:ss',
+    hourStep: 0,
+    minuteStep: 0,
+    secondStep: 0,
+    readonly: true,
+    placeholder: null,
+    autoPopupEnd: true,
+    showNow: true,
+    onChange: null,
+    fieldName: {
+      start: 'start',
+      end: 'end',
+    },
+    flatValue: true,
+    startPickerProps: {
+      placeholder: '开始时间',
+    },
+    endPickerProps: {
+      placeholder: '结束时间',
+    },
+  };
   Component.register(TimeRangePicker);
 
   class TreeSelectPopup extends Popup {
@@ -28831,6 +28995,7 @@
 
     _show() {
       super._show();
+
       this.selectControl.searchBox && this.selectControl.searchBox.focus();
     }
   }
@@ -28839,26 +29004,7 @@
 
   class TreeSelect extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        options: [],
-        allowClear: false,
-        placeholder: '请选择',
-        // tree的select事件的配置
-        treeSelectable: {},
-        multiple: false,
-        // 复选框模式，即为多选
-        treeCheckable: false,
-        treeDataFields: {
-          key: 'value',
-          text: 'text',
-          children: 'children',
-          parentKey: 'parentKey',
-        },
-        onlyleaf: false,
-        showArrow: true,
-      };
-
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(TreeSelect.defaults, props), ...mixins);
     }
 
     _created() {
@@ -29069,8 +29215,8 @@
           if (curOption) {
             items.push({
               component: 'Tag',
-              type: 'round',
-              // size: 'xs',
+              type: 'square',
+              size: 'xs',
               text: curOption[treeDataFields.text],
               key: curOption[treeDataFields.key],
               removable:
@@ -29168,6 +29314,25 @@
     }
   }
 
+  TreeSelect.defaults = {
+    options: [],
+    allowClear: false,
+    placeholder: '请选择',
+    // tree的select事件的配置
+    treeSelectable: {},
+    multiple: false,
+    // 复选框模式，即为多选
+    treeCheckable: false,
+    treeDataFields: {
+      key: 'value',
+      text: 'text',
+      children: 'children',
+      parentKey: 'parentKey',
+    },
+    onlyleaf: false,
+    showArrow: true,
+  };
+
   Component.register(TreeSelect);
 
   const DEFAULT_ACCEPT =
@@ -29259,11 +29424,7 @@
 
   class FileItem extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        disabled: false,
-        file: null,
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(FileItem.defaults, props), ...mixins);
     }
 
     _created() {
@@ -29462,13 +29623,14 @@
     }
   }
 
+  FileItem.defaults = {
+    disabled: false,
+    file: null,
+  };
+
   class FileList extends Component {
     constructor(props, ...mixins) {
-      const defaults = {
-        disabled: false,
-        files: null,
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(FileList.defaults, props), ...mixins);
     }
 
     _created() {
@@ -29522,6 +29684,11 @@
       }
     }
   }
+
+  FileList.defaults = {
+    disabled: false,
+    files: null,
+  };
 
   function getError(option, xhr) {
     const msg = `Can't ${option.method} ${option.action} ${xhr.status}`;
@@ -29622,28 +29789,7 @@
 
   class Uploader extends Field {
     constructor(props, ...mixins) {
-      const defaults = {
-        // 测试地址
-        action: '',
-        disabled: false,
-        beforeUpload: null,
-        button: null,
-        defaultFileList: [],
-        multiple: false,
-        name: 'file',
-        display: true,
-        data: {},
-        // request option
-        method: 'post',
-        headers: {},
-        withCredentials: false,
-        allowUpdate: false,
-        onRemove: null,
-        renderer: null,
-        extraAction: [],
-        customizeInfo: null,
-      };
-      super(Component.extendProps(defaults, props), ...mixins);
+      super(Component.extendProps(Uploader.defaults, props), ...mixins);
       this.reqs = {};
       this.onChange.bind(this);
       this._changeUploadMode.bind(this);
@@ -29853,6 +29999,7 @@
       }
 
       const before = beforeUpload(file, fileList);
+      if (this.inputFile && this.inputFile.element) this.inputFile.element.value = '';
       if (isPromiseLike(before)) {
         before.then((pFile) => {
           if (isBlobFile(pFile)) {
@@ -30079,6 +30226,28 @@
       return isNotEmptyArray(_val) ? _val : null
     }
   }
+
+  Uploader.defaults = {
+    // 测试地址
+    action: '',
+    disabled: false,
+    beforeUpload: null,
+    button: null,
+    defaultFileList: [],
+    multiple: false,
+    name: 'file',
+    display: true,
+    data: {},
+    // request option
+    method: 'post',
+    headers: {},
+    withCredentials: false,
+    allowUpdate: false,
+    onRemove: null,
+    renderer: null,
+    extraAction: [],
+    customizeInfo: null,
+  };
 
   Component.register(Uploader);
 
