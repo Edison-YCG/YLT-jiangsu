@@ -11,6 +11,10 @@
   letter-spacing: 1.5px;
 }
 
+.ix-column-4.content .search-label {
+  margin-top: 8px;
+}
+
 .ix-column-4.content .search-box {
   position: relative;
 }
@@ -21,4 +25,5 @@
   right: 16px;
   transform: translateY(-50%);
   z-index: 100;
+  cursor: pointer;
 }
