@@ -1,0 +1,24 @@
+.ix-column-4.content {
+  margin-top: 96px;
+  background-color: white;
+}
+
+.page-title {
+  padding: 36px 0 24px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+.ix-column-4.content .search-box {
+  position: relative;
+}
+
+.ix-column-4.content .search-box svg {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  z-index: 100;
+}
