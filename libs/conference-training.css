@@ -1,0 +1,97 @@
+.container.content {
+  margin-top: 72px;
+}
+
+.container.content .nav-secondary {
+  justify-content: space-between;
+  background-color: white;
+  height: 72px;
+  margin-bottom: 16px;
+}
+
+.nav-secondary .nav .nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-secondary .nav .nav-link.active {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(#2b7efb, #2b7efb) no-repeat;
+  background-size: 60% 1px;
+  background-position: bottom;
+}
+
+.nav-secondary .nav .nav-item a {
+  color: black;
+  font-weight: 500;
+}
+
+.text-truncate-1 {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.text-truncate-2 {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.container.content .card {
+  border-radius: 8px;
+}
+
+.container.content .card-body {
+  padding: 20px 20px 24px;
+}
+
+.container.content .card-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.container.content .card-info {
+  padding: 9px 0 24px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.container.content .card-info .type {
+  margin: 10px 0;
+}
+
+.container.content .card-info .time {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.25);
+}
+
+.container.content .card .view {
+  width: 96px;
+  height: 30px;
+  color: #2b7efb;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid #2b7efb;
+  border-radius: 15px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.content.content .row:last-child {
+  margin-bottom: 192px;
+}
