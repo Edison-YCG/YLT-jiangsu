@@ -146,6 +146,10 @@ body {
   padding: 16px 0 2px;
 }
 
+.common-header .logo {
+  margin-left: 100px;
+}
+
 .common-header .dropdown button {
   color: white;
   text-decoration: none;
@@ -181,7 +185,7 @@ body {
   letter-spacing: 1px;
   transform: scale(0.68);
   /* margin-left: -69px; */
-  margin-left: -75px;
+  margin-left: -59px;
 }
 
 .common-header .search-box {
@@ -275,7 +279,7 @@ body {
 }
 
 .common-header .button-box {
-  padding-left: 45px;
+  /* padding-left: 45px; */
   margin-top: -5px;
 }
 
