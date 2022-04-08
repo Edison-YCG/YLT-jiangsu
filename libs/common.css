@@ -72,7 +72,7 @@ body {
 }
 
 .JS-headers {
-  height: 151px;
+  height: 72px;
 }
 
 .fixed {
@@ -340,12 +340,12 @@ body {
   width: 80px;
   font-size: 16px;
   font-weight: 400;
-  color: #ffffff;
   line-height: 22px;
+  color: #ffffff;
 }
 
-.common-header .button-box .unsign:first-child {
-  border-right: ;
+.common-header .button-box .unsign a {
+  color: #ffffff;
 }
 
 .common-header .button-box .login-box .dropdown-toggle .head {
@@ -396,6 +396,25 @@ body {
 .common-header .button-box .nomui-qa-btn {
   min-width: 88px;
   display: inline-block;
+}
+
+.main-nav {
+  height: 100%;
+}
+
+.main-nav .nav-item {
+  height: 100%;
+}
+
+.main-nav .nav-link {
+  font-size: 16px;
+}
+
+.main-nav .nav-link.active {
+  height: 100%;
+  background: linear-gradient(#ffffff, #ffffff) no-repeat;
+  background-size: 60% 3px;
+  background-position: bottom;
 }
 
 .common-nav {
