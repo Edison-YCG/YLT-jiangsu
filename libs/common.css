@@ -824,16 +824,6 @@ table.nom-table th {
   }
 }
 
-.text-truncate-1 {
-  text-overflow: -o-ellipsis-lastline;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-
 .text-truncate-2 {
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
@@ -841,5 +831,15 @@ table.nom-table th {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.text-truncate-5 {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
   -webkit-box-orient: vertical;
 }
