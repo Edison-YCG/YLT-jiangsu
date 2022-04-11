@@ -816,14 +816,17 @@
         var contentH = $(document).height() //内容高度
         if (scroH > 100) {
           //距离顶部大于100px时
-          $('.common-backtop')
+          // $('.common-backtop')
+          $('.top-indicator')
             .show()
             .addClass('animate__animated animate__slideInUp')
         }
         if (scroH < 100) {
-          $('.common-backtop').removeClass('animate__slideInUp').hide()
+          console.log('hide')
+          // $('.common-backtop').removeClass('animate__slideInUp').hide()
+          $('.top-indicator').removeClass('animate__slideInUp').hide()
         }
-        if (contentH - (scroH + viewH) <= 100) {
+        if (contentH - (scroH + viewH) <= 200) {
           //距离底部高度小于100px
         }
         if ((contentH = scroH + viewH)) {
