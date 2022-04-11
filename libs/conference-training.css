@@ -28,26 +28,6 @@
   font-weight: 500;
 }
 
-.text-truncate-1 {
-  text-overflow: -o-ellipsis-lastline;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-
-.text-truncate-2 {
-  text-overflow: -o-ellipsis-lastline;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
 .container.content .card {
   border-radius: 8px;
 }
@@ -58,6 +38,7 @@
 
 .container.content .card-title {
   font-size: 16px;
+  height: 44px;
   font-weight: 600;
   line-height: 22px;
 }
