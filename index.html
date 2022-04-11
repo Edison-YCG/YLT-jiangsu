@@ -270,11 +270,22 @@
           ></path>
         </svg>
       </div>
-      <div class="gap"></div>
+      <!-- <div class="gap"></div> -->
       <!-- <div class="text">回到顶部</div> -->
-      <div class="contact-us">
-        <img src="/themes/basic/assets/index-message.png" alt="" class="icon" />
-        <div class="contact-text mb-3" src="#">联系我们</div>
+      <div class="contact-us clearfix">
+        <div id="contact-content" class="contact-content d-none">
+          <div class="text-top">请选择要咨询问题类型</div>
+          <div class="text-center">区域伦理</div>
+          <div class="text-bottom">市场准入</div>
+        </div>
+        <div id="contact-opt" class="contact-opt">
+          <img
+            src="/themes/basic/assets/index-message.png"
+            alt=""
+            class="icon"
+          />
+          <div class="contact-text mb-3" src="#">联系我们</div>
+        </div>
       </div>
     </div>
     <!-- 内容部分-s -->
@@ -355,7 +366,7 @@
                   data-bs-ride="carousel"
                 >
                   <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active" data-bs-interval="3000">
                       <img
                         src="/themes/basic/assets/index-notice.png"
                         class="d-block"
@@ -365,7 +376,7 @@
                         江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江…
                       </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" data-bs-interval="3000">
                       <img
                         src="/themes/basic/assets/index-notice.png"
                         class="d-block"
@@ -375,7 +386,7 @@
                         甘肃省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江…
                       </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" data-bs-interval="3000">
                       <img
                         src="/themes/basic/assets/index-notice.png"
                         class="d-block"
@@ -614,7 +625,7 @@
         <h2 class="ix-common-title">邻域专家</h2>
         <div class="row">
           <!-- <div class="col-xl-4 col-4 d-flex justify-content-start"> -->
-          <div class="col-xl-3 col-3 d-flex justify-content-start">
+          <div class="col-xl-3 col-3 d-flex mb-3">
             <div class="card">
               <!-- <div class="row g-0"> -->
               <div class="card-content">
@@ -627,7 +638,7 @@
                 <!-- <div class="col-md-10"> -->
                 <div class="card-body">
                   <h5 class="card-title">麻醉科</h5>
-                  <div class="card-text">江苏省人民医院</div>
+                  <div class="card-text text-truncate">江苏省人民医院</div>
                   <div class="card-text">
                     <small class="text-muted">主任医师</small>
                   </div>
@@ -638,7 +649,7 @@
             </div>
           </div>
           <!-- <div class="col-xl-4 col-4 d-flex justify-content-center"> -->
-          <div class="col-xl-3 col-3 d-flex justify-content-center">
+          <div class="col-xl-3 col-3 d-flex mb-3">
             <div class="card">
               <!-- <div class="row g-0"> -->
               <div class="card-content">
@@ -662,7 +673,7 @@
             </div>
           </div>
           <!-- <div class="col-xl-4 col-4 d-flex justify-content-end"> -->
-          <div class="col-xl-3 col-3 d-flex justify-content-end">
+          <div class="col-xl-3 col-3 d-flex mb-3">
             <div class="card">
               <!-- <div class="row g-0"> -->
               <div class="card-content">
@@ -686,7 +697,30 @@
             </div>
           </div>
           <!-- <div class="col-xl-4 col-4 d-flex justify-content-end"> -->
-          <div class="col-xl-3 col-3 d-flex justify-content-end">
+          <div class="col-xl-3 col-3 d-flex mb-3">
+            <div class="card">
+              <!-- <div class="row g-0"> -->
+              <div class="card-content">
+                <!-- <div class="col-md-2">
+                  <img src="/themes/basic/assets/index-doctor.png" alt="..." />
+                </div> -->
+                <div class="avator">
+                  <img src="/themes/basic/assets/index-docker-1.png" alt="" />
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-title">麻醉科</h5>
+                    <div class="card-text">江苏省人民医院</div>
+                    <div class="card-text">
+                      <small class="text-muted">主任医师</small>
+                    </div>
+                    <a href="#" class="card-link">咨 询</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-3 d-flex mb-3">
             <div class="card">
               <!-- <div class="row g-0"> -->
               <div class="card-content">
@@ -842,6 +876,10 @@
           'linear'
         )
         return false
+      })
+
+      $('.contact-opt').click(function () {
+        $('.contact-content').toggleClass('d-none')
       })
     </script>
   </body>
