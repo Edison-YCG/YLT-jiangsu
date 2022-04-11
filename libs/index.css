@@ -120,6 +120,7 @@
 
 #carouselNoticeControls {
   position: relative;
+  width: 480px;
 }
 
 #carouselNoticeControls .footer {
