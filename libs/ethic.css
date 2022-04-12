@@ -94,12 +94,13 @@
 .page-ec .content-header .calendar {
   width: 108px;
   height: 36px;
-  line-height: 36px;
   font-size: 16px;
   border: 1px solid rgba(0, 0, 0, 0.35);
   border-radius: 18px;
-  text-align: center;
-  background: url('/themes/basic/assets/ethic-calendar.png') no-repeat;
-  padding-left: 32px;
-  background-position: 10px 50%;
+  padding: 0 10px;
+}
+
+.page-ec .content-header .calendar img {
+  width: 16px;
+  height: 16px;
 }
