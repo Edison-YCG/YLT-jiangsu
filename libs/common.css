@@ -870,11 +870,11 @@ table.nom-table th {
   }
 }
 
-.container.content {
+.content {
   margin-top: 72px;
 }
 
-.container.content .nav-secondary {
+.content .nav-secondary {
   justify-content: space-between;
   background-color: white;
   height: 72px;
