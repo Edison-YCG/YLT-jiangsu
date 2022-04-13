@@ -512,6 +512,16 @@ body {
   box-shadow: none !important;
 }
 
+.common-nav .fill {
+  /* width: 108px; */
+  height: 36px;
+  background: #2b7efb;
+  border-radius: 18px;
+  color: white;
+  border: none;
+  font-size: 16px;
+}
+
 .common-nav .btn:first-child {
   margin-left: 0;
 }
