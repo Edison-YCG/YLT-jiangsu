@@ -1,69 +1,69 @@
 new nomui.Component({
-  reference: document.getElementById("app"),
+  reference: document.getElementById('app'),
   children: [
     {
-      component: "Flex",
+      component: 'Flex',
       rows: [
         {
-          component: "Flex",
+          component: 'Flex',
           //justify: 'between',
-          align: "center",
-          classes: { "personal-header": true },
+          align: 'center',
+          classes: { 'personal-header': true },
           attrs: {
             style: {
-              height: "170px",
-              backgroundColor: "rgba(244, 246, 250, 1)",
-              padding: "0 36px",
+              height: '170px',
+              backgroundColor: 'rgba(244, 246, 250, 1)',
+              padding: '0 36px',
             },
           },
           cols: [
             {
-              component: "Avatar",
+              component: 'Avatar',
               icon: {
-                component: "Icon",
-                type: "user",
+                component: 'Icon',
+                type: 'user',
                 attrs: {
                   style: {
-                    fontSize: "60px",
+                    fontSize: '60px',
                   },
                 },
               },
               attrs: {
                 style: {
-                  width: "78px",
-                  height: "78px",
-                  marginRight: "14px",
+                  width: '78px',
+                  height: '78px',
+                  marginRight: '14px',
                 },
               },
             },
             {
               grow: true,
               children: {
-                component: "Flex",
+                component: 'Flex',
                 attrs: {
-                  style: { width: "80%" },
+                  style: { width: '80%' },
                 },
                 rows: [
                   {
-                    children: "Mingzhi",
+                    children: 'Mingzhi',
                     attrs: {
                       style: {
-                        fontSize: "24px",
-                        color: "rgba(43, 126, 251, 1)",
+                        fontSize: '24px',
+                        color: 'rgba(43, 126, 251, 1)',
                       },
                     },
                   },
                   {
-                    children: "信息完整度: 20%",
+                    children: '信息完整度: 20%',
                     attrs: {
                       style: {
-                        fontSize: "12px",
-                        color: "rgba(43, 126, 251, 1)",
+                        fontSize: '12px',
+                        color: 'rgba(43, 126, 251, 1)',
                       },
                     },
                   },
                   {
-                    component: "Progress",
+                    component: 'Progress',
                     percent: 20,
                     grow: true,
                     showInfo: false,
@@ -72,16 +72,28 @@ new nomui.Component({
               },
             },
             {
-              children: "去完善",
+              // children: "去完善",
+              children: '申请加入院长PI',
+              styles: {
+                flex: 'center',
+              },
               attrs: {
                 style: {
-                  width: "88px",
-                  height: "32px",
-                  borderRadius: "16px",
-                  color: "#2B7EFB",
-                  border: "1px solid #2B7EFB",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  // width: '88px',
+                  // height: '32px',
+                  // borderRadius: '16px',
+                  // color: '#2B7EFB',
+                  // border: '1px solid #2B7EFB',
+                  // justifyContent: 'center',
+                  // alignItems: 'center',
+                  width: '130px',
+                  height: '32px',
+                  background: '#2B7EFB',
+                  borderRadius: '16px',
+                  border: '1px solid #2B7EFB',
+                  fontSize: '12px',
+                  color: 'white',
+                  cursor: 'pointer',
                 },
               },
             },
@@ -129,82 +141,82 @@ new nomui.Component({
         //   ],
         // },
         {
-          component: "Tabs",
-          classes: { "personal-tabs": true },
+          component: 'Tabs',
+          classes: { 'personal-tabs': true },
           ref: (c) => {
-            tabRef = c;
+            tabRef = c
           },
-          uistyle: "line",
-          selectedTab: "my-info",
+          uistyle: 'line',
+          selectedTab: 'my-info',
           tabs: [
             {
-              key: "my-project",
-              item: { text: "我的项目" },
+              key: 'my-project',
+              item: { text: '我的项目' },
               panel: {
                 /**
                  * -------------------------- 我的项目 ----------------------------------
                  */
                 children: {
-                  component: "Panel",
+                  component: 'Panel',
                   header: false,
-                  uistyle: "plain",
-                  classes: { "personal-panel": true },
+                  uistyle: 'plain',
+                  classes: { 'personal-panel': true },
                   body: {
-                    component: "Rows",
+                    component: 'Rows',
                     items: [
                       {
-                        component: "Flex",
-                        gap: "small",
-                        classes: { "form-flex": true },
+                        component: 'Flex',
+                        gap: 'small',
+                        classes: { 'form-flex': true },
                         cols: [
                           {
-                            component: "Group",
-                            attrs: { style: { width: "100%" } },
+                            component: 'Group',
+                            attrs: { style: { width: '100%' } },
                             // inline: true,
                             fields: [
                               {
-                                component: "Textbox",
-                                label: "项目名",
+                                component: 'Textbox',
+                                label: '项目名',
                                 placeholder:
-                                  "可输入项目名称、方案号关键字进行搜索",
+                                  '可输入项目名称、方案号关键字进行搜索',
                                 labelWidth: 80,
                                 span: 4,
                               },
                               {
-                                component: "Select",
-                                label: "项目类型",
+                                component: 'Select',
+                                label: '项目类型',
                                 labelWidth: 90,
                                 span: 4,
                               },
                               {
-                                component: "Select",
-                                label: "项目状态",
+                                component: 'Select',
+                                label: '项目状态',
                                 labelWidth: 90,
                                 span: 4,
                               },
                             ],
                           },
                           {
-                            justify: "center",
-                            gap: "medium",
-                            align: "center",
+                            justify: 'center',
+                            gap: 'medium',
+                            align: 'center',
                             span: 3,
                             cols: [
                               {
-                                component: "Button",
-                                text: "搜索",
-                                type: "primary",
+                                component: 'Button',
+                                text: '搜索',
+                                type: 'primary',
                                 onClick: () => {},
                               },
                               {
-                                component: "Button",
-                                text: "重置",
+                                component: 'Button',
+                                text: '重置',
                                 onClick: () => {},
                               },
                               {
-                                component: "Button",
-                                type: "link",
-                                text: "更多条件↓",
+                                component: 'Button',
+                                type: 'link',
+                                text: '更多条件↓',
                                 onClick: () => {},
                               },
                             ],
@@ -212,151 +224,151 @@ new nomui.Component({
                         ],
                       },
                       {
-                        component: "Grid",
+                        component: 'Grid',
                         striped: true,
                         columns: [
                           {
-                            field: "name",
-                            key: "name",
-                            title: "标题",
+                            field: 'name',
+                            key: 'name',
+                            title: '标题',
                             width: 200,
                           },
                           {
-                            field: "projecttype",
-                            key: "projecttype",
-                            title: "项目类型",
+                            field: 'projecttype',
+                            key: 'projecttype',
+                            title: '项目类型',
                           },
                           {
-                            field: "registerType",
-                            key: "registerType",
-                            title: "销量",
+                            field: 'registerType',
+                            key: 'registerType',
+                            title: '销量',
                           },
                           {
-                            field: "fanganhao",
-                            key: "fanganhao",
-                            title: "方案号",
+                            field: 'fanganhao',
+                            key: 'fanganhao',
+                            title: '方案号',
                           },
                           {
-                            field: "zhongxinleibie",
-                            key: "zhongxinleibie",
-                            title: "中心类别",
+                            field: 'zhongxinleibie',
+                            key: 'zhongxinleibie',
+                            title: '中心类别',
                           },
                           {
-                            field: "guojixiangmu",
-                            key: "guojixiangmu",
-                            title: "是否为国际项目",
+                            field: 'guojixiangmu',
+                            key: 'guojixiangmu',
+                            title: '是否为国际项目',
                           },
                           {
-                            field: "canyuzhognxin",
-                            key: "canyuzhognxin",
-                            title: "参与中心",
+                            field: 'canyuzhognxin',
+                            key: 'canyuzhognxin',
+                            title: '参与中心',
                           },
                           {
-                            field: "cro",
-                            key: "cro",
-                            title: "申办方",
+                            field: 'cro',
+                            key: 'cro',
+                            title: '申办方',
                           },
                           {
-                            field: "status",
-                            key: "status",
-                            title: "项目状态",
+                            field: 'status',
+                            key: 'status',
+                            title: '项目状态',
                           },
                           {
-                            field: "submitStatus",
-                            key: "submitStatus",
-                            title: "提交状态",
+                            field: 'submitStatus',
+                            key: 'submitStatus',
+                            title: '提交状态',
                             cellRender: (args) => {
                               // 根据状态展示字体颜色和内容
                               return {
-                                tag: "span",
+                                tag: 'span',
                                 children: `${
-                                  args.index === 0 ? "待提交" : "已提交"
+                                  args.index === 0 ? '待提交' : '已提交'
                                 }`,
                                 styles: {
                                   text: `${
-                                    args.index === 0 ? "yellow" : "green"
+                                    args.index === 0 ? 'yellow' : 'green'
                                   }`,
                                 },
-                              };
+                              }
                             },
                           },
                           {
-                            field: "process",
-                            key: "process",
-                            title: "伦理审查进度",
+                            field: 'process',
+                            key: 'process',
+                            title: '伦理审查进度',
                           },
                           {
-                            field: "oper",
-                            key: "oper",
-                            title: "操作",
+                            field: 'oper',
+                            key: 'oper',
+                            title: '操作',
                             width: 200,
                             cellRender: (args) => {
                               // 根据状态展示字体颜色和内容
                               return {
-                                component: "Flex",
+                                component: 'Flex',
                                 cols: [
                                   {
-                                    component: "Button",
-                                    type: "link",
-                                    text: "编辑",
+                                    component: 'Button',
+                                    type: 'link',
+                                    text: '编辑',
                                     onClick: () => {},
                                   },
                                   {
-                                    component: "Button",
-                                    type: "link",
-                                    text: "意向中心",
+                                    component: 'Button',
+                                    type: 'link',
+                                    text: '意向中心',
                                     onClick: () => {},
                                   },
                                   {
-                                    component: "Button",
-                                    type: "text",
-                                    text: "删除",
+                                    component: 'Button',
+                                    type: 'text',
+                                    text: '删除',
                                     danger: true,
                                     onClick: () => {},
                                   },
                                 ],
-                              };
+                              }
                             },
                           },
                         ],
                         data: [
                           {
-                            name: "测试项目",
-                            projecttype: "项目类型",
-                            registerType: "注册类临床研究",
-                            fanganhao: "0001",
-                            zhongxinleibie: "多中心",
-                            guojixiangmu: "国内",
-                            canyuzhognxin: "3",
-                            cro: "申办方名字",
-                            status: "项目状态",
-                            submitStatus: "提交状态",
-                            process: "审查进度",
+                            name: '测试项目',
+                            projecttype: '项目类型',
+                            registerType: '注册类临床研究',
+                            fanganhao: '0001',
+                            zhongxinleibie: '多中心',
+                            guojixiangmu: '国内',
+                            canyuzhognxin: '3',
+                            cro: '申办方名字',
+                            status: '项目状态',
+                            submitStatus: '提交状态',
+                            process: '审查进度',
                           },
                           {
-                            name: "测试项目",
-                            projecttype: "项目类型",
-                            registerType: "注册类临床研究",
-                            fanganhao: "0001",
-                            zhongxinleibie: "多中心",
-                            guojixiangmu: "国内",
-                            canyuzhognxin: "3",
-                            cro: "申办方名字",
-                            status: "项目状态",
-                            submitStatus: "提交状态",
-                            process: "审查进度",
+                            name: '测试项目',
+                            projecttype: '项目类型',
+                            registerType: '注册类临床研究',
+                            fanganhao: '0001',
+                            zhongxinleibie: '多中心',
+                            guojixiangmu: '国内',
+                            canyuzhognxin: '3',
+                            cro: '申办方名字',
+                            status: '项目状态',
+                            submitStatus: '提交状态',
+                            process: '审查进度',
                           },
                         ],
                       },
                       {
-                        component: "Pager",
+                        component: 'Pager',
                         totalCount: 100,
                         texts: {
-                          prev: "<",
-                          next: ">",
+                          prev: '<',
+                          next: '>',
                         },
                         compact: true,
-                        itemsSort: ["count", "pages", "sizes"],
+                        itemsSort: ['count', 'pages', 'sizes'],
                         onPageChange: function (e) {},
                       },
                     ],
@@ -365,79 +377,79 @@ new nomui.Component({
               },
             },
             {
-              key: "my-orgn",
-              item: { text: "我的组织" },
+              key: 'my-orgn',
+              item: { text: '我的组织' },
               panel: {
                 /**
                  * ------------------------      我的组织       ---------------------------------------
                  */
                 children: {
-                  component: "Panel",
+                  component: 'Panel',
                   header: false,
-                  uistyle: "plain",
-                  classes: { "personal-panel": true },
+                  uistyle: 'plain',
+                  classes: { 'personal-panel': true },
                   styles: { padding: 2 },
                   body: {
-                    component: "Rows",
+                    component: 'Rows',
                     items: [
                       {
-                        component: "Grid",
+                        component: 'Grid',
                         striped: true,
                         columns: [
                           {
-                            field: "name",
-                            key: "name",
-                            title: "组织名称",
+                            field: 'name',
+                            key: 'name',
+                            title: '组织名称',
                             cellRender: (args) => {
                               // 根据状态展示字体颜色和内容
                               let items = [
                                 {
-                                  tag: "div",
+                                  tag: 'div',
                                   styles: {
-                                    text: ["primary"],
+                                    text: ['primary'],
                                   },
-                                  children: "组织名称",
+                                  children: '组织名称',
                                 },
-                              ];
+                              ]
                               if (args.rowData.isDefault) {
                                 items.push({
-                                  component: "Tag",
-                                  text: "默认",
-                                  color: "blue",
-                                });
+                                  component: 'Tag',
+                                  text: '默认',
+                                  color: 'blue',
+                                })
                               }
                               return {
-                                component: "Cols",
+                                component: 'Cols',
                                 items,
-                              };
+                              }
                             },
                           },
                           {
-                            field: "oper",
-                            key: "oper",
-                            title: "操作",
+                            field: 'oper',
+                            key: 'oper',
+                            title: '操作',
                             width: 250,
                             cellRender: (args) => {
                               if (args.rowData.isDefault) {
-                                return;
+                                return
                               }
                               // 根据状态展示按钮
                               return {
-                                component: "Button",
-                                type: "link",
-                                text: "设为默认",
+                                component: 'Button',
+                                type: 'link',
+                                text: '设为默认',
                                 onClick: () => {},
-                              };
+                              }
                             },
                           },
                         ],
                         data: [
                           {
-                            name: "测试项目",
+                            name: '测试项目',
                             isDefault: true,
                           },
                           {
-                            name: "测试项目",
+                            name: '测试项目',
                             isDefault: false,
                           },
                         ],
@@ -448,9 +460,9 @@ new nomui.Component({
               },
             },
             {
-              key: "my-news",
+              key: 'my-news',
               item: {
-                text: "我的消息",
+                text: '我的消息',
                 badge: {
                   number: 12,
                   overflowCount: 99,
@@ -461,94 +473,94 @@ new nomui.Component({
                  * ---------------------------- 我的消息 ---------------------------------
                  */
                 children: {
-                  component: "Panel",
+                  component: 'Panel',
                   header: false,
-                  uistyle: "plain",
-                  classes: { "personal-panel": true },
+                  uistyle: 'plain',
+                  classes: { 'personal-panel': true },
                   body: {
-                    component: "Rows",
+                    component: 'Rows',
                     items: [
                       {
-                        component: "Tabs",
-                        uistyle: "pill",
+                        component: 'Tabs',
+                        uistyle: 'pill',
                         tabs: [
                           {
-                            item: { text: "咨询" },
+                            item: { text: '咨询' },
                             panel: {
                               children: [
                                 {
-                                  component: "Grid",
+                                  component: 'Grid',
                                   striped: true,
                                   columns: [
-                                    { field: "ID", key: "ID", title: "会话ID" },
+                                    { field: 'ID', key: 'ID', title: '会话ID' },
                                     {
-                                      field: "customer",
-                                      key: "customer",
-                                      title: "接待客服",
+                                      field: 'customer',
+                                      key: 'customer',
+                                      title: '接待客服',
                                     },
                                     {
-                                      field: "startTime",
-                                      key: "startTime",
-                                      title: "会话开始时间",
+                                      field: 'startTime',
+                                      key: 'startTime',
+                                      title: '会话开始时间',
                                     },
                                     {
-                                      field: "endTime",
-                                      key: "endTime",
-                                      title: "会话结束时间",
+                                      field: 'endTime',
+                                      key: 'endTime',
+                                      title: '会话结束时间',
                                     },
                                     {
-                                      field: "rate",
-                                      key: "rate",
-                                      title: "评分",
+                                      field: 'rate',
+                                      key: 'rate',
+                                      title: '评分',
                                     },
                                     {
-                                      field: "remark",
-                                      key: "remark",
-                                      title: "备注",
+                                      field: 'remark',
+                                      key: 'remark',
+                                      title: '备注',
                                     },
                                     {
-                                      field: "oper",
-                                      key: "oper",
-                                      title: "操作",
+                                      field: 'oper',
+                                      key: 'oper',
+                                      title: '操作',
                                       width: 250,
                                       cellRender: (args) => {
                                         return {
-                                          component: "Button",
-                                          type: "link",
-                                          text: "查看",
+                                          component: 'Button',
+                                          type: 'link',
+                                          text: '查看',
                                           onClick: () => {},
-                                        };
+                                        }
                                       },
                                     },
                                   ],
                                   data: [
                                     {
-                                      ID: "12312312",
-                                      customer: "12312312",
-                                      startTime: "12312312",
-                                      endTime: "12312312",
-                                      rate: "12312312",
-                                      remark: "12312312",
+                                      ID: '12312312',
+                                      customer: '12312312',
+                                      startTime: '12312312',
+                                      endTime: '12312312',
+                                      rate: '12312312',
+                                      remark: '12312312',
                                     },
                                     {
-                                      ID: "12312312",
-                                      customer: "12312312",
-                                      startTime: "12312312",
-                                      endTime: "12312312",
-                                      rate: "12312312",
-                                      remark: "12312312",
+                                      ID: '12312312',
+                                      customer: '12312312',
+                                      startTime: '12312312',
+                                      endTime: '12312312',
+                                      rate: '12312312',
+                                      remark: '12312312',
                                     },
                                   ],
                                 },
                                 {
-                                  component: "Pager",
+                                  component: 'Pager',
                                   totalCount: 100,
                                   texts: {
-                                    prev: "<",
-                                    next: ">",
+                                    prev: '<',
+                                    next: '>',
                                   },
                                   compact: true,
-                                  itemsSort: ["count", "pages", "sizes"],
+                                  itemsSort: ['count', 'pages', 'sizes'],
                                   onPageChange: function (e) {},
                                 },
                               ],
@@ -556,7 +568,7 @@ new nomui.Component({
                           },
                           {
                             item: {
-                              text: "系统通知",
+                              text: '系统通知',
                               badge: {
                                 number: 12,
                                 overflowCount: 99,
@@ -564,7 +576,7 @@ new nomui.Component({
                             },
                             panel: {
                               children:
-                                "另外一个表格和分页，也可使用同一个Grid，通过切换 tabsRef.panel控制展示",
+                                '另外一个表格和分页，也可使用同一个Grid，通过切换 tabsRef.panel控制展示',
                             },
                           },
                         ],
@@ -575,218 +587,218 @@ new nomui.Component({
               },
             },
             {
-              key: "my-info",
-              item: { text: "我的资料" },
+              key: 'my-info',
+              item: { text: '我的资料' },
               panel: {
                 /**
                  * ---------------------------- 我的资料 ---------------------------------
                  */
                 children: {
-                  component: "Panel",
+                  component: 'Panel',
                   header: false,
-                  uistyle: "plain",
-                  classes: { "personal-panel": true, "panel-info": true },
+                  uistyle: 'plain',
+                  classes: { 'personal-panel': true, 'panel-info': true },
                   styles: { padding: 2 },
                   body: {
-                    component: "Rows",
+                    component: 'Rows',
                     items: [
                       {
-                        component: "Tabs",
-                        uistyle: "pill",
+                        component: 'Tabs',
+                        uistyle: 'pill',
                         tabs: [
                           {
-                            item: { text: "个人信息" },
+                            item: { text: '个人信息' },
                             panel: {
                               children: [
                                 {
-                                  component: "Group",
-                                  classes: { "group-info": true },
+                                  component: 'Group',
+                                  classes: { 'group-info': true },
                                   ref: (c) => {
-                                    group = c;
+                                    group = c
                                   },
-                                  fieldDefaults: { span: 6, labelAlign: "top" },
+                                  fieldDefaults: { span: 6, labelAlign: 'top' },
                                   value: {
-                                    nickname: "huzj",
-                                    rate: "LV3（积分：20）",
+                                    nickname: 'huzj',
+                                    rate: 'LV3（积分：20）',
                                     tags: [1, 2],
                                   },
                                   fields: [
                                     {
-                                      component: "StaticText",
-                                      name: "nickname",
+                                      component: 'StaticText',
+                                      name: 'nickname',
                                       disabled: true,
-                                      label: "用户名",
+                                      label: '用户名',
                                     },
                                     {
-                                      component: "StaticText",
-                                      name: "rate",
+                                      component: 'StaticText',
+                                      name: 'rate',
                                       disabled: true,
-                                      label: "等级（积分）",
+                                      label: '等级（积分）',
                                     },
                                     {
-                                      component: "Textbox",
-                                      name: "name",
-                                      label: "姓名",
+                                      component: 'Textbox',
+                                      name: 'name',
+                                      label: '姓名',
                                       required: true,
                                     },
                                     {
-                                      component: "RadioList",
-                                      name: "gender",
-                                      label: "性别",
+                                      component: 'RadioList',
+                                      name: 'gender',
+                                      label: '性别',
                                       options: [
-                                        { text: "男", value: 0 },
-                                        { text: "女", value: 1 },
+                                        { text: '男', value: 0 },
+                                        { text: '女', value: 1 },
                                       ],
                                     },
                                     {
-                                      component: "Textbox",
-                                      name: "mobild",
-                                      label: "手机号",
+                                      component: 'Textbox',
+                                      name: 'mobild',
+                                      label: '手机号',
                                       required: true,
                                     },
                                     {},
                                     {
-                                      component: "Textbox",
-                                      name: "email",
-                                      label: "Email",
+                                      component: 'Textbox',
+                                      name: 'email',
+                                      label: 'Email',
                                       required: true,
                                       rules: [
                                         {
-                                          type: "email",
-                                          message: "Email 格式不正确",
+                                          type: 'email',
+                                          message: 'Email 格式不正确',
                                         },
                                       ],
                                     },
                                     {
-                                      component: "Textbox",
-                                      name: "tel",
-                                      label: "联系电话",
-                                      placeholder: "请输入联系电话",
+                                      component: 'Textbox',
+                                      name: 'tel',
+                                      label: '联系电话',
+                                      placeholder: '请输入联系电话',
                                     },
                                     {
-                                      component: "Textbox",
-                                      name: "tel",
-                                      label: "职称/职位",
+                                      component: 'Textbox',
+                                      name: 'tel',
+                                      label: '职称/职位',
                                       placeholder:
-                                        "可用英文”,”隔开录入多个职位（如：主任医师，教授）",
+                                        '可用英文”,”隔开录入多个职位（如：主任医师，教授）',
                                     },
                                     {
-                                      component: "Textbox",
-                                      name: "unit",
-                                      label: "工作单位",
-                                      placeholder: "请输入工作单位",
+                                      component: 'Textbox',
+                                      name: 'unit',
+                                      label: '工作单位',
+                                      placeholder: '请输入工作单位',
                                     },
 
                                     {
-                                      component: "DatePicker",
-                                      name: "birthDate",
-                                      label: "出生年月",
+                                      component: 'DatePicker',
+                                      name: 'birthDate',
+                                      label: '出生年月',
                                     },
                                     {
-                                      component: "Select",
-                                      name: "city",
-                                      label: "学历",
+                                      component: 'Select',
+                                      name: 'city',
+                                      label: '学历',
                                       value: 3,
                                       options: [
-                                        { text: "研究生", value: 1 },
-                                        { text: "本科", value: 2 },
-                                        { text: "大专", value: 3 },
+                                        { text: '研究生', value: 1 },
+                                        { text: '本科', value: 2 },
+                                        { text: '大专', value: 3 },
                                       ],
                                     },
                                     {
-                                      component: "Group",
-                                      name: "address",
-                                      label: "所在省市",
+                                      component: 'Group',
+                                      name: 'address',
+                                      label: '所在省市',
                                       flatValue: true,
                                       inline: true,
                                       fields: [
                                         {
-                                          component: "Select",
-                                          name: "province",
+                                          component: 'Select',
+                                          name: 'province',
                                           attrs: {
                                             style: {
-                                              width: "35%",
+                                              width: '35%',
                                             },
                                           },
-                                          placeholder: "省份",
+                                          placeholder: '省份',
                                           options: [
-                                            { text: "湖南", value: 1 },
-                                            { text: "广东", value: 2 },
+                                            { text: '湖南', value: 1 },
+                                            { text: '广东', value: 2 },
                                           ],
                                         },
                                         {
-                                          component: "StaticText",
-                                          value: "-",
+                                          component: 'StaticText',
+                                          value: '-',
                                         },
                                         {
-                                          component: "Select",
-                                          name: "city",
+                                          component: 'Select',
+                                          name: 'city',
                                           attrs: {
                                             style: {
-                                              width: "35%",
+                                              width: '35%',
                                             },
                                           },
-                                          placeholder: "城市",
+                                          placeholder: '城市',
                                           options: [
-                                            { text: "长沙", value: 1 },
-                                            { text: "广州", value: 2 },
+                                            { text: '长沙', value: 1 },
+                                            { text: '广州', value: 2 },
                                           ],
                                         },
                                       ],
                                     },
                                     {
-                                      component: "Textbox",
-                                      name: "address",
-                                      label: "地址",
-                                      placeholder: "请输入地址",
+                                      component: 'Textbox',
+                                      name: 'address',
+                                      label: '地址',
+                                      placeholder: '请输入地址',
                                     },
                                     // 注意: 此处的值无法通过 formRef.getValue获取
                                     //       需调用 listRef.getAllItems 来获取后，再组装
                                     {
-                                      component: "Rows",
-                                      classes: { "info-tags-rows": true },
+                                      component: 'Rows',
+                                      classes: { 'info-tags-rows': true },
                                       col: 12,
                                       items: [
                                         {
-                                          tag: "label",
-                                          children: "职业标签",
+                                          tag: 'label',
+                                          children: '职业标签',
                                         },
                                         {
-                                          component: "Flex",
-                                          gap: "medium",
+                                          component: 'Flex',
+                                          gap: 'medium',
                                           cols: [
                                             {
-                                              component: "List",
-                                              gutter: "sm",
-                                              data: ["CRO", "CRA"],
+                                              component: 'List',
+                                              gutter: 'sm',
+                                              data: ['CRO', 'CRA'],
                                               itemRender: ({
                                                 itemData,
                                                 item,
                                               }) => {
                                                 return {
-                                                  component: "Tag",
+                                                  component: 'Tag',
                                                   text: itemData,
-                                                  color: "blue",
-                                                };
+                                                  color: 'blue',
+                                                }
                                               },
                                             },
                                             {
-                                              component: "Button",
-                                              type: "link",
-                                              text: "设置职业标签",
+                                              component: 'Button',
+                                              type: 'link',
+                                              text: '设置职业标签',
                                               onClick: () => {
                                                 new nomui.Modal({
                                                   content: {
                                                     header: {
                                                       caption: {
-                                                        title: "设置职业标签",
+                                                        title: '设置职业标签',
                                                       },
                                                     },
                                                     body: {
-                                                      children: "职业标签List",
+                                                      children: '职业标签List',
                                                     },
                                                   },
-                                                });
+                                                })
                                               },
                                             },
                                           ],
@@ -794,50 +806,50 @@ new nomui.Component({
                                       ],
                                     },
                                     {
-                                      component: "Rows",
-                                      classes: { "info-tags-rows": true },
+                                      component: 'Rows',
+                                      classes: { 'info-tags-rows': true },
                                       col: 12,
                                       items: [
                                         {
-                                          tag: "label",
-                                          children: "关注领域",
+                                          tag: 'label',
+                                          children: '关注领域',
                                         },
                                         {
-                                          component: "Flex",
-                                          gap: "medium",
+                                          component: 'Flex',
+                                          gap: 'medium',
                                           cols: [
                                             {
-                                              component: "List",
-                                              gutter: "sm",
-                                              data: ["CRO", "CRA"],
+                                              component: 'List',
+                                              gutter: 'sm',
+                                              data: ['CRO', 'CRA'],
                                               itemRender: ({
                                                 itemData,
                                                 item,
                                               }) => {
                                                 return {
-                                                  component: "Tag",
+                                                  component: 'Tag',
                                                   text: itemData,
-                                                  color: "blue",
-                                                };
+                                                  color: 'blue',
+                                                }
                                               },
                                             },
                                             {
-                                              component: "Button",
-                                              type: "link",
-                                              text: "设置职业标签",
+                                              component: 'Button',
+                                              type: 'link',
+                                              text: '设置职业标签',
                                               onClick: () => {
                                                 new nomui.Modal({
                                                   content: {
                                                     header: {
                                                       caption: {
-                                                        title: "设置职业标签",
+                                                        title: '设置职业标签',
                                                       },
                                                     },
                                                     body: {
-                                                      children: "职业标签List",
+                                                      children: '职业标签List',
                                                     },
                                                   },
-                                                });
+                                                })
                                               },
                                             },
                                           ],
@@ -847,65 +859,65 @@ new nomui.Component({
                                   ],
                                 },
                                 {
-                                  component: "Flex",
-                                  gap: "medium",
+                                  component: 'Flex',
+                                  gap: 'medium',
                                   cols: [
                                     {
-                                      component: "Button",
-                                      text: "保存",
-                                      type: "primary",
+                                      component: 'Button',
+                                      text: '保存',
+                                      type: 'primary',
                                     },
-                                    { component: "Button", text: "取消" },
+                                    { component: 'Button', text: '取消' },
                                   ],
                                 },
                               ],
                             },
                           },
                           {
-                            item: { text: "修改密码" },
+                            item: { text: '修改密码' },
                             panel: {
-                              classes: { "tab-panel-password": true },
+                              classes: { 'tab-panel-password': true },
                               children: [
                                 {
-                                  component: "Group",
-                                  classes: { "group-info": true },
+                                  component: 'Group',
+                                  classes: { 'group-info': true },
                                   ref: (c) => {
-                                    group = c;
+                                    group = c
                                   },
-                                  fieldDefaults: { labelAlign: "top" },
+                                  fieldDefaults: { labelAlign: 'top' },
                                   fields: [
                                     {
-                                      component: "Password",
-                                      name: "oldPsw",
-                                      label: "密码",
+                                      component: 'Password',
+                                      name: 'oldPsw',
+                                      label: '密码',
                                       required: true,
                                     },
                                     {
-                                      component: "Password",
-                                      name: "newPsw",
-                                      label: "新密码",
+                                      component: 'Password',
+                                      name: 'newPsw',
+                                      label: '新密码',
                                       required: true,
                                     },
                                     {
-                                      component: "Password",
-                                      name: "confirmPsw",
-                                      label: "确认密码",
+                                      component: 'Password',
+                                      name: 'confirmPsw',
+                                      label: '确认密码',
                                       required: true,
                                     },
                                   ],
                                 },
                                 {
-                                  component: "Flex",
-                                  classes: { "panel-password-btns": true },
-                                  gap: "medium",
-                                  justify: "center",
+                                  component: 'Flex',
+                                  classes: { 'panel-password-btns': true },
+                                  gap: 'medium',
+                                  justify: 'center',
                                   cols: [
                                     {
-                                      component: "Button",
-                                      text: "保存",
-                                      type: "primary",
+                                      component: 'Button',
+                                      text: '保存',
+                                      type: 'primary',
                                     },
-                                    { component: "Button", text: "取消" },
+                                    { component: 'Button', text: '取消' },
                                   ],
                                 },
                               ],
@@ -923,4 +935,4 @@ new nomui.Component({
       ],
     },
   ],
-});
+})
