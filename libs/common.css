@@ -201,7 +201,7 @@ body {
   text-decoration: none;
 }
 
-.common-header > .container-header {
+.common-header>.container-header {
   margin: 0 10px;
 }
 
@@ -215,8 +215,7 @@ body {
 
 .common-header .logo a {
   display: block;
-  background: url('../themes/basic/assets/common-logo.png') no-repeat left
-    center;
+  background: url('../themes/basic/assets/common-logo.png') no-repeat left center;
   padding-left: 54px;
   font-size: 18px;
   color: #ffffff;
@@ -262,8 +261,7 @@ body {
 .common-header .search-box .dropdown-toggle::after {
   margin-left: 4px;
   border: none;
-  background: url('../themes/basic/assets/common-arrowdown.png') no-repeat left
-    center;
+  background: url('../themes/basic/assets/common-arrowdown.png') no-repeat left center;
   width: 16px;
   height: 16px;
   vertical-align: bottom;
@@ -475,7 +473,7 @@ body {
   position: relative;
   padding-left: 0;
   padding-right: 0;
-  margin-right: 70px;
+  margin-right: 40px;
   letter-spacing: 1.5px;
   font-weight: bold;
 }
@@ -493,23 +491,51 @@ body {
   position: absolute;
   height: 3px;
   background: #2b7efb;
-  width: 100%;
-  left: 0;
+  width: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
   bottom: -20px;
 }
 
 .common-nav .btn {
-  background: #ffffff;
-  border-radius: 16px;
+  font-size: 16px;
+  border-radius: 40px;
   border: 1px solid rgba(0, 0, 0, 0.35);
-  font-size: 12px;
   font-weight: 400;
-  color: #000000;
-  padding: 0 24px;
-  height: 32px;
-  line-height: 2.5;
-  margin-left: 10px;
+  padding: 0 21px;
+  height: 36px;
   box-shadow: none !important;
+  background-color: #2b7efb;
+  color: #fff;
+  border-color: #2b7efb;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
+.common-nav .search .input-group:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.common-nav .search svg {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+
+  color: rgba(210, 210, 210, 1);
 }
 
 .common-nav .fill {
@@ -522,15 +548,6 @@ body {
   font-size: 16px;
 }
 
-.common-nav .btn:first-child {
-  margin-left: 0;
-}
-
-.common-nav .btn:hover {
-  background-color: #2b7efb;
-  color: #fff;
-  border-color: #2b7efb;
-}
 
 .common-menu-nav {
   background-color: #fff;
@@ -568,7 +585,7 @@ body {
   min-height: calc(100vh - 580px);
 }
 
-.common-box > .card-body {
+.common-box>.card-body {
   padding: 24px;
 }
 
@@ -622,15 +639,11 @@ button:active {
   background-color: #edf4ff;
 }
 
-.nom-field > .nom-field-label > .nom-label {
+.nom-field>.nom-field-label>.nom-label {
   font-weight: bold;
 }
 
-.nom-steps
-  .nom-step
-  > .nom-step-item-container
-  .nom-step-item-content
-  .nom-step-item-title {
+.nom-steps .nom-step>.nom-step-item-container .nom-step-item-content .nom-step-item-title {
   font-weight: bold;
   font-size: 14px;
 }
@@ -668,7 +681,7 @@ table.nom-table th {
   padding-top: 10px;
 }
 
-.upload-opt-btn > :not(:last-child) {
+.upload-opt-btn> :not(:last-child) {
   margin-right: 8px;
 }
 
@@ -784,7 +797,7 @@ table.nom-table th {
   height: 2px;
 }
 
-.cjxm-steps .nom-step > .nom-step-item-container > .nom-step-item-icon {
+.cjxm-steps .nom-step>.nom-step-item-container>.nom-step-item-icon {
   border-width: 2px;
   font-weight: bold;
   font-size: 14px;
@@ -799,12 +812,7 @@ table.nom-table th {
   color: #969799 !important;
 }
 
-.cjxm-steps
-  .nom-step
-  > .nom-step-item-container
-  > .nom-step-item-icon
-  > .nom-icon
-  svg {
+.cjxm-steps .nom-step>.nom-step-item-container>.nom-step-item-icon>.nom-icon svg {
   font-weight: bold;
 }
 
@@ -822,7 +830,7 @@ table.nom-table th {
   min-height: 750px;
 }
 
-.nom-uploader > .nom-field-content > .nom-control > .nom-button {
+.nom-uploader>.nom-field-content>.nom-control>.nom-button {
   background-color: #fff;
 }
 
@@ -834,11 +842,11 @@ table.nom-table th {
   margin-top: 0;
 }
 
-.nom-file-list > :first-child {
+.nom-file-list> :first-child {
   margin-top: 1em;
 }
 
-.nom-file-list > :not(:last-child) {
+.nom-file-list> :not(:last-child) {
   margin-bottom: 1em;
 }
 
@@ -849,6 +857,7 @@ table.nom-table th {
 }
 
 @media (max-width: 991.98px) {
+
   .container,
   .container-md,
   .container-sm {
