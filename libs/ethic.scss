@@ -2,14 +2,40 @@
 
 .page-ec {
   background-color: #fff;
+
+  .ec-title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #323333;
+  }
+
+  .ec-calendar {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+
+    svg {
+      margin-right: 5px;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: #2B7EFB;
+      border-color: #2B7EFB;
+    }
+  }
+
   .ec-process-img {
     width: 80%;
     margin: 0 auto;
     margin-top: 63px;
     // border: 1px dashed #aaa;
   }
+
   .ec-process-btn {
     margin-top: 28px;
+
     .btn {
       box-shadow: none !important;
       padding: 10px 71px !important;
@@ -25,33 +51,40 @@
       -o-border-radius: 30px;
     }
   }
+
   .ec-advantages {
     margin-top: 60px;
+
     .row {
-      .col:nth-child(1) .card{
+      .col:nth-child(1) .card {
         background-image: url(../themes/basic/assets/ethic-card-bg.png);
       }
-      .col:nth-child(2) .card{
+
+      .col:nth-child(2) .card {
         background-image: url(../themes/basic/assets/ethic-card-bg2.png);
       }
-      .col:nth-child(3) .card{
+
+      .col:nth-child(3) .card {
         background-image: url(../themes/basic/assets/ethic-card-bg3.png);
       }
     }
+
     .card {
       height: 150px;
       background-position: right top;
       background-size: contain;
       background-repeat: no-repeat;
-      
-      
+
+
       .card-body {
         padding: 30px;
       }
+
       .card-title {
         font-size: 22px;
         font-weight: bold;
       }
+
       .card-text {
         margin-top: 20px;
         width: 80%;
