@@ -80,6 +80,10 @@
   color: #000;
 }
 
+.page-core .news-list .news-item .news-item-right {
+  width: 100%;
+}
+
 .page-core .news-list .news-item .item-tags .tag-item {
   min-width: 64px;
   margin-right: 10px;
