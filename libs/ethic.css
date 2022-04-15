@@ -14,13 +14,13 @@
 
 .page-ec .ec-process-btn .btn {
   -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+          box-shadow: none !important;
   padding: 10px 71px !important;
-  background: #2b7efb;
+  background: #2B7EFB;
   border-radius: 30px;
   border: 8px solid #d5e5fe;
   font-size: 16px;
-  color: #ffffff;
+  color: #FFFFFF;
   padding: 0;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
@@ -64,44 +64,6 @@
   margin-top: 20px;
   width: 80%;
   font-size: 18px;
-  opacity: 0.7;
+  opacity: .7;
 }
 /*# sourceMappingURL=ethic.css.map */
-
-.btn-ellipse-fill {
-  flex-shrink: 0;
-  background: #2b7efb;
-  padding: 7px 21px;
-  font-size: 16px;
-  color: #ffffff;
-  height: 36px;
-  align-self: center;
-  border-radius: 18px;
-}
-
-.btn-ellipse-fill:focus {
-  box-shadow: none;
-}
-
-.btn-ellipse-fill:hover {
-  color: #ffffff;
-}
-
-.page-ec .content-header {
-  padding: 0 150px;
-}
-
-.page-ec .content-header .calendar {
-  width: 108px;
-  height: 36px;
-  font-size: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.35);
-  border-radius: 18px;
-  padding: 0 10px;
-  cursor: pointer;
-}
-
-.page-ec .content-header .calendar img {
-  width: 16px;
-  height: 16px;
-}
