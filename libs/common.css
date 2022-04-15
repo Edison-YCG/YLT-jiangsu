@@ -110,6 +110,7 @@ body {
 }
 
 .common-backtop .top-indicator {
+  display: none;
   color: #757F92;
   transition: all 0.2s ease;
   padding: 15px 0;
