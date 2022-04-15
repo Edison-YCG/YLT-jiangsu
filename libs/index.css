@@ -106,6 +106,24 @@
   color: #2b7efb;
 }
 
+.card-body .card-body-content {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+
+.card-body .card-body-content:hover {
+  color: #2b7efb;
+}
+
+.card-other-news a {
+  color: black;
+}
+
+.card-other-news a:hover {
+  color: #2b7efb;
+}
+
 .ix-column-2 .card-text a {
   display: block;
   font-size: 14px;
