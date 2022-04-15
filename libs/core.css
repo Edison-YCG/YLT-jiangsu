@@ -77,9 +77,6 @@
 
 .page-core .news-list .news-item .news-title {
   font-size: 16px;
-}
-
-.page-core .news-list .news-item .news-title a {
   color: #000;
 }
 
@@ -91,6 +88,7 @@
   border: 1px solid #D9D9D9;
   border-radius: 2px;
   background: #F5F5F5;
+  color: rgba(0, 0, 0, 0.65);
 }
 
 .page-core .news-list .news-item .news-detail {
@@ -100,15 +98,19 @@
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  opacity: .65;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.page-core .news-list .news-item .news-viewer-icon {
+  color: rgba(0, 0, 0, 0.85);
 }
 
 .page-core .news-list .news-item .news-info .news-from {
-  opacity: .45;
+  color: rgba(0, 0, 0, 0.45);
 }
 
 .page-core .news-list .news-item .news-info .news-time {
-  opacity: .25;
+  color: rgba(0, 0, 0, 0.25);
 }
 
 .page-core .meeting-training {

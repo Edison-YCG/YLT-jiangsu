@@ -3,18 +3,22 @@
 .page-core {
   min-height: calc(100vh - 580px);
   background-color: #fff;
+
   .news-type-tabs {
     border-bottom: 1px dashed #E9E9E9;
   }
+
   .nav {
     // margin-bottom: 25px;
     font-size: 12px;
+
     .nav-item {
       .nav-link {
         color: #000;
         opacity: .65;
       }
     }
+
     .nav-item .nav-link.active {
       opacity: 1;
       color: #fff;
@@ -22,8 +26,10 @@
       border-radius: 50rem;
     }
   }
+
   .form-control {
     padding: 5px 16px;
+
     &:focus {
       box-shadow: none;
     }
@@ -31,11 +37,13 @@
 
   .core-search {
     position: relative;
+
     .input-group {
       &:focus {
         box-shadow: none;
       }
     }
+
     svg {
       position: absolute;
       top: 50%;
@@ -56,10 +64,12 @@
       padding-bottom: 27px;
       border-bottom: 1px solid #E9E9E9;
       font-size: 14px;
+
       &:nth-last-of-type(1) {
         padding-bottom: 0;
         border-bottom: none;
       }
+
       img {
         width: 230px;
         height: 176px;
@@ -67,12 +77,12 @@
         display: block;
         object-fit: cover;
       }
+
       .news-title {
         font-size: 16px;
-        a {
-          color: #000;
-        }
+        color: #000;
       }
+
       .item-tags {
         .tag-item {
           min-width: 64px;
@@ -82,8 +92,10 @@
           border: 1px solid #D9D9D9;
           border-radius: 2px;
           background: #F5F5F5;
+          color: rgba(0, 0, 0, 0.65);
         }
       }
+
       .news-detail {
         display: -webkit-box;
         overflow: hidden;
@@ -91,14 +103,22 @@
         text-overflow: ellipsis;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
-        opacity: .65;
+        color: rgba(0, 0, 0, 0.65);
       }
-      .news-info{
-        .news-from{
-          opacity: .45;
+
+      .news-viewer-icon {
+        color: rgba(0, 0, 0, 0.85);
+      }
+
+      .news-info {
+        .news-from {
+
+          color: rgba(0, 0, 0, 0.45);
         }
+
         .news-time {
-          opacity: .25;
+
+          color: rgba(0, 0, 0, 0.25);
         }
       }
     }
@@ -106,11 +126,13 @@
 
   .meeting-training {
     padding-top: 21px;
+
     .nav {
       .nav-link {
         padding: 4px 10px;
       }
     }
+
     .table {
       margin-top: 20px;
       margin-bottom: 63px;
@@ -119,18 +141,20 @@
       border-style: hidden;
       box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
       overflow: hidden;
+
       a {
         color: rgba(0, 0, 0, .85)
       }
+
       thead {
         th {
-            font-size: 12px;
-            font-weight: 400;
-            color: #888;
+          font-size: 12px;
+          font-weight: 400;
+          color: #888;
         }
 
         th:first-child {
-            padding-left: 65px;
+          padding-left: 65px;
         }
       }
 
@@ -156,21 +180,26 @@
 }
 
 .core-pagination {
+
   // 适配abp分页组件的dom结构
   .row {
     .col-md-7 {
       width: 100%;
     }
   }
+
   .pagination {
     .page-item {
       margin-right: 10px;
+
       .page-link {
         color: rgba(0, 0, 0, .8);
+
         &:focus {
           box-shadow: none;
         }
       }
+
       &.active {
         .page-link {
           color: #fff;
