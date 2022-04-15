@@ -1,66 +1,41 @@
-/* .container.content {
-  margin-top: 72px;
+.cg-column-1 {
+  background-color: #fff;
+  padding: 36px 0 170px;
 }
 
-.container.content .nav-secondary {
-  justify-content: space-between;
-  background-color: white;
-  height: 72px;
-  margin-bottom: 16px;
-}
-
-.nav-secondary .nav .nav-item {
-  display: flex;
-  align-items: center;
-}
-
-.nav-secondary .nav .nav-link.active {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  background: linear-gradient(#2b7efb, #2b7efb) no-repeat;
-  background-size: 60% 1px;
-  background-position: bottom;
-}
-
-.nav-secondary .nav .nav-item a {
-  color: black;
-  font-weight: 500;
-} */
-
-.container.content .card {
+.cg-column-1 .card {
   border-radius: 8px;
 }
 
-.container.content .card-body {
+.cg-column-1 .card-body {
   padding: 20px 20px 24px;
 }
 
-.container.content .card-title {
+.cg-column-1 .card-title {
   font-size: 16px;
   height: 44px;
   font-weight: 600;
   line-height: 22px;
 }
 
-.container.content .card-info {
+.cg-column-1 .card-info {
   padding: 9px 0 24px;
   font-size: 14px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.4);
 }
 
-.container.content .card-info .type {
+.cg-column-1 .card-info .type {
   margin: 10px 0;
 }
 
-.container.content .card-info .time {
+.cg-column-1 .card-info .time {
   margin-top: 15px;
   padding-top: 15px;
   border-top: 1px dashed rgba(0, 0, 0, 0.25);
 }
 
-.container.content .card .view {
+.cg-column-1 .card .view {
   width: 96px;
   height: 30px;
   color: #2b7efb;
@@ -71,8 +46,4 @@
   border-radius: 15px;
   text-align: center;
   vertical-align: center;
-}
-
-.content.content .row:last-child {
-  margin-bottom: 192px;
 }

@@ -2,6 +2,33 @@
   background-color: #fff;
 }
 
+.page-ec .ec-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #323333;
+}
+
+.page-ec .ec-calendar {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 14px;
+}
+
+.page-ec .ec-calendar svg {
+  margin-right: 5px;
+}
+
+.page-ec .ec-calendar:hover {
+  color: #fff;
+  background-color: #2B7EFB;
+  border-color: #2B7EFB;
+}
+
 .page-ec .ec-process-img {
   width: 80%;
   margin: 0 auto;

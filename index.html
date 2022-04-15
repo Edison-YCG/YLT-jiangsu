@@ -253,27 +253,12 @@
     <div class="JS-headers"></div>
     <div class="common-backtop">
       <div class="top-indicator">
-        <svg
-          t="1622955703086"
-          class="icon"
-          viewBox="0 0 1024 1024"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          p-id="4583"
-          width="32"
-          height="32"
-        >
-          <path
-            d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"
-            p-id="4584"
-            fill="#ffffff"
-          ></path>
-        </svg>
+        <svg t="1650009227956" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4226" width="20" height="20"><path d="M516.608 364.544c-1.536-0.256-3.584-0.512-5.888-0.512-14.336 0-27.392 5.632-36.864 15.104L58.88 794.624c-9.472 9.472-15.104 22.528-15.104 36.864s5.632 27.392 15.104 36.864c9.472 9.472 22.528 15.36 36.864 15.36s27.392-5.888 36.864-15.36l384.256-383.744 384 384c9.216 8.96 22.016 14.592 36.096 14.592 28.928 0 51.968-23.296 51.968-51.968 0-14.08-5.632-26.624-14.592-36.096L559.104 379.648c-9.472-9.472-22.528-15.36-37.12-15.36-1.792 0-3.584 0-5.632 0.256h0.256zM137.216 187.392h759.552c28.928 0 51.968 23.296 51.968 51.968 0 28.928-23.296 51.968-51.968 51.968H137.216c-28.928 0-51.968-23.296-51.968-51.968 0-28.672 23.296-51.968 51.968-51.968z m0 0" fill="currentColor" p-id="4227"></path></svg>
       </div>
       <!-- <div class="gap"></div> -->
       <!-- <div class="text">回到顶部</div> -->
-      <div class="contact-us clearfix">
-        <div id="contact-content" class="contact-content d-none">
+      <div id="contact-us" class="contact-us" >
+        <div class="contact-content">
           <div class="text-top">请选择要咨询问题类型</div>
           <div class="text-center">区域伦理</div>
           <div class="text-bottom">市场准入</div>
@@ -284,7 +269,7 @@
             alt=""
             class="icon"
           />
-          <div class="contact-text mb-3" src="#">联系我们</div>
+          <div class="contact-text" src="#">联系我们</div>
         </div>
       </div>
     </div>
@@ -891,7 +876,7 @@
       })
 
       $('.contact-opt').click(function () {
-        $('.contact-content').toggleClass('d-none')
+        $('.contact-us').toggleClass('QA-show')
       })
     </script>
   </body>
