@@ -40,10 +40,7 @@ a {
   text-decoration: none !important;
 }
 body {
-  font-family: -apple-system, PingFangSC-Regular, PingFang SC,
-    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
+  font-family: -apple-system, PingFangSC-Regular, PingFang SC, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-size: 12px;
   color: #000000;
   background: #fafafa;
@@ -60,11 +57,10 @@ body {
   left: 0;
   width: 100%;
   z-index: 5555;
-  /* box-shadow: 0 1px 0 #000000; */
+  box-shadow: 0 1px 0 #000000;
 }
 .JS-headers {
   height: 72px;
-  box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, 0.1);
 }
 .fixed {
   position: fixed;
@@ -79,16 +75,12 @@ body {
   flex-direction: column;
   position: fixed;
   right: 12px;
-  top: 50%;
+  top: 65%;
   z-index: 999999;
   cursor: pointer;
   user-select: none;
   width: 46px;
   text-align: center;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
 }
 .common-backtop .top-indicator:hover svg {
   transform: scale(1.1);
@@ -99,11 +91,11 @@ body {
 }
 .common-backtop .top-indicator {
   display: none;
-  color: #757f92;
+  color: #757F92;
   transition: all 0.2s ease;
   padding: 15px 0;
   margin-bottom: 5px;
-  background: #ffffff;
+  background: #FFFFFF;
   box-shadow: 0px 0px 10px 2px rgba(43, 126, 251, 0.1);
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -111,7 +103,7 @@ body {
   -o-transition: all 0.2s ease;
 }
 .common-backtop .contact-us {
-  background: #ffffff;
+  background: #FFFFFF;
   box-shadow: 0px 0px 10px 2px rgba(43, 126, 251, 0.1);
   position: relative;
 }
@@ -163,7 +155,7 @@ body {
   text-align: center;
 }
 .QA-show .contact-text {
-  color: #0087ff;
+  color: #0087FF;
 }
 .common-header {
   background: #2b7efb;
@@ -187,8 +179,7 @@ body {
 }
 .common-header .logo a {
   display: block;
-  background: url('../themes/basic/assets/common-logo.png') no-repeat left
-    center;
+  background: url('../themes/basic/assets/common-logo.png') no-repeat left center;
   padding-left: 54px;
   font-size: 18px;
   color: #ffffff;
@@ -230,8 +221,7 @@ body {
 .common-header .search-box .dropdown-toggle::after {
   margin-left: 4px;
   border: none;
-  background: url('../themes/basic/assets/common-arrowdown.png') no-repeat left
-    center;
+  background: url('../themes/basic/assets/common-arrowdown.png') no-repeat left center;
   width: 16px;
   height: 16px;
   vertical-align: bottom;
@@ -555,11 +545,7 @@ button:active {
 .nom-field > .nom-field-label > .nom-label {
   font-weight: bold;
 }
-.nom-steps
-  .nom-step
-  > .nom-step-item-container
-  .nom-step-item-content
-  .nom-step-item-title {
+.nom-steps .nom-step > .nom-step-item-container .nom-step-item-content .nom-step-item-title {
   font-weight: bold;
   font-size: 14px;
 }
@@ -699,12 +685,7 @@ table.nom-table th {
 .cjxm-steps .nom-step-item-wait .nom-step-item-title {
   color: #969799 !important;
 }
-.cjxm-steps
-  .nom-step
-  > .nom-step-item-container
-  > .nom-step-item-icon
-  > .nom-icon
-  svg {
+.cjxm-steps .nom-step > .nom-step-item-container > .nom-step-item-icon > .nom-icon svg {
   font-weight: bold;
 }
 .cjxm-steps .nom-step.nom-step-item-wait .nom-step-item-icon {
