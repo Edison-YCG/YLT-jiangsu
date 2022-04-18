@@ -1,875 +1,692 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/libs/animate.min.css" />
-    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/libs/nomui/nomui.css" />
-    <link rel="stylesheet" href="/libs/common.css" />
-    <link rel="stylesheet" href="/libs/introduce.css" />
-    <link rel="stylesheet" href="/libs/core.css" />
-    <link rel="stylesheet" href="/libs/mechanism.css" />
-    <link rel="stylesheet" href="/libs/ethic.css" />
-    <link rel="stylesheet" href="/libs/index.css" />
-  </head>
 
-  <body>
-    <header id="JS-header">
-      <div class="common-header">
-        <div class="container-header">
-          <div class="row">
-            <!-- <div class="col-xl-4 col-6"> -->
-            <div class="col-xl-3 col-6">
-              <h1 class="logo">
-                <a href="">
-                  <p>南京临床研究协作审查联盟</p>
-                  <p>Nanjing clinical research Collaborative Review Alliance</p>
-                </a>
-              </h1>
-            </div>
-            <!-- <div class="col-xl-8 col-9"> -->
-            <div class="col-xl-4 col-9">
-              <!-- <ul class="nav nav-pills"> -->
-              <ul class="nav main-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
-                    >首页</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">区域伦理</a>
-                </li>
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="#">企业服务</a>
-                </li> -->
-                <div class="dropdown">
-                  <button
-                    class="btn btn-link dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    企业服务
-                  </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <li><a class="dropdown-item" href="#">市场准入</a></li>
-                  </ul>
-                </div>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">政策法规</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">信息公告</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">中心介绍</a>
-                </li>
-              </ul>
-            </div>
-            <!-- <div class="col-xl-5 col-6"> -->
-            <div class="col-xl-2 col-6">
-              <div class="search-box">
-                <div class="input-group mb-3">
-                  <button
-                    class="btn btn-outline-primary dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    成员机构
-                  </button>
-                  <ul class="dropdown-menu border-0 shadow">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Separated link</a>
-                    </li>
-                  </ul>
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Text input with dropdown button"
-                    placeholder="请输入"
-                  />
-                </div>
-                <svg
-                  t="1644566427892"
-                  class="icon"
-                  viewBox="0 0 1024 1024"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  p-id="2044"
-                  width="16"
-                  height="16"
-                >
-                  <path
-                    d="M480 128c192 0 352 160 352 352S672 832 480 832 128 672 128 480 288 128 480 128m0-64C249.6 64 64 249.6 64 480S249.6 896 480 896 896 710.4 896 480 710.4 64 480 64z"
-                    fill="currentcolor"
-                    p-id="2045"
-                  ></path>
-                  <path
-                    d="M928 928m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z"
-                    fill="currentcolor"
-                    p-id="2046"
-                  ></path>
-                  <path
-                    d="M770.56 725.248l180.992 180.992-45.248 45.312-181.056-181.056z"
-                    fill="currentcolor"
-                    p-id="2047"
-                  ></path>
-                </svg>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/libs/animate.min.css" />
+  <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/libs/nomui/nomui.css" />
+  <link rel="stylesheet" href="/libs/common.css" />
+  <link rel="stylesheet" href="/libs/introduce.css" />
+  <link rel="stylesheet" href="/libs/core.css" />
+  <link rel="stylesheet" href="/libs/mechanism.css" />
+  <link rel="stylesheet" href="/libs/ethic.css" />
+  <link rel="stylesheet" href="/libs/index.css" />
+</head>
+
+<body>
+  <header id="JS-header">
+    <div class="common-header">
+      <div class="container-header">
+        <div class="row">
+          <div class="col-xxl-3 col-6">
+            <h1 class="logo">
+              <a href="">
+                <p>南京生物医药产业创新转化中心</p>
+                <p>Nanjing biomedical industry innovation and transformation center</p>
+              </a>
+            </h1>
+          </div>
+          <div class="col-xxl-5 col-12">
+            <ul class="nav main-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">首页</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">区域伦理</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                  aria-expanded="false">企业服务</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">政策法规</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">信息公告</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">中心介绍</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xxl-3 col-4">
+            <div class="search-box">
+              <div class="input-group mb-3">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  成员机构
+                </button>
+                <ul class="dropdown-menu border-0 shadow">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Another action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </li>
+                </ul>
+                <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                  placeholder="请输入" />
               </div>
+              <svg t="1644566427892" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="2044" width="16" height="16">
+                <path
+                  d="M480 128c192 0 352 160 352 352S672 832 480 832 128 672 128 480 288 128 480 128m0-64C249.6 64 64 249.6 64 480S249.6 896 480 896 896 710.4 896 480 710.4 64 480 64z"
+                  fill="currentcolor" p-id="2045"></path>
+                <path d="M928 928m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill="currentcolor" p-id="2046"></path>
+                <path d="M770.56 725.248l180.992 180.992-45.248 45.312-181.056-181.056z" fill="currentcolor"
+                  p-id="2047"></path>
+              </svg>
             </div>
-            <!-- <div class="col-xl-3 col-12"> -->
-            <div class="col-xl-3 col-12">
-              <!-- 
+          </div>
+          <div class="col-xxl-1 col-2">
+            <!-- 
                 login-box text-start:登陆后使用
                -->
-              <div class="button-box">
-                <div class="login-box text-start">
-                  <!-- 这是未登陆后的状态start -->
-                  <div class="unsign">
+            <div class="button-box">
+              <div class="login-box text-start">
+                <!-- 这是未登陆后的状态start -->
+                <!-- <div class="unsign">
                     <a>登陆</a>
                     <span>|</span>
                     <a>注册</a>
-                  </div>
-                  <!-- 这是未登陆后的状态end -->
-
-                  <!-- 这是登陆后的状态start -->
-                  <!-- <div class="dropdown">
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton1"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <span class="head"
-                        ><img
-                          src="./themes/basic/assets/common-default-head.png"
-                          alt=""
-                      /></span>
-                      <span class="name" title="李四李四李四李四"
-                        >李四李四李四李四</span
-                      >
-                    </button>
-                    <ul
-                      class="dropdown-menu border-0 shadow text-center"
-                      aria-labelledby="dropdownMenuButton1"
-                    >
-                      <li><a class="dropdown-item" href="#">个人中心</a></li>
-                      <li><a class="dropdown-item" href="#">退出登录</a></li>
-                    </ul>
-                  </div>
-                  <svg
-                    t="1645520980944"
-                    class="icon"
-                    viewBox="0 0 1024 1024"
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    p-id="2124"
-                    width="24"
-                    height="24"
-                  >
-                    <path
-                      d="M683.712 800l-89.408 148.992a96 96 0 0 1-164.608 0L340.288 800H192A160 160 0 0 1 32 640V192A160 160 0 0 1 192 32h640A160 160 0 0 1 992 192v448a160 160 0 0 1-160 160h-148.288z m148.288-64a96 96 0 0 0 96-96V192A96 96 0 0 0 832 96H192A96 96 0 0 0 96 192v448A96 96 0 0 0 192 736h184.512l108.032 180.096a32 32 0 0 0 54.912 0l108.032-180.096H832z"
-                      fill="#ffffff"
-                      p-id="2125"
-                    ></path>
-                    <path
-                      d="M256 416m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z"
-                      fill="#ffffff"
-                      p-id="2126"
-                    ></path>
-                    <path
-                      d="M512 416m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z"
-                      fill="#ffffff"
-                      p-id="2127"
-                    ></path>
-                    <path
-                      d="M768 416m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z"
-                      fill="#ffffff"
-                      p-id="2128"
-                    ></path>
-                  </svg> -->
-                  <!-- 这是登陆后的状态end-->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="common-nav">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-8 col-9">
-              <ul class="nav nav-pills">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
-                    >首页</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">区域伦理</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">成员单位</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">新闻中心</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">联盟介绍</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-xl-4 col-3 text-end">
-              <button type="button" class="btn btn-outline-primary mt-1 mb-1">
-                加入联盟
-              </button>
-              <button type="button" class="btn btn-outline-primary mt-1 mb-1">
-                项目申请
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </header>
-    <div class="JS-headers"></div>
-    <div class="common-backtop">
-      <div class="top-indicator">
-        <svg
-          t="1650009227956"
-          class="icon"
-          viewBox="0 0 1024 1024"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          p-id="4226"
-          width="20"
-          height="20"
-        >
-          <path
-            d="M516.608 364.544c-1.536-0.256-3.584-0.512-5.888-0.512-14.336 0-27.392 5.632-36.864 15.104L58.88 794.624c-9.472 9.472-15.104 22.528-15.104 36.864s5.632 27.392 15.104 36.864c9.472 9.472 22.528 15.36 36.864 15.36s27.392-5.888 36.864-15.36l384.256-383.744 384 384c9.216 8.96 22.016 14.592 36.096 14.592 28.928 0 51.968-23.296 51.968-51.968 0-14.08-5.632-26.624-14.592-36.096L559.104 379.648c-9.472-9.472-22.528-15.36-37.12-15.36-1.792 0-3.584 0-5.632 0.256h0.256zM137.216 187.392h759.552c28.928 0 51.968 23.296 51.968 51.968 0 28.928-23.296 51.968-51.968 51.968H137.216c-28.928 0-51.968-23.296-51.968-51.968 0-28.672 23.296-51.968 51.968-51.968z m0 0"
-            fill="currentColor"
-            p-id="4227"
-          ></path>
-        </svg>
-      </div>
-      <!-- <div class="gap"></div> -->
-      <!-- <div class="text">回到顶部</div> -->
-      <div id="contact-us" class="contact-us">
-        <div class="contact-content">
-          <div class="text-top">请选择要咨询问题类型</div>
-          <div class="text-center">区域伦理</div>
-          <div class="text-bottom">市场准入</div>
-        </div>
-        <div id="contact-opt" class="contact-opt">
-          <img
-            src="/themes/basic/assets/index-message.png"
-            alt=""
-            class="icon"
-          />
-          <div class="contact-text" src="#">联系我们</div>
-        </div>
-      </div>
-    </div>
-    <!-- 内容部分-s -->
-    <!-- 1 -->
-    <div class="ix-column-1">
-      <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button> -->
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <a href="#">
-              <div class="index-banner index-banner-1"></div>
-            </a>
-          </div>
-          <div class="carousel-item">
-            <a href="#">
-              <div class="index-banner index-banner-2"></div>
-            </a>
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-    <!-- 2 -->
-    <div class="ix-column-2">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-6 col-6">
-            <div class="card">
-              <div class="card-body">
-                <!-- <h5 class="card-title">新闻资讯<a href="">更多</a></h5> -->
-                <!-- <h6 class="card-subtitle mb-2 text-muted"><span class="badge bg-primary">南京</span></h6> -->
-                <div class="card-title">
-                  最新公告
-                  <span class="card-subtitle"><a href="">更多</a></span>
-                </div>
-                <!-- 轮播图 -->
-                <div
-                  id="carouselNoticeControls"
-                  class="carousel slide"
-                  data-bs-ride="carousel"
-                >
-                  <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="3000">
-                      <a href="#">
-                        <img
-                          src="/themes/basic/assets/index-notice.png"
-                          class="d-block"
-                          alt="..."
-                        />
-                      </a>
-                      <div class="footer">
-                        江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江…
-                      </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="3000">
-                      <a href="#">
-                        <img
-                          src="/themes/basic/assets/index-notice.png"
-                          class="d-block"
-                          alt="..."
-                        />
-                      </a>
-                      <div class="footer">
-                        甘肃省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江…
-                      </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="3000">
-                      <a href="" #>
-                        <img
-                          src="/themes/basic/assets/index-notice.png"
-                          class="d-block"
-                          alt="..."
-                        />
-                      </a>
-                      <div class="footer">
-                        湖南省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江…
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselNoticeControls"
-                    data-bs-slide="prev"
-                  >
-                    <span
-                      class="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselNoticeControls"
-                    data-bs-slide="next"
-                  >
-                    <span
-                      class="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-                  <!-- <div class="footer">
-                    江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江…
                   </div> -->
-                </div>
-                <!-- <div class="card-text">
-                  <a href=""
-                    ><span class="tag">[行业资讯]</span
-                    ><span class="txt"
-                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
-                    ><span class="time">2022-01-01</span></a
-                  >
-                  <a href=""
-                    ><span class="tag">[行业资讯]</span
-                    ><span class="txt"
-                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
-                    ><span class="time">2022-01-01</span></a
-                  >
-                  <a href=""
-                    ><span class="tag">[行业资讯]</span
-                    ><span class="txt"
-                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
-                    ><span class="time">2022-01-01</span></a
-                  >
-                  <a href=""
-                    ><span class="tag">[行业资讯]</span
-                    ><span class="txt"
-                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
-                    ><span class="time">2022-01-01</span></a
-                  >
-                  <a href=""
-                    ><span class="tag">[行业资讯]</span
-                    ><span class="txt"
-                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
-                    ><span class="time">2022-01-01</span></a
-                  >
-                </div> -->
-                <!-- <a href="#" class="card-link">详情</a>
-                        <a href="#" class="card-link">Another link</a> -->
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-6 col-6">
-            <div class="card">
-              <div class="card-body">
-                <!-- <h5 class="card-title">政策法规<a href="">更多</a></h5> -->
-                <!-- <h6 class="card-subtitle mb-2 text-muted"><span class="badge bg-primary">南京</span></h6> -->
+                <!-- 这是未登陆后的状态end -->
 
-                <div class="card-title">
-                  政策法规
-                  <span class="card-subtitle"><a href="">更多</a></span>
+                <!-- 这是登陆后的状态start -->
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="head"><img src="./themes/basic/assets/common-default-head.png" alt="" /></span>
+                    <span class="name" title="李四李四李四李四">李四李四李四李四</span>
+                  </button>
+                  <ul class="dropdown-menu border-0 shadow text-center" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#">个人中心</a></li>
+                    <li><a class="dropdown-item" href="#">退出登录</a></li>
+                  </ul>
                 </div>
-                <a class="card-body-content" href="#" target="_blank">
-                  <div class="card-content">
-                    <div class="content-img">
-                      <img
-                        src="/themes/basic/assets/index-policy.png"
-                        alt="policy"
-                      />
-                    </div>
-                    <div class="content-text">
-                      <div class="content-text-title">
-                        实质推进！南京临床研究伦理协作审查联盟推进会成功召开...
-                      </div>
-                      <div class="content-text-subtitle text-truncate-5">
-                        实质推进！南京临床研究伦理协作审查联盟推进会成功召开实质推进！实质推进！南京临床研究伦理协作审查联盟推进会成功召开实质推进！实质推进！南京临床研究伦理协作审查联盟推进会成功召开实质推进！南京临床研究伦理协作审查联盟推进会成功召开实质推进！南京临床研究伦理协作审查联盟推进会成功召开实质推进！前进
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <div class="card-other-news text-truncate">
-                  <a href="#" target="_blank">
-                    实质推进！南京临床研究伦理协作审查联盟推进会成功召开》实质推进！南京临床研究伦理协作审查联盟推进会成功召开
-                  </a>
-                </div>
-                <div class="card-other-news text-truncate">
-                  <a href="#" target="_blank">
-                    实质推进！南京临床研究伦理协作审查联盟推进会成功召开》实质推进！南京临床研究伦理协作审查联盟推进会成功召开
-                  </a>
-                </div>
-                <!-- <div class="card-text">
-                  <a href=""
-                    ><span class="txt"
-                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
-                    ><span class="time">2022-01-01</span></a
-                  >
-                  <a href=""
-                    ><span class="txt"
-                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
-                    ><span class="time">2022-01-01</span></a
-                  >
-                  <a href=""
-                    ><span class="txt"
-                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
-                    ><span class="time">2022-01-01</span></a
-                  >
-                  <a href=""
-                    ><span class="txt"
-                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
-                    ><span class="time">2022-01-01</span></a
-                  >
-                  <a href=""
-                    ><span class="txt"
-                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
-                    ><span class="time">2022-01-01</span></a
-                  >
-                </div> -->
-                <!-- <a href="#" class="card-link">详情</a>
-                        <a href="#" class="card-link">Another link</a> -->
+                <svg t="1645520980944" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="2124" width="24" height="24">
+                  <path
+                    d="M683.712 800l-89.408 148.992a96 96 0 0 1-164.608 0L340.288 800H192A160 160 0 0 1 32 640V192A160 160 0 0 1 192 32h640A160 160 0 0 1 992 192v448a160 160 0 0 1-160 160h-148.288z m148.288-64a96 96 0 0 0 96-96V192A96 96 0 0 0 832 96H192A96 96 0 0 0 96 192v448A96 96 0 0 0 192 736h184.512l108.032 180.096a32 32 0 0 0 54.912 0l108.032-180.096H832z"
+                    fill="#ffffff" p-id="2125"></path>
+                  <path d="M256 416m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#ffffff" p-id="2126"></path>
+                  <path d="M512 416m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#ffffff" p-id="2127"></path>
+                  <path d="M768 416m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="#ffffff" p-id="2128"></path>
+                </svg>
+                <!-- 这是登陆后的状态end-->
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- 3 -->
-    <div class="ix-column-3">
-      <div class="container">
-        <h2 class="ix-common-title">成员单位<a href="">更多</a></h2>
-        <div class="type-1">
+  </header>
+  <div class="JS-headers"></div>
+  <div class="common-backtop">
+    <div class="top-indicator">
+      <svg t="1650009227956" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        p-id="4226" width="20" height="20">
+        <path
+          d="M516.608 364.544c-1.536-0.256-3.584-0.512-5.888-0.512-14.336 0-27.392 5.632-36.864 15.104L58.88 794.624c-9.472 9.472-15.104 22.528-15.104 36.864s5.632 27.392 15.104 36.864c9.472 9.472 22.528 15.36 36.864 15.36s27.392-5.888 36.864-15.36l384.256-383.744 384 384c9.216 8.96 22.016 14.592 36.096 14.592 28.928 0 51.968-23.296 51.968-51.968 0-14.08-5.632-26.624-14.592-36.096L559.104 379.648c-9.472-9.472-22.528-15.36-37.12-15.36-1.792 0-3.584 0-5.632 0.256h0.256zM137.216 187.392h759.552c28.928 0 51.968 23.296 51.968 51.968 0 28.928-23.296 51.968-51.968 51.968H137.216c-28.928 0-51.968-23.296-51.968-51.968 0-28.672 23.296-51.968 51.968-51.968z m0 0"
+          fill="currentColor" p-id="4227"></path>
+      </svg>
+    </div>
+    <!-- <div class="gap"></div> -->
+    <!-- <div class="text">回到顶部</div> -->
+    <div id="contact-us" class="contact-us">
+      <div class="contact-content">
+        <div class="text-top">请选择要咨询问题类型</div>
+        <div class="text-center">区域伦理</div>
+        <div class="text-bottom">市场准入</div>
+      </div>
+      <div id="contact-opt" class="contact-opt">
+        <img src="/themes/basic/assets/index-message.png" alt="" class="icon" />
+        <div class="contact-text" src="#">联系我们</div>
+      </div>
+    </div>
+  </div>
+  <!-- 内容部分-s -->
+  <!-- 1 -->
+  <div class="ix-column-1">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button> -->
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="#">
+            <div class="index-banner index-banner-1"></div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="#">
+            <div class="index-banner index-banner-2"></div>
+          </a>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!-- 2 -->
+  <div class="ix-column-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 col-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">江苏省人民医院</h5>
-              <h6 class="card-subtitle mb-2 text-muted">
-                <span class="badge bg-primary">南京</span>
-              </h6>
-              <div class="card-text">
-                江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。
+              <!-- <h5 class="card-title">新闻资讯<a href="">更多</a></h5> -->
+              <!-- <h6 class="card-subtitle mb-2 text-muted"><span class="badge bg-primary">南京</span></h6> -->
+              <div class="card-title">
+                最新公告
+                <span class="card-subtitle"><a href="">更多</a></span>
               </div>
-              <a href="#" class="card-link">详情</a>
-              <!-- <a href="#" class="card-link">Another link</a> -->
+              <!-- 轮播图 -->
+              <div id="carouselNoticeControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="3000">
+                    <a href="#">
+                      <img src="/themes/basic/assets/index-notice.png" class="d-block" alt="..." />
+                    </a>
+                    <div class="footer">
+                      江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江…
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <a href="#">
+                      <img src="/themes/basic/assets/index-notice.png" class="d-block" alt="..." />
+                    </a>
+                    <div class="footer">
+                      甘肃省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江…
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <a href="" #>
+                      <img src="/themes/basic/assets/index-notice.png" class="d-block" alt="..." />
+                    </a>
+                    <div class="footer">
+                      湖南省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江…
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselNoticeControls"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselNoticeControls"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                <!-- <div class="footer">
+                    江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江…
+                  </div> -->
+              </div>
+              <!-- <div class="card-text">
+                  <a href=""
+                    ><span class="tag">[行业资讯]</span
+                    ><span class="txt"
+                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
+                    ><span class="time">2022-01-01</span></a
+                  >
+                  <a href=""
+                    ><span class="tag">[行业资讯]</span
+                    ><span class="txt"
+                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
+                    ><span class="time">2022-01-01</span></a
+                  >
+                  <a href=""
+                    ><span class="tag">[行业资讯]</span
+                    ><span class="txt"
+                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
+                    ><span class="time">2022-01-01</span></a
+                  >
+                  <a href=""
+                    ><span class="tag">[行业资讯]</span
+                    ><span class="txt"
+                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
+                    ><span class="time">2022-01-01</span></a
+                  >
+                  <a href=""
+                    ><span class="tag">[行业资讯]</span
+                    ><span class="txt"
+                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
+                    ><span class="time">2022-01-01</span></a
+                  >
+                </div> -->
+              <!-- <a href="#" class="card-link">详情</a>
+                        <a href="#" class="card-link">Another link</a> -->
             </div>
           </div>
         </div>
-        <div class="type-2">
-          <div class="row">
-            <div class="col-xl-6 col-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">江苏省人民医院</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">
-                    <span class="badge bg-primary">南京</span>
-                  </h6>
-                  <div class="card-text">
-                    江苏省人民医院，暨南京医科大学第一附属医院、
-                  </div>
-                  <a href="#" class="card-link">详情</a>
-                  <!-- <a href="#" class="card-link">Another link</a> -->
-                </div>
+        <div class="col-xl-6 col-6">
+          <div class="card">
+            <div class="card-body">
+              <!-- <h5 class="card-title">政策法规<a href="">更多</a></h5> -->
+              <!-- <h6 class="card-subtitle mb-2 text-muted"><span class="badge bg-primary">南京</span></h6> -->
+
+              <div class="card-title">
+                政策法规
+                <span class="card-subtitle"><a href="">更多</a></span>
               </div>
-            </div>
-            <div class="col-xl-6 col-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">江苏省人民医院</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">
-                    <span class="badge bg-primary">南京</span>
-                  </h6>
-                  <div class="card-text">
-                    江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。
+              <a class="card-body-content" href="#" target="_blank">
+                <div class="card-content">
+                  <div class="content-img">
+                    <img src="/themes/basic/assets/index-policy.png" alt="policy" />
                   </div>
-                  <a href="#" class="card-link">详情</a>
-                  <!-- <a href="#" class="card-link">Another link</a> -->
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6 col-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">江苏省人民医院</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">
-                    <span class="badge bg-primary">南京</span>
-                  </h6>
-                  <div class="card-text">
-                    江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。
+                  <div class="content-text">
+                    <div class="content-text-title">
+                      实质推进！南京临床研究伦理协作审查联盟推进会成功召开...
+                    </div>
+                    <div class="content-text-subtitle text-truncate-5">
+                      实质推进！南京临床研究伦理协作审查联盟推进会成功召开实质推进！实质推进！南京临床研究伦理协作审查联盟推进会成功召开实质推进！实质推进！南京临床研究伦理协作审查联盟推进会成功召开实质推进！南京临床研究伦理协作审查联盟推进会成功召开实质推进！南京临床研究伦理协作审查联盟推进会成功召开实质推进！前进
+                    </div>
                   </div>
-                  <a href="#" class="card-link">详情</a>
-                  <!-- <a href="#" class="card-link">Another link</a> -->
                 </div>
+              </a>
+              <div class="card-other-news text-truncate">
+                <a href="#" target="_blank">
+                  实质推进！南京临床研究伦理协作审查联盟推进会成功召开》实质推进！南京临床研究伦理协作审查联盟推进会成功召开
+                </a>
               </div>
-            </div>
-            <div class="col-xl-6 col-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">江苏省人民医院</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">
-                    <span class="badge bg-primary">南京</span>
-                  </h6>
-                  <div class="card-text">
-                    江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。
-                  </div>
-                  <a href="#" class="card-link">详情</a>
-                  <!-- <a href="#" class="card-link">Another link</a> -->
-                </div>
+              <div class="card-other-news text-truncate">
+                <a href="#" target="_blank">
+                  实质推进！南京临床研究伦理协作审查联盟推进会成功召开》实质推进！南京临床研究伦理协作审查联盟推进会成功召开
+                </a>
               </div>
+              <!-- <div class="card-text">
+                  <a href=""
+                    ><span class="txt"
+                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
+                    ><span class="time">2022-01-01</span></a
+                  >
+                  <a href=""
+                    ><span class="txt"
+                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
+                    ><span class="time">2022-01-01</span></a
+                  >
+                  <a href=""
+                    ><span class="txt"
+                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
+                    ><span class="time">2022-01-01</span></a
+                  >
+                  <a href=""
+                    ><span class="txt"
+                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
+                    ><span class="time">2022-01-01</span></a
+                  >
+                  <a href=""
+                    ><span class="txt"
+                      >祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院祝贺！精准狙击“脑胶质瘤”一院</span
+                    ><span class="time">2022-01-01</span></a
+                  >
+                </div> -->
+              <!-- <a href="#" class="card-link">详情</a>
+                        <a href="#" class="card-link">Another link</a> -->
             </div>
-          </div>
-          <div class="text-center">
-            <button type="button" class="btn btn-primary btn-lg">
-              加入联盟
-            </button>
           </div>
         </div>
       </div>
     </div>
-    <!-- 4 -->
-    <div class="ix-column-4">
-      <div class="container">
-        <h2 class="ix-common-title">领域专家</h2>
+  </div>
+  <!-- 3 -->
+  <div class="ix-column-3">
+    <div class="container">
+      <h2 class="ix-common-title">成员单位<a href="">更多</a></h2>
+      <div class="type-1">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">江苏省人民医院</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <span class="badge bg-primary">南京</span>
+            </h6>
+            <div class="card-text">
+              江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。
+            </div>
+            <a href="#" class="card-link">详情</a>
+            <!-- <a href="#" class="card-link">Another link</a> -->
+          </div>
+        </div>
+      </div>
+      <div class="type-2">
         <div class="row">
-          
-          <div class="col-xl-3 col-3 d-flex mb-3">
+          <div class="col-xl-6 col-6">
             <div class="card">
-              <!-- <div class="row g-0"> -->
-              <div class="card-content">
-                <!-- <div class="col-md-2">
+              <div class="card-body">
+                <h5 class="card-title">江苏省人民医院</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  <span class="badge bg-primary">南京</span>
+                </h6>
+                <div class="card-text">
+                  江苏省人民医院，暨南京医科大学第一附属医院、
+                </div>
+                <a href="#" class="card-link">详情</a>
+                <!-- <a href="#" class="card-link">Another link</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">江苏省人民医院</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  <span class="badge bg-primary">南京</span>
+                </h6>
+                <div class="card-text">
+                  江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。
+                </div>
+                <a href="#" class="card-link">详情</a>
+                <!-- <a href="#" class="card-link">Another link</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">江苏省人民医院</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  <span class="badge bg-primary">南京</span>
+                </h6>
+                <div class="card-text">
+                  江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。
+                </div>
+                <a href="#" class="card-link">详情</a>
+                <!-- <a href="#" class="card-link">Another link</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">江苏省人民医院</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  <span class="badge bg-primary">南京</span>
+                </h6>
+                <div class="card-text">
+                  江苏省人民医院，暨南京医科大学第一附属医院、江苏省临床医学研究院、江苏省红十字医院。江苏省妇幼保健院作为江苏省人民医院妇幼分院，实行一体化管理。江苏省人民医院前身为1936年成立的江苏省立医政学院附设诊疗所。
+                </div>
+                <a href="#" class="card-link">详情</a>
+                <!-- <a href="#" class="card-link">Another link</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary btn-lg">
+            加入联盟
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 4 -->
+  <div class="ix-column-4">
+    <div class="container">
+      <h2 class="ix-common-title">领域专家</h2>
+      <div class="row">
+
+        <div class="col-xl-3 col-3 d-flex mb-3">
+          <div class="card">
+            <!-- <div class="row g-0"> -->
+            <div class="card-content">
+              <!-- <div class="col-md-2">
                   <img src="/themes/basic/assets/index-doctor.png" alt="..." />
                 </div> -->
-                <div class="avator">
-                  <img src="/themes/basic/assets/index-docker-1.png" alt="" />
+              <div class="avator">
+                <img src="/themes/basic/assets/index-docker-1.png" alt="" />
+              </div>
+              <!-- <div class="col-md-10"> -->
+              <div class="card-body">
+                <h5 class="card-title">麻醉科</h5>
+                <div class="card-text text-truncate">江苏省人民医院</div>
+                <div class="card-text">
+                  <small class="text-muted">主任医师</small>
                 </div>
-                <!-- <div class="col-md-10"> -->
+                <a href="#" class="card-link">咨 询</a>
+              </div>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-3 d-flex mb-3">
+          <div class="card">
+            <!-- <div class="row g-0"> -->
+            <div class="card-content">
+              <!-- <div class="col-md-2">
+                  <img src="/themes/basic/assets/index-doctor.png" alt="..." />
+                </div> -->
+              <div class="avator">
+                <img src="/themes/basic/assets/index-docker-2.png" alt="" />
+              </div>
+              <!-- <div class="col-md-10"> -->
+              <div class="card-body">
+                <h5 class="card-title">麻醉科</h5>
+                <div class="card-text">江苏省人民医院</div>
+                <div class="card-text">
+                  <small class="text-muted">主任</small>
+                </div>
+                <a href="#" class="card-link">咨 询</a>
+              </div>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-3 d-flex mb-3">
+          <div class="card">
+            <!-- <div class="row g-0"> -->
+            <div class="card-content">
+              <!-- <div class="col-md-2">
+                  <img src="/themes/basic/assets/index-doctor.png" alt="..." />
+                </div> -->
+              <div class="avator">
+                <img src="/themes/basic/assets/index-docker-3.png" alt="" />
+              </div>
+              <div class="col-md-10">
                 <div class="card-body">
                   <h5 class="card-title">麻醉科</h5>
-                  <div class="card-text text-truncate">江苏省人民医院</div>
+                  <div class="card-text">江苏省人民医院</div>
                   <div class="card-text">
                     <small class="text-muted">主任医师</small>
                   </div>
                   <a href="#" class="card-link">咨 询</a>
                 </div>
-                <!-- </div> -->
               </div>
             </div>
           </div>
-          
-          <div class="col-xl-3 col-3 d-flex mb-3">
-            <div class="card">
-              <!-- <div class="row g-0"> -->
-              <div class="card-content">
-                <!-- <div class="col-md-2">
+        </div>
+
+        <div class="col-xl-3 col-3 d-flex mb-3">
+          <div class="card">
+            <!-- <div class="row g-0"> -->
+            <div class="card-content">
+              <!-- <div class="col-md-2">
                   <img src="/themes/basic/assets/index-doctor.png" alt="..." />
                 </div> -->
-                <div class="avator">
-                  <img src="/themes/basic/assets/index-docker-2.png" alt="" />
-                </div>
-                <!-- <div class="col-md-10"> -->
+              <div class="avator">
+                <img src="/themes/basic/assets/index-docker-1.png" alt="" />
+              </div>
+              <div class="col-md-10">
                 <div class="card-body">
                   <h5 class="card-title">麻醉科</h5>
                   <div class="card-text">江苏省人民医院</div>
                   <div class="card-text">
-                    <small class="text-muted">主任</small>
+                    <small class="text-muted">主任医师</small>
                   </div>
                   <a href="#" class="card-link">咨 询</a>
                 </div>
-                <!-- </div> -->
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-xl-3 col-3 d-flex mb-3">
-            <div class="card">
-              <!-- <div class="row g-0"> -->
-              <div class="card-content">
-                <!-- <div class="col-md-2">
-                  <img src="/themes/basic/assets/index-doctor.png" alt="..." />
-                </div> -->
-                <div class="avator">
-                  <img src="/themes/basic/assets/index-docker-3.png" alt="" />
-                </div>
-                <div class="col-md-10">
-                  <div class="card-body">
-                    <h5 class="card-title">麻醉科</h5>
-                    <div class="card-text">江苏省人民医院</div>
-                    <div class="card-text">
-                      <small class="text-muted">主任医师</small>
-                    </div>
-                    <a href="#" class="card-link">咨 询</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-         
-          <div class="col-xl-3 col-3 d-flex mb-3">
-            <div class="card">
-              <!-- <div class="row g-0"> -->
-              <div class="card-content">
-                <!-- <div class="col-md-2">
-                  <img src="/themes/basic/assets/index-doctor.png" alt="..." />
-                </div> -->
-                <div class="avator">
-                  <img src="/themes/basic/assets/index-docker-1.png" alt="" />
-                </div>
-                <div class="col-md-10">
-                  <div class="card-body">
-                    <h5 class="card-title">麻醉科</h5>
-                    <div class="card-text">江苏省人民医院</div>
-                    <div class="card-text">
-                      <small class="text-muted">主任医师</small>
-                    </div>
-                    <a href="#" class="card-link">咨 询</a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- 5 -->
-    <div class="ix-column-5">
-      <div class="container">
-        <h2 class="ix-common-title">特色专业</h2>
-        <div class="row">
-          <!-- <div class="col-xl-3 col-3 d-flex justify-content-center"> -->
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">麻醉科</h5>
-              <h6 class="card-subtitle mb-2 text-muted">江苏省人民医院</h6>
-              <!-- <div class="card-text">进行中项目 816</div> -->
-              <a href="#" class="card-link">咨 询</a>
-              <!-- <a href="#" class="card-link">Another link</a> -->
-            </div>
+  </div>
+  <!-- 5 -->
+  <div class="ix-column-5">
+    <div class="container">
+      <h2 class="ix-common-title">特色专业</h2>
+      <div class="row">
+        <!-- <div class="col-xl-3 col-3 d-flex justify-content-center"> -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">麻醉科</h5>
+            <h6 class="card-subtitle mb-2 text-muted">江苏省人民医院</h6>
+            <!-- <div class="card-text">进行中项目 816</div> -->
+            <a href="#" class="card-link">咨 询</a>
+            <!-- <a href="#" class="card-link">Another link</a> -->
           </div>
-          <!-- </div> -->
-          <!-- <div class="col-xl-3 col-3 d-flex justify-content-center"> -->
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">麻醉科</h5>
-              <h6 class="card-subtitle mb-2 text-muted">江苏省人民医院</h6>
-              <!-- <div class="card-text">进行中项目 816</div> -->
-              <a href="#" class="card-link">咨 询</a>
-              <!-- <a href="#" class="card-link">Another link</a> -->
-            </div>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="col-xl-3 col-3 d-flex justify-content-center"> -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">麻醉科</h5>
+            <h6 class="card-subtitle mb-2 text-muted">江苏省人民医院</h6>
+            <!-- <div class="card-text">进行中项目 816</div> -->
+            <a href="#" class="card-link">咨 询</a>
+            <!-- <a href="#" class="card-link">Another link</a> -->
           </div>
-          <!-- </div> -->
-          <!-- <div class="col-xl-3 col-3 d-flex justify-content-center"> -->
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">麻醉科</h5>
-              <h6 class="card-subtitle mb-2 text-muted">江苏省人民医院</h6>
-              <!-- <div class="card-text">进行中项目 816</div> -->
-              <a href="#" class="card-link">咨 询</a>
-              <!-- <a href="#" class="card-link">Another link</a> -->
-            </div>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="col-xl-3 col-3 d-flex justify-content-center"> -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">麻醉科</h5>
+            <h6 class="card-subtitle mb-2 text-muted">江苏省人民医院</h6>
+            <!-- <div class="card-text">进行中项目 816</div> -->
+            <a href="#" class="card-link">咨 询</a>
+            <!-- <a href="#" class="card-link">Another link</a> -->
           </div>
-          <!-- </div> -->
-          <!-- <div class="col-xl-3 col-3 d-flex justify-content-center"> -->
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">麻醉科</h5>
-              <h6 class="card-subtitle mb-2 text-muted">江苏省人民医院</h6>
-              <!-- <div class="card-text">进行中项目 816</div> -->
-              <a href="#" class="card-link">咨 询</a>
-              <!-- <a href="#" class="card-link">Another link</a> -->
-            </div>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="col-xl-3 col-3 d-flex justify-content-center"> -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">麻醉科</h5>
+            <h6 class="card-subtitle mb-2 text-muted">江苏省人民医院</h6>
+            <!-- <div class="card-text">进行中项目 816</div> -->
+            <a href="#" class="card-link">咨 询</a>
+            <!-- <a href="#" class="card-link">Another link</a> -->
           </div>
-          <!-- </div> -->
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">麻醉科</h5>
-              <h6 class="card-subtitle mb-2 text-muted">江苏省人民医院</h6>
-              <!-- <div class="card-text">进行中项目 816</div> -->
-              <a href="#" class="card-link">咨 询</a>
-              <!-- <a href="#" class="card-link">Another link</a> -->
-            </div>
+        </div>
+        <!-- </div> -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">麻醉科</h5>
+            <h6 class="card-subtitle mb-2 text-muted">江苏省人民医院</h6>
+            <!-- <div class="card-text">进行中项目 816</div> -->
+            <a href="#" class="card-link">咨 询</a>
+            <!-- <a href="#" class="card-link">Another link</a> -->
           </div>
         </div>
       </div>
     </div>
-    <!-- 内容部分-e -->
-    <footer class="common-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-4 col-4">
-            <div class="message">
-              <p class="txt">电话</p>
-              <p class="tips">400-822-4688</p>
-            </div>
-          </div>
-          <div class="col-xl-4 col-4">
-            <div class="message">
-              <p class="txt">邮箱</p>
-              <p class="tips">market@wetrial.com</p>
-            </div>
-          </div>
-          <div class="col-xl-4 col-4">
-            <p class="txt">地址</p>
-            <p class="tips">湖南省长沙市岳麓大道311号金麓国际写字楼6楼</p>
+  </div>
+  <!-- 内容部分-e -->
+  <footer class="common-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4 col-4">
+          <div class="message">
+            <p class="txt">电话</p>
+            <p class="tips">400-822-4688</p>
           </div>
         </div>
-        <div class="copyright">
-          Copyright © 2015-2020 YLT版权所有
-          <a
-            target="_blank"
-            href="https://beian.miit.gov.cn/#/"
-            rel="noopener noreferrer"
-            >京ICP备11034462号-2</a
-          >
-          | 京公网安备11010502038388
+        <div class="col-xl-4 col-4">
+          <div class="message">
+            <p class="txt">邮箱</p>
+            <p class="tips">market@wetrial.com</p>
+          </div>
+        </div>
+        <div class="col-xl-4 col-4">
+          <p class="txt">地址</p>
+          <p class="tips">湖南省长沙市岳麓大道311号金麓国际写字楼6楼</p>
         </div>
       </div>
-    </footer>
-    <script src="/libs/js/jquery-3.6.0.min.js"></script>
-    <script src="/libs/js/jquery.plugins.min.js"></script>
-    <script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script>
-      $(document).scroll(function () {
-        var scroH = $(document).scrollTop() //滚动高度
-        var viewH = $(window).height() //可见高度
-        var contentH = $(document).height() //内容高度
-        if (scroH > 100) {
-          //距离顶部大于100px时
-          // $('.common-backtop')
-          $('.top-indicator')
-            .show()
-            .addClass('animate__animated animate__slideInUp')
-        }
-        if (scroH < 100) {
-          console.log('hide')
-          // $('.common-backtop').removeClass('animate__slideInUp').hide()
-          $('.top-indicator').removeClass('animate__slideInUp').hide()
-        }
-        if (contentH - (scroH + viewH) <= 200) {
-          //距离底部高度小于100px
-        }
-        if ((contentH = scroH + viewH)) {
-          //滚动条滑到底部啦
-        }
-      })
-      $('.top-indicator').click(function () {
-        $('body,html').animate(
-          {
-            scrollTop: 0,
-          },
-          10,
-          'linear'
-        )
-        return false
-      })
+      <div class="copyright">
+        Copyright © 2015-2020 YLT版权所有
+        <a target="_blank" href="https://beian.miit.gov.cn/#/" rel="noopener noreferrer">京ICP备11034462号-2</a>
+        | 京公网安备11010502038388
+      </div>
+    </div>
+  </footer>
+  <script src="/libs/js/jquery-3.6.0.min.js"></script>
+  <script src="/libs/js/jquery.plugins.min.js"></script>
+  <script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).scroll(function () {
+      var scroH = $(document).scrollTop() //滚动高度
+      var viewH = $(window).height() //可见高度
+      var contentH = $(document).height() //内容高度
+      if (scroH > 100) {
+        //距离顶部大于100px时
+        // $('.common-backtop')
+        $('.top-indicator')
+          .show()
+          .addClass('animate__animated animate__slideInUp')
+      }
+      if (scroH < 100) {
+        console.log('hide')
+        // $('.common-backtop').removeClass('animate__slideInUp').hide()
+        $('.top-indicator').removeClass('animate__slideInUp').hide()
+      }
+      if (contentH - (scroH + viewH) <= 200) {
+        //距离底部高度小于100px
+      }
+      if ((contentH = scroH + viewH)) {
+        //滚动条滑到底部啦
+      }
+    })
+    $('.top-indicator').click(function () {
+      $('body,html').animate({
+          scrollTop: 0,
+        },
+        10,
+        'linear'
+      )
+      return false
+    })
 
-      $('.contact-opt').click(function () {
-        $('.contact-us').toggleClass('QA-show')
-      })
-    </script>
-  </body>
+    $('.contact-opt').click(function () {
+      $('.contact-us').toggleClass('QA-show')
+    })
+  </script>
+</body>
+
 </html>
