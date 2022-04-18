@@ -1,11 +1,3 @@
-.breadcrumb.gk .breadcrumb-item a {
-  color: rgba(0, 0, 0, 0.45);
-}
-
-.breadcrumb.gk .breadcrumb-item.active {
-  color: rgba(0, 0, 0, 0.65);
-}
-
 .mechanism-gk.common-division {
   height: 32px;
 }
@@ -66,7 +58,7 @@
   border-left: none;
 }
 .mechanism-gk-card1 .box .information a {
-  color: #2b7efb;
+  color: #2B7EFB;
 }
 .mechanism-gk-card1 .box .btn {
   float: right;
@@ -108,7 +100,7 @@
   display: block;
 }
 .mechanism-gk-card1 .introduce .more {
-  color: #2b7efb;
+  color: #2B7EFB;
   position: absolute;
   right: 15px;
   bottom: 0;
@@ -129,8 +121,8 @@
 }
 .mechanism-gk-card1 .nav .nav-link.active,
 .mechanism-gk-card1 .nav .nav-link:hover {
-  color: #2b7efb;
-  border-bottom: 3px solid #2b7efb;
+  color: #2B7EFB;
+  border-bottom: 3px solid #2B7EFB;
 }
 .mechanism-gk-card2 {
   background: #fff;
@@ -156,7 +148,7 @@
 .mechanism-gk-card2 .nav .nav-link:hover {
   color: #fff;
   border-radius: 20px;
-  background-color: #2b7efb;
+  background-color: #2B7EFB;
 }
 .mechanism-gk-card2 .info1 {
   padding: 0 44px;
@@ -232,9 +224,9 @@
   display: inline-block;
   width: 320px;
   height: 32px;
-  background: #ffffff;
+  background: #FFFFFF;
   border-radius: 16px;
-  border: 1px solid #d2d2d2;
+  border: 1px solid #D2D2D2;
   flex: none;
   padding-left: 16px;
   padding-right: 42px;
@@ -244,7 +236,7 @@
   left: 330px;
   bottom: 8px;
   cursor: pointer;
-  color: #888;
+  color: #d2d2d2;
   z-index: 10;
 }
 .mechanism-gk-card2 .search-box svg:hover {
