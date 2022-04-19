@@ -70,14 +70,12 @@ body {
   box-shadow: 0 7px 5px -5px #a8aab9;
 }
 .common-backtop {
-  display: flex;
-  flex-direction: column;
+  display: none;
   position: fixed;
   right: 12px;
   top: 70%;
   z-index: 999999;
   cursor: pointer;
-  user-select: none;
   width: 46px;
   text-align: center;
 }
@@ -89,7 +87,6 @@ body {
   -o-transform: scale(1.1);
 }
 .common-backtop .top-indicator {
-  display: none;
   color: #757F92;
   transition: all 0.2s ease;
   padding: 15px 0;
@@ -307,6 +304,7 @@ body {
   vertical-align: middle;
   position: relative;
   width: 160px;
+  left: -50px;
 }
 .common-header .button-box .login-box .dropdown {
   display: inline-block;
