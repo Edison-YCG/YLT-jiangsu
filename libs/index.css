@@ -209,10 +209,7 @@
   border: none;
 }
 .ix-column-3 .card-body {
-  padding: 42px 0 0 56px;
-}
-.ix-column-3 .type-1 .card-body {
-  padding-bottom: 32px;
+  padding: 42px 0 42px 56px;
 }
 .ix-column-3 .card-title {
   font-size: 20px;
@@ -283,7 +280,6 @@
   font-size: 20px;
   color: #ffffff;
   margin-bottom: 34px;
-  margin-top: 42px;
 }
 .ix-column-4 {
   margin-bottom: 56px;

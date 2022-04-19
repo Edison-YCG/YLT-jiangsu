@@ -152,13 +152,13 @@
       </svg>
     </div>
   </div>
-  <div id="contact-us" class="contact-us">
+  <div class="contact-us">
     <div class="contact-content">
       <div class="text-top">请选择要咨询问题类型</div>
       <div class="text-bottom">区域伦理</div>
       <div class="text-bottom">市场准入</div>
     </div>
-    <div id="contact-opt" class="contact-opt">
+    <div class="contact-opt">
       <img src="/themes/basic/assets/index-message.png" alt="" class="icon" />
       <div class="contact-text" src="#">联系我们</div>
     </div>
@@ -648,6 +648,7 @@
   <script src="/libs/js/jquery.plugins.min.js"></script>
   <script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
+    //返回顶部
     $(document).scroll(function () {
       var scroH = $(document).scrollTop() //滚动高度
       var viewH = $(window).height() //可见高度
@@ -674,11 +675,16 @@
         10,
         'linear'
       )
-      return false
     })
 
-    $('.contact-opt').click(function () {
-      $('.contact-us').toggleClass('QA-show')
+    //联系我们
+    $('.contact-us').click(function (e) {
+      e.stopPropagation()
+      e.preventDefault()
+      $(this).toggleClass('QA-show')
+    })
+    $(document).click(function () {
+      $('.contact-us').removeClass('QA-show')
     })
   </script>
 </body>
