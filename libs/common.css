@@ -396,12 +396,15 @@ body {
   font-size: 16px;
   font-weight: 100;
   padding: 0;
+  height: 100%;
 }
 .main-nav .nav-link:hover,
 .main-nav .nav-link.active {
-  height: 100%;
   border-bottom: 3px solid #fff;
   font-weight: bold;
+}
+.main-nav .dropdown .nav-link {
+  border-bottom: none;
 }
 .common-nav {
   padding: 20px 0;
