@@ -23,7 +23,7 @@
   background: #fff;
 }
 
-.container .join-ethic {
+.ie-column-1 .join-ethic {
   right: 0;
   top: 79px;
   transform: translate(-100%, -50%);
@@ -32,5 +32,9 @@
   padding: 7px 11px;
   border-radius: 18px;
   border: 1px solid #2b7efb;
-  background-color: white;
+  background-color: #fff;
+}
+.ie-column-1 .join-ethic:hover {
+  background-color: #2b7efb;
+  color: #fff;
 }
