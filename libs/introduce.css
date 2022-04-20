@@ -21,7 +21,6 @@
 .ie-column-1,
 .ie-column-2 {
   background: #fff;
-  min-height: calc(100vh - 580px);
 }
 
 .container .join-ethic {
