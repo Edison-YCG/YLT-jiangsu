@@ -900,7 +900,7 @@
       if (target.nodeName !== 'A') {
         if (target.nodeName === 'LI') {
           new Swiper(`.${target.dataset.index}`, {
-            autoplay: true, //等同于以下设置
+            autoplay: true, 
             slidesPerView: 3,
             spaceBetween: 20,
             navigation: {
@@ -912,7 +912,7 @@
           $(`.ix-column-5 .${target.dataset.index}`).show().siblings().hide()
         } else {
           new Swiper(`.${target.parentElement.dataset.index}`, {
-            autoplay: true, //等同于以下设置
+            autoplay: true, 
             slidesPerView: 3,
             spaceBetween: 20,
             navigation: {
