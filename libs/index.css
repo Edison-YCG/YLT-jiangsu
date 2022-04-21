@@ -58,6 +58,7 @@
 }
 .ix-column-2 .card-body {
   padding: 34px 40px 31px;
+  min-height: 387px;
 }
 .ix-column-2 .card-title {
   display: flex;
