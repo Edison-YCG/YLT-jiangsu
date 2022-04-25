@@ -43,20 +43,15 @@
   background: #0142FF;
 }
 
-.ix-column-1 .index-banner {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-clip: border-box;
-  height: 520px;
-}
-
-.ix-column-1 .index-banner-1 {
-  background-image: url('../themes/basic/assets/index-banner.png');
-}
-
-.ix-column-1 .index-banner-2 {
-  background-image: url('../themes/basic/assets/index-banner-2.png');
+.ix-column-1 {
+  .carousel-item {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: 520px;
+    }
+  }
 }
 
 .ix-column-2 {
