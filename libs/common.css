@@ -280,7 +280,6 @@ body {
   -o-transform: scale(0.95);
 }
 .common-header .button-box {
-  /* padding-left: 45px; */
   margin-top: -5px;
 }
 .common-header .button-box .btn {
@@ -381,6 +380,20 @@ body {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+}
+.common-header .button-box .login-box .dropdown-item {
+  max-width: 130px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  position: relative;
+}
+.common-header .button-box .login-box .dropdown-item svg {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .common-header .button-box .nomui-qa-btn {
   min-width: 88px;
