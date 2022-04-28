@@ -476,9 +476,12 @@
 }
 .ix-column-5 .swiper .swiper-button-next,
 .ix-column-5 .swiper .swiper-button-prev {
+  height: 100% !important;
+  top: 0;
+  margin-top: 0;
   width: auto;
   height: auto;
-  font-size: 56px;
+  font-size: 34px;
   color: #fff;
 }
 .ix-column-5 .swiper .swiper-button-next::after,
@@ -489,9 +492,11 @@
 .ix-column-5 .swiper .swiper-button-prev.swiper-button-disabled {
   pointer-events: auto;
 }
-@media (max-width: 1400px) {
-  .ix-column-5 .swiper .swiper-button-next,
-  .ix-column-5 .swiper .swiper-button-prev {
-    font-size: 46px;
-  }
+.ix-column-5 .swiper .swiper-button-prev {
+  left: 0;
+  padding-left: 10px;
+}
+.ix-column-5 .swiper .swiper-button-next {
+  right: 0;
+  padding-right: 10px;
 }
