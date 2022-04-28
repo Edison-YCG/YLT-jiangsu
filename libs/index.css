@@ -478,12 +478,16 @@
 .ix-column-5 .swiper .swiper-button-prev {
   width: auto;
   height: auto;
-  font-size: 60px;
+  font-size: 56px;
   color: #fff;
 }
 .ix-column-5 .swiper .swiper-button-next::after,
 .ix-column-5 .swiper .swiper-button-prev::after {
   display: none;
+}
+.ix-column-5 .swiper .swiper-button-next.swiper-button-disabled,
+.ix-column-5 .swiper .swiper-button-prev.swiper-button-disabled {
+  pointer-events: auto;
 }
 @media (max-width: 1400px) {
   .ix-column-5 .swiper .swiper-button-next,
