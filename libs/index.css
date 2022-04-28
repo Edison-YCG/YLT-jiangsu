@@ -477,6 +477,7 @@
 .ix-column-5 .swiper .swiper-button-next,
 .ix-column-5 .swiper .swiper-button-prev {
   height: 100% !important;
+  width: 80px !important;
   top: 0;
   margin-top: 0;
   width: auto;
@@ -494,9 +495,11 @@
 }
 .ix-column-5 .swiper .swiper-button-prev {
   left: 0;
+  justify-content: start !important;
   padding-left: 10px;
 }
 .ix-column-5 .swiper .swiper-button-next {
   right: 0;
+  justify-content: end !important;
   padding-right: 10px;
 }
