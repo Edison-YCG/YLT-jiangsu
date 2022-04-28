@@ -46,10 +46,11 @@
 .ix-column-1 {
   .carousel-item {
     max-height: 480px;
+
     img {
       width: 100%;
       height: 100%;
-      object-fit:cover;
+      object-fit: cover;
       display: block;
     }
   }
@@ -515,42 +516,47 @@
 
   .swiper {
     display: none;
+
     .swiper-slide {
-.box{
-  width: 420px;
-  height: 230px;
-  overflow: hidden;
-  .txt {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.55);
-    padding: 10px 12px;
+      .box {
+        width: 420px;
+        height: 230px;
+        overflow: hidden;
+        @media (max-width: 1400px) {
+          width: 300px;
+          height: 164px;
+        }
+        .txt {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.55);
+          padding: 10px 12px;
 
-    span {
-      display: block;
-      font-size: 16px;
-      color: #FFFFFF;
-      line-height: 22px;
-      height: 44px;
-      text-overflow: -o-ellipsis-lastline;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
-  }
+          span {
+            display: block;
+            font-size: 16px;
+            color: #FFFFFF;
+            line-height: 22px;
+            height: 44px;
+            text-overflow: -o-ellipsis-lastline;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+        }
 
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
     }
 
     .swiper-button-next,
@@ -561,8 +567,11 @@
 
       width: auto;
       height: auto;
-      font-size: 34px;
+      font-size: 60px;
       color: #fff;
+      @media (max-width: 1400px) {
+        font-size: 46px;
+      }
     }
 
   }
