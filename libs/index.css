@@ -36,6 +36,9 @@
 .ix-column-1 .carousel-indicators .active {
   background: #0142FF;
 }
+.ix-column-1 {
+  margin-top: -2px;
+}
 .ix-column-1 .carousel-item {
   max-height: 618px;
 }
