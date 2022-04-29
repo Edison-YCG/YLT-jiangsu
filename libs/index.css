@@ -119,9 +119,17 @@
 #carouselNoticeControls {
   position: relative;
 }
-#carouselNoticeControls img {
+#carouselNoticeControls .carousel-item {
+  max-height: 264px;
+  overflow: hidden;
+  background-color: #eee;
+}
+#carouselNoticeControls .carousel-item img {
+  display: block;
   width: 100%;
-  height: 264px;
+  height: 100%;
+  object-fit: contain;
+  max-height: 264px;
 }
 #carouselNoticeControls .footer {
   position: absolute;
@@ -329,6 +337,12 @@
   font-weight: bold;
   margin-bottom: 12px;
   color: #000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+  width: 210px;
+  display: inline-block;
 }
 .ix-column-4 .card-title a {
   color: #000;
@@ -337,8 +351,11 @@
   color: #666;
   margin-bottom: 22px;
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+  width: 210px;
+  display: inline-block;
   font-size: 20px;
 }
 .ix-column-4 .card-text:nth-last-of-type(1) {

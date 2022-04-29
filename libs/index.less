@@ -143,23 +143,32 @@
 
 #carouselNoticeControls {
   position: relative;
+  .carousel-item {
+    max-height: 264px;
+    overflow: hidden;
+    background-color: #eee;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      max-height: 264px;
+    }
+  }
+  .footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px 12px;
+    background: rgba(0, 0, 0, 0.55);
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+  }
 }
 
-#carouselNoticeControls img {
-  width: 100%;
-  height: 264px;
-}
 
-#carouselNoticeControls .footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  padding: 10px 12px;
-  background: rgba(0, 0, 0, 0.55);
-  font-size: 16px;
-  font-weight: 400;
-  color: white;
-}
+
 
 .ix-column-2 .card-content {
   display: flex;
@@ -394,7 +403,12 @@
   font-weight: bold;
   margin-bottom: 12px;
   color: #000;
-  ;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+  width: 210px;
+  display: inline-block;
 }
 
 .ix-column-4 .card-title a {
@@ -405,8 +419,11 @@
   color: #666;
   margin-bottom: 22px;
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+  width: 210px;
+  display: inline-block;
   font-size: 20px;
 }
 
