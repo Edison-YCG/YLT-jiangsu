@@ -182,6 +182,7 @@ body {
 .common-header .logo a {
   display: block;
   background: url('../themes/basic/assets/common-logo.png') no-repeat left center;
+  background-size: contain;
   padding-left: 54px;
   font-size: 18px;
   color: #ffffff;
