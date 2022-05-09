@@ -364,6 +364,9 @@
 .ix-column-4 .card-text:nth-last-of-type(1) {
   margin-bottom: 0;
 }
+.ix-column-4 .card-text:nth-of-type(1) {
+  margin-bottom: 22px;
+}
 .ix-column-4 .card-text .text-muted {
   min-width: 74px;
   font-size: 14px;
@@ -522,4 +525,20 @@
   right: 0;
   justify-content: end !important;
   padding-right: 10px;
+}
+.side-link {
+  position: fixed;
+  right: 0;
+  top: 65%;
+}
+.side-link a {
+  display: block;
+  box-shadow: 0px 0px 10px 2px rgba(43, 126, 251, 0.1);
+  border-radius: 2px;
+  padding: 11px 16px;
+  width: 66px;
+  height: 66px;
+  background: #0087FF;
+  font-size: 16px;
+  color: #FFFFFF;
 }

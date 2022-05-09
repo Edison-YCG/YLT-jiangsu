@@ -6,6 +6,17 @@
 
   .news-type-tabs {
     border-bottom: 1px dashed #E9E9E9;
+
+    .col-4 {
+      display: flex;
+      align-items: center;
+
+      .title {
+        font-size: 12px;
+        min-width: 40px;
+      }
+    }
+
   }
 
   .nav {
