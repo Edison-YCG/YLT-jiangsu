@@ -151,6 +151,17 @@
       </svg>
     </div>
   </div>
+  <div class="contact-us">
+    <div class="contact-content">
+      <div class="text-top">请选择要咨询问题类型</div>
+      <div class="text-bottom">区域伦理</div>
+      <div class="text-bottom">市场准入</div>
+    </div>
+    <div class="contact-opt">
+      <img src="/themes/basic/assets/index-message.png" alt="" class="icon" />
+      <div class="contact-text" src="#">联系我们</div>
+    </div>
+  </div>
   <div class="side-link">
     <a href="">
       伦理申请
@@ -840,7 +851,15 @@
         'linear'
       )
     })
-
+    //联系我们
+    $('.contact-us').click(function (e) {
+      e.stopPropagation()
+      e.preventDefault()
+      $(this).toggleClass('QA-show')
+    })
+    $(document).click(function () {
+      $('.contact-us').removeClass('QA-show')
+    })
     //底部轮播
     $(document).on("click", ".ix-column-5 .item-box", function (event) {
       var target = event.target
