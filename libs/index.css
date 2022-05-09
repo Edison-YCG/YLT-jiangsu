@@ -529,7 +529,8 @@
 .side-link {
   position: fixed;
   right: 0;
-  top: 65%;
+  top: 75%;
+  z-index: 9999;
 }
 .side-link a {
   display: block;
