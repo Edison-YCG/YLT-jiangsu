@@ -45,6 +45,7 @@
 
 .ix-column-1 {
   margin-top: -3px;
+
   .carousel-item {
     max-height: 600px;
 
@@ -126,9 +127,21 @@
   color: black;
 }
 
-.card-other-news a:hover {
-  text-decoration: underline !important;
+.ix-column-2 {
+  .card-other-news {
+    &:hover {
+      color: #0087ff;
+    }
+
+    a {
+      &:hover {
+        color: #0087ff;
+      }
+    }
+
+  }
 }
+
 
 .ix-column-2 .card-text a {
   display: block;
@@ -144,10 +157,12 @@
 
 #carouselNoticeControls {
   position: relative;
+
   .carousel-item {
     max-height: 264px;
     overflow: hidden;
     background-color: #eee;
+
     img {
       display: block;
       width: 100%;
@@ -156,6 +171,7 @@
       max-height: 264px;
     }
   }
+
   .footer {
     position: absolute;
     width: 100%;
@@ -196,6 +212,10 @@
 .ix-column-2 .card-content .content-text .content-text-title {
   font-size: 16px;
   font-weight: bold;
+
+  &:hover {
+    color: #0087ff;
+  }
 }
 
 .ix-column-2 .card-content .content-text .content-text-subtitle {
