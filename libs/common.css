@@ -832,6 +832,9 @@ table.nom-table th {
 .side-link a span:hover {
   color: #0087FF;
 }
+.min-h {
+  min-height: calc(100vh - 303.5px);
+}
 @media (max-width: 1400px) {
   .JS-headers {
     height: 105px;
