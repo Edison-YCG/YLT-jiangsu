@@ -106,8 +106,11 @@
 .card-other-news a {
   color: black;
 }
-.card-other-news a:hover {
-  text-decoration: underline !important;
+.ix-column-2 .card-other-news:hover {
+  color: #0087ff;
+}
+.ix-column-2 .card-other-news a:hover {
+  color: #0087ff;
 }
 .ix-column-2 .card-text a {
   display: block;
@@ -165,6 +168,9 @@
 .ix-column-2 .card-content .content-text .content-text-title {
   font-size: 16px;
   font-weight: bold;
+}
+.ix-column-2 .card-content .content-text .content-text-title:hover {
+  color: #0087ff;
 }
 .ix-column-2 .card-content .content-text .content-text-subtitle {
   margin-top: 14px;
