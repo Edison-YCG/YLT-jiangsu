@@ -119,6 +119,10 @@
   color: rgba(0, 0, 0, 0.65);
 }
 
+.page-core .news-list .news-item .news-footer {
+  padding-top: 24px;
+}
+
 .page-core .news-list .news-item .news-viewer-icon {
   color: rgba(0, 0, 0, 0.85);
 }
