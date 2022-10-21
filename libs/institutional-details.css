@@ -1,0 +1,53 @@
+.id-column-2 {
+  background: #FFFFFF;
+  border-radius: 2px;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+.id-column-2 .common-title {
+  margin-bottom: 20px;
+}
+.id-column-2 .nav {
+  border-top: 1px dashed #eee;
+  padding: 20px;
+}
+.id-column-2 .nav .nav-item {
+  margin: 0 15px;
+}
+.id-column-2 .nav .nav-item:first-child {
+  margin-left: 0;
+}
+.id-column-2 .nav .nav-item .nav-link {
+  font-size: 14px;
+  color: #979797;
+  padding: 6px 15px;
+}
+.id-column-2 .nav .nav-item .nav-link.active,
+.id-column-2 .nav .nav-item .nav-link:hover {
+  background: #195FE7;
+  color: #fff;
+}
+.id-column-2 .info {
+  padding: 5px 20px 0;
+}
+.id-column-2 .info .row {
+  padding-left: 13px;
+}
+.id-column-2 .info .tit {
+  color: #888;
+  margin-bottom: 6px;
+}
+.id-column-2 .info .sub {
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+.id-column-2 .introduce {
+  padding: 0 20px 140px;
+}
+.id-column-2 .introduce .id-content-box {
+  padding-left: 13px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000000;
+  line-height: 20px;
+}
