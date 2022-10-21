@@ -475,6 +475,12 @@ body {
         background: #083B8C;
       }
     }
+
+    .dropdown-menu {
+      .dropdown-item {
+        line-height: 24px;
+      }
+    }
   }
 }
 
@@ -670,9 +676,6 @@ button:active {
   transform: scale(0.95);
 }
 
-.dropdown-item {
-  padding: 6px 20px;
-}
 
 .dropdown-item:focus,
 .dropdown-item:hover {
@@ -1097,6 +1100,10 @@ table.nom-table th {
 }
 
 @media (max-width: 1400px) {
+  .main-nav .nav-item .nav-link {
+    width: 140px;
+  }
+
   .common-header .button-box {
     margin-left: 5px !important;
   }
