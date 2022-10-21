@@ -771,13 +771,19 @@ table.nom-table th {
   line-clamp: 5;
   -webkit-box-orient: vertical;
 }
-.common-search {
+.common-right-filter {
+  background: #FFFFFF;
+}
+.common-right-filter .search {
   position: relative;
 }
-.common-search .input-group:focus {
+.common-right-filter .search .form-control:focus {
   box-shadow: none;
 }
-.common-search svg {
+.common-right-filter .search .form-control:focus ~ svg {
+  color: #86b7fe;
+}
+.common-right-filter .search svg {
   position: absolute;
   top: 50%;
   right: 16px;
@@ -790,8 +796,74 @@ table.nom-table th {
   z-index: 10;
   color: #d2d2d2;
 }
-.min-h {
-  min-height: calc(100vh - 303.5px);
+.common-right-filter .filter-box {
+  padding: 24px 20px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.09);
+}
+.common-right-filter .filter-box:last-child {
+  box-shadow: none;
+}
+.common-right-filter .filter-box .filter-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 18px;
+  letter-spacing: 1.5px;
+}
+.common-right-filter .filter-box .filter-subtitle {
+  font-size: 14px;
+  color: #979797;
+  margin-bottom: 12px;
+}
+.common-right-filter .filter-box .tag-box-radio {
+  overflow: hidden;
+}
+.common-right-filter .filter-box .tag-box-radio .form-check {
+  float: left;
+  padding-left: 0;
+}
+.common-right-filter .filter-box .tag-box-radio .form-check .form-check-input {
+  visibility: hidden;
+}
+.common-right-filter .filter-box .tag-box-radio .form-check .form-check-input:checked ~ .form-check-label {
+  background: #195FE7;
+  color: #fff;
+  border-color: #195FE7;
+}
+.common-right-filter .filter-box .tag-box-radio .form-check .form-check-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: #979797;
+  padding: 4px 10px;
+  border: 1px solid #D9D9D9;
+  margin-right: 10px;
+  margin-bottom: 12px;
+  transition: all 0.1s;
+}
+.common-right-filter .filter-box .tag-box-radio .form-check .form-check-label:hover,
+.common-right-filter .filter-box .tag-box-radio .form-check .form-check-label.active {
+  background: #195FE7;
+  color: #fff;
+  border-color: #195FE7;
+}
+.common-right-filter .filter-box .tag-box-check {
+  overflow: hidden;
+}
+.common-right-filter .filter-box .tag-box-check .form-check {
+  font-size: 12px;
+  margin-right: 60px;
+  margin-bottom: 24px;
+  float: left;
+}
+.common-right-filter .filter-box .tag-box-check .form-check .form-check-input {
+  width: 16px;
+  height: 16px;
+  box-shadow: none;
+  margin-right: 5px;
+  border-radius: 0;
+}
+.common-right-filter .filter-box .tag-box-check .form-check .form-check-label {
+  vertical-align: sub;
 }
 .common-breadcrumb {
   margin: 16px 0;
@@ -822,6 +894,21 @@ table.nom-table th {
   display: inline-block;
   background: #195FE7;
   margin-right: 10px;
+}
+.common-pagination .row .col-md-7 {
+  width: 100%;
+}
+.common-pagination .pagination .page-item {
+  margin-right: 10px;
+}
+.common-pagination .pagination .page-item .page-link {
+  color: rgba(0, 0, 0, 0.8);
+}
+.common-pagination .pagination .page-item .page-link:focus {
+  box-shadow: none;
+}
+.common-pagination .pagination .page-item.active .page-link {
+  color: #fff;
 }
 @media (max-width: 1400px) {
   .common-header .button-box {

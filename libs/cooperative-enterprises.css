@@ -3,6 +3,7 @@
   background: #FFFFFF;
   border-radius: 2px;
   padding: 20px 24px;
+  overflow: hidden;
 }
 .ce-column-1 .item {
   padding: 24px 14px;

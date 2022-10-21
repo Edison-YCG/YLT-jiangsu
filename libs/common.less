@@ -910,30 +910,120 @@ table.nom-table th {
   -webkit-box-orient: vertical;
 }
 
-.common-search {
-  position: relative;
-}
+.common-right-filter {
+  background: #FFFFFF;
 
-.common-search .input-group:focus {
-  box-shadow: none;
-}
+  .search {
+    position: relative;
 
-.common-search svg {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  cursor: pointer;
-  z-index: 10;
-  color: #d2d2d2;
-}
+    .form-control:focus {
+      box-shadow: none;
 
-.min-h {
-  min-height: calc(100vh - 303.5px);
+      &~svg {
+        color: #86b7fe;
+      }
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 10;
+      color: #d2d2d2;
+    }
+  }
+
+  .filter-box {
+    padding: 24px 20px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.09);
+
+    &:last-child {
+      box-shadow: none;
+    }
+
+    .filter-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000000;
+      margin-bottom: 18px;
+      letter-spacing: 1.5px;
+    }
+
+    .filter-subtitle {
+      font-size: 14px;
+      color: #979797;
+      margin-bottom: 12px;
+    }
+
+    .tag-box-radio {
+      overflow: hidden;
+
+      .form-check {
+        float: left;
+        padding-left: 0;
+
+        .form-check-input {
+          visibility: hidden;
+
+          &:checked~.form-check-label {
+            background: #195FE7;
+            color: #fff;
+            border-color: #195FE7;
+          }
+        }
+
+        .form-check-label {
+          font-size: 12px;
+          font-weight: 400;
+          color: #979797;
+          padding: 4px 10px;
+          border: 1px solid #D9D9D9;
+          margin-right: 10px;
+          margin-bottom: 12px;
+          transition: all .1s;
+
+          &:hover,
+          &.active {
+            background: #195FE7;
+            color: #fff;
+            border-color: #195FE7;
+          }
+        }
+      }
+
+    }
+
+    .tag-box-check {
+      overflow: hidden;
+
+      .form-check {
+        font-size: 12px;
+        margin-right: 60px;
+        margin-bottom: 24px;
+        float: left;
+
+        .form-check-input {
+          width: 16px;
+          height: 16px;
+          box-shadow: none;
+          margin-right: 5px;
+          border-radius: 0;
+        }
+
+        .form-check-label {
+          vertical-align: sub;
+        }
+      }
+    }
+  }
+
+
 }
 
 .common-breadcrumb {
@@ -973,6 +1063,36 @@ table.nom-table th {
     display: inline-block;
     background: #195FE7;
     margin-right: 10px;
+  }
+}
+
+.common-pagination {
+
+  // 适配abp分页组件的dom结构
+  .row {
+    .col-md-7 {
+      width: 100%;
+    }
+  }
+
+  .pagination {
+    .page-item {
+      margin-right: 10px;
+
+      .page-link {
+        color: rgba(0, 0, 0, .8);
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      &.active {
+        .page-link {
+          color: #fff;
+        }
+      }
+    }
   }
 }
 
