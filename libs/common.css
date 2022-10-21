@@ -809,6 +809,20 @@ table.nom-table th {
 .common-breadcrumb .breadcrumb .breadcrumb-item.active {
   color: rgba(0, 0, 0, 0.85);
 }
+.common-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #2F3B5A;
+}
+.common-title::before {
+  content: '|';
+  width: 3px;
+  height: 100%;
+  color: #195FE7;
+  display: inline-block;
+  background: #195FE7;
+  margin-right: 10px;
+}
 @media (max-width: 1400px) {
   .common-header .button-box {
     margin-left: 5px !important;

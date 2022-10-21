@@ -942,18 +942,37 @@ table.nom-table th {
   .breadcrumb {
     margin-bottom: 0;
     font-size: 14px;
-    .breadcrumb-item{
+
+    .breadcrumb-item {
       a {
-color: rgba(0,0,0,0.45);
-&:hover {
-  color: #083B8C;
-}
+        color: rgba(0, 0, 0, 0.45);
+
+        &:hover {
+          color: #083B8C;
+        }
       }
+
       &.active {
-   
-        color: rgba(0,0,0,0.85);
-            }
+
+        color: rgba(0, 0, 0, 0.85);
+      }
     }
+  }
+}
+
+.common-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #2F3B5A;
+
+  &::before {
+    content: '|';
+    width: 3px;
+    height: 100%;
+    color: #195FE7;
+    display: inline-block;
+    background: #195FE7;
+    margin-right: 10px;
   }
 }
 
