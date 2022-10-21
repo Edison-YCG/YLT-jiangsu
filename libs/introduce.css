@@ -22,7 +22,7 @@
   height: 100%;
   object-fit: fill;
 }
-.ie-column-1 .box .content {
+.ie-column-1 .box .ie-content-box {
   font-size: 14px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.65);

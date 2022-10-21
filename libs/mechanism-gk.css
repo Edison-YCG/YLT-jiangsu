@@ -1,173 +1,138 @@
 .mechanism-gk.common-division {
   height: 32px;
 }
-.mechanism-gk-card1 {
+.mg-column-1 {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
+  border-radius: 2px;
 }
-.mechanism-gk-card1 .box {
-  padding: 9px 42px;
-  margin-bottom: 15px;
-  position: relative;
-  min-height: 101px;
+.mg-column-1 .box {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
 }
-.mechanism-gk-card1 .box .head-img {
-  width: 92px;
-  height: 92px;
+.mg-column-1 .box .left {
+  display: flex;
+  margin-right: 60px;
+}
+.mg-column-1 .box .left .logo {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   overflow: hidden;
   background: #eee;
-  border: 26px solid #fff;
-  box-sizing: content-box;
-  position: absolute;
-  top: -17px;
-  left: 16px;
+  margin-right: 19px;
 }
-.mechanism-gk-card1 .box .head-img img {
+.mg-column-1 .box .left .logo img {
   object-fit: cover;
-  width: 99%;
-  height: 99%;
+  width: 100%;
+  height: 100%;
 }
-.mechanism-gk-card1 .box .information {
-  padding-top: 20px;
-  margin-left: 110px;
-  max-width: 650px;
-  display: inline-block;
-  position: relative;
-  z-index: 9;
-}
-.mechanism-gk-card1 .box .information h2 {
-  font-size: 18px;
+.mg-column-1 .box .left .title {
+  font-size: 16px;
+  color: #000000;
   font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 6px;
-}
-.mechanism-gk-card1 .box .information .badge {
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.65);
-  background: unset !important;
-  padding: 0 12px;
-  border-left: 1px solid #8e8e8e;
-  border-radius: 0;
-  margin: 6px 0;
-}
-.mechanism-gk-card1 .box .information .badge:first-child {
-  padding-left: 0;
-  border-left: none;
-}
-.mechanism-gk-card1 .box .information a {
-  color: #2B7EFB;
-}
-.mechanism-gk-card1 .box .btn {
-  float: right;
-  margin-top: 39px;
-  padding: 6px 16px;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  color: #888;
-  box-shadow: none;
-}
-.mechanism-gk-card1 .box .btn svg {
-  margin-right: 6px;
-}
-.mechanism-gk-card1 .box .btn:hover {
-  color: #fff;
-  border-color: #0d6efd;
-}
-.mechanism-gk-card1 .box .btn:hover svg {
-  color: #fff;
-}
-.mechanism-gk-card1 .introduce {
-  position: relative;
-  z-index: 9;
-  padding: 0 42px;
-  font-size: 12px;
-  font-weight: 400;
-  color: #888;
-  line-height: 24px;
-  margin-bottom: 24px;
-  max-height: 72px;
-  overflow: hidden;
+  margin-bottom: 9px;
+  word-break: break-all;
   text-overflow: ellipsis;
+  overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
-.mechanism-gk-card1 .introduce.show {
-  max-height: initial;
-  display: block;
+.mg-column-1 .box .left .city {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 17px;
 }
-.mechanism-gk-card1 .introduce .more {
-  color: #2B7EFB;
-  position: absolute;
-  right: 15px;
-  bottom: 0;
-  cursor: pointer;
+.mg-column-1 .box .left .city svg {
+  margin-right: 7px;
+  vertical-align: bottom;
 }
-.mechanism-gk-card1 .nav {
+.mg-column-1 .box .right {
+  flex: 0 0 auto;
+}
+.mg-column-1 .box .right button {
+  margin-right: 16px;
+  background: #FFFFFF;
+  border-radius: 2px;
+  border: 1px solid #D2D2D2;
+  font-size: 12px;
+  color: #000000;
+}
+.mg-column-1 .box .right button:hover {
+  background: #083B8C;
+  color: #fff;
+  border-color: #083B8C;
+}
+.mg-column-1 .box .right button:last-child {
+  margin-right: 0;
+}
+.mg-column-1 .nav {
   border-top: 1px dashed #eee;
+  padding: 10px 20px;
 }
-.mechanism-gk-card1 .nav .nav-link {
+.mg-column-1 .nav .nav-item {
+  margin: 0 15px;
+}
+.mg-column-1 .nav .nav-item:first-child {
+  margin-left: 0;
+}
+.mg-column-1 .nav .nav-item .nav-link {
   font-size: 14px;
-  font-weight: bold;
-  color: #000;
-  padding: 14px 0;
-  margin: 0 35px;
+  color: #979797;
+  padding: 6px 10px;
 }
-.mechanism-gk-card1 .nav .nav-link:first-child {
-  margin-left: 42px;
+.mg-column-1 .nav .nav-item .nav-link.active,
+.mg-column-1 .nav .nav-item .nav-link:hover {
+  background: #195FE7;
+  color: #fff;
 }
-.mechanism-gk-card1 .nav .nav-link.active,
-.mechanism-gk-card1 .nav .nav-link:hover {
-  color: #2B7EFB;
-  border-bottom: 3px solid #2B7EFB;
-}
-.mechanism-gk-card2 {
+.mg-column-2 {
   background: #fff;
   border-radius: 12px;
   box-shadow: 2px 2px 6px 1px rgba(0, 28, 89, 0.06);
   margin-bottom: 140px;
   overflow: hidden;
 }
-.mechanism-gk-card2 .nav {
+.mg-column-2 .nav {
   border-bottom: 1px dashed #eee;
   padding: 0 35px;
 }
-.mechanism-gk-card2 .nav .nav-link {
+.mg-column-2 .nav .nav-link {
   font-size: 14px;
   color: #000;
   padding: 2px 15px;
   margin: 24px 55px;
 }
-.mechanism-gk-card2 .nav .nav-link:first-child {
+.mg-column-2 .nav .nav-link:first-child {
   margin-left: 0;
 }
-.mechanism-gk-card2 .nav .nav-link.active,
-.mechanism-gk-card2 .nav .nav-link:hover {
+.mg-column-2 .nav .nav-link.active,
+.mg-column-2 .nav .nav-link:hover {
   color: #fff;
   border-radius: 20px;
   background-color: #2B7EFB;
 }
-.mechanism-gk-card2 .info1 {
+.mg-column-2 .info1 {
   padding: 0 44px;
   padding-top: 40px;
   margin-bottom: 16px;
 }
-.mechanism-gk-card2 .info1 .tit {
+.mg-column-2 .info1 .tit {
   color: #888;
   margin-bottom: 6px;
 }
-.mechanism-gk-card2 .info1 .sub {
+.mg-column-2 .info1 .sub {
   margin-bottom: 40px;
   font-weight: bold;
 }
-.mechanism-gk-card2 .info2 {
+.mg-column-2 .info2 {
   padding: 2px 44px;
   overflow: hidden;
 }
-.mechanism-gk-card2 .info2 .table {
+.mg-column-2 .info2 .table {
   border-radius: 12px;
   margin-bottom: 63px;
   font-weight: bold;
@@ -175,36 +140,36 @@
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
-.mechanism-gk-card2 .info2 .table thead th {
+.mg-column-2 .info2 .table thead th {
   font-size: 12px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.85);
 }
-.mechanism-gk-card2 .info2 .table thead th:first-child {
+.mg-column-2 .info2 .table thead th:first-child {
   padding-left: 65px;
 }
-.mechanism-gk-card2 .info2 .table tbody {
+.mg-column-2 .info2 .table tbody {
   border-top: none;
 }
-.mechanism-gk-card2 .info2 .table tbody tr:nth-of-type(odd) > * {
+.mg-column-2 .info2 .table tbody tr:nth-of-type(odd) > * {
   background: #fff;
 }
-.mechanism-gk-card2 .info2 .table tbody tr td:first-child {
+.mg-column-2 .info2 .table tbody tr td:first-child {
   padding-left: 65px;
 }
-.mechanism-gk-card2 .info2 .table th,
-.mechanism-gk-card2 .info2 .table td {
+.mg-column-2 .info2 .table th,
+.mg-column-2 .info2 .table td {
   padding: 11px;
   border-bottom: none;
 }
-.mechanism-gk-card2 h2 {
+.mg-column-2 h2 {
   font-size: 16px;
   font-weight: bold;
   color: #000000;
   margin-bottom: 32px;
   position: relative;
 }
-.mechanism-gk-card2 h2::after {
+.mg-column-2 h2::after {
   content: '';
   width: 72px;
   height: 12px;
@@ -215,12 +180,12 @@
   left: -4px;
   bottom: -5px;
 }
-.mechanism-gk-card2 .search-box {
+.mg-column-2 .search-box {
   padding: 40px 44px 0;
   position: relative;
   margin-bottom: 24px;
 }
-.mechanism-gk-card2 .search-box .form-control {
+.mg-column-2 .search-box .form-control {
   display: inline-block;
   width: 320px;
   height: 32px;
@@ -231,7 +196,7 @@
   padding-left: 16px;
   padding-right: 42px;
 }
-.mechanism-gk-card2 .search-box svg {
+.mg-column-2 .search-box svg {
   position: absolute;
   left: 330px;
   bottom: 8px;
@@ -239,23 +204,23 @@
   color: #d2d2d2;
   z-index: 10;
 }
-.mechanism-gk-card2 .search-box svg:hover {
+.mg-column-2 .search-box svg:hover {
   transform: scale(1.2);
   font-weight: bold;
 }
-.mechanism-gk-card2 .search-box svg:active {
+.mg-column-2 .search-box svg:active {
   transform: scale(0.95);
 }
-.mechanism-gk-card2 .subnav {
+.mg-column-2 .subnav {
   padding: 40px 44px 0;
   margin-bottom: 24px;
 }
-.mechanism-gk-card2 .subnav button:first-child {
+.mg-column-2 .subnav button:first-child {
   border-radius: 20px 0 0 20px;
   box-shadow: none;
   transform: scale(1);
 }
-.mechanism-gk-card2 .subnav button:last-child {
+.mg-column-2 .subnav button:last-child {
   border-radius: 0 20px 20px 0;
   box-shadow: none;
   transform: scale(1);

@@ -936,6 +936,27 @@ table.nom-table th {
   min-height: calc(100vh - 303.5px);
 }
 
+.common-breadcrumb {
+  margin: 16px 0;
+
+  .breadcrumb {
+    margin-bottom: 0;
+    font-size: 14px;
+    .breadcrumb-item{
+      a {
+color: rgba(0,0,0,0.45);
+&:hover {
+  color: #083B8C;
+}
+      }
+      &.active {
+   
+        color: rgba(0,0,0,0.85);
+            }
+    }
+  }
+}
+
 @media (max-width: 1400px) {
   .common-header .button-box {
     margin-left: 5px !important;
