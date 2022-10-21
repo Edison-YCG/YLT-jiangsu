@@ -546,10 +546,17 @@ body {
   border-right: 1px solid rgba(255, 255, 255, 0.4);
   font-size: 20px;
   color: #FFFFFF;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.common-footer .message svg {
+  color: #fff;
+  margin-right: 20px;
 }
 .common-footer .message.border-right-none {
   border-right: 0;
+  cursor: pointer;
 }
 .common-footer .copyright {
   font-size: 12px;
