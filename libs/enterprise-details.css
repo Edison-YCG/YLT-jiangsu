@@ -1,20 +1,17 @@
-.mechanism-gk.common-division {
-  height: 32px;
-}
-.mg-column-1 {
+.ed-column-1 {
   background: #fff;
   border-radius: 2px;
 }
-.mg-column-1 .box {
+.ed-column-1 .box {
   padding: 20px;
   display: flex;
   justify-content: space-between;
 }
-.mg-column-1 .box .left {
+.ed-column-1 .box .left {
   display: flex;
   margin-right: 60px;
 }
-.mg-column-1 .box .left .logo {
+.ed-column-1 .box .left .logo {
   flex: 0 0 auto;
   width: 52px;
   height: 52px;
@@ -23,12 +20,12 @@
   background: #eee;
   margin-right: 19px;
 }
-.mg-column-1 .box .left .logo img {
+.ed-column-1 .box .left .logo img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
-.mg-column-1 .box .left .title {
+.ed-column-1 .box .left .title {
   font-size: 16px;
   color: #000000;
   font-weight: bold;
@@ -40,20 +37,20 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
-.mg-column-1 .box .left .city {
+.ed-column-1 .box .left .city {
   font-size: 12px;
   font-weight: 400;
   color: #000000;
   line-height: 17px;
 }
-.mg-column-1 .box .left .city svg {
+.ed-column-1 .box .left .city svg {
   margin-right: 7px;
   vertical-align: bottom;
 }
-.mg-column-1 .box .right {
+.ed-column-1 .box .right {
   flex: 0 0 auto;
 }
-.mg-column-1 .box .right button {
+.ed-column-1 .box .right button {
   margin-right: 16px;
   background: #FFFFFF;
   border-radius: 2px;
@@ -61,40 +58,40 @@
   font-size: 12px;
   color: #000000;
 }
-.mg-column-1 .box .right button:hover {
+.ed-column-1 .box .right button:hover {
   background: #083B8C;
   color: #fff;
   border-color: #083B8C;
 }
-.mg-column-1 .box .right button:last-child {
+.ed-column-1 .box .right button:last-child {
   margin-right: 0;
 }
-.mg-column-1 .nav {
+.ed-column-1 .nav {
   border-top: 1px dashed #eee;
   padding: 10px 20px;
 }
-.mg-column-1 .nav .nav-item {
+.ed-column-1 .nav .nav-item {
   margin: 0 15px;
 }
-.mg-column-1 .nav .nav-item:first-child {
+.ed-column-1 .nav .nav-item:first-child {
   margin-left: 0;
 }
-.mg-column-1 .nav .nav-item .nav-link {
+.ed-column-1 .nav .nav-item .nav-link {
   font-size: 14px;
   color: #979797;
   padding: 6px 15px;
 }
-.mg-column-1 .nav .nav-item .nav-link.active,
-.mg-column-1 .nav .nav-item .nav-link:hover {
+.ed-column-1 .nav .nav-item .nav-link.active,
+.ed-column-1 .nav .nav-item .nav-link:hover {
   background: #195FE7;
   color: #fff;
 }
-.mg-column-2 {
+.ed-column-2 {
   background: #FFFFFF;
   border-radius: 2px;
   padding: 20px 20px 130px;
 }
-.mg-column-2 .mg-content-box {
+.ed-column-2 .ed-content-box {
   padding-top: 16px;
   font-size: 14px;
   font-weight: 400;
