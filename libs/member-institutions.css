@@ -31,6 +31,9 @@
   width: 100%;
   height: 100%;
 }
+.mi-column-1 .item .right {
+  flex: 1 1 auto;
+}
 .mi-column-1 .item .right .right-top {
   display: flex;
 }
