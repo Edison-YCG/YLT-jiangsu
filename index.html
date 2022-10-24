@@ -10,10 +10,6 @@
   <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="/libs/nomui/nomui.css" />
   <link rel="stylesheet" href="/libs/common.css" />
-  <link rel="stylesheet" href="/libs/introduce.css" />
-  <link rel="stylesheet" href="/libs/core.css" />
-  <link rel="stylesheet" href="/libs/mechanism.css" />
-  <link rel="stylesheet" href="/libs/ethic.css" />
   <link rel="stylesheet" href="/libs/index.css" />
   <link rel="stylesheet" href="/libs/swiper/swiper-bundle.min.css" />
 </head>
@@ -186,7 +182,7 @@
       <img src="/themes/basic/assets/index-message.png" alt="" class="icon" />
     </div>
   </div>
-  <!-- 内容部分-s -->
+
   <!-- 1 -->
   <div class="ix-column-1">
     <div class="container">
@@ -691,7 +687,7 @@
     </div>
   </div>
 
-  <!-- 内容部分-e -->
+
   <footer class="common-footer">
     <div class="container">
       <div class="row">
@@ -793,53 +789,7 @@
     $(document).click(function () {
       $('.contact-us').removeClass('QA-show')
     })
-    //底部轮播
-    $(document).on("click", ".ix-column-5 .item-box", function (event) {
-      var target = event.target
-      if (target.nodeName !== 'A') {
-        var name
-        var ele
-        if (target.nodeName === 'LI') {
-          name = target.dataset.index
-          ele = $(`.ix-column-5 .${name}`)
-          $(target).addClass('active').siblings().removeClass('active')
-          if (ele.length !== 0) {
-            new Swiper(`.ix-column-5 .${name}`, {
-              autoplay: true,
-              slidesPerView: 3,
-              spaceBetween: 20,
-              navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-              },
-            })
-            ele.show().siblings().hide()
-          } else {
-            $(`.ix-column-5 .lunbo-swiper .swiper`).hide()
-          }
 
-        } else {
-          name = target.parentElement.dataset.index
-          ele = $(`.ix-column-5 .${name}`)
-          $(target.parentElement).addClass('active').siblings().removeClass('active')
-          if (ele.length !== 0) {
-            new Swiper(`.ix-column-5 .${name}`, {
-              autoplay: true,
-              slidesPerView: 3,
-              spaceBetween: 20,
-              navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-              },
-            })
-            ele.show().siblings().hide()
-          } else {
-            $(`.ix-column-5 .lunbo-swiper .swiper`).hide()
-          }
-        }
-      }
-    })
-    $(`.ix-column-5 .item-box .item-tab:first`).click()
   </script>
 </body>
 
