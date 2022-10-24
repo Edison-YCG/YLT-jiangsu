@@ -1,217 +1,124 @@
 @charset "UTF-8";
 
-.page-core {
-  min-height: calc(100vh - 580px);
-  background-color: #fff;
+.ni-column-1 {
+  padding: 0px 40px 24px;
+  background: #FFFFFF;
+  border-radius: 2px;
 
-  .news-type-tabs {
-    border-bottom: 1px dashed #E9E9E9;
-  }
+  .item {
+    border-bottom: 1px solid #E9E9E9;
+    padding-bottom: 24px;
+    padding-top: 23px;
+    display: flex;
 
-  .nav {
-    // margin-bottom: 25px;
-    font-size: 12px;
+    &:hover {
+      .title {
+        color: #083B8C !important;
+      }
+    }
 
-    .nav-item {
-      .nav-link {
+    .left {
+      flex: 0 0 auto;
+      margin-right: 15px;
+      color: #999999;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .time {
+        display: flex;
+        align-items: center;
+
+        .number {
+          font-size: 32px;
+          line-height: 32px;
+          font-weight: 400;
+          margin-right: 16px;
+        }
+
+        .line {
+          width: 30px;
+          height: 0;
+          border-top: 1px dotted #C5C4C4;
+        }
+      }
+
+      svg {
+        margin-bottom: 5px;
+      }
+    }
+
+    .center {
+      flex: 1 1 auto;
+      margin-right: 21px;
+
+      .title {
+        font-size: 16px;
+        font-weight: bold;
         color: #000;
-        opacity: .65;
+        margin-bottom: 16px;
+        word-break: break-all;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
       }
-    }
 
-    .nav-item .nav-link.active {
-      opacity: 1;
-      color: #fff;
-      background: #2B7EFB;
-      border-radius: 50rem;
-    }
-  }
-
-  .form-control {
-    padding: 5px 16px;
-
-    &:focus {
-      box-shadow: none;
-    }
-  }
-
-  .core-search {
-    position: relative;
-
-    .input-group {
-      &:focus {
-        box-shadow: none;
+      .introduce {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.65);
+        line-height: 24px;
+        margin-bottom: 16px;
+        word-break: break-all;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
       }
-    }
 
-    svg {
-      position: absolute;
-      top: 50%;
-      right: 16px;
-      transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      -o-transform: translateY(-50%);
-      cursor: pointer;
-      z-index: 10;
-    }
-  }
+      .info-box {
+        display: flex;
+        justify-content: space-between;
 
-  .news-list {
-    .news-item {
-      margin-top: 27px;
-      padding-bottom: 27px;
-      border-bottom: 1px solid #E9E9E9;
-      font-size: 14px;
+        .tag-box {
+          span {
+            padding: 2px 17px;
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.65);
+            background: #F5F5F5;
+            border-radius: 2px;
+            border: 1px solid #D9D9D9;
+            display: inline-block;
+            margin-right: 9px;
+          }
+        }
 
-      &:nth-last-of-type(1) {
-        padding-bottom: 0;
-        border-bottom: none;
+        .view-info {
+          font-size: 14px;
+          font-weight: 400;
+          color: rgba(0, 0, 0, 0.85);
+
+          svg {
+            margin-right: 2px;
+          }
+        }
       }
+
+    }
+
+    .right {
+      flex: 0 0 auto;
+      width: 210px;
+      height: 130px;
 
       img {
-        width: 230px;
-        height: 176px;
-        min-width: 230px;
-        display: block;
-        object-fit: cover;
-      }
-
-      .news-title {
-        font-size: 16px;
-        color: #000;
-      }
-
-      .news-item-right {
         width: 100%;
-      }
-
-      .item-tags {
-        .tag-item {
-          min-width: 64px;
-          margin-right: 10px;
-          padding: 2px 15px;
-          text-align: center;
-          border: 1px solid #D9D9D9;
-          border-radius: 2px;
-          background: #F5F5F5;
-          color: rgba(0, 0, 0, 0.65);
-        }
-      }
-
-      .news-detail {
-        display: -webkit-box;
-        overflow: hidden;
-        white-space: normal;
-        text-overflow: ellipsis;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        color: rgba(0, 0, 0, 0.65);
-      }
-
-      .news-footer {
-        padding-top: 24px;
-      }
-
-      .news-viewer-icon {
-        color: rgba(0, 0, 0, 0.85);
-      }
-
-      .news-info {
-        .news-from {
-
-          color: rgba(0, 0, 0, 0.45);
-        }
-
-        .news-time {
-
-          color: rgba(0, 0, 0, 0.25);
-        }
-      }
-    }
-  }
-
-  .meeting-training {
-    padding-top: 21px;
-
-    .nav {
-      .nav-link {
-        padding: 4px 10px;
-      }
-    }
-
-    .table {
-      margin-top: 20px;
-      margin-bottom: 63px;
-      border-radius: 12px;
-      font-weight: bold;
-      border-style: hidden;
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-
-      a {
-        color: rgba(0, 0, 0, .85)
-      }
-
-      thead {
-        th {
-          font-size: 12px;
-          font-weight: 400;
-          color: #888;
-        }
-
-        th:first-child {
-          padding-left: 65px;
-        }
-      }
-
-      tbody {
-        border-top: none;
-
-        tr:nth-of-type(odd)>* {
-          background: #fff;
-        }
-
-        tr td:first-child {
-          padding-left: 65px;
-        }
-      }
-
-      th,
-      td {
-        padding: 11px;
-        border-bottom: none;
-      }
-    }
-  }
-}
-
-.core-pagination {
-
-  // 适配abp分页组件的dom结构
-  .row {
-    .col-md-7 {
-      width: 100%;
-    }
-  }
-
-  .pagination {
-    .page-item {
-      margin-right: 10px;
-
-      .page-link {
-        color: rgba(0, 0, 0, .8);
-
-        &:focus {
-          box-shadow: none;
-        }
-      }
-
-      &.active {
-        .page-link {
-          color: #fff;
-        }
+        height: 100%;
+        object-fit: fill;
       }
     }
   }
