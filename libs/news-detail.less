@@ -1,81 +1,59 @@
 @charset "UTF-8";
 
-.page-core-detail {
+.nd-column-1 {
+  .box {
+    background: #FFFFFF;
+    border-radius: 2px;
+    padding: 30px 40px;
 
-  .card {
-    padding: 40px 48px;
-    margin-bottom: 16px;
-    color:  rgba(0, 0, 0, .65);
-    border-radius: 12px;
-    border: none;
-    box-shadow: 2px 2px 6px 1px rgba(0,28,89,0.06);
-    .card-body {
-      padding: 0;
-      .card-title {
-        color: #000;
-        font-size: 18px;
+    .top-box {
+
+      border-bottom: 1px dotted #E9E9E9;
+      margin-bottom: 20px;
+
+      .title {
+        font-size: 24px;
         font-weight: bold;
+        color: #000000;
+        margin-bottom: 20px;
+        text-align: center;
       }
-      .update-time {
-        color: rgba(0, 0, 0, .25);
-      }
-      .tag-list {
-        display: flex;
-        justify-content: center;
-        margin-top: 15px;
-        .tag {
-          min-width: 64px;
-          margin-right: 10px;
-          padding: 2px 15px;
-          text-align: center;
-          border: 1px solid #D9D9D9;
-          border-radius: 2px;
+
+      .tag-box {
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.65);
+        text-align: center;
+        margin-bottom: 20px;
+
+        span {
+          padding: 2px 17px;
+          display: inline-block;
           background: #F5F5F5;
+          border-radius: 2px;
+          border: 1px solid #D9D9D9;
+          margin-right: 9px;
         }
       }
-      .release-time, .organ-name, .detail-content, .detail-content > p {
-        margin-top: 20px;
-      }
-      .detail-content {
-        line-height: 24px;
-        p {
-          text-indent: 25px;
+
+      .tips {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        color: #979797;
+        margin-bottom: 20px;
+
+        span {
+          margin: 0 15px;
         }
       }
     }
-  }
 
-  .card-file {
-    .card-body{
-      .card-title {
-        margin-bottom: 16px;
-        font-size: 14px;
-        line-height: 24px;
-      }
-      .file-list {
-        .file-item {
-          margin-bottom: 16px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: #2B7EFB;
-          .file-name {
-          }
-          .file-btns {
-            .file-btn {
-              margin-left: 18px;
-              padding: 7px 14px;
-              border-radius: 50rem;
-              color: #2B7EFB;
-              border: 1px solid #D9D9D9;
-              background: transparent;
-              &:first-child {
-                margin-left: 0;
-              }
-            }
-          }
-        }        
-      }
+    .nd-content-box {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.65);
+      line-height: 30px;
     }
   }
 

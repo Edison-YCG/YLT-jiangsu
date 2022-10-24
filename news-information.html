@@ -8,76 +8,16 @@
     <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/libs/nomui/nomui.css" />
     <link rel="stylesheet" href="/libs/common.css" />
-    <link rel="stylesheet" href="/libs/introduce.css" />
-    <link rel="stylesheet" href="/libs/core.css" />
-    <link rel="stylesheet" href="/libs/mechanism.css" />
-    <link rel="stylesheet" href="/libs/ethic.css" />
-    <link rel="stylesheet" href="/libs/index.css" />
+    <link rel="stylesheet" href="/libs/news-information.css" />
   </head>
 
   <body>
-    <!-- 内容部分-s -->
-    <div class="common-division">&nbsp;</div>
+   
     <div class="page-core">
-      <section class="container py-4">
-        <!-- 资讯，法规，公告，会议等 tabs -->
-        <div class="news-type-tabs row pb-4">
-          <div class="col-8">
-            <ul class="nav nav-pills">
-              <li class="nav-item me-4">
-                <a class="nav-link active" aria-current="page" href="#"
-                  >新闻咨询</a
-                >
-              </li>
-              <li class="nav-item me-4">
-                <a class="nav-link" href="#">政策法规</a>
-              </li>
-              <li class="nav-item me-4">
-                <a class="nav-link" href="#">通知公告</a>
-              </li>
-              <li class="nav-item me-4">
-                <a class="nav-link" href="#">会议培训</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-4">
-            <div class="common-search input-group ms-4">
-              <input
-                type="text"
-                class="form-control rounded-pill"
-                placeholder="请输入关键字搜索"
-              />
-              <svg
-                t="1644566427892"
-                class="icon"
-                viewBox="0 0 1024 1024"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                p-id="2044"
-                width="16"
-                height="16"
-              >
-                <path
-                  d="M480 128c192 0 352 160 352 352S672 832 480 832 128 672 128 480 288 128 480 128m0-64C249.6 64 64 249.6 64 480S249.6 896 480 896 896 710.4 896 480 710.4 64 480 64z"
-                  fill="currentcolor"
-                  p-id="2045"
-                ></path>
-                <path
-                  d="M928 928m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z"
-                  fill="currentcolor"
-                  p-id="2046"
-                ></path>
-                <path
-                  d="M770.56 725.248l180.992 180.992-45.248 45.312-181.056-181.056z"
-                  fill="currentcolor"
-                  p-id="2047"
-                ></path>
-              </svg>
-            </div>
-          </div>
-        </div>
+      <section class="container">
+   
 
-        <!-- 新闻资讯 -->
+       
         <div class="news-list">
           <div class="news-item d-flex flex-column">
             <a href="" target="_blank">
@@ -271,13 +211,17 @@
           </div> -->
         </div>
 
-        <div class="core-pagination d-flex justify-content-end">
+        <div class="common-pagination d-flex justify-content-end">
           <ul class="pagination mt-5">
             <li class="page-item">
               <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true"><</span>
-              </a>
-            </li>
+                <span aria-hidden="true">
+                  <svg t="1666334194644" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="1081" width="16" height="16">
+                    <path
+                      d="M719.2 912.6c14.2-14.2 14.2-37.2 0-51.4L371.7 513.8c-2.8-2.9-2.8-7.5 0-10.3L719.2 156c14.2-14.2 14.2-37.2 0-51.4-14.2-14.2-37.2-14.2-51.4 0L320.3 452c-15.6 15.6-23.4 36-23.4 56.5s7.8 41 23.4 56.5l347.4 347.4c14.3 14.3 37.3 14.3 51.5 0.2z"
+                      p-id="1082" fill="currentColor"></path>
+                  </svg></span> </a> </li>
             <li class="page-item"><a class="page-link" href="#">1</a></li>
             <li class="page-item active">
               <a class="page-link" href="#">2</a>
@@ -286,112 +230,22 @@
             <li class="page-item"><a class="page-link" href="#">4</a></li>
             <li class="page-item">
               <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">></span>
+                <span aria-hidden="true"><svg t="1666334208601" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="1283" width="16" height="16">
+                    <path
+                      d="M307.6 104.6c-14.2 14.2-14.2 37.2 0 51.4L655 503.4c2.8 2.9 2.8 7.5 0 10.3L307.6 861.2c-14.2 14.2-14.2 37.2 0 51.4 14.2 14.2 37.2 14.2 51.4 0l347.4-347.4c15.6-15.6 23.4-36 23.4-56.5s-7.8-41-23.4-56.5L359 104.6c-14.2-14.2-37.2-14.2-51.4 0z"
+                      p-id="1284" fill="currentColor"></path>
+                  </svg></span>
               </a>
             </li>
           </ul>
         </div>
-        <!-- 新闻资讯 end -->
+       
 
-        <!-- 会议培训 -->
-        <div class="meeting-training">
-          <div class="d-flex align-items-center">
-            <div class="fw-bold">会议类型：</div>
-            <ul class="nav nav-pills">
-              <li class="nav-item ms-2">
-                <a class="nav-link" href="#">全部</a>
-              </li>
-              <li class="nav-item ms-2">
-                <a class="nav-link" href="#">临床医学</a>
-              </li>
-              <li class="nav-item ms-2">
-                <a class="nav-link active" href="#">医疗器械</a>
-              </li>
-              <li class="nav-item ms-2">
-                <a class="nav-link" href="#">科研学习</a>
-              </li>
-              <li class="nav-item ms-2">
-                <a class="nav-link" href="#">GCP法规</a>
-              </li>
-              <li class="nav-item ms-2">
-                <a class="nav-link" href="#">公共卫生</a>
-              </li>
-              <li class="nav-item ms-2">
-                <a class="nav-link" href="#">其它</a>
-              </li>
-            </ul>
-          </div>
 
-          <div class="meeting-training-table">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">会议主题</th>
-                  <th scope="col">会议事件</th>
-                  <th scope="col">会议类型</th>
-                  <th scope="col">操作</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>机构SOP详述</td>
-                  <td>2021-12-12 12:00:11 - 2021-12-13 12:00:11</td>
-                  <td>临床医疗</td>
-                  <td>查看详情</td>
-                </tr>
-                <tr>
-                  <td>机构SOP详述</td>
-                  <td>2021-12-12 12:00:11 - 2021-12-13 12:00:11</td>
-                  <td>临床医疗</td>
-                  <td>查看详情</td>
-                </tr>
-                <tr>
-                  <td>机构SOP详述</td>
-                  <td>2021-12-12 12:00:11 - 2021-12-13 12:00:11</td>
-                  <td>临床医疗</td>
-                  <td>查看详情</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <!-- 会议培训 end -->
       </section>
     </div>
-    <!-- 内容部分 end -->
+ 
 
-    <footer class="common-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-4 col-4">
-            <div class="message">
-              <p class="txt">电话</p>
-              <p class="tips">400-822-4688</p>
-            </div>
-          </div>
-          <div class="col-xl-4 col-4">
-            <div class="message">
-              <p class="txt">邮箱</p>
-              <p class="tips">market@wetrial.com</p>
-            </div>
-          </div>
-          <div class="col-xl-4 col-4">
-            <p class="txt">地址</p>
-            <p class="tips">湖南省长沙市岳麓大道311号金麓国际写字楼6楼</p>
-          </div>
-        </div>
-        <div class="copyright">
-          Copyright © 2015-2020 YLT版权所有
-          <a
-            target="_blank"
-            href="https://beian.miit.gov.cn/#/"
-            rel="noopener noreferrer"
-            >京ICP备11034462号-2</a
-          >
-          | 京公网安备11010502038388
-        </div>
-      </div>
-    </footer>
-    <script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
