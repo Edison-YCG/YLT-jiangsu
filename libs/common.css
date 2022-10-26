@@ -415,7 +415,7 @@ body {
   text-align: center;
 }
 .main-nav .nav-item .nav-link:hover,
-.main-nav .nav-item .nav-link:active {
+.main-nav .nav-item .nav-link.active {
   background: #083B8C;
 }
 .main-nav .nav-item .dropdown-menu .dropdown-item {
