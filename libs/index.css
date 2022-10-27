@@ -437,3 +437,9 @@
   -webkit-line-clamp: 1;
   color: #979797;
 }
+.ix-column-4 .column-right .row .col-6:nth-last-child(1) .item {
+  margin-bottom: 0;
+}
+.ix-column-4 .column-right .row .col-6:nth-last-child(2) .item {
+  margin-bottom: 0;
+}
