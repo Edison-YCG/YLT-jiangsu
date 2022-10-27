@@ -124,6 +124,9 @@
 .mi-column-1 .item .right .right-introduce .link-box a:hover {
   background: #083B8C;
 }
+.mi-column-1 .common-pagination {
+  margin-top: 20px;
+}
 .mi-column-2 {
   margin-top: 48px;
 }

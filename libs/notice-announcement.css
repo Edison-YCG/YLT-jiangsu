@@ -83,6 +83,9 @@
   height: 100%;
   object-fit: fill;
 }
+.na-column-1 .common-pagination {
+  margin-top: 20px;
+}
 .na-column-2 {
   margin-top: 48px;
 }
