@@ -936,6 +936,7 @@ table.nom-table th {
   border-radius: 2px;
   color: #FFFFFF;
   padding: 10px;
+  margin-bottom: 10px;
 }
 .nomui-checkboxList-extend .nom-list-item-wrapper .nom-list-item.s-selected {
   background: #195FE7;
@@ -964,7 +965,7 @@ table.nom-table th {
   font-size: 12px;
 }
 .nomui-steps-extend .nom-steps .nom-step > .nom-step-item-container > .nom-step-item-icon {
-  border-radius: none;
+  border-radius: 0;
 }
 @media (max-width: 1400px) {
   .main-nav .nav-item .nav-link {
