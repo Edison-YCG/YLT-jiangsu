@@ -963,6 +963,9 @@ table.nom-table th {
 .nomui-radioList-extend .nom-list-item-wrapper .nom-list-item .text {
   font-size: 12px;
 }
+.nomui-steps-extend .nom-steps .nom-step > .nom-step-item-container > .nom-step-item-icon {
+  border-radius: none;
+}
 @media (max-width: 1400px) {
   .main-nav .nav-item .nav-link {
     width: 140px;
