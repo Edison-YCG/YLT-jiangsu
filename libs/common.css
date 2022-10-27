@@ -398,6 +398,7 @@ body {
 .main-nav {
   height: 56px;
   line-height: 56px;
+  letter-spacing: 2px;
   background: linear-gradient(90deg, #063B8C 0%, #6093F4 53%, #10408D 100%);
 }
 .main-nav .nav-item {
@@ -413,13 +414,39 @@ body {
   color: #FFFFFF;
   padding: 0;
   text-align: center;
+  font-weight: 500;
 }
 .main-nav .nav-item .nav-link:hover,
 .main-nav .nav-item .nav-link.active {
   background: #083B8C;
 }
+.main-nav .nav-item .dropdown-menu {
+  padding: 0;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+}
 .main-nav .nav-item .dropdown-menu .dropdown-item {
-  line-height: 24px;
+  width: 163px;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding: 0;
+  text-align: center;
+  font-weight: 500;
+  width: 162px;
+  color: #083B8C;
+  border-bottom: 1px solid #FFFFFF;
+  background: #D7DADD;
+}
+.main-nav .nav-item .dropdown-menu .dropdown-item:hover,
+.main-nav .nav-item .dropdown-menu .dropdown-item.active {
+  background: #083B8C;
+}
+.main-nav .nav-item .dropdown-menu .dropdown-item:hover {
+  background: #083B8C;
+  color: #FFFFFF;
+}
+.main-nav .dropdown-toggle::after {
+  display: none;
 }
 .common-nav {
   padding: 20px 0;
@@ -533,7 +560,7 @@ body {
   justify-content: space-between;
 }
 .common-footer {
-  margin-top: 200px;
+  margin-top: 48px;
   letter-spacing: 1.5px;
   background: #002052;
   padding-top: 36px;
@@ -944,7 +971,7 @@ table.nom-table th {
     margin-left: 5px !important;
   }
   .ix-column-1 .card .card-body {
-    min-height: unset !important;
+    min-height: 366px !important;
     padding: 16px 20px 0 !important;
   }
   .ix-column-1 .card .card-body .card-body-content .card-content .content-text .content-text-title {

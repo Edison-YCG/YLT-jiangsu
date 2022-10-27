@@ -459,6 +459,7 @@ body {
 .main-nav {
   height: 56px;
   line-height: 56px;
+  letter-spacing: 2px;
   background: linear-gradient(90deg, #063B8C 0%, #6093F4 53%, #10408D 100%);
 
   .nav-item {
@@ -476,6 +477,7 @@ body {
       color: #FFFFFF;
       padding: 0;
       text-align: center;
+      font-weight: 500;
 
       &:hover,
       &.active {
@@ -484,10 +486,27 @@ body {
     }
 
     .dropdown-menu {
+      padding: 0;
+      border-left: 1px solid #FFFFFF;
+      border-right: 1px solid #FFFFFF;
+
       .dropdown-item {
-        line-height: 24px;
+        .nav-link();
+        width: 162px;
+        color: #083B8C;
+        border-bottom: 1px solid #FFFFFF;
+        background: #D7DADD;
+
+        &:hover {
+          background: #083B8C;
+          color: #FFFFFF;
+        }
       }
     }
+  }
+
+  .dropdown-toggle::after {
+    display: none;
   }
 }
 
@@ -626,7 +645,7 @@ body {
 }
 
 .common-footer {
-  margin-top: 200px;
+  margin-top: 48px;
   letter-spacing: 1.5px;
   background: #002052;
   padding-top: 36px;
@@ -1170,7 +1189,7 @@ table.nom-table th {
   }
 
   .ix-column-1 .card .card-body {
-    min-height: unset !important;
+    min-height: 366px !important;
     padding: 16px 20px 0 !important;
   }
 
