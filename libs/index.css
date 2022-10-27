@@ -83,7 +83,10 @@
 .ix-column-1 .banner .carousel .carousel-indicators .active {
   background: #0142FF;
 }
-.ix-column-1 .banner .carousel img {
+.ix-column-1 .banner .carousel .carousel-item {
+  height: 425px;
+}
+.ix-column-1 .banner .carousel .carousel-item img {
   object-fit: fill;
   width: 100%;
   height: 100%;

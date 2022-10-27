@@ -964,8 +964,8 @@ table.nom-table th {
 .nomui-radioList-extend .nom-list-item-wrapper .nom-list-item .text {
   font-size: 12px;
 }
-.nomui-steps-extend .nom-steps .nom-step > .nom-step-item-container > .nom-step-item-icon {
-  border-radius: 0;
+.nomui-steps-extend .nom-step-item-icon {
+  border-radius: 0 !important;
 }
 @media (max-width: 1400px) {
   .main-nav .nav-item .nav-link {
@@ -975,7 +975,6 @@ table.nom-table th {
     margin-left: 5px !important;
   }
   .ix-column-1 .card .card-body {
-    min-height: 366px !important;
     padding: 16px 20px 0 !important;
   }
   .ix-column-1 .card .card-body .card-body-content .card-content .content-text .content-text-title {
