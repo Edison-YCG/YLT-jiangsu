@@ -146,8 +146,14 @@
         <li class="nav-item">
           <a class="nav-link" href="#">政策法规</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">信息公告</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+            aria-expanded="false">申请</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">项目申请</a></li>
+            <li><a class="dropdown-item" href="#">机构入驻</a></li>
+            <li><a class="dropdown-item" href="#">企业入驻</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">中心介绍</a>
@@ -767,7 +773,9 @@
   <script src="/libs/nomui/nomui.js"></script>
   <script>
     //动态设置二级菜单宽度
-    $('.main-nav .dropdown-menu .dropdown-item').css("width", $('.main-nav .nav-item.dropdown').innerWidth())
+    $('.main-nav .nav-item.dropdown').each(function(){
+      $(this).find('.dropdown-menu .dropdown-item').css("width",$(this).innerWidth())
+    })
     //返回顶部
     $(document).scroll(function () {
       var scroH = $(document).scrollTop() //滚动高度
