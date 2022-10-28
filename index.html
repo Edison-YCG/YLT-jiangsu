@@ -766,6 +766,8 @@
   <!-- nomui js -->
   <script src="/libs/nomui/nomui.js"></script>
   <script>
+    //动态设置二级菜单宽度
+    $('.main-nav .dropdown-menu .dropdown-item').css("width", $('.main-nav .nav-item.dropdown').innerWidth())
     //返回顶部
     $(document).scroll(function () {
       var scroH = $(document).scrollTop() //滚动高度
