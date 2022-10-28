@@ -462,48 +462,53 @@ body {
   letter-spacing: 2px;
   background: linear-gradient(90deg, #063B8C 0%, #6093F4 53%, #10408D 100%);
 
-  .nav-item {
+  .nav {
+    flex-wrap: nowrap;
+    justify-content: center;
 
-    border-right: 1px solid;
-    border-image: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75)) 1 1;
+    .nav-item {
+      flex: 1 1 auto;
+      border-right: 1px solid;
+      border-image: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75)) 1 1;
 
-    &:last-child {
-      border-right: none;
-    }
-
-    .nav-link {
-      width: 163px;
-      font-size: 18px;
-      color: #FFFFFF;
-      padding: 0;
-      text-align: center;
-      font-weight: 500;
-
-      &:hover,
-      &.active {
-        background: #083B8C;
+      &:last-child {
+        border-right: none;
       }
-    }
 
-    .dropdown-menu {
-      padding: 0;
-      border-left: 1px solid #FFFFFF;
-      border-right: 1px solid #FFFFFF;
+      .nav-link {
+        font-size: 18px;
+        color: #FFFFFF;
+        padding: 0;
+        text-align: center;
+        font-weight: 500;
 
-      .dropdown-item {
-        .nav-link();
-        width: 162px;
-        color: #083B8C;
-        border-bottom: 1px solid #FFFFFF;
-        background: #D7DADD;
-
-        &:hover {
+        &:hover,
+        &.active {
           background: #083B8C;
-          color: #FFFFFF;
+        }
+      }
+
+      .dropdown-menu {
+        padding: 0;
+        border-left: 1px solid #FFFFFF;
+        border-right: 1px solid #FFFFFF;
+
+        .dropdown-item {
+          .nav-link();
+          width: 162px;
+          color: #083B8C;
+          border-bottom: 1px solid #FFFFFF;
+          background: #D7DADD;
+
+          &:hover {
+            background: #083B8C;
+            color: #FFFFFF;
+          }
         }
       }
     }
   }
+
 
   .dropdown-toggle::after {
     display: none;
@@ -642,6 +647,7 @@ body {
   padding-top: 44px;
   display: flex;
   justify-content: space-between;
+
 }
 
 .common-footer {
@@ -1189,11 +1195,6 @@ table.nom-table th {
 
 @media (max-width: 1400px) {
 
-  .main-nav .nav-item .nav-link,
-  .main-nav .nav-item .dropdown-menu .dropdown-item {
-    width: 130px;
-  }
-
   .main-nav .nav-item .dropdown-menu {
     min-width: unset;
   }
@@ -1213,4 +1214,12 @@ table.nom-table th {
   .ix-column-1 .card .card-body .card-body-content {
     margin-bottom: 18px !important;
   }
+}
+
+@media (max-width: 1199px) {
+
+  .common-top-title {
+    font-size: 36px;
+  }
+
 }
