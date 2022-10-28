@@ -1188,8 +1188,14 @@ table.nom-table th {
 
 
 @media (max-width: 1400px) {
-  .main-nav .nav-item .nav-link {
+
+  .main-nav .nav-item .nav-link,
+  .main-nav .nav-item .dropdown-menu .dropdown-item {
     width: 130px;
+  }
+
+  .main-nav .nav-item .dropdown-menu {
+    min-width: unset;
   }
 
   .common-header .button-box {
