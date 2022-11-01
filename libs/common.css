@@ -980,12 +980,12 @@ body > .placeholder {
 }
 .common-bootstrap-table .table thead th {
   font-size: 12px;
-  font-weight: 400;
-  color: #979797;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.85);
   background: #F5F5F6;
 }
 .common-bootstrap-table .table thead th:first-child {
-  padding-left: 56px;
+  padding-left: 48px;
 }
 .common-bootstrap-table .table tbody {
   border-top: none;
@@ -998,8 +998,7 @@ body > .placeholder {
   background: #F5F5F6;
 }
 .common-bootstrap-table .table tbody tr td:first-child {
-  padding-left: 56px;
-  color: #2B7EFB;
+  padding-left: 48px;
 }
 .common-bootstrap-table .table th,
 .common-bootstrap-table .table td {
