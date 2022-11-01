@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>首页</title>
+  <link rel="stylesheet" href="/libs/animate.min.css" />
+  <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/libs/nomui/nomui.css" />
+  <link rel="stylesheet" href="/libs/common.css" />
+  <link rel="stylesheet" href="/libs/index.css" />
+  <link rel="stylesheet" href="/libs/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <header id="JS-header">
+    <div class="container">
+      <div class="common-header">
+        <div class="container-header">
+
+          <div class="row">
+            <div class="col-xxl-6 col-6">
+              <h1 class="logo">
+                <a href="">
+                  <p>江淮暨安徽GCP专科联盟</p>
+                </a>
+              </h1>
+            </div>
+            <div class="col-xxl-6 col-6">
+              <!-- 
+                    login-box text-start:登陆后使用
+                   -->
+              <div class="button-box">
+                <div class="login-box text-start">
+                  <!-- 这是未登陆后的状态start -->
+                  <div class="unsign">
+                    <a>注册</a>
+                    <span>|</span>
+                    <a data-bs-toggle="modal" data-bs-target="#loginModal">登陆</a>
+                  </div>
+                  <!-- 这是未登陆后的状态end -->
+
+                  <!-- 这是登陆后的状态start -->
+                  <!-- <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="head"><img src="./themes/basic/assets/common-default-head.png" alt="" /></span>
+                          <span class="name" title="李四李四李四李四">李四李四李四李四</span>
+                        </button>
+                        <ul class="dropdown-menu border-0 shadow text-center" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="#">个人中心</a></li>
+                          <li><a class="dropdown-item" href="#">退出登录</a></li>
+                          <li><a class="dropdown-item" href="#">医院医院医院医院医院医院医院医院医院医院医院医院医院医院<svg t="1651047960748"
+                                class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                p-id="2079" width="1em" height="1em">
+                                <path fill="currentColor"
+                                  d="M135.828997 461.86209 135.828997 289.487184l677.204717 0-81.274308 81.272002c-12.92898 12.928451-12.92898 33.902134 0 46.796816 12.92898 12.928451 33.869753 12.928451 46.79771 0l132.288212-132.281769c10.695011-5.850242 17.941339-17.201777 17.941339-30.263258 0-1.466398-0.102335-2.908236-0.278351-4.326539-0.514744-5.556553-2.437615-11.001565-5.753263-15.768125l0.106428-0.105401-0.593542-0.593518c-0.989578-1.346671-2.092747-2.635013-3.311555-3.850701-1.211644-1.211595-2.493899-2.309602-3.832439-3.294023L776.606614 88.562035c-13.467261-13.46671-35.28402-13.46671-48.752305 0s-13.467261 35.282574 0 48.750307l83.22788 83.22447L101.353422 220.536812c-19.039392 0-34.476598 15.419178-34.476598 34.475186l0 206.850092c0 19.056008 15.436183 34.474163 34.476598 34.474163C120.392814 496.337275 135.828997 480.918098 135.828997 461.86209zM928.78769 530.812461c-19.057812 0-34.476598 15.452947-34.476598 34.542724l0 172.778088L220.516171 738.133274l77.880886-80.127945c12.92898-13.296841 12.92898-34.843576 0-48.142463s-33.88715-13.298887-46.81613 0L125.312048 739.774657c-13.896044 4.454452-23.95965 17.49035-23.95965 32.901341 0 14.702863 9.162036 27.240411 22.070549 32.229029l126.288322 129.910768c12.408096 12.760628 32.52405 12.760628 44.947496 0 12.406049-12.760628 12.406049-33.466206 0-46.224788l-79.10481-81.374332 713.231687 0c19.054742 0 34.475575-15.452947 34.475575-34.541701l0-207.321836C963.263265 546.264385 947.842432 530.812461 928.78769 530.812461z"
+                                  p-id="2080"></path>
+                              </svg></a></li>
+    
+                        </ul>
+                      </div>
+                      <svg t="1645520980944" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="2124" width="1.5em" height="1.5em">
+                        <path
+                          d="M683.712 800l-89.408 148.992a96 96 0 0 1-164.608 0L340.288 800H192A160 160 0 0 1 32 640V192A160 160 0 0 1 192 32h640A160 160 0 0 1 992 192v448a160 160 0 0 1-160 160h-148.288z m148.288-64a96 96 0 0 0 96-96V192A96 96 0 0 0 832 96H192A96 96 0 0 0 96 192v448A96 96 0 0 0 192 736h184.512l108.032 180.096a32 32 0 0 0 54.912 0l108.032-180.096H832z"
+                          fill="currentColor" p-id="2125"></path>
+                        <path d="M256 416m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="currentColor" p-id="2126">
+                        </path>
+                        <path d="M512 416m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="currentColor" p-id="2127">
+                        </path>
+                        <path d="M768 416m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" fill="currentColor" p-id="2128">
+                        </path>
+                      </svg> -->
+                  <!-- 这是登陆后的状态end-->
+                </div>
+              </div>
+              <div class="search-box">
+                <div class="input-group">
+                  <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    成员机构
+                  </button>
+                  <ul class="dropdown-menu border-0 shadow">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </li>
+                  </ul>
+                  <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                    placeholder="请输入" />
+                </div>
+                <svg t="1644566427892" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" p-id="2044" width="16" height="16">
+                  <path
+                    d="M480 128c192 0 352 160 352 352S672 832 480 832 128 672 128 480 288 128 480 128m0-64C249.6 64 64 249.6 64 480S249.6 896 480 896 896 710.4 896 480 710.4 64 480 64z"
+                    fill="currentcolor" p-id="2045"></path>
+                  <path d="M928 928m-32 0a32 32 0 1 0 64 0 32 32 0 1 0-64 0Z" fill="currentcolor" p-id="2046"></path>
+                  <path d="M770.56 725.248l180.992 180.992-45.248 45.312-181.056-181.056z" fill="currentcolor"
+                    p-id="2047"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="common-top-title">
+        <span>效率高</span><span>入组快</span><span>质量强</span><span>临床试验一站式解决方案</span>
+      </div>
+
+    </div>
+
+
+  </header>
+  <div class="main-nav">
+    <div class="container">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">首 页</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+            aria-expanded="false">申请加入</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">项目申请</a></li>
+            <li><a class="dropdown-item" href="#">机构入驻</a></li>
+            <li><a class="dropdown-item" href="#">企业入驻</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">区域伦理</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">政策法规</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+            aria-expanded="false">申请</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">项目申请</a></li>
+            <li><a class="dropdown-item" href="#">机构入驻</a></li>
+            <li><a class="dropdown-item" href="#">企业入驻</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">中心介绍</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">中心介绍</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="common-backtop">
+    <div class="top-indicator">
+      <svg t="1650009227956" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        p-id="4226" width="20" height="20">
+        <path
+          d="M516.608 364.544c-1.536-0.256-3.584-0.512-5.888-0.512-14.336 0-27.392 5.632-36.864 15.104L58.88 794.624c-9.472 9.472-15.104 22.528-15.104 36.864s5.632 27.392 15.104 36.864c9.472 9.472 22.528 15.36 36.864 15.36s27.392-5.888 36.864-15.36l384.256-383.744 384 384c9.216 8.96 22.016 14.592 36.096 14.592 28.928 0 51.968-23.296 51.968-51.968 0-14.08-5.632-26.624-14.592-36.096L559.104 379.648c-9.472-9.472-22.528-15.36-37.12-15.36-1.792 0-3.584 0-5.632 0.256h0.256zM137.216 187.392h759.552c28.928 0 51.968 23.296 51.968 51.968 0 28.928-23.296 51.968-51.968 51.968H137.216c-28.928 0-51.968-23.296-51.968-51.968 0-28.672 23.296-51.968 51.968-51.968z m0 0"
+          fill="currentColor" p-id="4227"></path>
+      </svg>
+    </div>
+  </div>
+  <div class="contact-us">
+    <div class="contact-content">
+      <div class="text-top">请选择要咨询问题类型</div>
+      <div class="text-bottom">区域伦理</div>
+      <div class="text-bottom">市场准入</div>
+    </div>
+    <div class="contact-opt">
+      <img src="/themes/basic/assets/index-message.png" alt="" class="icon" />
+    </div>
+  </div>
+  <div class="container">
+    <div class="common-content-none">
+      <svg t="1619147741727" class="nom-empty-img-normal" width="70" height="80" viewBox="0 0 1084 1024" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" p-id="4197">
+        <path d="M0 933.456842a456.737684 85.342316 0 1 0 913.475368 0 456.737684 85.342316 0 1 0-913.475368 0Z"
+          fill="#F5F5F7" fill-opacity=".8" p-id="4198"></path>
+        <path
+          d="M822.130526 682.738526L660.944842 484.372211c-7.733895-9.337263-19.038316-14.989474-30.942316-14.989474h-346.543158c-11.897263 0-23.201684 5.652211-30.935579 14.989474L91.351579 682.738526v103.632842h730.778947V682.738526z"
+          fill="#AEB8C2" p-id="4199"></path>
+        <path
+          d="M775.390316 794.165895L634.543158 624.990316c-6.743579-8.131368-16.889263-12.577684-27.270737-12.577684H305.071158c-10.374737 0-20.527158 4.446316-27.270737 12.577684L136.953263 794.165895v92.914526h638.437053V794.165895z"
+          fill="#000000" p-id="4200"></path>
+        <path
+          d="M227.907368 213.355789h457.653895a26.947368 26.947368 0 0 1 26.947369 26.947369v628.843789a26.947368 26.947368 0 0 1-26.947369 26.947369H227.907368a26.947368 26.947368 0 0 1-26.947368-26.947369V240.303158a26.947368 26.947368 0 0 1 26.947368-26.947369z"
+          fill="#F5F5F7" p-id="4201"></path>
+        <path
+          d="M287.514947 280.407579h338.438737a13.473684 13.473684 0 0 1 13.473684 13.473684V462.012632a13.473684 13.473684 0 0 1-13.473684 13.473684H287.514947a13.473684 13.473684 0 0 1-13.473684-13.473684V293.881263a13.473684 13.473684 0 0 1 13.473684-13.473684z m1.765053 268.220632h334.908632a15.238737 15.238737 0 0 1 0 30.477473H289.28a15.238737 15.238737 0 0 1 0-30.477473z m0 79.245473h334.908632a15.245474 15.245474 0 0 1 0 30.484211H289.28a15.245474 15.245474 0 0 1 0-30.484211z m531.354947 293.066105c-5.221053 20.688842-23.558737 36.109474-45.372631 36.109474H138.206316c-21.813895 0-40.151579-15.427368-45.365895-36.109474a49.300211 49.300211 0 0 1-1.495579-12.058947V682.745263h177.300211c19.584 0 35.368421 16.491789 35.368421 36.513684v0.269474c0 20.015158 15.966316 36.176842 35.550315 36.176842h234.341053c19.584 0 35.550316-16.309895 35.550316-36.331789V719.292632c0-20.021895 15.784421-36.554105 35.368421-36.554106h177.30021v226.149053a49.381053 49.381053 0 0 1-1.488842 12.05221z"
+          fill="#DCE0E6" p-id="4202"></path>
+        <path
+          d="M842.920421 224.282947l-46.012632 17.852632a6.736842 6.736842 0 0 1-8.872421-8.286316l13.049264-41.815579c-17.441684-19.833263-27.681684-44.018526-27.681685-70.117052C773.402947 54.581895 841.566316 0 925.655579 0 1009.724632 0 1077.894737 54.581895 1077.894737 121.916632c0 67.334737-68.163368 121.916632-152.245895 121.916631-30.504421 0-58.906947-7.181474-82.728421-19.550316z"
+          fill="#DCE0E6" p-id="4203"></path>
+        <path
+          d="M985.626947 106.004211c10.597053 0 19.193263 8.488421 19.193264 18.96421s-8.596211 18.964211-19.193264 18.964211c-10.597053 0-19.193263-8.488421-19.193263-18.964211s8.596211-18.964211 19.193263-18.96421z m-119.619368 2.371368l18.863158 33.185684h-38.386526l19.523368-33.185684z m76.43621 0v33.185684h-33.583157v-33.185684h33.583157z"
+          fill="#FFFFFF" p-id="4204"></path>
+      </svg>
+      <span>暂无内容</span>
+    </div>
+  </div>
+
+  <!-- 登录-s -->
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">用户登录</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="loginApp"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 登录-e -->
+  <footer class="common-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4 col-4">
+          <div class="message">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21"
+              height="21" viewBox="0 0 20 20">
+              <g>
+                <path fill="currentColor" class="st0" d="M17.9,9.4c0,0-0.1,0-0.1,0c-0.5-0.1-0.8-0.5-0.7-1c0.1-0.6,0.1-1.3-0.1-1.9c-0.2-0.9-0.7-1.6-1.3-2.3
+		c-0.6-0.6-1.4-1.1-2.3-1.3c-0.6-0.2-1.3-0.2-1.9-0.1c-0.5,0.1-0.9-0.3-1-0.7c-0.1-0.5,0.3-0.9,0.8-1C12.1,0.9,13,1,13.8,1.2
+		c1.2,0.3,2.2,0.9,3.1,1.8c0.9,0.9,1.5,1.9,1.8,3.1c0.2,0.9,0.3,1.7,0.1,2.6C18.7,9.1,18.4,9.4,17.9,9.4z" />
+              </g>
+              <g>
+                <path fill="currentColor" class="st0" d="M14.5,9c0,0-0.1,0-0.1,0c-0.5-0.1-0.8-0.5-0.8-1c0.1-0.6-0.1-1.1-0.5-1.5c-0.4-0.4-1-0.6-1.5-0.5
+		c-0.5,0.1-0.9-0.3-1-0.7c-0.1-0.5,0.3-0.9,0.7-1c1.1-0.2,2.3,0.2,3,1c0.8,0.8,1.2,1.9,1,3C15.4,8.7,15,9,14.5,9z" />
+              </g>
+              <g>
+                <path fill="currentColor" class="st0" d="M14.7,18.7c-0.3,0-0.5,0-0.8-0.1c-2.5-0.8-6-2.3-8.3-4.6C3.3,11.7,1.9,8.2,1,5.7C0.7,4.9,0.9,4.1,1.3,3.4
+		c0.5-0.7,1.3-1.1,2.1-1.1h2.3c0.6,0,1.2,0.4,1.6,0.9l1.1,2c0.3,0.5,0.3,1.1,0,1.7L7.5,8.7C7.6,9.1,8,10,8.8,10.8
+		c0.8,0.8,1.7,1.1,2.1,1.3l1.8-0.9c0.5-0.3,1.1-0.2,1.7,0l2,1.1c0.6,0.3,0.9,0.9,0.9,1.6v2.3c0,0.8-0.4,1.6-1.1,2.1
+		C15.7,18.5,15.2,18.7,14.7,18.7z M3.5,4.1c-0.3,0-0.5,0.1-0.7,0.3C2.7,4.6,2.6,4.8,2.7,5.1c0.6,1.9,2,5.4,4.2,7.6
+		c2.1,2.1,5.7,3.5,7.6,4.2c0.3,0.1,0.5,0,0.6-0.1c0.2-0.2,0.3-0.4,0.3-0.7v-2.3l-2-1.1l-2.1,1c-0.2,0.1-0.4,0.1-0.6,0.1
+		c-0.1,0-1.8-0.4-3.3-1.8c-1.4-1.4-1.8-3.2-1.8-3.3c0-0.2,0-0.4,0.1-0.6l1-2.1l-1.1-2H3.5z" />
+              </g>
+            </svg>400-822-4688
+          </div>
+        </div>
+        <div class="col-xl-4 col-4">
+          <div class="message">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21"
+              height="21" viewBox="0 0 20 20">
+              <path fill="currentColor" class="st0" d="M20,3.1c0-0.1,0-0.1,0-0.2c0-0.1,0-0.1-0.1-0.2c0,0,0-0.1,0-0.1c0,0,0,0,0,0c0,0-0.1-0.1-0.1-0.1
+	c0,0-0.1-0.1-0.1-0.1c-0.1,0-0.1,0-0.2-0.1c-0.1,0-0.1,0-0.2,0c0,0,0,0-0.1,0H10H0.9c0,0,0,0-0.1,0c-0.1,0-0.1,0-0.2,0
+	c-0.1,0-0.1,0-0.2,0.1c0,0-0.1,0.1-0.1,0.1c-0.1,0-0.1,0.1-0.1,0.1c0,0,0,0,0,0c0,0,0,0.1,0,0.1c0,0.1-0.1,0.1-0.1,0.2
+	C0,3,0,3,0,3.1c0,0,0,0.1,0,0.1V10v6.8c0,0.5,0.4,0.9,0.9,0.9h18.2c0.5,0,0.9-0.4,0.9-0.9V10V3.2C20,3.1,20,3.1,20,3.1z M10,4.1h6.4
+	L10,8.9L3.6,4.1H10z M18.2,15.9H1.8V10V5l7.6,5.7c0.2,0.1,0.4,0.2,0.5,0.2c0.2,0,0.4-0.1,0.5-0.2L18.2,5v5V15.9z" />
+            </svg>
+            market@wetrial.com
+          </div>
+        </div>
+        <div class="col-xl-4 col-4">
+          <div class="message border-right-none"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="21" viewBox="0 0 20 20">
+              <path fill="currentColor" class="st0" d="M19.1,13.6L19.1,13.6l0-0.9v-0.9v-1.6c0-5.1-4.1-9.3-9.1-9.3c-5,0-9.1,4.2-9.1,9.3v1.6v0.9v0.9
+	C0.4,13.6,0,14,0,14.5v0.9c0,0.5,0.4,0.9,0.9,0.9v1.8c0,0.5,0.4,0.9,0.9,0.9h1.8c1.5,0,2.7-1.2,2.7-2.7v-2.7c0-1.5-1.2-2.7-2.7-2.7
+	H2.7v-0.7C2.7,6.1,6,2.7,10,2.7s7.3,3.4,7.3,7.5v0.7h-0.9c-1.5,0-2.7,1.2-2.7,2.7v2.7c0,1.5,1.2,2.7,2.7,2.7h1.8
+	c0.5,0,0.9-0.4,0.9-0.9v-1.8h0c0.5,0,0.9-0.4,0.9-0.9v-0.9C20,14,19.6,13.6,19.1,13.6z M3.6,12.7c0.5,0,0.9,0.4,0.9,0.9v2.7
+	c0,0.5-0.4,0.9-0.9,0.9H2.7v-4.5H3.6z M17.3,17.3h-0.9c-0.5,0-0.9-0.4-0.9-0.9v-2.7c0-0.5,0.4-0.9,0.9-0.9h0.9V17.3z" />
+            </svg>在线咨询</div>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright © 2015-2020 YLT版权所有
+        <a target="_blank" href="https://beian.miit.gov.cn/#/" rel="noopener noreferrer">京ICP备11034462号-2</a>
+        | 京公网安备11010502038388
+      </div>
+    </div>
+  </footer>
+  <script src="/libs/js/jquery-3.6.0.min.js"></script>
+  <script src="/libs/js/jquery.plugins.min.js"></script>
+  <script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/libs/swiper/swiper-bundle.min.js"></script>
+  <!-- nomui js -->
+  <script src="/libs/nomui/nomui.js"></script>
+  <script>
+    //动态设置二级菜单宽度
+    $('.main-nav .nav-item.dropdown').each(function () {
+      $(this).find('.dropdown-menu .dropdown-item').css("width", $(this).innerWidth())
+    })
+    //返回顶部
+    $(document).scroll(function () {
+      var scroH = $(document).scrollTop() //滚动高度
+      var viewH = $(window).height() //可见高度
+      var contentH = $(document).height() //内容高度
+      if (scroH > 1000) {
+        $('.common-backtop')
+          .show()
+          .addClass('animate__animated animate__slideInUp')
+      }
+      if (scroH < 100) {
+        $('.common-backtop').removeClass('animate__slideInUp').hide()
+      }
+      if (contentH - (scroH + viewH) <= 200) {
+        //距离底部高度小于100px
+      }
+      if ((contentH = scroH + viewH)) {
+        //滚动条滑到底部啦
+      }
+    })
+    $('.common-backtop').click(function () {
+      $('body,html').animate({
+          scrollTop: 0,
+        },
+        10,
+        'linear'
+      )
+    })
+
+    //联系我们
+    $('.contact-us').click(function (e) {
+      e.stopPropagation()
+      e.preventDefault()
+      $(this).toggleClass('QA-show')
+    })
+    $(document).click(function () {
+      $('.contact-us').removeClass('QA-show')
+    })
+  </script>
+  <script>
+    new nomui.Component({
+      reference: document.getElementById('loginApp'),
+      children: {
+        classes: {
+          'card': true,
+          'border-0': true,
+        },
+        children: {
+          attrs: {
+            style: {
+              'width': '452px',
+              'margin': '0 auto',
+            }
+          },
+          component: 'Flex',
+          gap: 'medium',
+          rows: [{
+              component: 'Rows',
+              items: [{
+                component: 'Group',
+                fields: [{
+                    component: 'Textbox',
+                    name: 'name',
+                    label: '用户名/邮箱',
+                    labelAlign: 'top',
+                    required: true,
+                    placeholder: '请输入用户名/邮箱',
+                    span: '12',
+                  },
+                  {
+                    component: 'Textbox',
+                    name: 'age',
+                    label: '登录密码',
+                    labelAlign: 'top',
+                    required: true,
+                    placeholder: '请输入密码',
+                    span: '12',
+                  },
+                  {
+                    component: 'Checkbox',
+                    name: 'aggree',
+                    text: '记住密码',
+                    label: '',
+                    labelAlign: 'top',
+                    span: '6',
+                  },
+                  {
+                    component: 'Flex',
+                    attrs: {
+                      style: {
+                        'position': 'absolute',
+                        'right': '0',
+                        'bottom': '3px',
+                      }
+                    },
+                    cols: [{
+                        component: 'Button',
+                        text: '忘记密码',
+                        type: 'link',
+                      },
+                      {
+                        component: 'Button',
+                        text: '|',
+                        type: 'link',
+                        attrs: {
+                          style: {
+                            'padding-left': 0,
+                            'padding-right': 0,
+                          },
+
+                        }
+                      },
+                      {
+                        component: 'Button',
+                        text: '用户注册',
+                        type: 'link',
+                      },
+                    ],
+                  },
+
+                ],
+              }, ],
+            },
+            {
+              component: 'Flex',
+              gap: 'large',
+              attrs: {
+                style: {
+                  'padding': '0.5rem',
+                }
+              },
+              rows: [{
+                component: 'Button',
+                attrs: {
+                  style: {
+                    'width': '100%',
+                    'padding': '8px',
+                    'font-size': '16px',
+                  }
+                },
+                text: '立即登录',
+                type: 'primary',
+              }, ],
+            }
+          ]
+
+
+        },
+      }
+
+    })
+  </script>
+</body>
+
+</html>
