@@ -1198,6 +1198,53 @@ body {
   }
 }
 
+.common-bootstrap-table {
+  .table {
+    margin-bottom: 0;
+    font-weight: bold;
+    border-style: hidden;
+
+    thead {
+      th {
+        font-size: 12px;
+        font-weight: 400;
+        color: #979797;
+        background: #F5F5F6;
+      }
+
+      th:first-child {
+        padding-left: 56px;
+      }
+
+    }
+
+    tbody {
+      border-top: none;
+
+      tr:nth-of-type(odd)>* {
+        --bs-table-accent-bg: #fff;
+        background: #fff;
+      }
+
+      tr:nth-of-type(even)>* {
+
+        background: #F5F5F6;
+      }
+
+      tr td:first-child {
+        padding-left: 56px;
+        color: #2B7EFB;
+      }
+    }
+
+    th,
+    td {
+      padding: 11px;
+      border-bottom: none;
+    }
+  }
+}
+
 @media (max-width: 1400px) {
 
   .main-nav .nav-item .dropdown-menu {

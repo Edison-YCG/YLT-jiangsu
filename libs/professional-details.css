@@ -29,6 +29,9 @@
   border-radius: 2px;
   padding: 24px 20px 30px;
 }
+.pd-column-2 .nav {
+  margin-bottom: 24px;
+}
 .pd-column-2 .nav .nav-item {
   margin: 0 8px;
 }
