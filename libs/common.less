@@ -57,6 +57,7 @@ body {
   overflow-y: scroll;
   /* 所有页面都出现滚动条 */
   --nom-color-primary: #195FE7;
+  --nom-color-primary-hover: #074cd5;
 }
 
 #loginModalLabel {
@@ -64,6 +65,13 @@ body {
   text-align: center;
   font-weight: bold;
   color: #323233;
+  font-size: 24px;
+}
+
+#loginApp {
+  .nom-field>.nom-field-label>.nom-label {
+    font-size: 14px;
+  }
 }
 
 #JS-header {
@@ -712,11 +720,6 @@ button:active {
   font-weight: bold;
 }
 
-.nom-steps .nom-step>.nom-step-item-container .nom-step-item-content .nom-step-item-title {
-  font-weight: bold;
-  font-size: 14px;
-}
-
 table.nom-table th {
   font-weight: bold;
 }
@@ -1187,8 +1190,40 @@ table.nom-table th {
 }
 
 .nomui-steps-extend {
-  .nom-step-item-icon {
-    border-radius: 0 !important;
+  .nom-step.nom-step-item-wait .nom-step-item-icon {
+    border-color: #D7DADD;
+    background: #D7DADD;
+    color: #4E5969;
+
+
+  }
+
+  .nom-step.nom-step-item-finish .nom-step-item-icon {
+    border-color: #E2EBFD;
+    background-color: #E2EBFD;
+
+
+  }
+
+  .nom-step>.nom-step-item-container>.nom-step-item-icon {
+    border-radius: 0;
+    font-size: 16px;
+  }
+
+  &.nom-steps-vertical>.nom-step>.nom-step-item-container>.nom-step-item-content>.nom-step-item-description {
+    min-height: 110px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #86909C;
+    line-height: 20px;
+  }
+
+  .nom-step>.nom-step-item-container .nom-step-item-content .nom-step-item-title {
+    margin-bottom: 9px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1D2129;
+    line-height: 24px;
   }
 }
 

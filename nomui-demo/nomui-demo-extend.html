@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nomui组件改样式</title>
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/libs/nomui/nomui.css">
+    <link rel="stylesheet" href="/libs/common.css">
+</head>
+
+<body>
+    <!-- 内容部分-s -->
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <!-- 内容部分-e -->
+
+    <script src="/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- nomui js -->
+    <script src="/libs/nomui/nomui.js"></script>
+
+    <!-- use nomui -->
+    <script>
+        new nomui.Component({
+            reference: document.getElementById('app'),
+            children: {
+                component: 'Panel',
+                styles: {
+                    margin: 5,
+                },
+                header: {
+                    caption: {
+                        title: 'nomui组件改样式'
+                    }
+                },
+                body: {
+                    children: [{
+                            component: 'RadioList',
+                            classes: {
+                                'nomui-radioList-extend': true,
+                            },
+                            label: '单选',
+                            span: '12',
+                            value: 3,
+                            options: [{
+                                    text: '金庸',
+                                    value: 0,
+                                },
+                                {
+                                    text: '古龙',
+                                    value: 1,
+                                },
+                                {
+                                    text: '梁羽生',
+                                    value: 2,
+                                },
+                                {
+                                    text: '温瑞安',
+                                    value: 3,
+                                },
+                                {
+                                    text: '古龙',
+                                    value: 4,
+                                },
+                                {
+                                    text: '梁羽生',
+                                    value: 5,
+                                },
+                                {
+                                    text: '温瑞安',
+                                    value: 6,
+                                },
+                                {
+                                    text: '古龙',
+                                    value: 7,
+                                },
+                                {
+                                    text: '梁羽生',
+                                    value: 8,
+                                },
+                                {
+                                    text: '温瑞安',
+                                    value: 9,
+                                },
+                            ],
+                        },
+                        {
+                            component: 'CheckboxList',
+                            classes: {
+                                'nomui-checkboxList-extend': true,
+                            },
+                            label: '多选',
+                            span: '12',
+                            value: [0, 1, 5],
+                            options: [{
+                                    text: '质量管理',
+                                    value: 0,
+                                },
+                                {
+                                    text: 'CRA',
+                                    value: 1,
+                                },
+                                {
+                                    text: 'CRA',
+                                    value: 2,
+                                },
+                                {
+                                    text: 'CRA',
+                                    value: 3,
+                                },
+                                {
+                                    text: 'CRA',
+                                    value: 4,
+                                },
+                                {
+                                    text: 'CRA',
+                                    value: 5,
+                                },
+                                {
+                                    text: 'CRA',
+                                    value: 6,
+                                },
+                                {
+                                    text: 'CRA',
+                                    value: 7,
+                                },
+                                {
+                                    text: 'CRA',
+                                    value: 8,
+                                },
+                                {
+                                    text: 'CRA',
+                                    value: 9,
+                                },
+                            ],
+                        },
+                        {
+                            component: 'Steps',
+                            classes: {
+                                'nomui-steps-extend': true,
+                            },
+                            direction: 'vertical',
+                            current: 1,
+                            options: [{
+                                    title: 'Finished',
+                                    description: 'This is description',
+                                },
+                                {
+                                    title: 'In Progress',
+                                    // subTitle: 'subTitle',
+                                    description: 'This is description',
+                                },
+                                {
+                                    title: 'Waiting',
+                                    description: 'This is description',
+                                },
+                                {
+                                    title: 'ending',
+                                    description: 'This is description',
+                                },
+                            ],
+                        },
+                    ]
+
+                }
+            },
+
+        })
+    </script>
+</body>
+
+</html>
